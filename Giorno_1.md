@@ -9,8 +9,18 @@
 - Agente Palk
 - Ispettore Slack
 
-Il giocatore potrà usare l'<b>Ispettore Slack</b> per condurre le indagini di questo episodio.
+Il giocatore potrà usare l'<b>Ispettore Slack</b> per condurre le indagini di questo episodio.<br>
+Alcune parti del colonnello Melchett potrebbero esser trasformate in parti per l'ispettore Slack.
 
+## Note
+Le azioni disponibili in questo capitolo sono:
+- Esplorazione Gossington Hall
+- Interrogatorio
+    - Dolly Bantry
+    - Arthur Bantry
+    - Domestiche
+    - Basil Blake
+- Ricostruzione del caso in stazione di polizia    
 ---
 
 <i>Gossington Hall, mattina.</i>
@@ -287,3 +297,91 @@ Una bionda al platino, eh? Sarà bene andare a scambiare due parole con quel gio
 > 1. (oppure 2.) Basil. Basil Blake.
 
 ---
+
+[Melchett e Slack vanno alla villa di Basil Blake]
+
+[Melchett bussa alla porta]
+
+<b>BASIL BLAKE</b><br>
+Beh, che volete?
+
+<b>COLONNELLO MELCHETT</b><br>
+Siete voi il signor Basil Blake?
+
+<b>BASIL BLAKE</b><br>
+Precisamente.
+
+<b>COLONNELLO MELCHETT</b><br>
+Colonnello Melchett, capo della polizia della contea.<br>
+Ho sentito, Blake, che alla fine della scorsa settimana avete avuto la visita... di una giovane signora bionda.<br>
+Sono venuto qui perchè è stato trovato il corpo di una giovane bionda... d'aspetto... ehm... leggermente
+insolito, assassinata.
+
+<b>BASIL BLAKE</b><br>
+Perbacco! E dove?
+
+<b>COLONNELLO MELCHETT</b><br>
+Nella biblioteca di Gossington Hall.
+
+<b>BASIL BLAKE</b><br>
+A Gossington? Dal vecchio Bantry? Oh, questa si che è bella! Il vecchio Bantry! Vecchio sporcaccione!
+
+[Arriva una macchina]
+
+<b>BASIL BLAKE</b><br>
+Sarà tempo che ve ne andiate. Permettete che vi presenti: Dinah Lee... il colonnello Blimp della polizia della contea.
+E ora, colonnello, che avete potuto constatare che la mia bionda è viva e gode di ottima salute, vorrete continuare il
+bel lavoro che riguarda la piccola commedia del vecchio Bantry. Buon giorno!
+
+<b>COLONNELLO MELCHETT</b><br>
+Vi avverto, giovanotto, che sarebbe bene che teneste la lingua a posto, altrimenti avrete noie.
+
+[Melchett se ne va con la faccia rossa di collera]
+
+---
+
+> A questo punto l'ispettore Slack inizia a ricostruire la vicenda con gli alibi della gente interrogata
+
+[In ufficio]
+
+<b>ISPETTORE SLACK</b><br>
+La signora Bantry, dopo cena, è rimasta in biblioteca fino alle dieci circa, dopo di che è andata a letto. Ha spento
+le luci uscendo e dopo di allora nessuno, presumibilmente, vi è entrato. I domestici sono andati a dormire alle
+dieci e mezzo, salvo Lorrimer che si è ritirato alle undici meno un quarto, dopo aver messo i liquori nella hall.
+Nessuno ha udito nulla d'insolito eccettuata una delle cameriere, che invece ha udito anche troppo! Rantoli e urla
+agghiaccianti, passi sinistri e chissà cos'altro. L'altra cameriera, che divide con lei la camera, dice che la ragazza
+ha dormito tutta la notte, initerrottamente.
+
+<b>COLONNELLO MELCHETT</b><br>
+Che mi dite della finestra forzata?
+
+<b>ISPETTORE SLACK</b><br>
+Lavoro da dilettante, fatto con un comune scalpello, di modello corrente, senza produrre molto rumore. Dovrebbe essere
+da qualche parte nella casa, ma nessuno riesce a trovarlo. Si tratta comunque di un utensile molto diffuso.
+
+[Apre la porta il dottor Heydock]
+
+<b>DOTTOR HAYDOCK</b><br>
+Ho ritenuto opportuno di venire a darvi i risultati.<br>
+Niente di nuovo. Proprio quello che pensavo. La morte è dovuta a strangolamento, per mezzo di una fascia di satin
+della sua stessa veste che le è stata passata intorno al collo e incrociata da dietro. Cosa estremamente facile e
+semplice, che non deve aver richiesto una grande forza, specialmente se la ragazza è stata aggredita di sorpresa, 
+come sembra. Non ci sono segni di colluttazione.<br>
+L'ora del decesso è avvenuta tra le dieci e mezzanotte.
+
+<b>COLONNELLO MELCHETT</b><br>
+Suppongo che abbiate dato un'occhiata alla lista delle persone delle quali ci è stata comunicata la scomparsa, vero?
+
+<b>ISPETTORE SLACK</b><br>
+Sono segnate qui. Signora Saunders, scomparsa una settimana fa, capelli neri, occhi azzurri, trentasei anni.
+La signora Barnard, di sessantacinque anni. Pamela Reeves, sedicenne, mancante da casa dalla scorsa notte,
+ha partecipato al raduno delle studentesse, capelli scuri raccolti in due codini, altezza metri uno e sessantacinque...
+
+[Squilla il telefono]
+
+<b>COLONNELLO MELCHETT</b><br>
+Pronto... si... si; centra di polizia di Much Benham... che cosa? Un momento...<br>
+Ruby Keene, diciottenne, di professione ballerina, altezza metri uno e sessanta, slanciata, capelli biondo platino,
+occhi azzurri, naso leggermente all'insù, con un vestito da sera bianco e sandali d'argento. Manderò subito Slack.<br>
+Penso che ci siamo, era la polizia del Glenshire. Comunicano la scomparsa della ragazza dal Majestic Hotel.<br>
+Mettetevi in collegamento, sul posto, col sovrintendente Harper e collaborate con lui.
