@@ -25,7 +25,7 @@ Le azioni disponibili in questo capitolo sono:
 
 <i>Gossington Hall, mattina.</i>
 
-[Mary bussa alla camera dei signori Bantry]
+<i>[Mary bussa alla camera dei signori Bantry]</i>
 
 <b>DOLLY BANTRY</b><br>
 Avanti.
@@ -33,7 +33,7 @@ Avanti.
 <b>MARY</b><br>
 Oh, signora, signora, <i>c'è un cadavere in biblioteca!</i>
 
-[Mary corre fuori dalla camera]
+<i>[Mary corre fuori dalla camera]</i>
 
 <b>DOLLY BANTRY</b> (<i>tra sè e sè</i>)<br>
 <i>Impossibile! Devo aver sognato.</i><br>
@@ -43,7 +43,7 @@ Svegliati, Arthur. Non hai sentito che cosa ha detto?
 <b>ARTHUR BANTRY</b><br>
 Va bene, va bene. Sono completamente d'accordo con te, Dolly.
 
-[Arthur torna a dormire e Dolly lo scuote]
+<i>[Arthur torna a dormire e Dolly lo scuote]</i>
 
 <b>DOLLY BANTRY</b><br>
 Devi ascoltarmi. Mary è entrata a dire che c'è un cadavere in biblioteca.
@@ -94,7 +94,7 @@ Questa potrebbe essere la volta buona. Comunque, Arthur, devi andare a vedere.
 
 ---
 
-[Arthur esce dalla camera e scende le scale per andare in biblioteca]
+<i>[Arthur esce dalla camera e scende le scale per andare in biblioteca]</i>
 
 <b>LORRIMER</b><br>
 Sono lieto che siate venuto, signore. Ho disposto che non si facesse nulla prima del vostro arrivo.
@@ -115,7 +115,7 @@ Forse, signore, gradireste accertarvene voi stesso.
 
 ---
 
-[Viene chiamata la polizia]
+<i>[Viene chiamata la polizia]</i>
 
 <b>AGENTE PALK</b><br>
 Ispettore Slack? Qui l'agente Palk. Mi è stato comunicato ora che stamane alle sette e un quarto è stato
@@ -123,7 +123,7 @@ trovato il cadavere di una giovane donna...
 
 ---
 
-[Suona il telefono a casa di Miss Marple]
+<i>[Suona il telefono a casa di Miss Marple]</i>
 
 <b>JANE MARPLE</b><br>
 Si, parla Jane. Ti sei alzata molto per tempo, Dolly.
@@ -151,7 +151,7 @@ Beh, certo cara... se posso esserti d'aiuto...
 
 ---
 
-[Miss Marple arriva a Gossington Hall per vedere il luogo del delitto]
+<i>[Miss Marple arriva a Gossington Hall per vedere il luogo del delitto]</i>
 
 <b>AGENTE PALK</b><br>
 Mi spiace, ma nessuno può entrare, signora. Ordine dell'ispettore.
@@ -172,7 +172,7 @@ Nulla deve essere toccato o manomesso per nessun motivo.
 > Fissò le dita che s'aggrappavano freneticamente alla scollatura del vestito, come se la ragazza vi si fosse attaccata,
 > in un estremo tentativo di respirare.
 
-[Arriva l'auto del colonnello Melchett con l'ispettore Slack]
+<i>[Arriva l'auto del colonnello Melchett con l'ispettore Slack]</i>
 
 <b>COLONNELLO MELCHETT</b><br>
 Buon giorno, Bantry. Ho pensato di venire di persona. Mi sembra un caso straordinario. Nessuna idea di chi sia la donna?
@@ -198,7 +198,7 @@ Meglio cominciare subito. Haydock dovrebbe essere qui da un momento all'altro. A
 > A questo punto si può esplorare Gossington Hall usando l'Ispettore Slack per cercare la biblioteca.<br>
 > Quando viene trovata, compare un messaggio che fa tornare l'ispettore dal colonnello per iniziare le indagini.
 
-[Arriva il medico legale con una macchina]
+<i>[Arriva il medico legale con una macchina]</i>
 
 <b>COLONNELLO MELCHETT</b><br>
 Bene, andiamo. In biblioteca, ha detto Slack.
@@ -245,7 +245,7 @@ Per il momento non ne sapete molto nemmeno voi, Slack.
 
 ---
 
-[Il colonnello Melchett, l'ispettore Slack e il colonnello Bantry si spostano nello studio di Arthur]
+<i>[Il colonnello Melchett, l'ispettore Slack e il colonnello Bantry si spostano nello studio di Arthur]</i>
 
 <b>ISPETTORE SLACK</b><br>
 1. Cosa evete fatto la scorsa notte?
@@ -298,9 +298,9 @@ Una bionda al platino, eh? Sarà bene andare a scambiare due parole con quel gio
 
 ---
 
-[Melchett e Slack vanno alla villa di Basil Blake]
+<i>[Melchett e Slack vanno alla villa di Basil Blake]</i>
 
-[Melchett bussa alla porta]
+<i>[Melchett bussa alla porta]</i>
 
 <b>BASIL BLAKE</b><br>
 Beh, che volete?
@@ -326,7 +326,7 @@ Nella biblioteca di Gossington Hall.
 <b>BASIL BLAKE</b><br>
 A Gossington? Dal vecchio Bantry? Oh, questa si che è bella! Il vecchio Bantry! Vecchio sporcaccione!
 
-[Arriva una macchina]
+<i>[Arriva una macchina]</i>
 
 <b>BASIL BLAKE</b><br>
 Sarà tempo che ve ne andiate. Permettete che vi presenti: Dinah Lee... il colonnello Blimp della polizia della contea.
@@ -336,13 +336,13 @@ bel lavoro che riguarda la piccola commedia del vecchio Bantry. Buon giorno!
 <b>COLONNELLO MELCHETT</b><br>
 Vi avverto, giovanotto, che sarebbe bene che teneste la lingua a posto, altrimenti avrete noie.
 
-[Melchett se ne va con la faccia rossa di collera]
+<i>[Melchett se ne va con la faccia rossa di collera]</i>
 
 ---
 
 > A questo punto l'ispettore Slack inizia a ricostruire la vicenda con gli alibi della gente interrogata
 
-[In ufficio]
+<i>[In ufficio]</i>
 
 <b>ISPETTORE SLACK</b><br>
 La signora Bantry, dopo cena, è rimasta in biblioteca fino alle dieci circa, dopo di che è andata a letto. Ha spento
@@ -359,7 +359,7 @@ Che mi dite della finestra forzata?
 Lavoro da dilettante, fatto con un comune scalpello, di modello corrente, senza produrre molto rumore. Dovrebbe essere
 da qualche parte nella casa, ma nessuno riesce a trovarlo. Si tratta comunque di un utensile molto diffuso.
 
-[Apre la porta il dottor Heydock]
+<i>[Apre la porta il dottor Heydock]</i>
 
 <b>DOTTOR HAYDOCK</b><br>
 Ho ritenuto opportuno di venire a darvi i risultati.<br>
@@ -377,7 +377,7 @@ Sono segnate qui. Signora Saunders, scomparsa una settimana fa, capelli neri, oc
 La signora Barnard, di sessantacinque anni. Pamela Reeves, sedicenne, mancante da casa dalla scorsa notte,
 ha partecipato al raduno delle studentesse, capelli scuri raccolti in due codini, altezza metri uno e sessantacinque...
 
-[Squilla il telefono]
+<i>[Squilla il telefono]</i>
 
 <b>COLONNELLO MELCHETT</b><br>
 Pronto... si... si; centra di polizia di Much Benham... che cosa? Un momento...<br>
