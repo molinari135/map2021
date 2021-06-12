@@ -80,6 +80,11 @@ In questa tabella sono presenti tutti gli oggetti che sembrano essere utili al f
 
 ## Storyboard
 
+| Giorno 1 | Giorno 2 | Giorno 3 | Giorno 4 | Giorno 5 |
+|-----|-----|-----|-----|-----|
+| Gossington Hall | Majestic Hotel | Jefferson | Pamela Reeves | Finale |
+| Ritrovamento del cadavere nella biblioteca, inizio investigazioni | Scomparsa di Ruby Keene dall'hotel | Interrogatorio della famiglia Jefferson | Ritrovamento della macchina bruciata | Scelta dell'assassino |
+
 ## Modifiche
 
 ## Finali
