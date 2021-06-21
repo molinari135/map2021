@@ -1,387 +1,315 @@
 # Giorno 1 - Gossington Hall
 
-## Personaggi
+## Stanze
+| Ovest | Nord | Est |
+|---|---|---|
+|Bagno|Corridoio|Guardaroba|
+|Camera da letto|Corridoio|Studio|
+| |Scale| |
+|Cucina|Corridoio|Biblioteca|
+|Sala da pranzo|Corridoio|Salotto|
+| |Ingresso| |
+| | <b>Sud</b>| |
 
-- Dolly Bantry
-- Arthur Bantry
-- Mary (domestica)
-- Lorrimer (maggiordomo)
-- Agente Palk
-- Ispettore Slack
+## NPC
+| Stanza | NPC |
+|---|---|
+|Ingresso| |
+|Sala da pranzo|[Dolly Bantry](##Dolly Bantry), [Jane Marple](##Jane Marple)|
+|Salotto|[Colonnello Melchett](##Colonnello Melchett)|
+|Cucina|[Lorrimer](##Lorrimer), [Domestica 2](##Domestica 2)|
+|Biblioteca|[Haydock](##Haydoc), [Agente Palk](##Agente Palk)|
+|Scale||
+|Camera da letto|[Domestica 1](##Domestica 1)|
+|Studio|[Arthur Bantry](##Arthur Bantry)|
+|Bagno| |
+|Guardaroba| |
 
-Il giocatore potrà usare l'<b>Ispettore Slack</b> per condurre le indagini di questo episodio.<br>
-Alcune parti del colonnello Melchett potrebbero esser trasformate in parti per l'ispettore Slack.
+# Interazione NPC
 
-## Note
-Le azioni disponibili in questo capitolo sono:
-- Esplorazione Gossington Hall
-- Interrogatorio
-    - Dolly Bantry
-    - Arthur Bantry
-    - Domestiche
-    - Basil Blake
-- Ricostruzione del caso in stazione di polizia    
----
+Il dialogo viene sempre iniziato dall'Ispettore Slack.
 
-<i>Gossington Hall, mattina.</i>
+## Dolly Bantry
 
-<i>[Mary bussa alla camera dei signori Bantry]</i>
+### Opzione 1
+- Buongiorno, sono l'ispettore Slack.
+- Salve, sono Dolly Bantry, è un omicidio interessante vero?
+- Decisamente, mi occuperò io delle investigazioni.
+- Oh, fantastico, le consiglio di parlare con Miss Marple, se ne intende di omicidi.
+- (Quella vecchia zitella è sempre tra i piedi...) Lo farò.
 
-<b>DOLLY BANTRY</b><br>
-Avanti.
+### Opzione 2
+- Conosce la ragazza?
+- Mai vista prima, nemmeno mio marito la conosce.
+- Questo complica leggermente le cose...
+- Non si preoccupi, c'è qui Miss Marple!
+- Giusto...
 
-<b>MARY</b><br>
-Oh, signora, signora, <i>c'è un cadavere in biblioteca!</i>
+### Opzione 3
+- Dove posso trovare il signor Bantry?
+- Sta nel suo studio, al secondo piano.
+- Andrò a farmi una chiacchierata con lui.
+- Però povera ragazza, così giovane. La lascio al suo lavoro, ispettore.
+- Grazie, pensi a riposare adesso. (Studio, secondo piano, ok.)
 
-<i>[Mary corre fuori dalla camera]</i>
-
-<b>DOLLY BANTRY</b> (<i>tra sè e sè</i>)<br>
-<i>Impossibile! Devo aver sognato.</i><br>
-Arthur, Arthur, svegliati!<br>
-Svegliati, Arthur. Non hai sentito che cosa ha detto?
-
-<b>ARTHUR BANTRY</b><br>
-Va bene, va bene. Sono completamente d'accordo con te, Dolly.
-
-<i>[Arthur torna a dormire e Dolly lo scuote]</i>
-
-<b>DOLLY BANTRY</b><br>
-Devi ascoltarmi. Mary è entrata a dire che c'è un cadavere in biblioteca.
-
-<b>ARTHUR BANTRY</b><br>
-Un... che cosa?
-
-<b>DOLLY BANTRY</b><br>
-Un cadavere in biblioteca!
-
-<b>ARTHUR BANTRY</b><br>
-Chi l'ha detto?
-
-<b>DOLLY BANTRY</b><br>
-Mary.
-
-<b>ARTHUR BANTRY</b><br>
-Sciocchezze, vecchia mia; te lo sei sognato.
-
-<b>DOLLY BANTRY</b><br>
-No, non ho sognato: è venuta e ha detto proprio così.
-
-<b>ARTHUR BANTRY</b><br>
-Mary è venuta a dire che c'è un cadavere in biblioteca?
-
-<b>DOLLY BANTRY</b><br>
-Si.
-
-<b>ARTHUR BANTRY</b><br>
-Non è possibile.
-
-<b>DOLLY BANTRY</b><br>
-L'ha detto.
-
-<b>ARTHUR BANTRY</b><br>
-Te lo sei immaginato.
-
-<b>DOLLY BANTRY</b><br>
-Non me lo sono immaginato.
-
-<b>ARTHUR BANTRY</b><br>
-Ma davvero, Dolly, stavi sognando, ecco tutto; è per via di quel giallo che stavi leggendo... Sai... Lord Edgbaston
-trova una splendida biona morta sul tappeto della biblioteca. Nei libri, i cadaveri si rinvengono sempre
-nelle biblioteche. Nella vita di tutti i giorni non mi risulta che sia mai successo.
-
-<b>DOLLY BANTRY</b><br>
-Questa potrebbe essere la volta buona. Comunque, Arthur, devi andare a vedere.
+### Opzione 4
+- Cosa stava facendo ieri sera?
+- Prima di andare a letto ero in biblioteca.
+- A che ora è andata a dormire?
+- Era presto, dovevano essere le 22:30.
+- (Quindi alle 22:30 non c'era nessun cadavere.)
 
 ---
 
-<i>[Arthur esce dalla camera e scende le scale per andare in biblioteca]</i>
+## Jane Marple
 
-<b>LORRIMER</b><br>
-Sono lieto che siate venuto, signore. Ho disposto che non si facesse nulla prima del vostro arrivo.
-Credete che debba chiamare la polizia?
+### Opzione 1
+- Si ricorda di me, Miss Marple?
+- Oh, l'ispettore Slack, certo che mi ricordo di lei.
+- La avverto, non sarà come l'ultima volta. Questo caso non fa per lei.
+- Allora me ne starò qui mentre guardo le vostre gesta, ispettore.
+- Le auguro una buona giornata, Miss.
 
-<b>ARTHUR BANTRY</b><br>
-Chiamare la polizia? Perchè?
+### Opzione 2
+- Lei dev'essere Miss Marple.
+- Si.
+- Lei riuscì a risolvere quel caso di qualche anno fa.
+- Fortuna del principiante, mi creda, sono solo una vecchia che ama i pettegolezzi.
+- Conterò sul suo aiuto allora.
 
-<b>LORRIMER</b><br>
-Mary, naturalmente, è alquanto sconvolta, signore, perchè è stata lei a fare la triste scoperta.
-Come al solito è entrata in biblioteca per aprire le tendine e per poco non inciampava nel cadavere.
+### Opzione 3
+- E lei sarebbe?
+- Sua nonna.
+- Posso assicurarle che mia nonna non le assomiglia.
+- Che giovanotto impertinente!
+- (Meglio scappare...)
 
-<b>ARTHUR BANTRY</b><br>
-Intendete dirmi che c'è un cadavere in biblioteca? <i>Nella mia</i> biblioteca?
-
-<b>LORRIMER</b><br>
-Forse, signore, gradireste accertarvene voi stesso.
-
----
-
-<i>[Viene chiamata la polizia]</i>
-
-<b>AGENTE PALK</b><br>
-Ispettore Slack? Qui l'agente Palk. Mi è stato comunicato ora che stamane alle sette e un quarto è stato
-trovato il cadavere di una giovane donna...
-
----
-
-<i>[Suona il telefono a casa di Miss Marple]</i>
-
-<b>JANE MARPLE</b><br>
-Si, parla Jane. Ti sei alzata molto per tempo, Dolly.
-
-<b>DOLLY BANTRY</b><br>
-Oh, è accaduta una cosa terribile. Abbiamo appena scoperto un cadavere in biblioteca.
-
-<b>JANE MARPLE</b><br>
-Ma il cadavere di chi?
-
-<b>DOLLY BANTRY</b><br>
-Si tratta di una bionda. Una bella bionda, come nei libri. Nessuno di noi l'ha mai vista prima d'ora. E adesso
-giace morta, lì in biblioteca. Per questo devi venire subito qui, ti mando una macchina.
-
-<b>JANE MARPLE</b><br>
-Va bene, cara, se credi che io possa sollevarti...
-
-<b>DOLLY BANTRY</b><br>
-Oh, non ho bisogno di essere confortata. Ma tu sei così pratica di cadaveri. A quanto pare è stata strangolata,
-mi sembra che quando in una casa accade un assassinio tanto vale gustarselo. Per questo desidero la tua venuta,
-per aiutarmi a trovare il colpevole e chiarire il mistero o altro. Non trovi che sia una cosa eccitante?
-
-<b>JANE MARPLE</b><br>
-Beh, certo cara... se posso esserti d'aiuto...
+### Opzione 4
+- Voi siete l'amica di Dolly?
+- Si, Dolly mi ha telefonato stamattina presto e adesso sono qui.
+- E' sempre bello lavorare con lei.
+- Oh, caro, certo che si!
+- Spero che collaborerete ancora con me.
 
 ---
 
-<i>[Miss Marple arriva a Gossington Hall per vedere il luogo del delitto]</i>
+## Colonnello Melchett
 
-<b>AGENTE PALK</b><br>
-Mi spiace, ma nessuno può entrare, signora. Ordine dell'ispettore.
+### Opzione 1
+- Davvero orribile.
+- Dice bene, ispettore, Haydock sta concludendo l'autopsia.
+- Andrò a parlare con lui.
+- Si occupi lei di interrogare tutti.
+- (Che palle...) Certamente, colonnello.
 
-<b>DOLLY BANTRY</b><br>
-Andiamo, Palk. Voi conoscete bene Miss Marple, è molto importante che possa vedere il cadavere.
+### Opzione 2
+- Secondo lei è stato Bantry?
+- Non credo, a che pro avrebbe fatto ciò?
+- Ah, non saprei.
+- Provi a cercare degli indizi per la casa.
+- Mi metto all'opera.
 
-<b>AGENTE PALK</b><br>
-Nulla deve essere toccato o manomesso per nessun motivo.
+### Opzione 3
+- Odio lavorare la mattina presto.
+- A chi lo dice, nemmeno il tempo di finire la colazione...
+- Chi ha ricevuto la chiamata?
+- L'agente Palk, è lì.
+- Speriamo di chiudere subito il caso...
 
-> Era una sfavillante figura di ragazza. Una giovane coi capelli di un biondo non naturale, acconciati in elaborati
-> ricci e onde. Il corpo sottile era vestito di un abito da sera di satin bianco ornato di pagliuzze che le lasciava
-> scoperta la schiena. La faccia era molto truccata e la cipria che risaltava grottescamente sulla pelle gonfia,
-> le ciglia posticce che pendevano sulle guance distorte, il rosso delle labbra che sembrava una ferita.
-> Le unghie delle mani erano laccate di un rosso sangue, come quelle dei piedi che calzavano dozzinali sandali
-> argentei. Era una figura volgare, appariscente e scintillante, che contrastava singolarmente con l'ambiente
-> solido e vecchio stile della biblioteca del colonnello Bantry. [...] Miss Marple si chinò. Non toccò la ragazza.
-> Fissò le dita che s'aggrappavano freneticamente alla scollatura del vestito, come se la ragazza vi si fosse attaccata,
-> in un estremo tentativo di respirare.
-
-<i>[Arriva l'auto del colonnello Melchett con l'ispettore Slack]</i>
-
-<b>COLONNELLO MELCHETT</b><br>
-Buon giorno, Bantry. Ho pensato di venire di persona. Mi sembra un caso straordinario. Nessuna idea di chi sia la donna?
-
-<b>ARTHUR BANTRY</b><br>
-Assolutamente no. Mai vista in vita mia.
-
-<b>ISPETTORE SLACK</b><br>
-1. Siete sicuro di non conoscerla?
-2. Il maggiordomo ne sa qualcosa?
-3. Nemmeno vostra moglie ha mai visto questa ragazza?
-
-> 2. Lorrimer è stato preso quanto me alla sprovvista.
-
-<b>ISPETTORE SLACK</b><br>
-Ah... mi stupisco.
-
-<b>COLONNELLO MELCHETT</b><br>
-Meglio cominciare subito. Haydock dovrebbe essere qui da un momento all'altro. Ah, eccolo.
+### Opzione 4
+- Che faccio, colonnello?
+- Interroghi tutti, si faccia un giro della casa, veda lei.
+- Devo fare degli schedari?
+- Se vuole, li faccia e li porti in centrale.
+- Vado subito.
 
 ---
 
-> A questo punto si può esplorare Gossington Hall usando l'Ispettore Slack per cercare la biblioteca.<br>
-> Quando viene trovata, compare un messaggio che fa tornare l'ispettore dal colonnello per iniziare le indagini.
+## Lorrimer
 
-<i>[Arriva il medico legale con una macchina]</i>
+### Opzione 1
+- Cognome e mestiere prego.
+- Lorrimer. Sono il maggiordomo della casa.
+- Cosa stava facendo alle 22?
+- Ho sistemato il whisky in salotto, il padrone non era tornato, parli con lui per avere conferma.
+- Grazie, lo farò.
 
-<b>COLONNELLO MELCHETT</b><br>
-Bene, andiamo. In biblioteca, ha detto Slack.
+### Opzione 2
+- Di solito va in biblioteca?
+- La sera, lascio il vassoio con il whisky per il padrone.
+- Nessuno è andato in biblioteca ieri sera?
+- Si, la signora Bantry ha letto dei libri prima di andare a letto.
+- Interessante...
 
-<b>ARTHUR BANTRY</b><br>
-Tutto incredibile! Voi sapete quanto ha insistito mia moglie, stamane, per convincermi che era entrata la domestica
-a dire del cadavere nella biblioteca. Io, proprio, non le credevo.
+### Opzione 3
+- Chi ha ritrovato il cadavere?
+- E' stata Mary, credo stia sistemando la camera da letto.
+- Dove si trova?
+- Al secondo piano, segua il corridoio, è sulla destra.
+- Grazie, parlerò con lei.
 
-<b>COLONNELLO MELCHETT</b><br>
-Oh, posso capirvi. Spero che vostra moglie non sia troppo sconvolta dell'avvenimento.
-
-<b>ARTHUR BANTRY</b><br>
-Ha chiamato Miss Marple, qui del paese, la conoscete?
-
-<b>COLONNELLO MELCHETT</b><br>
-Penso che vostra moglie la voglia mettere alla prova come piccola poliziotta dilettante. Miss Marple ne è proprio
-il tipico rappresentante locale. Una volta ci ha dato una lezione, vero, Slack?
-
-<b>ISPETTORE SLACK</b><br>
-1. Allora era diverso.
-2. Già...
-3. Stavolta il caso non è alla sua portata.
-
-> 1. Si trattava di un caso locale. La vecchia signora è al corrente di tutto quanto accade in paese, questo è vero.
-
-Ma stavolta il casa non è alla sua portata.
-
-<b>COLONNELLO MELCHETT</b><br>
-Per il momento non ne sapete molto nemmeno voi, Slack.
-
-<b>ISPETTORE SLACK</b><br>
-1. Vedremo...
-2. Datemi tempo, signore.
-3. Meglio iniziare le indagini.
+### Opzione 4
+- Lei ha proprio la faccia da indiziato numero 1.
+- La prego, non dica così.
+- Sa, nei libri è un classico.
+- Il mio alibi può smentire la sua asserzione.
+- Vedremo Lorrimer, vedremo...
 
 ---
 
-> Si può aggiungere una scena dove l'ispettore sente il discorso tra Miss Marple e Dolly riguardante Basil Blake
+## Domestica 2
 
-> La sola possibile spiegazione è legata a Basil Blake. Basil offre trattenimenti. La gente vien giù da Londra
-> e dagli stabilimenti cinematografici. Ricordi lo scorso luglio? Schiamazzi e urla, i più terribili rumori, tutti
-> ubriachi fradici. Mi dispiace dirlo... La signora Berry mi ha raccontato del disordine e dell'incredibile
-> quantità di vetri rotti trovati all'indomani, per tacere della giovane addormentata in bagno, praticamente nuda!
+### Opzione 1
+- Lei è Mary?
+- Oh, no sono la sua compagna di stanza.
+- Cosa stava facendo alle 22?
+- A quell'ora ero già a letto.
+- Capisco.
 
----
+### Opzione 2
+- Si occupa della biblioteca?
+- Oh no, Mary se ne occupa.
+- Da sola?
+- A volte la aiuta Lorrimer.
+- Chiederò a loro.
 
-<i>[Il colonnello Melchett, l'ispettore Slack e il colonnello Bantry si spostano nello studio di Arthur]</i>
+### Opzione 3
+- Secondo lei chi ha ucciso la ragazza?
+- Sono sicura che i miei padroni non commetterebbero un omicidio.
+- Non avete mai visto quella ragazza?
+- Mai. Assurdo che si trovi nella nostra biblioteca...
+- Indagheremo a fondo sulla questione.
 
-<b>ISPETTORE SLACK</b><br>
-1. Cosa evete fatto la scorsa notte?
-2. Quando siete tornato a casa?   
-3. Non siete entrato in biblioteca?
-4. Chi chiude la biblioteca?
-5. Cosa stava facendo vostra moglie?
-
-<b>ARTHUR BANTRY</b><br>
-> 1. Sono stato al raduno dell'Associazione dei conservatori. Alle 9, a Much Benham.
-
-> 2. Ho lasciato Much Benham subito dopo le dieci. Per strada ho avuto una noia, ho dovuto cambiare una ruota.
-> Sono arrivato qui che mancava un quarto alle dodici.
-
-> 3. No, ero stanco e sono andato dritto a letto.
-
-> 4. Lorrimer. In questa stagione, intorno alle sette e mezzo. Se sono fuori, lascia il vassoio con whisky
-> e bicchieri nella hall.
-
-> 5. L'ho trovata a letto, già addormentata. Può darsi che sia stata in biblioteca ieri sera o anche nel salone.
-> Non gliel'ho chiesto.
-
-Parola mia! Qui c'entra Basil Blake!
-
-<b>COLONNELLO MELCHETT</b><br>
-Chi è?
-
-<b>ARTHUR BANTRY</b><br>
-Un giovanotto che ha a che fare con l'industria cinematografica. Un giovane velenoso, un bruto. Mia moglie va matta
-per lui perchè sua madre è stata una sua compagna di scuola, ma è un vanesio, decadente e inutile. Lo prenderei a
-calci nel didietro! Ha comprato quella villetta sulla Lansham Road, la conoscete quella orribile casuccia moderna.
-Offre trattenimenti a mandrie urlanti e rumorose, e ogni fine settimana ha con sè una ragazza.
-
-<b>COLONNELLO MELCHETT</b><br>
-Ragazze?
-
-<b>ARTHUR BANTRY</b><br>
-Si ce n'era una la settimana scorsa, una di quelle bionde platinate.
-
-<b>COLONNELLO MELCHETT</b><br>
-Una bionda al platino, eh? Sarà bene andare a scambiare due parole con quel giovanotto, Braid, Blake, come si chiama?...
-
-<b>ISPETTORE SLACK</b><br>
-1. Brandon Brake
-2. Black Blank
-3. Basil Blake
-
-<b>ARTHUR BANTRY</b><br>
-> 1. (oppure 2.) Basil. Basil Blake.
+### Opzione 4
+- Mi può preparare un bicchiere di whisky?
+- Sono desolata ma...
+- Ma?
+- Ecco, la polizia ha bloccato tutte le stanze.
+- Ha ragione, mi scusi.
 
 ---
 
-<i>[Melchett e Slack vanno alla villa di Basil Blake]</i>
+## Haydock
 
-<i>[Melchett bussa alla porta]</i>
+### Opzione 1
+- Hey Doc! Che si dice?
+- Ancora con questa battuta, non fa più ridere, Slack.
+- A che punto siamo?
+- Posso assicurarti che è morta.
+- Ottimo.
 
-<b>BASIL BLAKE</b><br>
-Beh, che volete?
+### Opzione 2
+- Quanti anni ha?
+- Aveva. Credo 18 anni.
+- Nessuno la conosce?
+- A quanto pare no.
+- Non è un buon inizio.
 
-<b>COLONNELLO MELCHETT</b><br>
-Siete voi il signor Basil Blake?
+### Opzione 3
+- Doc, sei riuscito a capire come è morta?
+- Sembra sia stata strangolata intorno alle 23.
+- Con cosa?
+- Con un lembo del vestito.
+- Se scopri altro avvisami.
 
-<b>BASIL BLAKE</b><br>
-Precisamente.
-
-<b>COLONNELLO MELCHETT</b><br>
-Colonnello Melchett, capo della polizia della contea.<br>
-Ho sentito, Blake, che alla fine della scorsa settimana avete avuto la visita... di una giovane signora bionda.<br>
-Sono venuto qui perchè è stato trovato il corpo di una giovane bionda... d'aspetto... ehm... leggermente
-insolito, assassinata.
-
-<b>BASIL BLAKE</b><br>
-Perbacco! E dove?
-
-<b>COLONNELLO MELCHETT</b><br>
-Nella biblioteca di Gossington Hall.
-
-<b>BASIL BLAKE</b><br>
-A Gossington? Dal vecchio Bantry? Oh, questa si che è bella! Il vecchio Bantry! Vecchio sporcaccione!
-
-<i>[Arriva una macchina]</i>
-
-<b>BASIL BLAKE</b><br>
-Sarà tempo che ve ne andiate. Permettete che vi presenti: Dinah Lee... il colonnello Blimp della polizia della contea.
-E ora, colonnello, che avete potuto constatare che la mia bionda è viva e gode di ottima salute, vorrete continuare il
-bel lavoro che riguarda la piccola commedia del vecchio Bantry. Buon giorno!
-
-<b>COLONNELLO MELCHETT</b><br>
-Vi avverto, giovanotto, che sarebbe bene che teneste la lingua a posto, altrimenti avrete noie.
-
-<i>[Melchett se ne va con la faccia rossa di collera]</i>
+### Opzione 4
+- Secondo me è stato il maggiordomo...
+- Si, e io sono la regina Elisabetta, ma fammi il piacere...
+- Dai davvero, è super sospetto.
+- Devi smetterla di andare in quel bar la notte.
+- Me ne vado, me ne vado.
 
 ---
 
-> A questo punto l'ispettore Slack inizia a ricostruire la vicenda con gli alibi della gente interrogata
+## Agente Palk
 
-<i>[In ufficio]</i>
+### Opzione 1
+- Buongiorno agente.
+- Salve ispettore, sto cercando indizi.
+- Stai cercando qualcosa?
+- Si, dia un'occhiata alla finestra.
+- Controllo subito.
 
-<b>ISPETTORE SLACK</b><br>
-La signora Bantry, dopo cena, è rimasta in biblioteca fino alle dieci circa, dopo di che è andata a letto. Ha spento
-le luci uscendo e dopo di allora nessuno, presumibilmente, vi è entrato. I domestici sono andati a dormire alle
-dieci e mezzo, salvo Lorrimer che si è ritirato alle undici meno un quarto, dopo aver messo i liquori nella hall.
-Nessuno ha udito nulla d'insolito eccettuata una delle cameriere, che invece ha udito anche troppo! Rantoli e urla
-agghiaccianti, passi sinistri e chissà cos'altro. L'altra cameriera, che divide con lei la camera, dice che la ragazza
-ha dormito tutta la notte, initerrottamente.
+### Opzione 2
+- Hai mai visto quella ragazza?
+- No, signore. Forse viene da fuori.
+- Spero non da troppo lontano.
+- Come mai?
+- Non mi va di collaborare con la contea affianco...
 
-<b>COLONNELLO MELCHETT</b><br>
-Che mi dite della finestra forzata?
+### Opzione 3
+- Per caso hai interrogato qualcuno?
+- No, nessuno, ma Miss Marple ha visto la scena del crimine.
+- L'hai controllata? Ha toccato qualcosa?
+- Non ha mosso niente, ma ha fissato a lungo il cadavere.
+- Chissà cosa ha notato.
 
-<b>ISPETTORE SLACK</b><br>
-Lavoro da dilettante, fatto con un comune scalpello, di modello corrente, senza produrre molto rumore. Dovrebbe essere
-da qualche parte nella casa, ma nessuno riesce a trovarlo. Si tratta comunque di un utensile molto diffuso.
+### Opzione 4
+- Hai ricevuto tu la chiamata in centrale?
+- Si, mi ha chiamato la signora Bantry.
+- Che ora era?
+- Dovevano essere le 7:30.
+- La lascio al suo lavoro.
 
-<i>[Apre la porta il dottor Heydock]</i>
+---
 
-<b>DOTTOR HAYDOCK</b><br>
-Ho ritenuto opportuno di venire a darvi i risultati.<br>
-Niente di nuovo. Proprio quello che pensavo. La morte è dovuta a strangolamento, per mezzo di una fascia di satin
-della sua stessa veste che le è stata passata intorno al collo e incrociata da dietro. Cosa estremamente facile e
-semplice, che non deve aver richiesto una grande forza, specialmente se la ragazza è stata aggredita di sorpresa, 
-come sembra. Non ci sono segni di colluttazione.<br>
-L'ora del decesso è avvenuta tra le dieci e mezzanotte.
+## Domestica 1
 
-<b>COLONNELLO MELCHETT</b><br>
-Suppongo che abbiate dato un'occhiata alla lista delle persone delle quali ci è stata comunicata la scomparsa, vero?
+### Opzione 1
+- Buongiorno, lei deve essere Mary.
+- Sono io. Volete farmi delle domande?
+- Certamente, avete notato qualcosa di strano ieri sera?
+- Si, ho sentito dei rumori, ma nessuno mi crede.
+- La crederò io, allora.
 
-<b>ISPETTORE SLACK</b><br>
-Sono segnate qui. Signora Saunders, scomparsa una settimana fa, capelli neri, occhi azzurri, trentasei anni.
-La signora Barnard, di sessantacinque anni. Pamela Reeves, sedicenne, mancante da casa dalla scorsa notte,
-ha partecipato al raduno delle studentesse, capelli scuri raccolti in due codini, altezza metri uno e sessantacinque...
+### Opzione 2
+- Sistema lei la biblioteca?
+- Si, la sistemo prima che venga usata.
+- E quando ha trovato il cadavere?
+- La mattina, stavo aprendo le tende.
+- Non si preoccupi, siamo già al lavoro.
 
-<i>[Squilla il telefono]</i>
+### Opzione 3
+- Secondo lei è stato Lorrimer?
+- Ne dubito fortemente.
+- Oppure il signor Bantry?
+- Spero stia scherzando, ispettore.
+- Era solo un piccolo test, si calmi.
 
-<b>COLONNELLO MELCHETT</b><br>
-Pronto... si... si; centra di polizia di Much Benham... che cosa? Un momento...<br>
-Ruby Keene, diciottenne, di professione ballerina, altezza metri uno e sessanta, slanciata, capelli biondo platino,
-occhi azzurri, naso leggermente all'insù, con un vestito da sera bianco e sandali d'argento. Manderò subito Slack.<br>
-Penso che ci siamo, era la polizia del Glenshire. Comunicano la scomparsa della ragazza dal Majestic Hotel.<br>
-Mettetevi in collegamento, sul posto, col sovrintendente Harper e collaborate con lui.
+### Opzione 4
+- A che ora è andata a dormire ieri?
+- Alle 22, insieme all'altra domestica.
+- Ha dormito tutta la notte?
+- No, mi sono svegliata per dei rumori.
+- Immagino venissero dalla biblioteca.
+
+---
+
+## Arthur Bantry
+
+### Opzione 1
+- Sono l'ispettore Slack, vorrei farle delle domande.
+- Certamente, sono a sua disposizione.
+- Cosa avete fatto la scorsa notte?
+- Sono stato al raduno dell'Associazione dei conservatori, alle 9.
+
+### Opzione 2
+- Chi si occupa della biblioteca?
+- Lorrimer, il mio maggiordomo.
+- A che ora?
+- Verso le 19:30, se sono fuori lascia il vassoio con il whisky nella hall.
+- (Quindi alle 22 era già chiusa la biblioteca)
+
+### Opzione 3
+- Ieri a che ora è tornato a casa?
+- Sono partito alle 22 ma ho forato lungo il tragitto.
+- A che ora è riuscito a rincasare?
+- Erano le 23:45.
+- (Orario interessante, direi)
+
+### Opzione 4
+- Non è entrato in biblioteca ieri sera?
+- No, ero stanco ed era tardi.
+- E sua moglie?
+- Stava già dormendo quando sono tornato.
+- La ringrazio.
