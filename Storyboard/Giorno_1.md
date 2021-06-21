@@ -59,6 +59,8 @@ Il dialogo viene sempre iniziato dall'Ispettore Slack.
 - Era presto, dovevano essere le 22:30.
 - (Quindi alle 22:30 non c'era nessun cadavere.)
 
+[Torna su](#npc)
+
 ---
 
 ## Jane Marple
@@ -90,6 +92,8 @@ Il dialogo viene sempre iniziato dall'Ispettore Slack.
 - E' sempre bello lavorare con lei.
 - Oh, caro, certo che si!
 - Spero che collaborerete ancora con me.
+
+[Torna su](#npc)
 
 ---
 
@@ -123,6 +127,8 @@ Il dialogo viene sempre iniziato dall'Ispettore Slack.
 - Se vuole, li faccia e li porti in centrale.
 - Vado subito.
 
+[Torna su](#npc)
+
 ---
 
 ## Lorrimer
@@ -154,6 +160,8 @@ Il dialogo viene sempre iniziato dall'Ispettore Slack.
 - Sa, nei libri è un classico.
 - Il mio alibi può smentire la sua asserzione.
 - Vedremo Lorrimer, vedremo...
+
+[Torna su](#npc)
 
 ---
 
@@ -187,6 +195,8 @@ Il dialogo viene sempre iniziato dall'Ispettore Slack.
 - Ecco, la polizia ha bloccato tutte le stanze.
 - Ha ragione, mi scusi.
 
+[Torna su](#npc)
+
 ---
 
 ## Haydock
@@ -218,6 +228,8 @@ Il dialogo viene sempre iniziato dall'Ispettore Slack.
 - Dai davvero, è super sospetto.
 - Devi smetterla di andare in quel bar la notte.
 - Me ne vado, me ne vado.
+
+[Torna su](#npc)
 
 ---
 
@@ -251,6 +263,8 @@ Il dialogo viene sempre iniziato dall'Ispettore Slack.
 - Dovevano essere le 7:30.
 - La lascio al suo lavoro.
 
+[Torna su](#npc)
+
 ---
 
 ## Domestica 1
@@ -283,6 +297,8 @@ Il dialogo viene sempre iniziato dall'Ispettore Slack.
 - No, mi sono svegliata per dei rumori.
 - Immagino venissero dalla biblioteca.
 
+[Torna su](#npc)
+
 ---
 
 ## Arthur Bantry
@@ -313,3 +329,5 @@ Il dialogo viene sempre iniziato dall'Ispettore Slack.
 - E sua moglie?
 - Stava già dormendo quando sono tornato.
 - La ringrazio.
+
+[Torna su](#npc)
