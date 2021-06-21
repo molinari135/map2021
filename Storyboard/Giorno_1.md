@@ -15,13 +15,13 @@
 | Stanza | NPC |
 |---|---|
 |Ingresso| |
-|Sala da pranzo|[Dolly Bantry](##Dolly Bantry), [Jane Marple](##Jane Marple)|
-|Salotto|[Colonnello Melchett](##Colonnello Melchett)|
-|Cucina|[Lorrimer](##Lorrimer), [Domestica 2](##Domestica 2)|
-|Biblioteca|[Haydock](##Haydoc), [Agente Palk](##Agente Palk)|
+|Sala da pranzo|[Dolly Bantry](#dolly-bantry), [Jane Marple](#jane-marple)|
+|Salotto|[Colonnello Melchett](#colonnello-melchett)|
+|Cucina|[Lorrimer](#lorrimer), [Domestica 2](#domestica-2)|
+|Biblioteca|[Haydock](#haydock), [Agente Palk](#agente-palk)|
 |Scale||
-|Camera da letto|[Domestica 1](##Domestica 1)|
-|Studio|[Arthur Bantry](##Arthur Bantry)|
+|Camera da letto|[Domestica 1](#domestica-1)|
+|Studio|[Arthur Bantry](#arthur-bantry)|
 |Bagno| |
 |Guardaroba| |
 
