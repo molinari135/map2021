@@ -12,7 +12,10 @@ import utility.Floor;
  * @author giaco
  */
 public class AllMaps {
-        GameDescription giorno1 = new GameDescription();
+
+    public AllMaps() {
+    }
+
     public void createMapGossingtonHall() {
         
         //Rooms
@@ -35,7 +38,8 @@ public class AllMaps {
         Room cesso = new Room(8,"ù cess", "Sei nel bagno. Quanto tempo passato qui dentro...meglio non pensarci..", Floor.PRIMO_PIANO);
 
         //TODO create corridoio
-//maps  
+
+        //maps
         diningRoom.setEast(livingRoom);
         diningRoom.setNorth(kitchen);
         kitchen.setSouth(diningRoom);
@@ -47,11 +51,15 @@ public class AllMaps {
         kitchen.setNorth(staircase1);
         library.setNorth(staircase1);
         
-        giorno1.getRooms().add(diningRoom);
-        giorno1.getRooms().add(kitchen);
-        giorno1.getRooms().add(livingRoom);
-        giorno1.getRooms().add(library);
-        giorno1.getRooms().add(staircase1);
+        /*gd1.getRooms().add(diningRoom);
+        gd1.getRooms().add(kitchen);
+        gd1.getRooms().add(livingRoom);
+        gd1.getRooms().add(library);
+        gd1.getRooms().add(staircase1);
+        gd1.getRooms().add(bedroom);
+                                               gd1.getRooms().add(study);
+                                               gd1.getRooms().add(cesso);
+                                               gd1.getRooms().add(wardrobe);*/
         
         bedroom.setSouth(staircase1);
         bedroom.setEast(study);
@@ -63,12 +71,7 @@ public class AllMaps {
         cesso.setSouth(bedroom);
         cesso.setEast(wardrobe);
         
-        giorno1.getRooms().add(bedroom);
-        giorno1.getRooms().add(study);
-        giorno1.getRooms().add(cesso);
-        giorno1.getRooms().add(wardrobe);
-        
-       
+
     }
    
 }

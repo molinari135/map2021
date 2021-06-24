@@ -17,8 +17,6 @@ import type.*;
  */
 public class GameDescription {
     
-    
-    
     private final List<Room> rooms = new ArrayList<>();
 
     private final List<VarObject> inventory = new ArrayList<>();
@@ -30,7 +28,6 @@ public class GameDescription {
     public List<Room> getRooms() {
         return rooms;
     }
-    
 
     public Room getCurrentRoom() {
         return currentRoom;
@@ -48,11 +45,4 @@ public class GameDescription {
         return characters;
     }
     
- 
-    
-    
-  
-
-    
-
 }
