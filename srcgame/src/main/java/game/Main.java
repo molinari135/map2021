@@ -31,5 +31,5 @@ public class Main {
     NPC Haydock= new NPC(8,"Il medico legale","Medico",true,true);
     NPC Lorrimer= new NPC(8,"Il maggiordomo di Gossington Hall","Maid",true,true);
 
-
+    
 }
