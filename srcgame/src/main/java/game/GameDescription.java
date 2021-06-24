@@ -10,19 +10,18 @@ import type.*;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author rino
  */
 public class GameDescription {
-    
+
     private final List<Room> rooms = new ArrayList<>();
 
     private final List<VarObject> inventory = new ArrayList<>();
 
     private final List<NPC> characters = new ArrayList<>();
-    
+
     private Room currentRoom;
 
     public List<Room> getRooms() {
@@ -44,5 +43,5 @@ public class GameDescription {
     public List<NPC> getCharacters() {
         return characters;
     }
-    
+
 }
