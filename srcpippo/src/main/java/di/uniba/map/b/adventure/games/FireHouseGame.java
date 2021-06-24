@@ -82,7 +82,7 @@ public class FireHouseGame extends GameDescription {
         livingRoom.setNorth(hall);
         livingRoom.setWest(kitchen);
         hall.setSouth(livingRoom);
-        hall.setWest(yourRoom);
+        hall.setWest(yourRoom);c
         hall.setNorth(bathroom);
         bathroom.setSouth(hall);
         yourRoom.setEast(hall);

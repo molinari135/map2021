@@ -23,12 +23,14 @@ public class GameDescription {
 
     private final List<VarObject> inventory = new ArrayList<>();
 
+    private final List<NPC> characters = new ArrayList<>();
+    
     private Room currentRoom;
 
     public List<Room> getRooms() {
         return rooms;
     }
-
+    
 
     public Room getCurrentRoom() {
         return currentRoom;
@@ -41,6 +43,11 @@ public class GameDescription {
     public List<VarObject> getInventory() {
         return inventory;
     }
+
+    public List<NPC> getCharacters() {
+        return characters;
+    }
+    
  
     
     
