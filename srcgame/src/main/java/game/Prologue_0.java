@@ -5,6 +5,7 @@
  */
 package game;
 
+import java.awt.ComponentOrientation;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -13,6 +14,9 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
 
 /**
  *
@@ -23,34 +27,32 @@ public class Prologue_0 extends javax.swing.JFrame {
     /**
      * Creates new form Prologue_0
      */
-    
-    
-    
-    public Prologue_0() {               
-        initComponents();     
+    int i = 1;
+
+    public Prologue_0() {
+        initComponents();
         playSound();
     }
-    
-    public static synchronized void playSound() {
-  new Thread(new Runnable() {
-  // The wrapper thread is unnecessary, unless it blocks on the
-  // Clip finishing; see comments.
-    @Override
-    public void run() {
-      try {
-        Clip clip = AudioSystem.getClip();
-        AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-          getClass().getClassLoader().getResource("jazz.wav")
-);
-        clip.open(inputStream);
-        clip.start(); 
-      } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
-        System.err.println(e.getMessage());
-      }
-    }
-  }).start();
-}
 
+    public static synchronized void playSound() {
+        Thread t2 = new Thread(new Runnable() { //TODO wrapper thread            
+            @Override
+            public void run() {
+                try {
+                    Clip clip = AudioSystem.getClip();
+                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+                            getClass().getClassLoader().getResource("rain1.wav")
+                    );
+                    clip.open(inputStream);
+                    clip.start();
+                    clip.loop(Clip.LOOP_CONTINUOUSLY);
+                } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+                    System.err.println(e.getMessage());
+                }
+            }
+        });
+        t2.start();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -61,62 +63,107 @@ public class Prologue_0 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        background = new javax.swing.JPanel();
+        continua = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        testoPrologo = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        background.setBackground(new java.awt.Color(0, 0, 0));
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField1.setFont(new java.awt.Font("Courier New", 0, 24)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Era una notte buia e tempestosa...\n");
-        jTextField1.setToolTipText("");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        continua.setBackground(new java.awt.Color(0, 0, 0));
+        continua.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        continua.setForeground(new java.awt.Color(255, 255, 255));
+        continua.setText("Continua");
+        continua.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.lightGray, java.awt.Color.white));
+        continua.setContentAreaFilled(false);
+        continua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                continuaActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(715, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 901, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(715, Short.MAX_VALUE))
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        testoPrologo.setEditable(false);
+        testoPrologo.setBackground(new java.awt.Color(0, 0, 0));
+        testoPrologo.setColumns(20);
+        testoPrologo.setFont(new java.awt.Font("Courier New", 0, 24)); // NOI18N
+        testoPrologo.setForeground(new java.awt.Color(255, 255, 255));
+        testoPrologo.setLineWrap(true);
+        testoPrologo.setRows(5);
+        testoPrologo.setText("\t   Era una notte buia e tempestosa...");
+        testoPrologo.setToolTipText("");
+        testoPrologo.setWrapStyleWord(true);
+        testoPrologo.setBorder(null);
+        testoPrologo.setCaretColor(new java.awt.Color(102, 102, 255));
+        jScrollPane1.setViewportView(testoPrologo);
+
+        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
+        background.setLayout(backgroundLayout);
+        backgroundLayout.setHorizontalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addContainerGap(1003, Short.MAX_VALUE)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                        .addComponent(continua)
+                        .addGap(898, 898, 898))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 895, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(433, 433, 433))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(216, 216, 216)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(836, Short.MAX_VALUE))
+        backgroundLayout.setVerticalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(267, 267, 267)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(continua)
+                .addContainerGap(481, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void continuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuaActionPerformed
 
+        //TODO Usare file per testi + aggiust. struttura
+        String text1 = "           Era una notte buia e tempestosa...\n\n"
+                + "La pioggia e il fragore dei tuoni"
+                + " non facevano altro che accentuare l’inquietudine di quel momento.";
+
+        String text2 = "           Era una notte buia e tempestosa...\n\n"
+                + "La pioggia e il fragore dei tuoni"
+                + " non facevano altro che accentuare l’inquietudine di quel momento."
+                + "\n\nRientrai subito nella mia Berlina per schiarirmi le idee e schermarle dalle intemperie.";
+                        
+        if (i == 1) {
+            testoPrologo.setText(text1);
+            i++;
+        } else if (i == 2){
+            testoPrologo.setText(text2);
+            i++;
+        } else if (i == 3) {
+            this.setVisible(false);
+            new Prologue_1().setVisible(true);
+            //aggiungere suono portiera
+        }        
+    }//GEN-LAST:event_continuaActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -153,7 +200,9 @@ public class Prologue_0 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel background;
+    private javax.swing.JButton continua;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea testoPrologo;
     // End of variables declaration//GEN-END:variables
 }

@@ -61,8 +61,8 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="gioca1" alignment="1" min="-2" pref="145" max="-2" attributes="0"/>
                       <Component id="gioca" alignment="1" min="-2" pref="145" max="-2" attributes="0"/>
+                      <Component id="esci" alignment="1" min="-2" pref="145" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -74,16 +74,16 @@
                   <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
                   <Component id="titolo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-                  <Component id="gioca1" min="-2" pref="143" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                   <Component id="gioca" min="-2" pref="143" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="esci" min="-2" pref="143" max="-2" attributes="0"/>
                   <EmptySpace pref="699" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="gioca">
+        <Component class="javax.swing.JButton" name="esci">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Courier New" size="48" style="2"/>
@@ -98,10 +98,10 @@
             <Property name="contentAreaFilled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="giocaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="esciActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="gioca1">
+        <Component class="javax.swing.JButton" name="gioca">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Courier New" size="48" style="2"/>
@@ -115,6 +115,9 @@
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="giocaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="titolo">
           <Properties>

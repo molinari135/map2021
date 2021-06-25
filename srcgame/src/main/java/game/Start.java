@@ -5,6 +5,13 @@
  */
 package game;
 
+import java.io.IOException;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 /**
  *
  * @author giaco
@@ -16,6 +23,29 @@ public class Start extends javax.swing.JFrame {
      */
     public Start() {
         initComponents();
+        playSound();
+    }
+    
+    //TODO come stoppare thread della musica?
+    public static synchronized void playSound() {
+        Thread t1 = new Thread(new Runnable() { //TODO wrapper thread            
+            @Override
+            public void run() {
+                try {
+                    Clip clip = AudioSystem.getClip();
+                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+                            getClass().getClassLoader().getResource("jazz.wav")
+                    );
+                    clip.open(inputStream);
+                    clip.start();
+                    clip.loop(Clip.LOOP_CONTINUOUSLY);
+                    
+                } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+                    System.err.println(e.getMessage());
+                }
+            }
+        });
+        t1.start();
     }
 
     /**
@@ -28,8 +58,8 @@ public class Start extends javax.swing.JFrame {
     private void initComponents() {
 
         background = new javax.swing.JPanel();
+        esci = new javax.swing.JButton();
         gioca = new javax.swing.JButton();
-        gioca1 = new javax.swing.JButton();
         titolo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -39,9 +69,20 @@ public class Start extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(0, 0, 0));
 
+        esci.setFont(new java.awt.Font("Courier New", 2, 48)); // NOI18N
+        esci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit-door.png"))); // NOI18N
+        esci.setToolTipText("Esci dal gioco");
+        esci.setBorder(null);
+        esci.setContentAreaFilled(false);
+        esci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                esciActionPerformed(evt);
+            }
+        });
+
         gioca.setFont(new java.awt.Font("Courier New", 2, 48)); // NOI18N
-        gioca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit-door.png"))); // NOI18N
-        gioca.setToolTipText("Esci dal gioco");
+        gioca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/magnifying-glass.png"))); // NOI18N
+        gioca.setToolTipText("Inizia le indagini");
         gioca.setBorder(null);
         gioca.setContentAreaFilled(false);
         gioca.addActionListener(new java.awt.event.ActionListener() {
@@ -49,12 +90,6 @@ public class Start extends javax.swing.JFrame {
                 giocaActionPerformed(evt);
             }
         });
-
-        gioca1.setFont(new java.awt.Font("Courier New", 2, 48)); // NOI18N
-        gioca1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/magnifying-glass.png"))); // NOI18N
-        gioca1.setToolTipText("Inizia le indagini");
-        gioca1.setBorder(null);
-        gioca1.setContentAreaFilled(false);
 
         titolo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/titolo2.gif"))); // NOI18N
 
@@ -69,8 +104,8 @@ public class Start extends javax.swing.JFrame {
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gioca1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gioca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(gioca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(esci, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         backgroundLayout.setVerticalGroup(
@@ -79,9 +114,9 @@ public class Start extends javax.swing.JFrame {
                 .addGap(182, 182, 182)
                 .addComponent(titolo)
                 .addGap(140, 140, 140)
-                .addComponent(gioca1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
                 .addComponent(gioca, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(esci, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(699, Short.MAX_VALUE))
         );
 
@@ -101,8 +136,13 @@ public class Start extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void giocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_giocaActionPerformed
+    private void esciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_esciActionPerformed
         System.exit(0);
+    }//GEN-LAST:event_esciActionPerformed
+
+    private void giocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_giocaActionPerformed
+        this.setVisible(false);
+        new Prologue_0().setVisible(true);
     }//GEN-LAST:event_giocaActionPerformed
 
     /**
@@ -142,8 +182,8 @@ public class Start extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
+    private javax.swing.JButton esci;
     private javax.swing.JButton gioca;
-    private javax.swing.JButton gioca1;
     private javax.swing.JLabel titolo;
     // End of variables declaration//GEN-END:variables
 }

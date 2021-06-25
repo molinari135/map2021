@@ -11,7 +11,7 @@ package game;
 public class Main {
     
     public static void main(String[] args) {
-        new Prologue_0().setVisible(true);
+        new Start().setVisible(true);
     }
 
 }
