@@ -5,7 +5,14 @@
  */
 package game;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 /**
  *
@@ -17,20 +24,33 @@ public class Prologue_0 extends javax.swing.JFrame {
      * Creates new form Prologue_0
      */
     
-    URL music = getClass().getClassLoader().getResource("/jazz.wav");
-    Sound sound = new Sound();
+    
     
     public Prologue_0() {               
         initComponents();     
-        playMusic(music);
+        playSound();
     }
     
-    public final void playMusic(URL url) {
-        sound.setFile(url);
-        sound.play(url);
-        sound.loop(url);        
-    } 
-    
+    public static synchronized void playSound() {
+  new Thread(new Runnable() {
+  // The wrapper thread is unnecessary, unless it blocks on the
+  // Clip finishing; see comments.
+    @Override
+    public void run() {
+      try {
+        Clip clip = AudioSystem.getClip();
+        AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+          getClass().getClassLoader().getResource("jazz.wav")
+);
+        clip.open(inputStream);
+        clip.start(); 
+      } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+        System.err.println(e.getMessage());
+      }
+    }
+  }).start();
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,10 +71,16 @@ public class Prologue_0 extends javax.swing.JFrame {
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(0, 0, 0));
         jTextField1.setFont(new java.awt.Font("Courier New", 0, 24)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("Era una notte buia e tempestosa...\n");
         jTextField1.setToolTipText("");
         jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -68,9 +94,9 @@ public class Prologue_0 extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(205, 205, 205)
+                .addGap(216, 216, 216)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(847, Short.MAX_VALUE))
+                .addContainerGap(836, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -86,6 +112,10 @@ public class Prologue_0 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
