@@ -14,9 +14,6 @@ import utility.Floor;
  */
 public class AllMaps {
 
-    public AllMaps() {
-    }
-
     public void createMapGossingtonHall() {
 
         //Rooms
@@ -57,9 +54,9 @@ public class AllMaps {
         gd1.getRooms().add(library);
         gd1.getRooms().add(staircase1);
         gd1.getRooms().add(bedroom);
-                                               gd1.getRooms().add(study);
-                                               gd1.getRooms().add(cesso);
-                                               gd1.getRooms().add(wardrobe);*/
+        gd1.getRooms().add(study);
+        gd1.getRooms().add(cesso);
+        gd1.getRooms().add(wardrobe);*/
         bedroom.setSouth(staircase1);
         bedroom.setEast(study);
         bedroom.setNorth(cesso);

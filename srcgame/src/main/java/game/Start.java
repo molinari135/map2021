@@ -28,9 +28,9 @@ public class Start extends javax.swing.JFrame {
     private void initComponents() {
 
         background = new javax.swing.JPanel();
-        titolo = new javax.swing.JLabel();
         gioca = new javax.swing.JButton();
-        esci = new javax.swing.JButton();
+        gioca1 = new javax.swing.JButton();
+        titolo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("The body in the library");
@@ -39,43 +39,50 @@ public class Start extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(0, 0, 0));
 
-        titolo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/titolo2.gif"))); // NOI18N
-        titolo.setAlignmentX(960.0F);
-        titolo.setAlignmentY(540.0F);
-
         gioca.setFont(new java.awt.Font("Courier New", 2, 48)); // NOI18N
-        gioca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/magnifying-glass (2).png"))); // NOI18N
+        gioca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit-door.png"))); // NOI18N
+        gioca.setToolTipText("Esci dal gioco");
         gioca.setBorder(null);
         gioca.setContentAreaFilled(false);
+        gioca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                giocaActionPerformed(evt);
+            }
+        });
 
-        esci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit-door.png"))); // NOI18N
-        esci.setContentAreaFilled(false);
+        gioca1.setFont(new java.awt.Font("Courier New", 2, 48)); // NOI18N
+        gioca1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/magnifying-glass.png"))); // NOI18N
+        gioca1.setToolTipText("Inizia le indagini");
+        gioca1.setBorder(null);
+        gioca1.setContentAreaFilled(false);
+
+        titolo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/titolo2.gif"))); // NOI18N
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(481, 481, 481)
-                .addComponent(titolo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                .addContainerGap(481, Short.MAX_VALUE)
+                .addComponent(titolo)
                 .addGap(481, 481, 481))
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(839, 839, 839)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(gioca, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(esci, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(gioca1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(gioca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(120, 120, 120)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                .addGap(182, 182, 182)
                 .addComponent(titolo)
-                .addGap(183, 183, 183)
+                .addGap(140, 140, 140)
+                .addComponent(gioca1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
                 .addComponent(gioca, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
-                .addComponent(esci, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(652, Short.MAX_VALUE))
+                .addContainerGap(699, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -93,6 +100,10 @@ public class Start extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void giocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_giocaActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_giocaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,8 +142,8 @@ public class Start extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
-    private javax.swing.JButton esci;
     private javax.swing.JButton gioca;
+    private javax.swing.JButton gioca1;
     private javax.swing.JLabel titolo;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,7 +14,7 @@ import type.*;
  *
  * @author rino
  */
-public class GameDescription {
+public class DayDescription {
 
     private final List<Room> rooms = new ArrayList<>();
 
