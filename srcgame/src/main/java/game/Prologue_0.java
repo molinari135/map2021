@@ -5,18 +5,12 @@
  */
 package game;
 
-import java.awt.ComponentOrientation;
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
-import javax.swing.text.StyledDocument;
 
 /**
  *
@@ -28,14 +22,16 @@ public class Prologue_0 extends javax.swing.JFrame {
      * Creates new form Prologue_0
      */
     int i = 1;
+    Thread t2;
 
     public Prologue_0() {
         initComponents();
         playSound();
     }
 
-    public static synchronized void playSound() {
-        Thread t2 = new Thread(new Runnable() { //TODO wrapper thread            
+    //TODO si può fare senza thread!! (vedere scene1)
+    public synchronized void playSound() {
+        t2 = new Thread(new Runnable() { //TODO wrapper thread            
             @Override
             public void run() {
                 try {
@@ -110,11 +106,11 @@ public class Prologue_0 extends javax.swing.JFrame {
                 .addContainerGap(1003, Short.MAX_VALUE)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                        .addComponent(continua)
-                        .addGap(898, 898, 898))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 895, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(433, 433, 433))))
+                        .addGap(433, 433, 433))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                        .addComponent(continua)
+                        .addGap(909, 909, 909))))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,19 +147,24 @@ public class Prologue_0 extends javax.swing.JFrame {
                 + "La pioggia e il fragore dei tuoni"
                 + " non facevano altro che accentuare l’inquietudine di quel momento."
                 + "\n\nRientrai subito nella mia Berlina per schiarirmi le idee e schermarle dalle intemperie.";
-                        
+
         if (i == 1) {
             testoPrologo.setText(text1);
             i++;
-        } else if (i == 2){
+        } else if (i == 2) {
             testoPrologo.setText(text2);
             i++;
         } else if (i == 3) {
-            this.setVisible(false);
-            new Prologue_1().setVisible(true);
-            //aggiungere suono portiera
-        }        
+            background.setVisible(false);
+            goToScene2();           
+        }
     }//GEN-LAST:event_continuaActionPerformed
+
+    public void goToScene2() {
+
+        Scene1 scene1 = new Scene1(this);
+
+    }    
     /**
      * @param args the command line arguments
      */

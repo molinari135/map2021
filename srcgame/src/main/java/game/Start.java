@@ -141,7 +141,7 @@ public class Start extends javax.swing.JFrame {
     }//GEN-LAST:event_esciActionPerformed
 
     private void giocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_giocaActionPerformed
-        this.setVisible(false);
+        this.dispose();
         new Prologue_0().setVisible(true);
     }//GEN-LAST:event_giocaActionPerformed
 
