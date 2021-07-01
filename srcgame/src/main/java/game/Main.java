@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package game;
+
+import db.DBgame;
+import java.sql.SQLException;
+
 /**
  *
  * @author giaco
@@ -11,6 +15,12 @@ package game;
 public class Main {
     
     public static void main(String[] args) {
+        try {
+            DBgame.getIstance().connect();
+        } catch(SQLException ex) {
+            System.err.println(ex.getSQLState() + ": " + ex.getMessage());
+        }
+        
         new Start().setVisible(true);        
     }
 

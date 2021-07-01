@@ -10,7 +10,7 @@ package type;
  * @author giaco
  */
 public class NPC {
-    private final int id;
+    private int id;
     
     private String name;
     
@@ -18,37 +18,34 @@ public class NPC {
     
     private String description; //show when you click on the object
     
-    private String sex;
-    
-    private String role;
-    
-    private boolean visible;
-    
     private Room position = null;
     
     private boolean clickable;
 
     //For primary character
-    public NPC(int id, String name, String surname, String description, String sex, String role, boolean visible, boolean clickable) {
+    public NPC(int id, String name, String surname, String description, boolean clickable) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.description = description;
-        this.sex = sex;
-        this.role = role;
-        this.visible = visible;
         this.clickable = clickable;
         
     }
     
     //For servant character
 
-    public NPC(int id, String description, String role, boolean visible, boolean clickable) {
+    public NPC(int id, String description, boolean clickable) {
         this.id = id;
         this.description = description;
-        this.role = role;
-        this.visible = visible;
         this.clickable = clickable;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public int getId() {
+        return id;
     }
     
     public void setPosition( Room position){
@@ -115,6 +112,4 @@ public class NPC {
         this.clickable = clickable;
     }
     
-    
-  
 }

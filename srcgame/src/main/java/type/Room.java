@@ -15,7 +15,7 @@ import utility.Floor;
  */
 public class Room {
 
-    private final int id;
+    private int id;
 
     private String name;
 
@@ -33,7 +33,7 @@ public class Room {
 
     private Room west = null;
     
-    private Floor floor = null;
+    private int floor = 0;
     
     private final List<VarObject> objects=new ArrayList<>();
 
@@ -42,13 +42,21 @@ public class Room {
         this.description = description;
     }
 
-    public Room(int id, String name, String description,Floor floor) {
+    public Room(int id, String name, String description,int floor) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.floor = floor;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public int getId() {
+        return id;
+    }
+    
     public String getName() {
         return name;
     }
@@ -134,11 +142,11 @@ public class Room {
         return true;
     }
 
-    public Floor getFloor() {
+    public int getFloor() {
         return floor;
     }
 
-    public void setFloor(Floor floor) {
+    public void setFloor(int floor) {
         this.floor = floor;
     }
     
