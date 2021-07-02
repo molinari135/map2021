@@ -14,21 +14,21 @@ import java.util.List;
  */
 public class Inventory {
 
-    private List<VarObject> list = new ArrayList<>();
+    private List<Item> list = new ArrayList<>();
 
-    public List<VarObject> getList() {
+    public List<Item> getList() {
         return list;
     }
 
-    public void setList(List<VarObject> list) {
+    public void setList(List<Item> list) {
         this.list = list;
     }
 
-    public void add(VarObject o) {
+    public void add(Item o) {
         list.add(o);
     }
 
-    public void remove(VarObject o) {
+    public void remove(Item o) {
         list.remove(o);
     }
 }

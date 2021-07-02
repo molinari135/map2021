@@ -18,7 +18,7 @@ public class DayDescription {
 
     private final List<Room> rooms = new ArrayList<>();
 
-    private final List<VarObject> inventory = new ArrayList<>();
+    private final List<Item> inventory = new ArrayList<>();
 
     private final List<NPC> characters = new ArrayList<>();
 
@@ -36,7 +36,7 @@ public class DayDescription {
         this.currentRoom = currentRoom;
     }
 
-    public List<VarObject> getInventory() {
+    public List<Item> getInventory() {
         return inventory;
     }
 
