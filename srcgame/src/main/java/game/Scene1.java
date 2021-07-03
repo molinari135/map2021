@@ -33,8 +33,8 @@ public class Scene1 {
     JTextArea testoPrologo = new JTextArea();
     JButton continua = new JButton();
     
-    JFrame frame;
-
+    JFrame frame;  
+    
     int i = 1;
 
     public Scene1(JFrame frame) {
@@ -91,11 +91,11 @@ public class Scene1 {
     }
 
     private void continuaActionPerformed(java.awt.event.ActionEvent evt) {
-
+        
         //TODO Usare file per testi + aggiust. struttura
         String text1 = "Come era potuto succedere?\nSembrava che per lui, o lei, questo fosse soltanto un gioco.\n\n"
-                + "Psicopatico del cazzo...\n";
-
+                + "Psicopatico del cazzo...\n";        
+        
         String text2 = "A interrompere le mie scorribande di pensieri fu l’agente Palck.\n"
                 + "Il suo viso stanco e svigorito comparve dietro la portiera alla mia destra,"
                 + "chiedendomi se fosse tutto a posto.\nNon poté fare a meno di notare, "
@@ -113,7 +113,7 @@ public class Scene1 {
             frame.dispose();
             //go to GIORNO_1
             
-        }
+        }        
     }
 
     public final void carSound() {
