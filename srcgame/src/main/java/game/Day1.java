@@ -7,8 +7,6 @@ package game;
 
 import type.NPC;
 import type.Room;
-import type.Staircase;
-import utility.Floor;
 
 /**
  *
@@ -16,9 +14,9 @@ import utility.Floor;
  */
 
 //TODO attributi?
-public class Giorno1 extends DayDescription {
+public class Day1 extends DayDescription {
 
-    DayDescription day1 = new Giorno1();
+    DayDescription day1 = new Day1();
 
     //NPCs
     NPC A_Bantry = new NPC(1, "Arthur", "Bantry", "Vecchio decrepito",

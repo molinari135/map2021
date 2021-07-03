@@ -17,6 +17,10 @@ public class NPC {
     private int room;
     private boolean visible;
 
+    public NPC() {
+        
+    }
+    
     //For primary character
     public NPC(int id, String name, String surname, String description, int room, boolean clickable) {
         this.id = id;

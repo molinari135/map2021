@@ -11,6 +11,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
+import type.Item;
+import type.NPC;
+import type.Place;
+import type.Room;
 
 /**
  *
@@ -82,32 +86,32 @@ public class DBgame {
 
     public static final String ALL_ROOM =
             "INSERT INTO room VALUES"
-            + "(101, 'Corridoio 1', 'Corridorio', 102, null, 1, 2, 0, 1),"
-            + "(102, 'Corridoio 2', 'Corridoio', 103, 101, 2, 3, 0, 1),"
-            + "(1, 'Sala da pranzo', 'Sala da pranzo della famiglia Bantry, situata nella lussuosa e imponente Gossington Hall.', null, 101, null, null, 0, 1),"
-            + "(2, 'Salotto', 'Ti trovi nel salotto. Ci sono quei mobili marrone scuro che hai sempre odiato e delle orribili sedie.', null, 101, null, null, 0, 1),"
-            + "(3, 'Cucina', 'Ti trovi nella solita cucina. Mobili bianchi, maniglie azzurre, quello strano lampadario che adoravi tanto quando eri piccolo.', null, 102, null, null, 0, 1),"
-            + "(4, 'Biblioteca', 'Sei nella Biblioteca. Scaffali pieni di libri.... chissa dove sono nascosti gli hentai...', null, 102, null, null, 0, 1),"
+            + "(101, 'Corridoio 1', 'Corridoio', 102, 0, 1, 2, 0, 1),"
+            + "(102, 'Corridoio 2', 'Corridoio', 103, 0, 2, 3, 0, 1),"
+            + "(1, 'Sala da pranzo', 'Sala da pranzo della famiglia Bantry, situata nella lussuosa e imponente Gossington Hall.', 0, 101, 0, 0, 0, 1),"
+            + "(2, 'Salotto', 'Ti trovi nel salotto. Ci sono quei mobili marrone scuro che hai sempre odiato e delle orribili sedie.', 0, 101, 0, 0, 0, 1),"
+            + "(3, 'Cucina', 'Ti trovi nella solita cucina. Mobili bianchi, maniglie azzurre, quello strano lampadario che adoravi tanto quando eri piccolo.', 0, 102, 0, 0, 0, 1),"
+            + "(4, 'Biblioteca', 'Sei nella Biblioteca. Scaffali pieni di libri.... chissa dove sono nascosti gli hentai...', 0, 102, 0, 0, 0, 1),"
             + "(103, 'Corridoio 3', 'Corridoio', 104, 102, 5, 6, 0, 1),"
-            + "(104, 'Corridoio 4', 'Corridoio', null, 103, 8, 7, 0, 1),"
-            + "(5, 'Camera da letto', 'Sei nella camera da letto dei signori Bantry, il letto è stato appena rifatto...', null, 103, null, null, 1, 1),"
-            + "(6, 'Studio', 'Sei nello studio del signor Arthur Bantry, nel cassetto della scrivania sta una calibro 50 per ammazzarsi', null, 103, null, null, 1, 1),"
-            + "(7, 'Guardaroba', 'Sei nel guardaroba, qui di solito si nascondono pezzi di umani...', null, 104, null, null, 1, 1),"
-            + "(8, 'Bagno', 'Sei nel bagno. Quanto tempo passato qui dentro...meglio non pensarci...', null, 104, null, null, 1, 1),"
-            + "(9, 'Reception', 'Ve la fate voi', 10, null, null, 11, 0, 2),"
-            + "(10, 'Salone', 'Ve la fate voi', 105, 9, null, null, 1, 2),"
-            + "(11, 'Campo da tennis', 'Ve la fate voi', null, 9, null, null, 0, 2),"
-            + "(105, 'Corridoio 5', 'Corridoio', 106, 10, null, null, 2, 2),"
-            + "(106, 'Corridoio 6', 'Corridoio', null, 105, null, 13, 2, 2)"
-            + "(12, 'Camera da letto', 'Ve la fate voi', 13, null, null, null, 2, 2),"
-            + "(13, 'Stanza di Jefferson', 'Ve la fate voi', 14, 106, null, 12, 2, 2),"
-            + "(14, 'Veranda', 'Ve la fate voi', null, 13, null, null, 2, 2),"
-            + "(107, 'Corridoio 7', 'Corridoio', 108, null, 16, 15, 0, 0),"
-            + "(108, 'Corridoio 8', 'Corridoio', null, 107, 18, 17, 0, 0),"
-            + "(15, 'Schedario', 'Contiene tutte le informazioni', null, 107, null, null, 0, 0),"
-            + "(16, 'Uffici', 'Uffici della polizia', null, 107, null, null, 0, 0),"
-            + "(17, 'Sala interrogatori', ';)', null, 108, null, null, 0, 0),"
-            + "(18, 'Ufficio capo', 'Ufficio del capo della pula', null, 108, null, null, 0, 0)";
+            + "(104, 'Corridoio 4', 'Corridoio', 0, 103, 8, 7, 0, 1),"
+            + "(5, 'Camera da letto', 'Sei nella camera da letto dei signori Bantry, il letto è stato appena rifatto...', 0, 103, 0, 0, 1, 1),"
+            + "(6, 'Studio', 'Sei nello studio del signor Arthur Bantry, nel cassetto della scrivania sta una calibro 50 per ammazzarsi', 0, 103, 0, 0, 1, 1),"
+            + "(7, 'Guardaroba', 'Sei nel guardaroba, qui di solito si nascondono pezzi di umani...', 0, 104, 0, 0, 1, 1),"
+            + "(8, 'Bagno', 'Sei nel bagno. Quanto tempo passato qui dentro...meglio non pensarci...', 0, 104, 0, 0, 1, 1),"
+            + "(9, 'Reception', 'Ve la fate voi', 10, 0, 0, 11, 0, 2),"
+            + "(10, 'Salone', 'Ve la fate voi', 105, 9, 0, 0, 1, 2),"
+            + "(11, 'Campo da tennis', 'Ve la fate voi', 0, 9, 0, 0, 0, 2),"
+            + "(105, 'Corridoio 5', 'Corridoio', 106, 10, 0, 0, 2, 2),"
+            + "(106, 'Corridoio 6', 'Corridoio', 0, 105, 0, 13, 2, 2),"
+            + "(12, 'Camera da letto', 'Ve la fate voi', 13, 0, 0, 0, 2, 2),"
+            + "(13, 'Stanza di Jefferson', 'Ve la fate voi', 14, 106, 0, 12, 2, 2),"
+            + "(14, 'Veranda', 'Ve la fate voi', 0, 13, 0, 0, 2, 2),"
+            + "(107, 'Corridoio 7', 'Corridoio', 108, 0, 16, 15, 0, 0),"
+            + "(108, 'Corridoio 8', 'Corridoio', 0, 107, 18, 17, 0, 0),"
+            + "(15, 'Archivio', 'Contiene tutte le informazioni delle persone', 0, 107, 0, 0, 0, 0),"
+            + "(16, 'Uffici', 'Uffici della polizia', 0, 107, 0, 0, 0, 0),"
+            + "(17, 'Sala interrogatori', 'Qui si svolgono gli interrogatori', 0, 108, 0, 0, 0, 0),"
+            + "(18, 'Ufficio capo', 'Ufficio del capo della pula', 0, 108, 0, 0, 0, 0)";
 
     public static final String ALL_NPC =
             "INSERT INTO npc VALUES"
@@ -174,7 +178,78 @@ public class DBgame {
         }
     }
     
-    // Map
+    public void printMap() throws SQLException {
+        Statement stm = connection.createStatement();
+        ResultSet rs = stm.executeQuery("SELECT * FROM map");
+        while(rs.next()) {
+            int id = rs.getInt("mapId");
+            String name = rs.getString("name");
+            String description = rs.getString("desc");
+            int chapter = rs.getInt("chapter");
+    
+            System.out.print("ID: " + id);
+            System.out.println(" - Name: " + name);
+            System.out.print("Description: " + description);
+            System.out.println(" - Chapter: " + chapter);
+            System.out.println("");
+        }
+  
+        rs.close();
+        stm.close();
+    }
+    
+    public void printItem() throws SQLException {
+        Statement stm = connection.createStatement();
+        ResultSet rs = stm.executeQuery("SELECT * FROM item");
+        while(rs.next()) {
+            int id = rs.getInt("itemId");
+            String name = rs.getString("name");
+            String description = rs.getString("desc");
+            int room = rs.getInt("room");
+            boolean collectable = rs.getBoolean("collectable");
+    
+            System.out.print("ID: " + id);
+            System.out.println(" - Name: " + name);
+            System.out.print("Description: " + description);
+            System.out.print(" - Room: " + room);
+            System.out.println(" - Collectable: " + collectable);
+            System.out.println("");
+        }
+  
+        rs.close();
+        stm.close();
+    }
+    
+    public void printRoom() throws SQLException {
+        Statement stm = connection.createStatement();
+        ResultSet rs = stm.executeQuery("SELECT * FROM room");
+        while(rs.next()) {
+            int id = rs.getInt("roomId");
+            String name = rs.getString("name");
+            String description = rs.getString("desc");
+            int north = rs.getInt("north");
+            int south = rs.getInt("south");
+            int east = rs.getInt("east");
+            int west = rs.getInt("west");
+            int floor = rs.getInt("floor");
+            int map = rs.getInt("map");
+    
+            System.out.print("ID: " + id);
+            System.out.print(" - Name: " + name);
+            System.out.println(" Description: " + description);
+            System.out.print("North: " + north);
+            System.out.print(" - South: " + south);
+            System.out.print(" - East: " + east);
+            System.out.println(" - West: " + west);
+            System.out.print("Floor: " + floor);
+            System.out.println(" - Map: " + map);
+            System.out.println("");
+        }
+  
+        rs.close();
+        stm.close();
+    }
+    
     public void printNpc() throws SQLException {
         Statement stm = connection.createStatement();
         ResultSet rs = stm.executeQuery("SELECT * FROM npc");
@@ -189,14 +264,82 @@ public class DBgame {
             System.out.print("ID: " + id);
             System.out.print(" - Name: " + name);
             System.out.println(" - Surname: " + surname);
-            System.out.print(" Description: " + description);
+            System.out.print("Description: " + description);
             System.out.print(" - Room: " + room);
             System.out.println(" - Visible: " + visible);
+            System.out.println("");
         }
   
         rs.close();
         stm.close();
     }
     
+    public Place getMap(String query) throws SQLException {
+        Place map = new Place(0, "", "", 0);
+        Statement stm = connection.createStatement();
+        ResultSet rs = stm.executeQuery("SELECT * FROM map WHERE LOWER(name) LIKE LOWER('%" + query + "%')");
+        while(rs.next()) {
+            map.setId(rs.getInt("mapId"));
+            map.setName(rs.getString("name"));
+            map.setDescription(rs.getString("desc"));
+            map.setChapter(rs.getInt("chapter"));
+        }
+        rs.close();
+        stm.close();
+        return map;
+    }
+    
+    public Item getItem(String query) throws SQLException {
+        Item item = new Item();
+        Statement stm = connection.createStatement();
+        ResultSet rs = stm.executeQuery("SELECT * FROM item WHERE LOWER(name) LIKE LOWER('%" + query + "%')");
+        while(rs.next()) {
+            item.setId(rs.getInt("itemId"));
+            item.setName(rs.getString("name"));
+            item.setDescription(rs.getString("desc"));
+            item.isCollectable(rs.getBoolean("collectable"));
+            item.setRoom(rs.getInt("room"));
+        }
+        rs.close();
+        stm.close();
+        return item;
+    }
+    
+    public Room getRoom(String query) throws SQLException {
+        Room room = new Room();
+        Statement stm = connection.createStatement();
+        ResultSet rs = stm.executeQuery("SELECT * FROM room WHERE LOWER(name) LIKE LOWER('%" + query + "%')");
+        while(rs.next()) {
+            room.setId(rs.getInt("roomId"));
+            room.setName(rs.getString("name"));
+            room.setDescription(rs.getString("desc"));
+            room.setNorth(rs.getInt("north"));
+            room.setSouth(rs.getInt("south"));
+            room.setEast(rs.getInt("east"));
+            room.setWest(rs.getInt("west"));
+            room.setFloor(rs.getInt("floor"));
+            room.setMap(rs.getInt("map"));
+        }
+        rs.close();
+        stm.close();
+        return room;
+    }
+    
+    public NPC getNpc(String query) throws SQLException {
+        NPC npc = new NPC();
+        Statement stm = connection.createStatement();
+        ResultSet rs = stm.executeQuery("SELECT * FROM npc WHERE LOWER(name) LIKE LOWER('%" + query + "%')");
+        while(rs.next()) {
+            npc.setId(rs.getInt("npcId"));
+            npc.setName(rs.getString("name"));
+            npc.setSurname(rs.getString("surname"));
+            npc.setDescription(rs.getString("desc"));
+            npc.setRoom(rs.getInt("room"));
+            npc.isVisible(rs.getBoolean("visible"));
+        }
+        rs.close();
+        stm.close();
+        return npc;
+    }
     
 }

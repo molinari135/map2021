@@ -10,13 +10,17 @@ package type;
  *
  * @author ester
  */
-public class Map {
+public class Place {
     private int id;
     private String name;
     private String description;
     private int chapter;
     
-    public Map(int id, String name, String description, int chapter) {
+    public Place() {
+        
+    }
+    
+    public Place(int id, String name, String description, int chapter) {
         this.id = id;
         this.name = name;
         this.description = description;
