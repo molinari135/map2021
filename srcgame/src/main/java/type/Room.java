@@ -21,6 +21,10 @@ public class Room {
     private int floor;  
     private int map;
     
+    public Room() {
+        
+    }
+    
     public Room(int id, String name, String description, int south, int north, int east, int west, int floor, int map) {
         this.id = id;
         this.name = name;

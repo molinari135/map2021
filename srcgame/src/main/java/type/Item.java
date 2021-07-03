@@ -17,6 +17,10 @@ public class Item {
     private boolean collectable;
     private int room;
 
+    public Item() {
+        
+    }
+    
     public Item(int id, String name, String description, boolean collectable, int room) {
         this.id = id;
         this.name = name;
