@@ -21,31 +21,27 @@ public class Start extends javax.swing.JFrame {
     /**
      * Creates new form Start
      */
+    
+    Clip clipJazz;
+    
     public Start() {
         initComponents();
         playSound();
     }
     
-    //TODO come stoppare thread della musica?
-    public static synchronized void playSound() {
-        Thread t1 = new Thread(new Runnable() { //TODO wrapper thread            
-            @Override
-            public void run() {
-                try {
-                    Clip clip = AudioSystem.getClip();
-                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                            getClass().getClassLoader().getResource("jazz.wav")
-                    );
-                    clip.open(inputStream);
-                    clip.start();
-                    clip.loop(Clip.LOOP_CONTINUOUSLY);
-                    
-                } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
-                    System.err.println(e.getMessage());
-                }
-            }
-        });
-        t1.start();
+    private void playSound() {
+        try {
+            clipJazz = AudioSystem.getClip();
+            AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+                    getClass().getClassLoader().getResource("jazz.wav")
+            );
+            clipJazz.open(inputStream);
+            clipJazz.start();
+            clipJazz.loop(Clip.LOOP_CONTINUOUSLY);
+
+        } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     /**
@@ -61,12 +57,13 @@ public class Start extends javax.swing.JFrame {
         esci = new javax.swing.JButton();
         gioca = new javax.swing.JButton();
         titolo = new javax.swing.JLabel();
-        silhouette_label = new javax.swing.JLabel();
         credits = new javax.swing.JButton();
+        silhouette = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("The body in the library");
         setBackground(new java.awt.Color(0, 0, 0));
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
         setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         background.setBackground(new java.awt.Color(0, 0, 0));
@@ -95,81 +92,82 @@ public class Start extends javax.swing.JFrame {
 
         titolo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/titolo2.gif"))); // NOI18N
 
-        silhouette_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/det_silh_invert.png"))); // NOI18N
-
-        credits.setFont(new java.awt.Font("Book Antiqua", 1, 24)); // NOI18N
+        credits.setFont(new java.awt.Font("Californian FB", 1, 24)); // NOI18N
+        credits.setForeground(new java.awt.Color(255, 255, 255));
         credits.setText("Credits");
         credits.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         credits.setContentAreaFilled(false);
+
+        silhouette.setIcon(new javax.swing.ImageIcon(getClass().getResource("/silhouette.png"))); // NOI18N
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(silhouette_label)
+                .addGap(52, 52, 52)
+                .addComponent(silhouette)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(backgroundLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                         .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(backgroundLayout.createSequentialGroup()
-                                .addGap(478, 478, 478)
-                                .addComponent(gioca, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(backgroundLayout.createSequentialGroup()
-                                .addGap(488, 488, 488)
-                                .addComponent(esci, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(credits)
-                        .addGap(74, 74, 74))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(titolo)
-                .addGap(481, 481, 481))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                                .addComponent(titolo)
+                                .addGap(481, 481, 481))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                                .addComponent(credits)
+                                .addGap(96, 96, 96))))
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addGap(422, 422, 422)
+                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(esci, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(gioca, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                .addGap(182, 182, 182)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(credits)
+                .addGap(212, 212, 212))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                .addGap(172, 172, 172)
                 .addComponent(titolo)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(132, 132, 132)
+                        .addGap(117, 117, 117)
                         .addComponent(gioca, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(121, 121, 121)
+                        .addGap(96, 96, 96)
                         .addComponent(esci, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(credits)
-                            .addComponent(silhouette_label))
-                        .addGap(212, 212, 212))))
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(silhouette, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(170, 170, 170))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 1083, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void giocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_giocaActionPerformed
+        this.dispose();
+        new Prologue_0(clipJazz).setVisible(true);
+    }//GEN-LAST:event_giocaActionPerformed
+
     private void esciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_esciActionPerformed
         System.exit(0);
     }//GEN-LAST:event_esciActionPerformed
-
-    private void giocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_giocaActionPerformed
-        this.dispose();
-        new Prologue_0().setVisible(true);
-    }//GEN-LAST:event_giocaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,7 +209,7 @@ public class Start extends javax.swing.JFrame {
     private javax.swing.JButton credits;
     private javax.swing.JButton esci;
     private javax.swing.JButton gioca;
-    private javax.swing.JLabel silhouette_label;
+    private javax.swing.JLabel silhouette;
     private javax.swing.JLabel titolo;
     // End of variables declaration//GEN-END:variables
 }

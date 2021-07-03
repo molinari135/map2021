@@ -6,7 +6,7 @@
 package game;
 
 import type.*;
-import utility.Floor;
+
 
 /**
  *
@@ -16,7 +16,7 @@ public class AllMaps {
 
     public void createMapGossingtonHall() {
 
-        //Rooms
+        /*Rooms
         Room diningRoom = new Room(0, "Sala da Pranzo", "Sala da pranzo della famiglia Banty, situata nella lussuosa e imponente Gossington Hall", Floor.PIANO_TERRA);
 
         Room livingRoom = new Room(1, "Salotto", "Ti trovi nel salotto. Ci sono quei mobili marrone scuro che hai sempre odiato e delle orribili sedie.", Floor.PIANO_TERRA);
@@ -56,7 +56,7 @@ public class AllMaps {
         gd1.getRooms().add(bedroom);
         gd1.getRooms().add(study);
         gd1.getRooms().add(cesso);
-        gd1.getRooms().add(wardrobe);*/
+        gd1.getRooms().add(wardrobe);
         bedroom.setSouth(staircase1);
         bedroom.setEast(study);
         bedroom.setNorth(cesso);
@@ -65,8 +65,9 @@ public class AllMaps {
         wardrobe.setSouth(study);
         wardrobe.setWest(cesso);
         cesso.setSouth(bedroom);
-        cesso.setEast(wardrobe);
+        cesso.setEast(wardrobe);*/
 
     }
+    
 
 }

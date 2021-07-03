@@ -5,8 +5,6 @@
  */
 package game;
 
-import type.NPC;
-import type.Room;
 
 /**
  *
@@ -15,10 +13,10 @@ import type.Room;
 
 //TODO attributi?
 public class Day1 extends DayDescription {
-
+/*
     DayDescription day1 = new Day1();
 
-    //NPCs
+    NPCs
     NPC A_Bantry = new NPC(1, "Arthur", "Bantry", "Vecchio decrepito",
             "M", "nobile", true, true);
     NPC D_Bantry = new NPC(2, "Dolly", "Bantry", "Vecchia decrepita",
@@ -53,9 +51,9 @@ public class Day1 extends DayDescription {
 
     Room wardrobe = new Room(7, "Guardaroba", "Sei nel guardaroba, qui di solito si nascondono pezzi di umani.. ", Floor.PRIMO_PIANO);
 
-    Room cesso = new Room(8, "u cess", "Sei nel bagno. Quanto tempo passato qui dentro...meglio non pensarci..", Floor.PRIMO_PIANO);
+    Room cesso = new Room(8, "u cess", "Sei nel bagno. Quanto tempo passato qui dentro...meglio non pensarci..", Floor.PRIMO_PIANO);*/
 
-    public void createMapGH() {
+    /*public void createMapGH() {
         //TODO create corridoio              
 
         //Maps
@@ -113,9 +111,10 @@ public class Day1 extends DayDescription {
         day1.getCharacters().add(Haydock);
         day1.getCharacters().add(Lorrimer);
 
-    }
+    }*/
     
-    public void startDay1() {
-        
+    public static void startDay1() {
+        new Day1_Form().setVisible(true);
+        //TODO Creare array di panel ecc come uomo Japan
     }
 }

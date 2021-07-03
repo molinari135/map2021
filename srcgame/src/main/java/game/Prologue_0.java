@@ -21,33 +21,31 @@ public class Prologue_0 extends javax.swing.JFrame {
     /**
      * Creates new form Prologue_0
      */
+    
     int i = 1;
-    Thread t2;
 
-    public Prologue_0() {
+    Clip clipRain;
+    Clip clipJazz;
+
+    public Prologue_0(Clip clipJazz) {
         initComponents();
         playSound();
+        this.clipJazz = clipJazz;
     }
 
-    //TODO si può fare senza thread!! (vedere scene1)
-    public synchronized void playSound() {
-        t2 = new Thread(new Runnable() { //TODO wrapper thread            
-            @Override
-            public void run() {
-                try {
-                    Clip clip = AudioSystem.getClip();
-                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                            getClass().getClassLoader().getResource("rain1.wav")
-                    );
-                    clip.open(inputStream);
-                    clip.start();
-                    clip.loop(Clip.LOOP_CONTINUOUSLY);
-                } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
-                    System.err.println(e.getMessage());
-                }
-            }
-        });
-        t2.start();
+    private void playSound() {
+        try {
+            clipRain = AudioSystem.getClip();
+            AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+                    getClass().getClassLoader().getResource("rain1.wav")
+            );
+            clipRain.open(inputStream);
+            clipRain.start();
+            clipRain.loop(Clip.LOOP_CONTINUOUSLY);
+
+        } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     /**
@@ -148,57 +146,32 @@ public class Prologue_0 extends javax.swing.JFrame {
                 + " non facevano altro che accentuare l’inquietudine di quel momento."
                 + "\n\nRientrai subito nella mia Berlina per schiarirmi le idee e schermarle dalle intemperie.";
 
-        if (i == 1) {
-            testoPrologo.setText(text1);
-            i++;
-        } else if (i == 2) {
-            testoPrologo.setText(text2);
-            i++;
-        } else if (i == 3) {
-            background.setVisible(false);
-            goToScene2();           
+        switch (i) {
+            case 1:
+                testoPrologo.setText(text1);
+                i++;
+                break;
+            case 2:
+                testoPrologo.setText(text2);
+                i++;
+                break;
+            case 3:                
+                goToScene1();
+                break;
+            default:
+                break;
         }
     }//GEN-LAST:event_continuaActionPerformed
 
-    public void goToScene2() {
+    public void goToScene1() {
+        background.setVisible(false);
+        Scene1 scene1 = new Scene1(this, clipRain, clipJazz);
 
-        Scene1 scene1 = new Scene1(this);
+    }
 
-    }    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Prologue_0.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Prologue_0.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Prologue_0.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Prologue_0.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Prologue_0().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
