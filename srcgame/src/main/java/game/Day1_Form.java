@@ -34,9 +34,12 @@ public class Day1_Form extends javax.swing.JFrame {
         continua1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         background1.setBackground(new java.awt.Color(0, 0, 0));
         background1.setForeground(new java.awt.Color(255, 255, 255));
+        background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(0, 0, 0));
@@ -44,6 +47,7 @@ public class Day1_Form extends javax.swing.JFrame {
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("Dimora della famiglia Bantry");
         jTextField1.setBorder(null);
+        background1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(742, 564, -1, -1));
 
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(0, 0, 0));
@@ -51,6 +55,7 @@ public class Day1_Form extends javax.swing.JFrame {
         jTextField2.setForeground(new java.awt.Color(255, 255, 255));
         jTextField2.setText("St. Mary Mead,   10 Ottobre 1982");
         jTextField2.setBorder(null);
+        background1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 317, 677, -1));
 
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(0, 0, 0));
@@ -58,6 +63,7 @@ public class Day1_Form extends javax.swing.JFrame {
         jTextField3.setForeground(new java.awt.Color(255, 255, 255));
         jTextField3.setText("Gossington Hall");
         jTextField3.setBorder(null);
+        background1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(789, 476, 329, -1));
 
         continua1.setBackground(new java.awt.Color(0, 0, 0));
         continua1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -70,50 +76,7 @@ public class Day1_Form extends javax.swing.JFrame {
                 continua1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout background1Layout = new javax.swing.GroupLayout(background1);
-        background1.setLayout(background1Layout);
-        background1Layout.setHorizontalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(background1Layout.createSequentialGroup()
-                .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(background1Layout.createSequentialGroup()
-                        .addGap(923, 923, 923)
-                        .addComponent(continua1))
-                    .addGroup(background1Layout.createSequentialGroup()
-                        .addGap(742, 742, 742)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(837, 837, 837))
-            .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(background1Layout.createSequentialGroup()
-                    .addGap(621, 621, 621)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 677, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(717, Short.MAX_VALUE)))
-            .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(background1Layout.createSequentialGroup()
-                    .addGap(789, 789, 789)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(897, Short.MAX_VALUE)))
-        );
-        background1Layout.setVerticalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background1Layout.createSequentialGroup()
-                .addGap(564, 564, 564)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(161, 161, 161)
-                .addComponent(continua1)
-                .addGap(237, 237, 237))
-            .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(background1Layout.createSequentialGroup()
-                    .addGap(317, 317, 317)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(722, Short.MAX_VALUE)))
-            .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(background1Layout.createSequentialGroup()
-                    .addGap(476, 476, 476)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(563, Short.MAX_VALUE)))
-        );
+        background1.add(continua1, new org.netbeans.lib.awtextra.AbsoluteConstraints(923, 767, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -63,8 +63,13 @@ public class Prologue_0 extends javax.swing.JFrame {
         testoPrologo = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         background.setBackground(new java.awt.Color(0, 0, 0));
+        background.setMinimumSize(new java.awt.Dimension(1920, 1080));
+        background.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         continua.setBackground(new java.awt.Color(0, 0, 0));
         continua.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -77,6 +82,7 @@ public class Prologue_0 extends javax.swing.JFrame {
                 continuaActionPerformed(evt);
             }
         });
+        background.add(continua, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 550, -1, -1));
 
         jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -96,35 +102,13 @@ public class Prologue_0 extends javax.swing.JFrame {
         testoPrologo.setCaretColor(new java.awt.Color(102, 102, 255));
         jScrollPane1.setViewportView(testoPrologo);
 
-        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
-        background.setLayout(backgroundLayout);
-        backgroundLayout.setHorizontalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addContainerGap(1003, Short.MAX_VALUE)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 895, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(433, 433, 433))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                        .addComponent(continua)
-                        .addGap(909, 909, 909))))
-        );
-        backgroundLayout.setVerticalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(267, 267, 267)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(continua)
-                .addContainerGap(481, Short.MAX_VALUE))
-        );
+        background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 895, 300));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 2331, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

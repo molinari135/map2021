@@ -67,6 +67,7 @@ public class Start extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         background.setBackground(new java.awt.Color(0, 0, 0));
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         esci.setFont(new java.awt.Font("Courier New", 2, 48)); // NOI18N
         esci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit-door.png"))); // NOI18N
@@ -78,6 +79,7 @@ public class Start extends javax.swing.JFrame {
                 esciActionPerformed(evt);
             }
         });
+        background.add(esci, new org.netbeans.lib.awtextra.AbsoluteConstraints(924, 605, 145, 143));
 
         gioca.setFont(new java.awt.Font("Courier New", 2, 48)); // NOI18N
         gioca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/magnifying-glass.png"))); // NOI18N
@@ -89,62 +91,20 @@ public class Start extends javax.swing.JFrame {
                 giocaActionPerformed(evt);
             }
         });
+        background.add(gioca, new org.netbeans.lib.awtextra.AbsoluteConstraints(924, 366, 145, 143));
 
         titolo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/titolo2.gif"))); // NOI18N
+        background.add(titolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 172, -1, -1));
 
         credits.setFont(new java.awt.Font("Californian FB", 1, 24)); // NOI18N
         credits.setForeground(new java.awt.Color(255, 255, 255));
         credits.setText("Credits");
         credits.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         credits.setContentAreaFilled(false);
+        background.add(credits, new org.netbeans.lib.awtextra.AbsoluteConstraints(1779, 897, -1, -1));
 
         silhouette.setIcon(new javax.swing.ImageIcon(getClass().getResource("/silhouette.png"))); // NOI18N
-
-        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
-        background.setLayout(backgroundLayout);
-        backgroundLayout.setHorizontalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(silhouette)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                                .addComponent(titolo)
-                                .addGap(481, 481, 481))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                                .addComponent(credits)
-                                .addGap(96, 96, 96))))
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(422, 422, 422)
-                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(esci, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(gioca, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        backgroundLayout.setVerticalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(credits)
-                .addGap(212, 212, 212))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(titolo)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(gioca, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(96, 96, 96)
-                        .addComponent(esci, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(silhouette, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(170, 170, 170))))
-        );
+        background.add(silhouette, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 294, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
