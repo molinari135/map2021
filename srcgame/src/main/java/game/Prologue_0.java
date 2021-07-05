@@ -147,6 +147,7 @@ public class Prologue_0 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_continuaActionPerformed
 
+    //TODO SPOSTARE SCENA 1 QUI
     public void goToScene1() {
         background.setVisible(false);
         Scene1 scene1 = new Scene1(this, clipRain, clipJazz);

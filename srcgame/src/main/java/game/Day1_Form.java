@@ -5,17 +5,35 @@
  */
 package game;
 
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author tom
  */
-public class Day1_Form extends javax.swing.JFrame {
+public class Day1_Form extends javax.swing.JFrame implements SceneChanger {
 
     /**
      * Creates new form Day1_Form
      */
+    
+    public JPanel bgPanel[] = new JPanel[20];
+    public JLabel bgLabel[] = new JLabel[20];
+    
     public Day1_Form() {
         initComponents();
+        freccia_sx.setVisible(false);
+        freccia_dx.setVisible(false);
+        text_box.setVisible(false);  
+        testo_box.setVisible(false);        
+        
+        jScrollPane1.getViewport().setOpaque(false);        
+        jScrollPane1.setViewportBorder(null);       
+        testo_box.setBackground(new Color(0,0,0,0));        
+               
     }
 
     /**
@@ -32,6 +50,11 @@ public class Day1_Form extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         continua1 = new javax.swing.JButton();
+        freccia_dx = new javax.swing.JButton();
+        freccia_sx = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        testo_box = new javax.swing.JTextArea();
+        text_box = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1920, 1080));
@@ -47,7 +70,7 @@ public class Day1_Form extends javax.swing.JFrame {
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("Dimora della famiglia Bantry");
         jTextField1.setBorder(null);
-        background1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(742, 564, -1, -1));
+        background1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 440, -1, -1));
 
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(0, 0, 0));
@@ -55,7 +78,7 @@ public class Day1_Form extends javax.swing.JFrame {
         jTextField2.setForeground(new java.awt.Color(255, 255, 255));
         jTextField2.setText("St. Mary Mead,   10 Ottobre 1982");
         jTextField2.setBorder(null);
-        background1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 317, 677, -1));
+        background1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 677, -1));
 
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(0, 0, 0));
@@ -63,7 +86,7 @@ public class Day1_Form extends javax.swing.JFrame {
         jTextField3.setForeground(new java.awt.Color(255, 255, 255));
         jTextField3.setText("Gossington Hall");
         jTextField3.setBorder(null);
-        background1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(789, 476, 329, -1));
+        background1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 360, 329, -1));
 
         continua1.setBackground(new java.awt.Color(0, 0, 0));
         continua1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -76,7 +99,42 @@ public class Day1_Form extends javax.swing.JFrame {
                 continua1ActionPerformed(evt);
             }
         });
-        background1.add(continua1, new org.netbeans.lib.awtextra.AbsoluteConstraints(923, 767, -1, -1));
+        background1.add(continua1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 600, -1, -1));
+
+        freccia_dx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/right_arrow.png"))); // NOI18N
+        freccia_dx.setContentAreaFilled(false);
+        freccia_dx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                freccia_dxActionPerformed(evt);
+            }
+        });
+        background1.add(freccia_dx, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 680, 100, 80));
+
+        freccia_sx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/left_arrow.png"))); // NOI18N
+        freccia_sx.setContentAreaFilled(false);
+        background1.add(freccia_sx, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 670, 100, 90));
+
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane1.setOpaque(false);
+
+        testo_box.setEditable(false);
+        testo_box.setColumns(20);
+        testo_box.setFont(new java.awt.Font("Courier New", 0, 24)); // NOI18N
+        testo_box.setForeground(new java.awt.Color(255, 255, 255));
+        testo_box.setLineWrap(true);
+        testo_box.setRows(5);
+        testo_box.setWrapStyleWord(true);
+        testo_box.setBorder(null);
+        testo_box.setOpaque(false);
+        jScrollPane1.setViewportView(testo_box);
+
+        background1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 710, 1120, 220));
+
+        text_box.setIcon(new javax.swing.ImageIcon(getClass().getResource("/text_box.png"))); // NOI18N
+        background1.add(text_box, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 660, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,7 +144,7 @@ public class Day1_Form extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background1, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -96,12 +154,71 @@ public class Day1_Form extends javax.swing.JFrame {
         goToDiningRoom();
     }//GEN-LAST:event_continua1ActionPerformed
 
+    private void freccia_dxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freccia_dxActionPerformed
+        goEast();      
+    }//GEN-LAST:event_freccia_dxActionPerformed
+
     public void goToDiningRoom() {
-        background1.setVisible(false);
-        DiningRoom dRoom = new DiningRoom(this);
+        background1.setVisible(false);        
+        createScene(1, "/diningroommod.png"); 
+        freccia_sx.setVisible(false);
     }
-          
     
+    @Override
+    public void goEast() {
+        bgPanel[1].setVisible(false);
+        createScene(2, "/corridoio1.png");
+    }    
+    
+     @Override
+    public void goNorth() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void goSouth() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void goWest() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void createScene(int bgNum, String bgFileName) {
+        
+        //panel
+        bgPanel[bgNum] = new JPanel();
+        bgPanel[bgNum].setBounds(0, 0, 1920, 1080);
+        bgPanel[bgNum].setBackground(Color.black);
+        bgPanel[bgNum].setLayout(null);
+        bgPanel[bgNum].setVisible(true);
+        
+        //sfondo
+        bgLabel[bgNum] = new JLabel();
+        bgLabel[bgNum].setBounds(0,0,1920,1080);
+        ImageIcon bgIcon = new ImageIcon(getClass().getResource(bgFileName));
+	bgLabel[bgNum].setIcon(bgIcon);	      
+        
+        //frecce + box     
+        freccia_sx.setVisible(true);
+        freccia_dx.setVisible(true);
+        //text_box.setVisible(true);    
+        //testo_box.setVisible(true);        
+      
+        testo_box.setBounds(410, 700, 1050, 250);
+        testo_box.setFont(new java.awt.Font("Courier New", 0, 30));
+        
+        bgPanel[bgNum].add(freccia_sx);
+        bgPanel[bgNum].add(freccia_dx);
+        bgPanel[bgNum].add(testo_box);
+        bgPanel[bgNum].add(text_box);    
+        
+        bgPanel[bgNum].add(bgLabel[bgNum]);
+        
+        this.add(bgPanel[bgNum]);
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -131,6 +248,7 @@ public class Day1_Form extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Day1_Form().setVisible(true);
             }
@@ -140,8 +258,14 @@ public class Day1_Form extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background1;
     private javax.swing.JButton continua1;
+    private javax.swing.JButton freccia_dx;
+    private javax.swing.JButton freccia_sx;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextArea testo_box;
+    private javax.swing.JLabel text_box;
     // End of variables declaration//GEN-END:variables
+   
 }
