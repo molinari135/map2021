@@ -144,23 +144,60 @@ public class Day1_Form extends javax.swing.JFrame {
 
     private void continua1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continua1ActionPerformed
         generateScenes();
-
         background1.setVisible(false);
         bgPanel[1].setVisible(true);
     }//GEN-LAST:event_continua1ActionPerformed
 
-    //TODO spostare in day1
-    public void goToScene2() {
-        bgPanel[1].setVisible(false);
-        bgPanel[2].setVisible(true);
-    }
-    
+    //TODO SPOSTARE IN DAY 1
     public void goToScene1() {
         bgPanel[2].setVisible(false);
         bgPanel[1].setVisible(true);
     }
-    
-    
+
+    public void goToScene2() {
+        bgPanel[1].setVisible(false);
+        bgPanel[2].setVisible(true);
+    }
+
+    public void goToScene2From1Floor() {
+        bgPanel[4].setVisible(false);
+        bgPanel[2].setVisible(true);
+    }
+
+    public void goToScene2FromLRoom() {
+        bgPanel[3].setVisible(false);
+        bgPanel[2].setVisible(true);
+    }
+
+    public void goToScene3() {
+        bgPanel[2].setVisible(false);
+        bgPanel[3].setVisible(true);
+    }
+
+    public void goToScene4() {
+        bgPanel[2].setVisible(false);
+        bgPanel[4].setVisible(true);
+    }
+
+    public void goToScene4FromScene5() {
+        bgPanel[5].setVisible(false);
+        bgPanel[4].setVisible(true);
+    }
+
+    public void goToScene5() {
+        bgPanel[4].setVisible(false);
+        bgPanel[5].setVisible(true);
+    }
+
+    public void goToScene6() {
+        bgPanel[4].setVisible(false);
+        bgPanel[6].setVisible(true);
+    }
+
+    public void goToScene6FromScene4() {
+        bgPanel[6].setVisible(false);
+        bgPanel[4].setVisible(true);
+    }
 
     public void createScene(int bgNum, int x, int y, String bgFileName) {
 
@@ -169,7 +206,7 @@ public class Day1_Form extends javax.swing.JFrame {
         bgPanel[bgNum].setBounds(0, 0, 1920, 1080);
         bgPanel[bgNum].setBackground(Color.black);
         bgPanel[bgNum].setLayout(null);
-        bgPanel[bgNum].setVisible(true);
+        bgPanel[bgNum].setVisible(false);
 
         //sfondo
         bgLabel[bgNum] = new JLabel();
@@ -177,10 +214,21 @@ public class Day1_Form extends javax.swing.JFrame {
         ImageIcon bgIcon = new ImageIcon(getClass().getResource(bgFileName));
         bgLabel[bgNum].setIcon(bgIcon);
 
-        //text_box.setVisible(true);    
-        //testo_box.setVisible(true);        
         testo_box.setBounds(410, 700, 1050, 250);
         testo_box.setFont(new java.awt.Font("Courier New", 0, 30));
+
+        //backpack - inventory
+        JButton backpack = new JButton();
+        backpack.setBounds(1700, 10, 200, 200);
+        backpack.setContentAreaFilled(false);
+        ImageIcon arrowIcon = new ImageIcon(getClass().getResource("/backpack_inventory.png"));
+        backpack.setBackground(null);
+        backpack.setFocusPainted(false);
+        backpack.setIcon(arrowIcon);
+        backpack.addActionListener(actHandler);
+        backpack.setActionCommand("apri inventario");
+        backpack.setBorderPainted(false);
+        bgPanel[bgNum].add(backpack);
 
         bgPanel[bgNum].add(testo_box);
         bgPanel[bgNum].add(text_box);
@@ -204,73 +252,104 @@ public class Day1_Form extends javax.swing.JFrame {
 
         bgPanel[bgNum].add(arrowButton);
     }
-    
-    public void createObject(int bgNum, int objx, int objy, int objWidth, int objHeight, String objFileName, 
-			String choice1Name, String choice2Name, String choice3Name, String choice1Command, String Choice2Command, String Choice3Command) {
-		
-		// CREATE POP MENU
-		JPopupMenu popMenu = new JPopupMenu();
-		// CREATE POP MENU ITEMS
-		JMenuItem menuItem[] = new JMenuItem[4]; // Use [1],[2],[3]
-		menuItem[1] = new JMenuItem(choice1Name);
-		menuItem[1].addActionListener(actHandler);
-		menuItem[1].setActionCommand(choice1Command);
-		popMenu.add(menuItem[1]);
-		
-		menuItem[2] = new JMenuItem(choice2Name);
-		menuItem[2].addActionListener(actHandler);
-		menuItem[2].setActionCommand(Choice2Command);
-		popMenu.add(menuItem[2]);
-		
-		menuItem[3] = new JMenuItem(choice3Name);
-		menuItem[3].addActionListener(actHandler);
-		menuItem[3].setActionCommand(Choice3Command);
-		popMenu.add(menuItem[3]);
-		
-		// CREATE OBJECTS
-		JLabel objectLabel = new JLabel();
-		objectLabel.setBounds(objx,objy,objWidth,objHeight);
-                //objectLabel.setOpaque(true);
-                //objectLabel.setBackground(Color.blue);
-		
-		ImageIcon objectIcon = new ImageIcon(getClass().getClassLoader().getResource(objFileName));
-		objectLabel.setIcon(objectIcon);
-		
-		objectLabel.addMouseListener(new MouseListener() {
 
-                        @Override
-			public void mouseClicked(MouseEvent e) {}
-                        @Override
-			public void mousePressed(MouseEvent e) {
-				
-				if(SwingUtilities.isRightMouseButton(e)) {
-					popMenu.show(objectLabel, e.getX(), e.getY());
-				}
-				
-			}
-			public void mouseReleased(MouseEvent e) {}
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent e) {}
-			
-		});
-		
-		
-		bgPanel[bgNum].add(objectLabel);
-		
-		
-	}
+    public void createObject(int bgNum, int objx, int objy, int objWidth, int objHeight, String objFileName,
+            String choice1Name, String choice2Name, String choice3Name, String choice1Command, String Choice2Command, String Choice3Command) {
+
+        // CREATE POP MENU
+        JPopupMenu popMenu = new JPopupMenu();
+        // CREATE POP MENU ITEMS
+        JMenuItem menuItem[] = new JMenuItem[4]; // Use [1],[2],[3]
+        menuItem[1] = new JMenuItem(choice1Name);
+        menuItem[1].addActionListener(actHandler);
+        menuItem[1].setActionCommand(choice1Command);
+        popMenu.add(menuItem[1]);
+
+        menuItem[2] = new JMenuItem(choice2Name);
+        menuItem[2].addActionListener(actHandler);
+        menuItem[2].setActionCommand(Choice2Command);
+        popMenu.add(menuItem[2]);
+
+        menuItem[3] = new JMenuItem(choice3Name);
+        menuItem[3].addActionListener(actHandler);
+        menuItem[3].setActionCommand(Choice3Command);
+        popMenu.add(menuItem[3]);
+
+        // CREATE OBJECTS
+        JLabel objectLabel = new JLabel();
+        objectLabel.setBounds(objx, objy, objWidth, objHeight);
+        objectLabel.setOpaque(true);
+        objectLabel.setBackground(Color.blue);
+
+        ImageIcon objectIcon = new ImageIcon(getClass().getClassLoader().getResource(objFileName));
+        objectLabel.setIcon(objectIcon);
+
+        objectLabel.addMouseListener(new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+                if (SwingUtilities.isRightMouseButton(e)) {
+                    popMenu.show(objectLabel, e.getX(), e.getY());
+                }
+
+            }
+
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            public void mouseExited(MouseEvent e) {
+            }
+
+        });
+
+        bgPanel[bgNum].add(objectLabel);
+
+    }
 
     public void generateScenes() {
+
+        //SCENA 1 -> DINING ROOM
         createScene(1, 0, 0, "/diningroommod.png");
         createArrowButton(1, 1750, 500, "/right_arrow.png", "goToCorridorFromDRoom");
         bgPanel[1].add(bgLabel[1]);
-        //objects
 
+        //SCENA 2 -> CORRIDOIO PIANO TERRA
         createScene(2, 352, 0, "/corridoio1.png");
-        createArrowButton(2, 20, 500, "/left_arrow.png", "goToDRoomFromCorridor");
-        createObject(2, 620, 300, 150, 650, "", "Entra" , "Osserva", "", "EastRoomCorridor1", "ObserveDiningRoom", "");
-        //objects
+        createObject(2, 620, 300, 150, 650, "", "Entra", "Osserva", "", "WestRoomCorridor1", "ObserveDiningRoom", "");
+        createObject(2, 1215, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor1", "ObserveLivingRoom", "");
+        createObject(2, 850, 350, 300, 500, "", "Sali al piano superiore", "", "", "StaircaseUP1", "", "");
         bgPanel[2].add(bgLabel[2]);
+
+        //SCENA 3 -> LIVING ROOM 
+        createScene(3, 0, 0, "");
+        createArrowButton(3, 150, 500, "/left_arrow.png", "goToCorridorFromLRoom");
+        bgPanel[3].add(bgLabel[3]);
+
+        //SCENA 4 -> CORRIDOIO PRIMO PIANO
+        createScene(4, 352, 0, "/corridoio2.png");
+        createArrowButton(4, 850, 850, "/down_arrow.png", "StaircaseDown1");
+        createObject(4, 550, 300, 150, 650, "", "Entra", "Osserva", "", "WestRoomCorridor2", "ObserveLibrary", "");
+        createObject(4, 1120, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor2", "ObserveStudy", "");
+        bgPanel[4].add(bgLabel[4]);
+
+        //SCENA 5 -> STUDIO
+        createScene(5, 0, 0, "/studio.png");
+        createArrowButton(5, 1750, 500, "/right_arrow.png", "goToCorridorFromStudy");
+        bgPanel[5].add(bgLabel[5]);
+
+        //SCENA 6 -> BIBLIOTECA
+        createScene(6, 70, 0, "/Library.png");
+        createArrowButton(6, 10, 500, "/left_arrow.png", "goToCorridorFromLibrary");
+        bgPanel[6].add(bgLabel[6]);
+
     }
 
     /**
