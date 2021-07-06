@@ -16,8 +16,8 @@ import type.Room;
  *
  * @author giaco
  */
-public class Main {
-    
+public class Main {    
+  
     public static void main(String[] args) {
         new Start().setVisible(true);  
         

@@ -6,34 +6,41 @@
 package game;
 
 import java.awt.Color;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.SwingUtilities;
 
 /**
  *
  * @author tom
  */
-public class Day1_Form extends javax.swing.JFrame implements SceneChanger {
+public class Day1_Form extends javax.swing.JFrame {
+
+    Day1 d1;
+
+    //TODO spostare in DAY1
+    ActionHandler1 actHandler = new ActionHandler1(this);
 
     /**
      * Creates new form Day1_Form
      */
-    
     public JPanel bgPanel[] = new JPanel[20];
     public JLabel bgLabel[] = new JLabel[20];
-    
+
     public Day1_Form() {
         initComponents();
-        freccia_sx.setVisible(false);
-        freccia_dx.setVisible(false);
-        text_box.setVisible(false);  
-        testo_box.setVisible(false);        
-        
-        jScrollPane1.getViewport().setOpaque(false);        
-        jScrollPane1.setViewportBorder(null);       
-        testo_box.setBackground(new Color(0,0,0,0));        
-               
+        text_box.setVisible(false);
+        testo_box.setVisible(false);
+
+        jScrollPane1.getViewport().setOpaque(false);
+        jScrollPane1.setViewportBorder(null);
+        testo_box.setBackground(new Color(0, 0, 0, 0));
     }
 
     /**
@@ -50,8 +57,6 @@ public class Day1_Form extends javax.swing.JFrame implements SceneChanger {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         continua1 = new javax.swing.JButton();
-        freccia_dx = new javax.swing.JButton();
-        freccia_sx = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         testo_box = new javax.swing.JTextArea();
         text_box = new javax.swing.JLabel();
@@ -101,19 +106,6 @@ public class Day1_Form extends javax.swing.JFrame implements SceneChanger {
         });
         background1.add(continua1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 600, -1, -1));
 
-        freccia_dx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/right_arrow.png"))); // NOI18N
-        freccia_dx.setContentAreaFilled(false);
-        freccia_dx.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                freccia_dxActionPerformed(evt);
-            }
-        });
-        background1.add(freccia_dx, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 680, 100, 80));
-
-        freccia_sx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/left_arrow.png"))); // NOI18N
-        freccia_sx.setContentAreaFilled(false);
-        background1.add(freccia_sx, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 670, 100, 90));
-
         jScrollPane1.setBorder(null);
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -151,72 +143,134 @@ public class Day1_Form extends javax.swing.JFrame implements SceneChanger {
     }// </editor-fold>//GEN-END:initComponents
 
     private void continua1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continua1ActionPerformed
-        goToDiningRoom();
+        generateScenes();
+
+        background1.setVisible(false);
+        bgPanel[1].setVisible(true);
     }//GEN-LAST:event_continua1ActionPerformed
 
-    private void freccia_dxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freccia_dxActionPerformed
-        goEast();      
-    }//GEN-LAST:event_freccia_dxActionPerformed
-
-    public void goToDiningRoom() {
-        background1.setVisible(false);        
-        createScene(1, "/diningroommod.png"); 
-        freccia_sx.setVisible(false);
-    }
-    
-    @Override
-    public void goEast() {
+    //TODO spostare in day1
+    public void goToScene2() {
         bgPanel[1].setVisible(false);
-        createScene(2, "/corridoio1.png");
-    }    
+        bgPanel[2].setVisible(true);
+    }
     
-     @Override
-    public void goNorth() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void goToScene1() {
+        bgPanel[2].setVisible(false);
+        bgPanel[1].setVisible(true);
     }
+    
+    
 
-    @Override
-    public void goSouth() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void createScene(int bgNum, int x, int y, String bgFileName) {
 
-    @Override
-    public void goWest() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void createScene(int bgNum, String bgFileName) {
-        
         //panel
         bgPanel[bgNum] = new JPanel();
         bgPanel[bgNum].setBounds(0, 0, 1920, 1080);
         bgPanel[bgNum].setBackground(Color.black);
         bgPanel[bgNum].setLayout(null);
         bgPanel[bgNum].setVisible(true);
-        
+
         //sfondo
         bgLabel[bgNum] = new JLabel();
-        bgLabel[bgNum].setBounds(0,0,1920,1080);
+        bgLabel[bgNum].setBounds(x, y, 1920, 1080);
         ImageIcon bgIcon = new ImageIcon(getClass().getResource(bgFileName));
-	bgLabel[bgNum].setIcon(bgIcon);	      
-        
-        //frecce + box     
-        freccia_sx.setVisible(true);
-        freccia_dx.setVisible(true);
+        bgLabel[bgNum].setIcon(bgIcon);
+
         //text_box.setVisible(true);    
         //testo_box.setVisible(true);        
-      
         testo_box.setBounds(410, 700, 1050, 250);
         testo_box.setFont(new java.awt.Font("Courier New", 0, 30));
-        
-        bgPanel[bgNum].add(freccia_sx);
-        bgPanel[bgNum].add(freccia_dx);
+
         bgPanel[bgNum].add(testo_box);
-        bgPanel[bgNum].add(text_box);    
-        
-        bgPanel[bgNum].add(bgLabel[bgNum]);
-        
+        bgPanel[bgNum].add(text_box);
+
         this.add(bgPanel[bgNum]);
+    }
+
+    public void createArrowButton(int bgNum, int x, int y, String arrowFileName, String command) {
+
+        ImageIcon arrowIcon = new ImageIcon(getClass().getResource(arrowFileName));
+
+        JButton arrowButton = new JButton();
+        arrowButton.setBounds(x, y, 150, 150);
+        arrowButton.setBackground(null);
+        arrowButton.setContentAreaFilled(false);
+        arrowButton.setFocusPainted(false);
+        arrowButton.setIcon(arrowIcon);
+        arrowButton.addActionListener(actHandler);
+        arrowButton.setActionCommand(command);
+        arrowButton.setBorderPainted(false);
+
+        bgPanel[bgNum].add(arrowButton);
+    }
+    
+    public void createObject(int bgNum, int objx, int objy, int objWidth, int objHeight, String objFileName, 
+			String choice1Name, String choice2Name, String choice3Name, String choice1Command, String Choice2Command, String Choice3Command) {
+		
+		// CREATE POP MENU
+		JPopupMenu popMenu = new JPopupMenu();
+		// CREATE POP MENU ITEMS
+		JMenuItem menuItem[] = new JMenuItem[4]; // Use [1],[2],[3]
+		menuItem[1] = new JMenuItem(choice1Name);
+		menuItem[1].addActionListener(actHandler);
+		menuItem[1].setActionCommand(choice1Command);
+		popMenu.add(menuItem[1]);
+		
+		menuItem[2] = new JMenuItem(choice2Name);
+		menuItem[2].addActionListener(actHandler);
+		menuItem[2].setActionCommand(Choice2Command);
+		popMenu.add(menuItem[2]);
+		
+		menuItem[3] = new JMenuItem(choice3Name);
+		menuItem[3].addActionListener(actHandler);
+		menuItem[3].setActionCommand(Choice3Command);
+		popMenu.add(menuItem[3]);
+		
+		// CREATE OBJECTS
+		JLabel objectLabel = new JLabel();
+		objectLabel.setBounds(objx,objy,objWidth,objHeight);
+                //objectLabel.setOpaque(true);
+                //objectLabel.setBackground(Color.blue);
+		
+		ImageIcon objectIcon = new ImageIcon(getClass().getClassLoader().getResource(objFileName));
+		objectLabel.setIcon(objectIcon);
+		
+		objectLabel.addMouseListener(new MouseListener() {
+
+                        @Override
+			public void mouseClicked(MouseEvent e) {}
+                        @Override
+			public void mousePressed(MouseEvent e) {
+				
+				if(SwingUtilities.isRightMouseButton(e)) {
+					popMenu.show(objectLabel, e.getX(), e.getY());
+				}
+				
+			}
+			public void mouseReleased(MouseEvent e) {}
+			public void mouseEntered(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {}
+			
+		});
+		
+		
+		bgPanel[bgNum].add(objectLabel);
+		
+		
+	}
+
+    public void generateScenes() {
+        createScene(1, 0, 0, "/diningroommod.png");
+        createArrowButton(1, 1750, 500, "/right_arrow.png", "goToCorridorFromDRoom");
+        bgPanel[1].add(bgLabel[1]);
+        //objects
+
+        createScene(2, 352, 0, "/corridoio1.png");
+        createArrowButton(2, 20, 500, "/left_arrow.png", "goToDRoomFromCorridor");
+        createObject(2, 620, 300, 150, 650, "", "Entra" , "Osserva", "", "EastRoomCorridor1", "ObserveDiningRoom", "");
+        //objects
+        bgPanel[2].add(bgLabel[2]);
     }
 
     /**
@@ -258,8 +312,6 @@ public class Day1_Form extends javax.swing.JFrame implements SceneChanger {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background1;
     private javax.swing.JButton continua1;
-    private javax.swing.JButton freccia_dx;
-    private javax.swing.JButton freccia_sx;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -267,5 +319,5 @@ public class Day1_Form extends javax.swing.JFrame implements SceneChanger {
     private javax.swing.JTextArea testo_box;
     private javax.swing.JLabel text_box;
     // End of variables declaration//GEN-END:variables
-   
+
 }
