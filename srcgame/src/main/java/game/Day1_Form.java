@@ -6,6 +6,7 @@
 package game;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
@@ -14,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
+import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
 /**
@@ -30,17 +32,18 @@ public class Day1_Form extends javax.swing.JFrame {
     /**
      * Creates new form Day1_Form
      */
+    
     public JPanel bgPanel[] = new JPanel[20];
     public JLabel bgLabel[] = new JLabel[20];
-
+    
+    
+    //TODO FORSE si può fare senza creare array e creandoli manualmente ogni scena, come il BACKPACK         
+    public JLabel textBox[] = new JLabel[10];
+    public JTextArea textAreaBox[] = new JTextArea[10];
+    public JButton textButton[] = new JButton[10];
+    
     public Day1_Form() {
-        initComponents();
-        text_box.setVisible(false);
-        testo_box.setVisible(false);
-
-        jScrollPane1.getViewport().setOpaque(false);
-        jScrollPane1.setViewportBorder(null);
-        testo_box.setBackground(new Color(0, 0, 0, 0));
+        initComponents();        
     }
 
     /**
@@ -57,13 +60,9 @@ public class Day1_Form extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         continua1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        testo_box = new javax.swing.JTextArea();
-        text_box = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1920, 1080));
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         background1.setBackground(new java.awt.Color(0, 0, 0));
         background1.setForeground(new java.awt.Color(255, 255, 255));
@@ -106,28 +105,6 @@ public class Day1_Form extends javax.swing.JFrame {
         });
         background1.add(continua1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 600, -1, -1));
 
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-        jScrollPane1.setOpaque(false);
-
-        testo_box.setEditable(false);
-        testo_box.setColumns(20);
-        testo_box.setFont(new java.awt.Font("Courier New", 0, 24)); // NOI18N
-        testo_box.setForeground(new java.awt.Color(255, 255, 255));
-        testo_box.setLineWrap(true);
-        testo_box.setRows(5);
-        testo_box.setWrapStyleWord(true);
-        testo_box.setBorder(null);
-        testo_box.setOpaque(false);
-        jScrollPane1.setViewportView(testo_box);
-
-        background1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 710, 1120, 220));
-
-        text_box.setIcon(new javax.swing.ImageIcon(getClass().getResource("/text_box.png"))); // NOI18N
-        background1.add(text_box, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 660, -1, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -145,7 +122,7 @@ public class Day1_Form extends javax.swing.JFrame {
     private void continua1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continua1ActionPerformed
         generateScenes();
         background1.setVisible(false);
-        bgPanel[1].setVisible(true);
+        bgPanel[1].setVisible(true);  
     }//GEN-LAST:event_continua1ActionPerformed
 
     //TODO SPOSTARE IN DAY 1
@@ -199,6 +176,70 @@ public class Day1_Form extends javax.swing.JFrame {
         bgPanel[4].setVisible(true);
     }
 
+    public void observeScene1() {             
+        textBox[2].setVisible(true);
+        textAreaBox[2].setVisible(true);
+        textButton[2].setVisible(true);
+        //TODO file
+        textAreaBox[2].setText("Da qui sembra portare alla sala da pranzo di Gossington Hall.");
+    }
+    
+    public void observeScene3() {
+        textBox[2].setVisible(true);
+        textAreaBox[2].setVisible(true);
+        textButton[2].setVisible(true);
+        //TODO file
+        textAreaBox[2].setText("Da qui sembra portare al soggiorno.");
+    }
+    
+    public void observeScene5() {
+        textBox[4].setVisible(true);
+        textAreaBox[4].setVisible(true);
+        textButton[4].setVisible(true);
+        //TODO file
+        textAreaBox[4].setText("Questo sembra essere lo studio del signor Bantry.");
+    }
+    
+    public void observeScene6() {
+        textBox[4].setVisible(true);
+        textAreaBox[4].setVisible(true);
+        textButton[4].setVisible(true);
+        //TODO file
+        textAreaBox[4].setText("Di qui c'è l'imponente biblioteca di Gossington Hall.");
+    }
+    
+    public void observeDollyBantry() {
+        textBox[1].setVisible(true);
+        textAreaBox[1].setVisible(true);
+        textButton[1].setVisible(true);
+        //TODO file
+        textAreaBox[1].setText("Quella donna è Dolly Bantry, proprietaria della casa, insieme a suo marito Arthur Bantry.");
+    }
+    
+    public void observeJaneMarple() {
+        textBox[1].setVisible(true);
+        textAreaBox[1].setVisible(true);
+        textButton[1].setVisible(true);
+        //TODO file
+        textAreaBox[1].setText("La signora in giallo (-cit)");
+    }
+    
+    public void observeLorrimer() {
+        textBox[3].setVisible(true);
+        textAreaBox[3].setVisible(true);
+        textButton[3].setVisible(true);
+        //TODO file
+        textAreaBox[3].setText("Parrebbe il maggiordomo della casa.");
+    }
+    
+    public void closeTextBox(int bgNum) {
+        textBox[bgNum].setVisible(false);
+        textAreaBox[bgNum].setVisible(false);
+        textButton[bgNum].setVisible(false);        
+    }
+    
+    
+
     public void createScene(int bgNum, int x, int y, String bgFileName) {
 
         //panel
@@ -214,9 +255,6 @@ public class Day1_Form extends javax.swing.JFrame {
         ImageIcon bgIcon = new ImageIcon(getClass().getResource(bgFileName));
         bgLabel[bgNum].setIcon(bgIcon);
 
-        testo_box.setBounds(410, 700, 1050, 250);
-        testo_box.setFont(new java.awt.Font("Courier New", 0, 30));
-
         //backpack - inventory
         JButton backpack = new JButton();
         backpack.setBounds(1700, 10, 200, 200);
@@ -226,16 +264,53 @@ public class Day1_Form extends javax.swing.JFrame {
         backpack.setFocusPainted(false);
         backpack.setIcon(arrowIcon);
         backpack.addActionListener(actHandler);
-        backpack.setActionCommand("apri inventario");
+        backpack.setActionCommand("openInventory");
         backpack.setBorderPainted(false);
         bgPanel[bgNum].add(backpack);
-
-        bgPanel[bgNum].add(testo_box);
-        bgPanel[bgNum].add(text_box);
-
+                
         this.add(bgPanel[bgNum]);
     }
-
+    
+    public void createTextBox(int bgNum) {
+        //TODO FARE PIù PICCOLA TEXT_BOX
+        
+        //creazione componenti
+        textBox[bgNum] = new JLabel();
+        textAreaBox[bgNum] = new JTextArea();
+        textButton[bgNum] = new JButton();
+        ImageIcon boxIcon = new ImageIcon(getClass().getResource("/text_box.png"));
+        textBox[bgNum].setIcon(boxIcon);
+        textBox[bgNum].setBounds(300, 680, 1300, 320);
+        textAreaBox[bgNum].setBackground(new Color(0, 0, 0, 0));
+        textAreaBox[bgNum].setBounds(400, 740, 1000, 200);
+        textAreaBox[bgNum].setFont(new java.awt.Font("Courier New", 0, 30));
+        textAreaBox[bgNum].setForeground(Color.white);
+        textAreaBox[bgNum].setBorder(null);
+        textAreaBox[bgNum].setEditable(false);
+        textAreaBox[bgNum].setWrapStyleWord(true);
+        textAreaBox[bgNum].setLineWrap(true);             
+        
+        textButton[bgNum].setBackground(new Color(0, 0, 0));
+        textButton[bgNum].setBounds(1438, 920, 64, 26);
+        textButton[bgNum].setFont(new Font("Segoe UI", 2, 14)); // NOI18N
+        textButton[bgNum].setForeground(new Color(255, 255, 255));
+        textButton[bgNum].setText("Continua");
+        textButton[bgNum].setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED,
+                Color.lightGray, Color.white, Color.lightGray, Color.white));
+        textButton[bgNum].setContentAreaFilled(false);
+        textButton[bgNum].addActionListener(actHandler);
+        textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
+        
+        //visibility
+        textBox[bgNum].setVisible(false);
+        textAreaBox[bgNum].setVisible(false);
+        textButton[bgNum].setVisible(false); 
+        
+        bgPanel[bgNum].add(textButton[bgNum]);
+        bgPanel[bgNum].add(textAreaBox[bgNum]);
+        bgPanel[bgNum].add(textBox[bgNum]);
+    }    
+   
     public void createArrowButton(int bgNum, int x, int y, String arrowFileName, String command) {
 
         ImageIcon arrowIcon = new ImageIcon(getClass().getResource(arrowFileName));
@@ -292,11 +367,9 @@ public class Day1_Form extends javax.swing.JFrame {
 
             @Override
             public void mousePressed(MouseEvent e) {
-
                 if (SwingUtilities.isRightMouseButton(e)) {
                     popMenu.show(objectLabel, e.getX(), e.getY());
                 }
-
             }
 
             public void mouseReleased(MouseEvent e) {
@@ -317,37 +390,50 @@ public class Day1_Form extends javax.swing.JFrame {
     public void generateScenes() {
 
         //SCENA 1 -> DINING ROOM
-        createScene(1, 0, 0, "/diningroommod.png");
+        createScene(1, 0, -10, "/diningroommod.png");
+        createTextBox(1);
         createArrowButton(1, 1750, 500, "/right_arrow.png", "goToCorridorFromDRoom");
+        createObject(1, 200, 220, 200, 700, "", "Parla", "Osserva", "", "TalkDolly", "ObserveDolly", "");      
+        createObject(1, 1550, 210, 220, 700, "", "Parla", "Osserva", "", "TalkJane", "ObserveJane", "");      
         bgPanel[1].add(bgLabel[1]);
 
         //SCENA 2 -> CORRIDOIO PIANO TERRA
         createScene(2, 352, 0, "/corridoio1.png");
         createObject(2, 620, 300, 150, 650, "", "Entra", "Osserva", "", "WestRoomCorridor1", "ObserveDiningRoom", "");
         createObject(2, 1215, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor1", "ObserveLivingRoom", "");
-        createObject(2, 850, 350, 300, 500, "", "Sali al piano superiore", "", "", "StaircaseUP1", "", "");
+        createObject(2, 850, 350, 300, 500, "", "Sali al piano superiore", "", "", "StaircaseUP1", "", "");          
+        createTextBox(2);
         bgPanel[2].add(bgLabel[2]);
-
+        
         //SCENA 3 -> LIVING ROOM 
-        createScene(3, 0, 0, "");
-        createArrowButton(3, 150, 500, "/left_arrow.png", "goToCorridorFromLRoom");
+        createScene(3, 0, -10, "/livingroom.png");
+        createTextBox(3);
+        createArrowButton(3, 10, 500, "/left_arrow.png", "goToCorridorFromLRoom");
+        createObject(3, 250, 250, 200, 650, "", "Parla", "Osserva", "puntagli il ferro", "", "ObserveLorrimer","");        
         bgPanel[3].add(bgLabel[3]);
 
         //SCENA 4 -> CORRIDOIO PRIMO PIANO
         createScene(4, 352, 0, "/corridoio2.png");
+        createTextBox(4);
         createArrowButton(4, 850, 850, "/down_arrow.png", "StaircaseDown1");
         createObject(4, 550, 300, 150, 650, "", "Entra", "Osserva", "", "WestRoomCorridor2", "ObserveLibrary", "");
-        createObject(4, 1120, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor2", "ObserveStudy", "");
+        createObject(4, 1120, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor2", "ObserveStudy", "");        
         bgPanel[4].add(bgLabel[4]);
 
         //SCENA 5 -> STUDIO
-        createScene(5, 0, 0, "/studio.png");
+        createScene(5, 0, -10, "/studio.png");
+        createTextBox(5);
         createArrowButton(5, 1750, 500, "/right_arrow.png", "goToCorridorFromStudy");
+        createObject(5, 390, 250, 200, 700, "", "Parla", "Osserva", "", "TalkBasil", "ObserveBasil", "");      
+        createObject(5, 1350, 250, 220, 700, "", "Parla", "Osserva", "", "TalkArthur", "ObserveArthur", "");      
         bgPanel[5].add(bgLabel[5]);
 
         //SCENA 6 -> BIBLIOTECA
-        createScene(6, 70, 0, "/Library.png");
+        createScene(6, 0, -10, "/Library.png");
+        createTextBox(6);
         createArrowButton(6, 10, 500, "/left_arrow.png", "goToCorridorFromLibrary");
+        createObject(6, 250, 700, 600, 170, "", "Osserva", "Ispeziona", "", "ObserveBody", "AnalizeBody", "");      
+        createObject(6, 1000, 400, 220, 500, "", "Parla", "Osserva", "", "TalkDoc", "ObserveDoc", "");      
         bgPanel[6].add(bgLabel[6]);
 
     }
@@ -391,12 +477,9 @@ public class Day1_Form extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background1;
     private javax.swing.JButton continua1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextArea testo_box;
-    private javax.swing.JLabel text_box;
     // End of variables declaration//GEN-END:variables
 
 }
