@@ -127,10 +127,18 @@ public class ActionHandler1 implements ActionListener {
             case "ObserveLorrimer": {
                 d1.observeLorrimer();
                 break;
+                
+                
+                
+                
+                
+                
+                
+                
+                
             }
-
         }
-
     }
-
 }
+
+            
