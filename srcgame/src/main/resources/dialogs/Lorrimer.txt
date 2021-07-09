@@ -1,0 +1,18 @@
+Detective
+Avrei delle domande da farle, sono l'Ispettore in carica.
+Lorrimer
+Mi dica.
+Detective
+Ieri notte a che ora è tornato il signor Bantry?
+Lorrimer
+Verso le 23:30, avevo lasciato il vassoio del whisky in salotto dopo aver chiuso a chiave la biblioteca.
+Detective
+Non ha notato niente di strano?
+Lorrimer
+Personalmente nulla, una domestica aveva sentito dei rumori ma non ci ha fatto molto caso.
+Detective
+Pensa che possa essere stato il signor Bantry?
+Lorrimer
+Assolutamente no, è una bravissima persona e non abbiamo mai visto questa ragazza prima d'ora.
+Detective
+La ringrazio, ora devo andare.

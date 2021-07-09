@@ -1,0 +1,12 @@
+Detective
+Buongiorno, lei è Arthur Bantry?
+Arthur Bantry
+Si, sono io. Avete bisogno di qualcosa, Ispettore?
+Detective
+Vorrei chiederle dove eravate ieri sera e cosa stavate facendo.
+Arthur Bantry
+Sono tornato a casa verso le 23:30 dopo aver partecipato ad un convegno. Lungo il tragitto ho forato una ruota e ho dovuto sostituirla.
+Detective
+Non c'era nessuno sveglio in casa al suo ritorno?
+Arthur Bantry
+No, mia moglie dormiva già e non c'erano domestici.

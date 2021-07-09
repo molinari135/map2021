@@ -7,6 +7,9 @@ package game;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -94,6 +97,20 @@ public class ActionHandler1 implements ActionListener {
                 d1.closeTextBox(6);
                 break;
 
+            case "continueDialog" :
+                d1.continueDialog(1);
+                break;
+            
+            case "continueDialog3" :
+                d1.continueDialog(3);
+                break;
+            case "continueDialog5" :
+                d1.continueDialog(5);
+                break;
+            case "continueDialog6" :
+                d1.continueDialog(6);
+                break;
+                
             case "ObserveDiningRoom": {
                 d1.observeScene1();
                 break;
@@ -118,25 +135,89 @@ public class ActionHandler1 implements ActionListener {
                 d1.observeDollyBantry();
                 break;
             }
+            
+            case "TalkDolly":{
+                try {
+                    d1.talkDollyBantry();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+                break;
+            }
 
             case "ObserveJane": {
                 d1.observeJaneMarple();
                 break;
             }
+            
+            case "TalkJane":{
+            try {
+                d1.talkJaneMarple();
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            break;
+            }
 
             case "ObserveLorrimer": {
                 d1.observeLorrimer();
                 break;
-                
-                
-                
-                
-                
-                
-                
-                
-                
             }
+            case "TalkLorrimer":{
+            try {
+                d1.talkLorrimer();
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            break;
+            }
+             case "ObserveBasil": {
+                d1.observeBasil();
+                break;
+            }
+            case "TalkBasil":{
+            try {
+                d1.talkBasil();
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            break;
+            }
+             case "ObserveABantry": {
+                d1.observeABantry();
+                break;
+            }
+            case "TalkABantry":{
+            try {
+                d1.talkABantry();
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            break;
+            }
+             case "ObserveHaydoc": {
+                d1.observeHaydoc();
+                break;
+            }
+            case "TalkHaydoc":{
+            try {
+                d1.talkHaydoc();
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            break;
+            }
+             case "ObserveBody": {
+                d1.observeBody();
+                break;
+            }
+            case "AnalizeBody":{
+            
+                d1.analizeBody();
+            
+            break;
+            }
+            
         }
     }
 }

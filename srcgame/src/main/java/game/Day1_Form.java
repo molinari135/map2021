@@ -219,27 +219,42 @@ public class Day1_Form extends javax.swing.JFrame {
     }
 
     public void observeDollyBantry() {
+        detectiveDestra[1].setVisible(false);
+        detectiveSinistra[1].setVisible(false);
+        icon[1].setVisible(false);
+        textAreaBox[1].setVisible(false);
         textBox[1].setVisible(true);
-        textAreaBox[1].setVisible(true);
+        textAreaBox2[1].setVisible(true);
         textButton[1].setVisible(true);
+        textButton[1].setActionCommand("continueTextScene" + 1);
         //TODO file
-        textAreaBox[1].setText("Quella donna è Dolly Bantry, proprietaria della casa, insieme a suo marito Arthur Bantry.");
+        textAreaBox2[1].setText("Quella donna è Dolly Bantry, proprietaria della casa, insieme a suo marito Arthur Bantry.");
     }
 
     public void observeJaneMarple() {
+        detectiveDestra[1].setVisible(false);
+        detectiveSinistra[1].setVisible(false);
+        textAreaBox[1].setVisible(false);
+        icon[1].setVisible(false);
         textBox[1].setVisible(true);
-        textAreaBox[1].setVisible(true);
+        textAreaBox2[1].setVisible(true);
         textButton[1].setVisible(true);
+        textButton[1].setActionCommand("continueTextScene" + 1);
         //TODO file
-        textAreaBox[1].setText("La signora in giallo (-cit)");
+        textAreaBox2[1].setText("La signora in giallo (-cit)");
     }
 
     public void observeLorrimer() {
+        detectiveDestra[1].setVisible(false);
+        detectiveSinistra[1].setVisible(false);
+        textAreaBox[1].setVisible(false);
+        icon[1].setVisible(false);
         textBox[3].setVisible(true);
-        textAreaBox[3].setVisible(true);
+        textAreaBox2[3].setVisible(true);
         textButton[3].setVisible(true);
         //TODO file
-        textAreaBox[3].setText("Parrebbe il maggiordomo della casa.");
+        textButton[3].setActionCommand("continueTextScene" + 3);
+        textAreaBox2[3].setText("Parrebbe il maggiordomo della casa.");
     }
     
     
@@ -294,6 +309,19 @@ public class Day1_Form extends javax.swing.JFrame {
         textAreaBox2[3].setText(list.get(i + 1));
 
     }
+    
+    public void observeBasil() {
+        detectiveDestra[1].setVisible(false);
+        detectiveSinistra[1].setVisible(false);
+        textAreaBox[1].setVisible(false);
+        icon[1].setVisible(false);
+        textBox[5].setVisible(true);
+        textAreaBox2[5].setVisible(true);
+        textButton[5].setVisible(true);
+        //TODO file
+        textButton[5].setActionCommand("continueTextScene" + 5);
+        textAreaBox2[5].setText("Parrebbe Basil");
+    }
 
     public void talkBasil() throws IOException {
         i = 0;
@@ -311,6 +339,19 @@ public class Day1_Form extends javax.swing.JFrame {
         textAreaBox2[5].setText(list.get(i + 1));
 
     }
+    
+    public void observeABantry() {
+        detectiveDestra[1].setVisible(false);
+        detectiveSinistra[1].setVisible(false);
+        textAreaBox[1].setVisible(false);
+        icon[1].setVisible(false);
+        textBox[5].setVisible(true);
+        textAreaBox2[5].setVisible(true);
+        textButton[5].setVisible(true);
+        //TODO file
+        textButton[5].setActionCommand("continueTextScene" + 5);
+        textAreaBox2[5].setText("Parrebbe Arthur Bantry");
+    }
 
     public void talkABantry() throws IOException {
         i = 0;
@@ -327,6 +368,19 @@ public class Day1_Form extends javax.swing.JFrame {
         textAreaBox[5].setText(list.get(i));
         textAreaBox2[5].setText(list.get(i + 1));
 
+    }
+    
+    public void observeHaydoc() {
+        detectiveDestra[1].setVisible(false);
+        detectiveSinistra[1].setVisible(false);
+        textAreaBox[1].setVisible(false);
+        icon[1].setVisible(false);
+        textBox[6].setVisible(true);
+        textAreaBox2[6].setVisible(true);
+        textButton[6].setVisible(true);
+        //TODO file
+        textButton[6].setActionCommand("continueTextScene" + 6);
+        textAreaBox2[6].setText("Parrebbe la Dottoressa Haydoc");
     }
 
     public void talkHaydoc() throws IOException {
@@ -346,6 +400,10 @@ public class Day1_Form extends javax.swing.JFrame {
     }
 
     public void observeBody() {
+        detectiveDestra[1].setVisible(false);
+        detectiveSinistra[1].setVisible(false);
+        textAreaBox[1].setVisible(false);
+        icon[1].setVisible(false);
         textBox[6].setVisible(true);
         textAreaBox2[6].setVisible(true);
         textButton[6].setVisible(true);
@@ -369,7 +427,7 @@ public class Day1_Form extends javax.swing.JFrame {
         textBox[bgNum].setVisible(false);
         textAreaBox[bgNum].setVisible(false);
         textAreaBox2[bgNum].setVisible(false);
-        textButton[bgNum].setVisible(false);
+        textButton[bgNum].setVisible(false); 
         detectiveDestra[bgNum].setVisible(false);
         detectiveSinistra[bgNum].setVisible(false);
         icon[bgNum].setVisible(false);
@@ -435,7 +493,7 @@ public class Day1_Form extends javax.swing.JFrame {
         textAreaBox[bgNum].setBackground(new Color(0, 0, 0, 0));
         textAreaBox[bgNum].setBounds(400, 740, 1000, 200);
         textAreaBox[bgNum].setFont(new java.awt.Font("Courier New", 0, 30));
-        textAreaBox[bgNum].setForeground(Color.white);
+        textAreaBox[bgNum].setForeground(Color.yellow);
         textAreaBox[bgNum].setBorder(null);
         textAreaBox[bgNum].setEditable(false);
         textAreaBox[bgNum].setWrapStyleWord(true);
@@ -451,8 +509,8 @@ public class Day1_Form extends javax.swing.JFrame {
         textAreaBox2[bgNum].setLineWrap(true);
 
         textButton[bgNum].setBackground(new Color(0, 0, 0));
-        textButton[bgNum].setBounds(1438, 920, 64, 26);
-        textButton[bgNum].setFont(new Font("Segoe UI", 2, 14)); // NOI18N
+        textButton[bgNum].setBounds(1400, 900, 100, 46);
+        textButton[bgNum].setFont(new Font("Segoe UI", 2, 22)); // NOI18N
         textButton[bgNum].setForeground(new Color(255, 255, 255));
         textButton[bgNum].setText("Continua");
         textButton[bgNum].setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED,
@@ -478,14 +536,14 @@ public class Day1_Form extends javax.swing.JFrame {
         detectiveSinistra[bgNum].setVisible(false);
         icon[bgNum].setVisible(false);
 
-        bgPanel[bgNum].add(detectiveDestra[bgNum]);
-        bgPanel[bgNum].add(detectiveSinistra[bgNum]);
+        
         bgPanel[bgNum].add(icon[bgNum]);
         bgPanel[bgNum].add(textButton[bgNum]);
         bgPanel[bgNum].add(textAreaBox[bgNum]);
         bgPanel[bgNum].add(textAreaBox2[bgNum]);
         bgPanel[bgNum].add(textBox[bgNum]);
-
+        bgPanel[bgNum].add(detectiveDestra[bgNum]);
+        bgPanel[bgNum].add(detectiveSinistra[bgNum]);
     }
 
     public void setIcon(int bgNum, String Filename) {
@@ -497,7 +555,7 @@ public class Day1_Form extends javax.swing.JFrame {
         list.removeAll(list);
         try {
             String dir = System.getProperty("user.dir");
-            Scanner file = new Scanner(new File(dir + "\\src\\main\\resources\\dialogs\\" + namefile));
+            Scanner file = new Scanner(new File(dir + "\\src\\main\\resources\\dialogs\\" + namefile),"UTF-8");
 
             while (file.hasNextLine()) {
                 list.add(file.nextLine());
@@ -553,9 +611,9 @@ public class Day1_Form extends javax.swing.JFrame {
         // CREATE OBJECTS
         JLabel objectLabel = new JLabel();
         objectLabel.setBounds(objx, objy, objWidth, objHeight);
-        objectLabel.setOpaque(true);
+        /*objectLabel.setOpaque(true);
         objectLabel.setBackground(Color.blue);
-
+        */
         ImageIcon objectIcon = new ImageIcon(getClass().getResource(objFileName));
         objectLabel.setIcon(objectIcon);
 
@@ -567,7 +625,7 @@ public class Day1_Form extends javax.swing.JFrame {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                if (SwingUtilities.isRightMouseButton(e)) {
+                if (SwingUtilities.isLeftMouseButton(e)) {
                     popMenu.show(objectLabel, e.getX(), e.getY());
                 }
             }
@@ -609,7 +667,7 @@ public class Day1_Form extends javax.swing.JFrame {
         createScene(3, 0, -10, "/livingroom.png");
         createTextBox(3);
         createArrowButton(3, 10, 500, "/left_arrow.png", "goToCorridorFromLRoom");
-        createObject(3, 250, 250, 200, 650, "", "Parla", "Osserva", "puntagli il ferro", "", "ObserveLorrimer", "");
+        createObject(3, 250, 250, 200, 650, "", "Parla", "Osserva", "puntagli il ferro", "TalkLorrimer", "ObserveLorrimer", "");
         bgPanel[3].add(bgLabel[3]);
 
         //SCENA 4 -> CORRIDOIO PRIMO PIANO
@@ -625,7 +683,7 @@ public class Day1_Form extends javax.swing.JFrame {
         createTextBox(5);
         createArrowButton(5, 1750, 500, "/right_arrow.png", "goToCorridorFromStudy");
         createObject(5, 390, 250, 200, 700, "", "Parla", "Osserva", "", "TalkBasil", "ObserveBasil", "");
-        createObject(5, 1350, 250, 220, 700, "", "Parla", "Osserva", "", "TalkArthur", "ObserveArthur", "");
+        createObject(5, 1350, 250, 220, 700, "", "Parla", "Osserva", "", "TalkABantry", "ObserveABantry", "");
         bgPanel[5].add(bgLabel[5]);
 
         //SCENA 6 -> BIBLIOTECA
@@ -633,7 +691,7 @@ public class Day1_Form extends javax.swing.JFrame {
         createTextBox(6);
         createArrowButton(6, 10, 500, "/left_arrow.png", "goToCorridorFromLibrary");
         createObject(6, 250, 700, 600, 170, "", "Osserva", "Ispeziona", "", "ObserveBody", "AnalizeBody", "");
-        createObject(6, 1000, 400, 220, 500, "", "Parla", "Osserva", "", "TalkDoc", "ObserveDoc", "");
+        createObject(6, 1000, 400, 220, 500, "", "Parla", "Osserva", "", "TalkHaydoc", "ObserveHaydoc", "");
         bgPanel[6].add(bgLabel[6]);
 
     }
@@ -681,5 +739,6 @@ public class Day1_Form extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
 
 }

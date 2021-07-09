@@ -34,6 +34,7 @@ import javax.swing.SwingUtilities;
 public class Day2_Form extends javax.swing.JFrame {
 
     Day1 d1;
+    int i=0; //va avanti dialoghi
 
     //TODO spostare in DAY1
     ActionHandler2 actHandler = new ActionHandler2(this);
@@ -793,7 +794,7 @@ public class Day2_Form extends javax.swing.JFrame {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                if (SwingUtilities.isRightMouseButton(e)) {
+                if (SwingUtilities.isLeftMouseButton(e)) {
                     popMenu.show(objectLabel, e.getX(), e.getY());
                 }
             }
