@@ -29,6 +29,8 @@ import javax.swing.SwingUtilities;
 public class Day1_Form extends javax.swing.JFrame {
 
     Day1 d1;
+    boolean object_available =false;
+    InventoryDialog inv =  new InventoryDialog(this, true);
     int i = 0; //per continuare dialoghi
 
     //TODO spostare in DAY1
@@ -245,10 +247,10 @@ public class Day1_Form extends javax.swing.JFrame {
     }
 
     public void observeLorrimer() {
-        detectiveDestra[1].setVisible(false);
-        detectiveSinistra[1].setVisible(false);
-        textAreaBox[1].setVisible(false);
-        icon[1].setVisible(false);
+        detectiveDestra[3].setVisible(false);
+        detectiveSinistra[3].setVisible(false);
+        textAreaBox[3].setVisible(false);
+        icon[3].setVisible(false);
         textBox[3].setVisible(true);
         textAreaBox2[3].setVisible(true);
         textButton[3].setVisible(true);
@@ -311,10 +313,10 @@ public class Day1_Form extends javax.swing.JFrame {
     }
     
     public void observeBasil() {
-        detectiveDestra[1].setVisible(false);
-        detectiveSinistra[1].setVisible(false);
-        textAreaBox[1].setVisible(false);
-        icon[1].setVisible(false);
+        detectiveDestra[5].setVisible(false);
+        detectiveSinistra[5].setVisible(false);
+        textAreaBox[5].setVisible(false);
+        icon[5].setVisible(false);
         textBox[5].setVisible(true);
         textAreaBox2[5].setVisible(true);
         textButton[5].setVisible(true);
@@ -341,10 +343,10 @@ public class Day1_Form extends javax.swing.JFrame {
     }
     
     public void observeABantry() {
-        detectiveDestra[1].setVisible(false);
-        detectiveSinistra[1].setVisible(false);
-        textAreaBox[1].setVisible(false);
-        icon[1].setVisible(false);
+        detectiveDestra[5].setVisible(false);
+        detectiveSinistra[5].setVisible(false);
+        textAreaBox[5].setVisible(false);
+        icon[5].setVisible(false);
         textBox[5].setVisible(true);
         textAreaBox2[5].setVisible(true);
         textButton[5].setVisible(true);
@@ -371,10 +373,10 @@ public class Day1_Form extends javax.swing.JFrame {
     }
     
     public void observeHaydoc() {
-        detectiveDestra[1].setVisible(false);
-        detectiveSinistra[1].setVisible(false);
-        textAreaBox[1].setVisible(false);
-        icon[1].setVisible(false);
+        detectiveDestra[6].setVisible(false);
+        detectiveSinistra[6].setVisible(false);
+        textAreaBox[6].setVisible(false);
+        icon[6].setVisible(false);
         textBox[6].setVisible(true);
         textAreaBox2[6].setVisible(true);
         textButton[6].setVisible(true);
@@ -397,13 +399,15 @@ public class Day1_Form extends javax.swing.JFrame {
         readFile("D_Haydoc.txt");
         textAreaBox[6].setText(list.get(i));
         textAreaBox2[6].setText(list.get(i + 1));
+        inv.getItem_1().setIcon(new ImageIcon(getClass().getResource("/doc_autopsia.png")));
+        inv.getItem_1().setText("");
     }
 
     public void observeBody() {
-        detectiveDestra[1].setVisible(false);
-        detectiveSinistra[1].setVisible(false);
-        textAreaBox[1].setVisible(false);
-        icon[1].setVisible(false);
+        detectiveDestra[6].setVisible(false);
+        detectiveSinistra[6].setVisible(false);
+        textAreaBox[6].setVisible(false);
+        icon[6].setVisible(false);
         textBox[6].setVisible(true);
         textAreaBox2[6].setVisible(true);
         textButton[6].setVisible(true);
@@ -420,6 +424,8 @@ public class Day1_Form extends javax.swing.JFrame {
         //TODO file
         textButton[6].setActionCommand("continueTextScene" + 6);
         textAreaBox2[6].setText("Ispezionando il cadavere , hai ottenuto ABITO BIANCO");
+        inv.getItem_2().setIcon(new ImageIcon(getClass().getResource("/dress1.png")));
+        inv.getItem_2().setText("");
 
     }
 

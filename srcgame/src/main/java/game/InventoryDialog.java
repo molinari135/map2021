@@ -6,6 +6,7 @@
 package game;
 
 import java.awt.Image;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
@@ -23,6 +24,26 @@ public class InventoryDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();        
     }
+
+    public JButton getItem_1() {
+        return item_1;
+    }
+
+    public JButton getItem_2() {
+        return item_2;
+    }
+
+    public JButton getItem_3() {
+        return item_3;
+    }
+
+    public void setItem_1(JButton item_1) {
+        this.item_1 = item_1;
+    }
+
+    public void setItem_2(JButton item_2) {
+        this.item_2 = item_2;
+    }
     
   
 
@@ -34,7 +55,6 @@ public class InventoryDialog extends javax.swing.JDialog {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         item_1 = new javax.swing.JButton();
         item_2 = new javax.swing.JButton();
@@ -53,29 +73,30 @@ public class InventoryDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Inventario");
         setMinimumSize(new java.awt.Dimension(900, 600));
-        setPreferredSize(new java.awt.Dimension(900, 600));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         item_1.setForeground(new java.awt.Color(255, 255, 255));
         item_1.setText("ITEM 1");
         item_1.setContentAreaFilled(false);
-        getContentPane().add(item_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 100, 100));
+        item_1.setMinimumSize(new java.awt.Dimension(128, 128));
+        item_1.setPreferredSize(new java.awt.Dimension(128, 128));
+        getContentPane().add(item_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 170, 160));
 
         item_2.setForeground(new java.awt.Color(255, 255, 255));
         item_2.setText("ITEM 2");
         item_2.setContentAreaFilled(false);
-        getContentPane().add(item_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 100, 100));
+        getContentPane().add(item_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 160, 160));
 
         item_3.setForeground(new java.awt.Color(255, 255, 255));
         item_3.setText("ITEM 3");
         item_3.setContentAreaFilled(false);
-        getContentPane().add(item_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 70, 100, 100));
+        getContentPane().add(item_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 150, 150));
 
         item_4.setForeground(new java.awt.Color(255, 255, 255));
         item_4.setText("ITEM 4");
         item_4.setContentAreaFilled(false);
-        getContentPane().add(item_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, 100, 100));
+        getContentPane().add(item_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 40, 140, 140));
 
         item_5.setForeground(new java.awt.Color(255, 255, 255));
         item_5.setText("ITEM 5");

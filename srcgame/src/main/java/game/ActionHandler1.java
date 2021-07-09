@@ -70,7 +70,8 @@ public class ActionHandler1 implements ActionListener {
                 break;
 
             case "openInventory":
-                new InventoryDialog(d1, true).setVisible(true);
+               
+                d1.inv.setVisible(true);
                 break;
 
             case "continueTextScene1":
@@ -202,6 +203,7 @@ public class ActionHandler1 implements ActionListener {
             case "TalkHaydoc":{
             try {
                 d1.talkHaydoc();
+                
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }

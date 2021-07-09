@@ -14,7 +14,7 @@ package game;
 //TODO attributi?
 public class Day1 extends DayDescription {  
     
-    ActionHandler1 actHandler = new ActionHandler1(this);  
+    //ActionHandler1 actHandler = new ActionHandler1(this);  
     Day1_Form d1_f;
         
     public void goToScene2() {
