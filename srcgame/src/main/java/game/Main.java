@@ -20,6 +20,7 @@ import type.Room;
  */
 public class Main {   
      public static List<NPC> listNPC = new ArrayList<NPC>();
+     public static List<Room> listRoom = new ArrayList<Room>();
   
     public static void main(String[] args) {
         new Start().setVisible(true);  
@@ -66,7 +67,7 @@ public class Main {
             autopsia1 = DBgame.getIstance().getItem("autopsia di");
             System.out.println("Nome(ID): " + autopsia1.getName() + "(" + autopsia1.getId() + ")");
             
-           
+            listRoom = DBgame.getIstance().getRoomList();
             listNPC = DBgame.getIstance().getNpcList();
             // fine controllo metodi
             DBgame.getIstance().disconnect();

@@ -1,18 +1,43 @@
-Detective
-Buongiorno signora, sono l'Ispettore, vorrei farle alcune domande.
-Dolly Bantry
-Oh certamente, mi dica tutto! Sono così felice!
-Detective
-(Ma che ca...) Ehm, ieri sera cosa stava facendo?
-Dolly Bantry
-Allora, ho fatto una torta di mele, poi ho ordinato lo studio...
-Detective
-No, signora, intendo ieri sera. Ha usato la biblioteca?
-Dolly Bantry
-Ovvio! Ho letto un bel giallo, vuole che glielo presti?
-Detective
-No, grazie, non ha notato niente di strano?
-Dolly Bantry
-Mhhh, no, mi dispiace. Vuole della torta?
-Detective
-Devo andare adesso. (Peggio di mia nonna in ospizio)
+Buongiorno, sono l'ispettore Slack.
+Salve, sono Dolly Bantry, è un omicidio interessante, vero?
+Decisamente, mi occuperò delle investigazioni.
+Oh, fantastico, le consiglio di parlare con Miss Maple, se ne intende di omicidi.
+Grazie per il consiglio, lo farò.
+
+
+
+
+Conosce la ragazza?
+Mai vista pria, nemmeno mio marito la conosce.
+(Sarà davvero così?)
+Ma non si preoccupi, c'è qui Miss Marple!
+Sarebbe?
+La signora laggiù.
+
+
+
+
+Dove posso trovare il signor Bantry?
+Sta nel suo studio, al secondo piano.
+(Vediamo un po' chi è questo tizio.)
+Povera ragazza, così giovane.
+Non si preoccupi, risolverò il caso.
+Buona fortuna Ispettore.
+
+
+
+
+Cosa stava facendo ieri sera?
+Prima di andare a letto ero in biblioteca.
+A che ora è andata a dormire?
+Era presto, dovevano essere le 22:30.
+(Quindi alle 22:30 non c'era nessun cadavere.)
+Se vuole può chiede informazioni al nostro maggiordomo, lo trova in soggiorno.
+
+
+
+
+Presentati
+Chiedi della vittima
+Chiedi dov'è il signor Bantry
+Informati sull'alibi

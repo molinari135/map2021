@@ -20,28 +20,21 @@ public class DayDescription {
 
     private final List<Item> inventory = new ArrayList<>();
 
-    private final List<NPC> characters = new ArrayList<>();
+    private final List<NPC> npc = new ArrayList<>();
 
-    private Room currentRoom;
+    
 
     public List<Room> getRooms() {
         return rooms;
     }
 
-    public Room getCurrentRoom() {
-        return currentRoom;
-    }
-
-    public void setCurrentRoom(Room currentRoom) {
-        this.currentRoom = currentRoom;
-    }
-
+  
     public List<Item> getInventory() {
         return inventory;
     }
 
-    public List<NPC> getCharacters() {
-        return characters;
+    public List<NPC> getNPC() {
+        return npc;
     }
-
+    
 }

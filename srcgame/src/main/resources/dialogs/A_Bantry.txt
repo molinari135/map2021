@@ -1,12 +1,43 @@
-Detective
-Buongiorno, lei è Arthur Bantry?
-Arthur Bantry
-Si, sono io. Avete bisogno di qualcosa, Ispettore?
-Detective
-Vorrei chiederle dove eravate ieri sera e cosa stavate facendo.
-Arthur Bantry
-Sono tornato a casa verso le 23:30 dopo aver partecipato ad un convegno. Lungo il tragitto ho forato una ruota e ho dovuto sostituirla.
-Detective
-Non c'era nessuno sveglio in casa al suo ritorno?
-Arthur Bantry
-No, mia moglie dormiva già e non c'erano domestici.
+Sono l'Ispettore Slack, vorrei farle delle domande.
+Certamente, sono a sua disposizione.
+Cosa stavate facendo la scorsa notte?
+Sono stato ad un raduno dell'Associazione dei conservatori, dalle 21 alle 23:30.
+(Il tempo necessario per commettere un omicidio e tornare a casa.)
+
+
+
+
+Ieri a che ora è tornato a casa?
+Sono partito alle 22 dall'Associazione ma ho forato lungo il tragitto.
+A che ora è riuscito a raggiungere Gossington Hall?
+Dovevano essere le 23:45.
+Nessuno era sveglio in casa a quell'ora?
+No, ho solo trovato il vassoio del whisky in salotto, come ordinato a Lorrimer.
+
+
+
+
+Quindi ieri non è entrato in biblioteca.
+No, ero stanco ed era tardi.
+Invece sua moglie?
+Stava già dormendo quando sono tornato.
+Non ha sentito nessun rumore strano verso quell'ora?
+Assolutamente niente, mi dispiace.
+
+
+
+
+Chi pensa possa essere stato?
+BASIL BLAKE! Quel effeminato ossessionato con il cinema!
+Si calmi, come mai tutto questo rancore?
+Oh! Oh!!! Lo guardi!!!!! Non le fa venire voglia di prenderlo a pugni???
+Ah, ma parla di questo ragazzo. Cosa le fa pensare che sia stato lui?
+Fa festini ogni notte, beve come un turco e combina solo guai. Parlategli e capirete.
+
+
+
+
+Presentati
+Informazioni sull'alibi
+Chiedi della biblioteca
+Sospetta di qualcuno?

@@ -1,14 +1,43 @@
-Detective
-Miss, che piacere vederla anche su questa scena del crimine.
-Jane Marple
-Il piacere è tutto mio Ispettore Slack, come posso aiutarla?
-Detective
-So che ha controllato la biblioteca, ha notato qualcosa?
-Jane Marple
-Forse qualcosina, le unghie della ragazza sono mangiucchiate.
-Detective
-(Ma perchè perdo tempo con queste vecchiette...) Ottima osservazione, altro?
-Jane Marple
-Oh beh, sembra sia morta senza... soffrire.
-Detective
-Mh, si, era presente nell'autopsia.
+Si ricorda di me, Miss Marple?
+Oh, l'Ispettore Slack, certo che mi ricordo di lei.
+La avverto, questo caso non fa per lei.
+Allora posso godermi il tè con la mia amica qui.
+(Madonna se metti mani sulla scena del crimine te le spezzo.)
+
+
+
+
+Siete amica dei Bantry?
+Si, Dolly mi ha telefonata stamattina presto e adesso sono qui.
+Abitate qui vicino?
+Sono stata accompagnata dalla macchina dei Bantry, sto nel paesino a valle.
+Non dubita dei signori Bantry? Potrebbero aver commesso loro l'omicidio.
+Ispettore, non faccia deduzioni avventate o rischierà di arrestare la persona sbagliata.
+
+
+
+
+Per caso avete messo piede sulla scena del crimine?
+Ah, chissà, forse si, forse no.
+Il mio intuito dice che ne ha messi due di piedi.
+Che ci posso fare, per quanto triste resta sempre affascinante la scena del crimine.
+Ha trovato qualcosa di interessante?
+Mah, niente di chè, la solita giovanotta con le unghie mangiate.
+
+
+
+
+Cosa stava facendo ieri sera verso le 23:00?
+Chiedo scusa Ispettore ma non credo di centrare qualcosa con il crimine.
+Questo lo decido io. Mi risponda.
+Come vuole, ero a casa di una mia nipote, abbiamo cenato insieme.
+Molto sospetto...
+Ahahahah, Ispettore lei è davvero simpatico sa?
+
+
+
+
+Ma questa signora...
+Amica dei Bantry
+Scena del crimine
+Informazioni sull'alibi

@@ -5,6 +5,8 @@
  */
 package game;
 
+import db.DataHandler;
+import db.DialogHandler;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -26,6 +28,14 @@ import javax.swing.JPopupMenu;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
+import static game.Main.listRoom;
+import static game.Main.listNPC;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import type.NPC;
+import type.Room;
 
 /**
  *
@@ -35,7 +45,9 @@ public class Day2_Form extends javax.swing.JFrame {
 
     Day1 d1;
     int i=0; //va avanti dialoghi
-
+    NPC dolly,j_marple,corpse,lorrimer,a_bantry,haydock,b_blake = new NPC();
+    Room ballRoom,hallwayHM,reception,jeffersonRoom,balcony = new Room();
+    File file = new File(DialogHandler.dir + "\\src\\main\\resources\\dialogs\\a_bantry.txt");
     //TODO spostare in DAY1
     ActionHandler2 actHandler = new ActionHandler2(this);
     InventoryDialog inv = new InventoryDialog(this, true);
@@ -49,6 +61,7 @@ public class Day2_Form extends javax.swing.JFrame {
     //TODO FORSE si può fare senza creare array e creandoli manualmente ogni scena, come il BACKPACK         
     public JLabel textBox[] = new JLabel[10];
     public JTextArea textAreaBox[] = new JTextArea[10];
+    public JTextArea textAreaBox2[] = new JTextArea[10];
     public JButton textButton[] = new JButton[10];
     public JButton continueDialogue[] = new JButton[10];
     public JRadioButton dialogueButton1[] = new JRadioButton[10];
@@ -191,7 +204,8 @@ public class Day2_Form extends javax.swing.JFrame {
         textAreaBox[2].setVisible(true);
         textButton[2].setVisible(true);
         //TODO file
-        textAreaBox[2].setText("Qui di seguito si trova la sala da ballo dell'hotel.");
+        ballRoom = DataHandler.RoomFinder(listRoom, "ballRoom");
+        textAreaBox2[2].setText("Qui di seguito si trova la sala da ballo dell'hotel.");
     }
 
     public void observeScene3() {
@@ -199,7 +213,7 @@ public class Day2_Form extends javax.swing.JFrame {
         textAreaBox[2].setVisible(true);
         textButton[2].setVisible(true);
         //TODO file
-        textAreaBox[2].setText("Da qui sembra portare al soggiorno.");
+        textAreaBox2[2].setText("Da qui sembra portare al soggiorno.");
     }
 
     public void observeScene5() {
@@ -250,17 +264,18 @@ public class Day2_Form extends javax.swing.JFrame {
         textAreaBox[5].setText("Napoli?!");
     }
 
-    public void talkOwner() {
+    public void talkOwner() throws FileNotFoundException {
         textBox[1].setVisible(true);
         textAreaBox[1].setVisible(true);
         textButton[1].setVisible(true);
+        textAreaBox2[1].setVisible(true);
         dialogueButton1[1].setVisible(true);
         dialogueButton2[1].setVisible(true);
         dialogueButton3[1].setVisible(true);
         dialogueButton4[1].setVisible(true);
-
         textAreaBox[1].setText("");
-
+        textAreaBox2[1].setText("");
+        
     }
 
     public void talkJosephine() {
@@ -311,13 +326,16 @@ public class Day2_Form extends javax.swing.JFrame {
         textAreaBox[2].setText("");
     }
 
-    public void choice1Owner() {
+    public void choice1Owner() throws FileNotFoundException {
         dialogueButton1[1].setVisible(false);
         dialogueButton2[1].setVisible(false);
         dialogueButton3[1].setVisible(false);
         dialogueButton4[1].setVisible(false);
+        List<String> Owner =new ArrayList<String>();
+        Owner = DialogHandler.SelectDialogOption(file, DialogHandler.FIRST_DIALOG_START, DialogHandler.FIRST_DIALOG_END);
+        System.out.println(Owner.get(4));
+        textAreaBox2[1].setText(Owner.get(4)+ "vaffanculo");
 
-        textAreaBox[1].setText("sfacimm");
     }
 
     public void choice2Owner() {
@@ -568,6 +586,7 @@ public class Day2_Form extends javax.swing.JFrame {
         //creazione componenti
         textBox[bgNum] = new JLabel();
         textAreaBox[bgNum] = new JTextArea();
+        textAreaBox2[bgNum] = new JTextArea();
         textButton[bgNum] = new JButton();
         continueDialogue[bgNum] = new JButton();
 
@@ -575,13 +594,23 @@ public class Day2_Form extends javax.swing.JFrame {
         textBox[bgNum].setIcon(boxIcon);
         textBox[bgNum].setBounds(300, 680, 1300, 320);
         textAreaBox[bgNum].setBackground(new Color(0, 0, 0, 0));
+        textAreaBox[bgNum].setOpaque(false);
         textAreaBox[bgNum].setBounds(400, 740, 1000, 200);
         textAreaBox[bgNum].setFont(new java.awt.Font("Courier New", 0, 30));
-        textAreaBox[bgNum].setForeground(Color.white);
+        textAreaBox[bgNum].setForeground(Color.yellow);
         textAreaBox[bgNum].setBorder(null);
         textAreaBox[bgNum].setEditable(false);
         textAreaBox[bgNum].setWrapStyleWord(true);
         textAreaBox[bgNum].setLineWrap(true);
+        textAreaBox2[bgNum].setBackground(new Color(0, 0, 0, 0));
+        textAreaBox2[bgNum].setOpaque(false);
+        textAreaBox2[bgNum].setBounds(400, 790, 1000, 200);
+        textAreaBox2[bgNum].setFont(new java.awt.Font("Courier New", 0, 30));
+        textAreaBox2[bgNum].setForeground(Color.white);
+        textAreaBox2[bgNum].setBorder(null);
+        textAreaBox2[bgNum].setEditable(false);
+        textAreaBox2[bgNum].setWrapStyleWord(true);
+        textAreaBox2[bgNum].setLineWrap(true);
 
         textButton[bgNum].setBackground(new Color(0, 0, 0));
         textButton[bgNum].setBounds(1438, 920, 64, 26);
@@ -633,6 +662,7 @@ public class Day2_Form extends javax.swing.JFrame {
         //visibility
         textBox[bgNum].setVisible(false);
         textAreaBox[bgNum].setVisible(false);
+        textAreaBox2[bgNum].setVisible(false);
         textButton[bgNum].setVisible(false);
         continueDialogue[bgNum].setVisible(false);
         dialogueButton1[bgNum].setVisible(false);
@@ -647,6 +677,7 @@ public class Day2_Form extends javax.swing.JFrame {
         bgPanel[bgNum].add(continueDialogue[bgNum]);
         bgPanel[bgNum].add(textButton[bgNum]);
         bgPanel[bgNum].add(textAreaBox[bgNum]);
+        bgPanel[bgNum].add(textAreaBox2[bgNum]);
         bgPanel[bgNum].add(textBox[bgNum]);
     }
 
@@ -814,11 +845,15 @@ public class Day2_Form extends javax.swing.JFrame {
 
     }
 
-    public void generateScenes() {
+    public void generateScenes() throws FileNotFoundException {
+        List<String> Owner1 = new ArrayList<String>();
+        
+        Owner1 = DialogHandler.SelectDialogOption(file, DialogHandler.DIALOG_OPTION_START, DialogHandler.DIALOG_OPTION_END);
+       
 
         //SCENA 1 -> RECEPTION
         createScene(1, 0, -10, "/receptionhotel.png");
-        createTextBox(1, "owner", "Salve, tutto bene?", "Israele non è-", "ciauz", "Cock rating?");
+        createTextBox(1, "owner", Owner1.get(0), Owner1.get(1), Owner1.get(2), Owner1.get(3));
         createArrowButton(1, 10, 500, "/left_arrow.png", "goToHallFromReception");
         createObject(1, 1000, 250, 200, 400, "", "Parla", "Osserva", "", "TalkOwner", "ObserveOwner", "");
         bgPanel[1].add(bgLabel[1]);

@@ -1,18 +1,43 @@
-Detective
-Avrei delle domande da farle, sono l'Ispettore in carica.
-Lorrimer
-Mi dica.
-Detective
-Ieri notte a che ora è tornato il signor Bantry?
-Lorrimer
-Verso le 23:30, avevo lasciato il vassoio del whisky in salotto dopo aver chiuso a chiave la biblioteca.
-Detective
-Non ha notato niente di strano?
-Lorrimer
-Personalmente nulla, una domestica aveva sentito dei rumori ma non ci ha fatto molto caso.
-Detective
-Pensa che possa essere stato il signor Bantry?
-Lorrimer
-Assolutamente no, è una bravissima persona e non abbiamo mai visto questa ragazza prima d'ora.
-Detective
-La ringrazio, ora devo andare.
+Cognome e mestiere, prego.
+Lorrimer. Sono il maggiordomo di Gossington Hall.
+Cosa stava facendo alle 22:00?
+Ho sistemato il whisky in salotto, il padrone non era tornato ancora.
+(Questo Bantry diventa sempre più sospetto...)
+
+
+
+
+Chi si occupa della biblioteca?
+Principalmente io, al signore piace passare lì la sera quando è stanco.
+Ieri nessuno è andato in biblioteca?
+Solo la signora Bantry, ha letto dei libri e poi è andata a letto.
+Cosa ha fatto dopo che è andata via?
+Ho chiuso la porta a chiave e sono andato a dormire anche io.
+
+
+
+
+Lei ha proprio la faccia da indiziato numero 1, lo sa?
+La prego, non dica così.
+Nei libri è un classico che il maggiordomo faccia queste cose.
+Mah, è più probabile che mi rinchiudano in una cella frigorifera di questi tempi...
+Sto scherzando, non si preoccupi.
+Lei ha uno strano senso dell'umorismo, Ispettore.
+
+
+
+
+Da quanto tempo lavora per i Bantry?
+Ho perso il conto, signore, saranno più di 30 anni ormai.
+Non dubita del signor Bantry? Non ha mai visto questa ragazza prima d'ora?
+Mai, e non penso che il signor Bantry abbia, diciamo, comportamenti violenti.
+Dove ha detto che si trova il signor Bantry?
+Nel suo studio, al secondo piano. Prenda le scale alla fine del corridoio.
+
+
+
+
+Identikit e alibi
+Chiedi info sulla biblioteca
+Che tipo sospetto...
+Chiedi info sui Bantry
