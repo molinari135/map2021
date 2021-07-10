@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package type;
 
 
@@ -11,17 +6,17 @@ package type;
  * @author rino
  */
 public class Item {
-    private int id;
+    private String id;
     private String name;
     private String description;
     private boolean collectable;
-    private int room;
+    private String room;
 
     public Item() {
         
     }
     
-    public Item(int id, String name, String description, boolean collectable, int room) {
+    public Item(String id, String name, String description, boolean collectable, String room) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -29,7 +24,7 @@ public class Item {
         this.room = room;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
     
@@ -45,11 +40,11 @@ public class Item {
         this.collectable = collectable;
     }
     
-    public void setRoom(int room) {
+    public void setRoom(String room) {
         this.room = room;
     }
     
-    public int getId() {
+    public String getId() {
         return id;
     }
     
@@ -65,34 +60,7 @@ public class Item {
         return collectable;
     }
 
-    public int getRoom() {
+    public String getRoom() {
         return room;
     }
-    
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + this.id;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Item other = (Item) obj;
-        if (this.id != other.id) {
-            return false;
-        }
-        return true;
-    }
-
 }
-    

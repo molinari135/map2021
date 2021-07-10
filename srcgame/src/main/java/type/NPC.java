@@ -1,38 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package type;
 
+import java.util.Iterator;
+import java.util.List;
+
 /**
- *
+ * 
  * @author giaco
  */
 public class NPC {
-    private int id;   
+    private String id;   
     private String name;    
     private String surname;   
     private String description; //show when you click on the object 
-    private int room;
-    private boolean visible;
+    private String room;
+    private boolean talked;
 
     public NPC() {
         
     }
     
     //For primary character
-    public NPC(int id, String name, String surname, String description, int room, boolean clickable) {
+    public NPC(String id, String name, String surname, String description, String room, boolean talked) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.description = description;
         this.room = room;
-        this.visible = visible;
+        this.talked = talked;
         
     }
     
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
     
@@ -48,15 +46,15 @@ public class NPC {
         this.description = description;
     }
     
-    public void setRoom(int room) {
+    public void setRoom(String room) {
         this.room = room;
     }
     
-    public void isVisible(boolean visible) {
-        this.visible = visible;
+    public void isTalked(boolean talked) {
+        this.talked = talked;
     }
     
-    public int getId() {
+    public String getId() {
         return id;
     }
     
@@ -72,11 +70,11 @@ public class NPC {
         return description;
     }
     
-    public int getRoom() {
+    public String getRoom() {
         return room;
     }
     
-    public boolean getVisible() {
-        return visible;
+    public boolean getTalked() {
+        return talked;
     }
 }

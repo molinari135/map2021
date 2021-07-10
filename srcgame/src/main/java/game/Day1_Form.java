@@ -21,6 +21,9 @@ import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
+import db.DataHandler;
+import static game.Main.listNPC;
+import type.NPC;
 
 /**
  *
@@ -35,7 +38,9 @@ public class Day1_Form extends javax.swing.JFrame {
 
     //TODO spostare in DAY1
     ActionHandler1 actHandler = new ActionHandler1(this);
-
+    
+    //NPC
+    NPC dolly,j_marple,corpse,lorrimer,a_bantry,haydock,b_blake = new NPC();
     /**
      * Creates new form Day1_Form
      */
@@ -224,39 +229,49 @@ public class Day1_Form extends javax.swing.JFrame {
         detectiveDestra[1].setVisible(false);
         detectiveSinistra[1].setVisible(false);
         icon[1].setVisible(false);
-        textAreaBox[1].setVisible(false);
+        textAreaBox[1].setVisible(true);
         textBox[1].setVisible(true);
         textAreaBox2[1].setVisible(true);
         textButton[1].setVisible(true);
         textButton[1].setActionCommand("continueTextScene" + 1);
         //TODO file
-        textAreaBox2[1].setText("Quella donna è Dolly Bantry, proprietaria della casa, insieme a suo marito Arthur Bantry.");
+
+        dolly = DataHandler.NpcFinder(listNPC, "d_bantry");
+        textAreaBox[1].setText(dolly.getName() + " " + dolly.getSurname());
+        textAreaBox2[1].setText(dolly.getDescription());
     }
 
     public void observeJaneMarple() {
         detectiveDestra[1].setVisible(false);
         detectiveSinistra[1].setVisible(false);
-        textAreaBox[1].setVisible(false);
+        textAreaBox[1].setVisible(true);
         icon[1].setVisible(false);
         textBox[1].setVisible(true);
         textAreaBox2[1].setVisible(true);
         textButton[1].setVisible(true);
         textButton[1].setActionCommand("continueTextScene" + 1);
         //TODO file
-        textAreaBox2[1].setText("La signora in giallo (-cit)");
+       
+        j_marple = DataHandler.NpcFinder(listNPC, "j_marple");
+        textAreaBox[1].setText(j_marple.getName() + " " + j_marple.getSurname());
+        textAreaBox2[1].setText(j_marple.getDescription());
+        
     }
 
     public void observeLorrimer() {
         detectiveDestra[3].setVisible(false);
         detectiveSinistra[3].setVisible(false);
-        textAreaBox[3].setVisible(false);
+        textAreaBox[3].setVisible(true);
         icon[3].setVisible(false);
         textBox[3].setVisible(true);
         textAreaBox2[3].setVisible(true);
         textButton[3].setVisible(true);
         //TODO file
+        lorrimer = DataHandler.NpcFinder(listNPC, "lorrimer");
+        textAreaBox[3].setText(lorrimer.getName());
+        textAreaBox2[3].setText(lorrimer.getDescription());
         textButton[3].setActionCommand("continueTextScene" + 3);
-        textAreaBox2[3].setText("Parrebbe il maggiordomo della casa.");
+        
     }
     
     
@@ -322,7 +337,9 @@ public class Day1_Form extends javax.swing.JFrame {
         textButton[5].setVisible(true);
         //TODO file
         textButton[5].setActionCommand("continueTextScene" + 5);
-        textAreaBox2[5].setText("Parrebbe Basil");
+        b_blake = DataHandler.NpcFinder(listNPC, "b_blake");
+        textAreaBox[5].setText(b_blake.getName() + " " + b_blake.getSurname());
+        textAreaBox2[5].setText(b_blake.getDescription());
     }
 
     public void talkBasil() throws IOException {
@@ -345,14 +362,16 @@ public class Day1_Form extends javax.swing.JFrame {
     public void observeABantry() {
         detectiveDestra[5].setVisible(false);
         detectiveSinistra[5].setVisible(false);
-        textAreaBox[5].setVisible(false);
+        textAreaBox[5].setVisible(true);
         icon[5].setVisible(false);
         textBox[5].setVisible(true);
         textAreaBox2[5].setVisible(true);
         textButton[5].setVisible(true);
         //TODO file
         textButton[5].setActionCommand("continueTextScene" + 5);
-        textAreaBox2[5].setText("Parrebbe Arthur Bantry");
+        a_bantry = DataHandler.NpcFinder(listNPC, "a_bantry");
+        textAreaBox[5].setText(a_bantry.getName() + " " + j_marple.getSurname());
+        textAreaBox2[5].setText(a_bantry.getDescription());
     }
 
     public void talkABantry() throws IOException {
@@ -375,14 +394,16 @@ public class Day1_Form extends javax.swing.JFrame {
     public void observeHaydoc() {
         detectiveDestra[6].setVisible(false);
         detectiveSinistra[6].setVisible(false);
-        textAreaBox[6].setVisible(false);
+        textAreaBox[6].setVisible(true);
         icon[6].setVisible(false);
         textBox[6].setVisible(true);
         textAreaBox2[6].setVisible(true);
         textButton[6].setVisible(true);
         //TODO file
         textButton[6].setActionCommand("continueTextScene" + 6);
-        textAreaBox2[6].setText("Parrebbe la Dottoressa Haydoc");
+        haydock = DataHandler.NpcFinder(listNPC, "haydock");
+        textAreaBox[6].setText(haydock.getName() + " " + haydock.getSurname());
+        textAreaBox2[6].setText(haydock.getDescription());
     }
 
     public void talkHaydoc() throws IOException {
@@ -406,14 +427,16 @@ public class Day1_Form extends javax.swing.JFrame {
     public void observeBody() {
         detectiveDestra[6].setVisible(false);
         detectiveSinistra[6].setVisible(false);
-        textAreaBox[6].setVisible(false);
+        textAreaBox[6].setVisible(true);
         icon[6].setVisible(false);
         textBox[6].setVisible(true);
         textAreaBox2[6].setVisible(true);
         textButton[6].setVisible(true);
         //TODO file
         textButton[6].setActionCommand("continueTextScene" + 6);
-        textAreaBox2[6].setText("Sembrerebbe il cadavere coperto da un velo");
+        corpse = DataHandler.NpcFinder(listNPC, "corpse");
+        textAreaBox[6].setText(corpse.getName() + " " + corpse.getSurname());
+        textAreaBox2[6].setText(corpse.getDescription());
     }
 
     public void analizeBody() {
@@ -497,7 +520,8 @@ public class Day1_Form extends javax.swing.JFrame {
         textBox[bgNum].setIcon(boxIcon);
         textBox[bgNum].setBounds(300, 680, 1300, 320);
         textAreaBox[bgNum].setBackground(new Color(0, 0, 0, 0));
-        textAreaBox[bgNum].setBounds(400, 740, 1000, 200);
+        textAreaBox[bgNum].setOpaque(false);
+        textAreaBox[bgNum].setBounds(400, 740, 1000, 50);
         textAreaBox[bgNum].setFont(new java.awt.Font("Courier New", 0, 30));
         textAreaBox[bgNum].setForeground(Color.yellow);
         textAreaBox[bgNum].setBorder(null);
@@ -506,6 +530,7 @@ public class Day1_Form extends javax.swing.JFrame {
         textAreaBox[bgNum].setLineWrap(true);
 
         textAreaBox2[bgNum].setBackground(new Color(0, 0, 0, 0));
+        textAreaBox2[bgNum].setOpaque(false);
         textAreaBox2[bgNum].setBounds(400, 790, 1000, 200);
         textAreaBox2[bgNum].setFont(new java.awt.Font("Courier New", 0, 30));
         textAreaBox2[bgNum].setForeground(Color.white);
@@ -575,6 +600,7 @@ public class Day1_Form extends javax.swing.JFrame {
 
     }
 
+    
     public void createArrowButton(int bgNum, int x, int y, String arrowFileName, String command) {
 
         ImageIcon arrowIcon = new ImageIcon(getClass().getResource(arrowFileName));

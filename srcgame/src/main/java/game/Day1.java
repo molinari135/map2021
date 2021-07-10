@@ -12,16 +12,9 @@ package game;
  */
 
 //TODO attributi?
-public class Day1 extends DayDescription {  
+public class Day1  {
     
-    //ActionHandler1 actHandler = new ActionHandler1(this);  
-    Day1_Form d1_f;
-        
-    public void goToScene2() {
-        d1_f.bgPanel[1].setVisible(false);
-        d1_f.bgPanel[2].setVisible(true);        
-    }
-    
+
 /*
     DayDescription day1 = new Day1();
 
@@ -123,7 +116,7 @@ public class Day1 extends DayDescription {
     }*/    
     
     public static void startDay1() {
-        new Day1_Form().setVisible(true);
+
         //TODO Creare array di panel ecc come uomo Japan
     }
 }
