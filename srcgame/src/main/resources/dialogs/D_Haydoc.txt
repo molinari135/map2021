@@ -1,0 +1,20 @@
+Detective
+Dottoressa, potrei avere l'autopsia?
+Dottoressa Haydoc
+Certamente, la stavo ultimando.
+Detective
+Ha notato qualcosa di strano?
+Dottoressa Haydoc
+Niente di sconvolgente, è morta.
+Detective
+Si, intendevo... qualcosa in più.
+Dottoressa Haydoc
+Scusi ma cosa altro vuole sapere? Se ha giocato a briscola prima di morire?
+Detective
+No, io...
+Dottoressa Haydoc
+Ahahahahah, adoro farti sentire uno scemo. Posso dirti che prima di esser stata strangolata, è stata narcotizzata. Tra le 22:30 e le 23:30 presumibilmente.
+Detective
+Grazie, doc. (Ma perchè lavoro con la gente pazza?)
+
+HAI OTTENUTO AUTOPSIA.
