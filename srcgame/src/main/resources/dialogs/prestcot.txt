@@ -1,0 +1,66 @@
+Detective
+Salve, sono l'Ispettore Slack, cerco il proprietario dell'hotel.
+Signor Prestcot
+Sono io, può chiamarmi Prestcot. Volete informazioni?
+Detective
+Si, ho bisogno di sapere di più sulla ragazza scomparsa.
+Signor Prestcot
+Il suo nome era Ruby Keene, era la cugina di Josie, la nostra intrattenitrice.
+Detective
+(Adesso sappiamo quale nome cancellare dalla lista delle persone scomparse in centrale.)
+
+
+
+
+
+Da quanto tempo lavorava qui la ragazza?
+Signor Prestcot
+Direi da 3 o 4 mesi, me l'ha presentata Josie per sostituirla.
+Detective
+Come mai aveva bisogno di essere sostituita?
+Signor Prestcot
+Durante una esibizione si è fatta male alla caviglia e non riesce a ballare bene.
+Detective
+Quindi la ragazza si occupava solo di ballare al posto suo?
+Signor Prestcot
+Beh non proprio, faceva anche compagnia durante il bridge.
+
+
+
+
+
+Chi ha chiamato la polizia per denunciare la scomparsa?
+Signor Prestcot
+Un nostro cliente, si chiama Conway Jefferson.
+Detective
+Sta ancora soggiornando qui, vero?
+Signor Prestcot
+Certo, lo può trovare al primo piano, ha una suite con una veranda.
+Detective
+Ha notato niente di strano? Intendo, tra i clienti e la ragazza.
+Signor Prestcot
+Passava molto tempo con il signor Jefferson, sembra si fosse affezionato a lei.
+
+
+
+
+
+Non ha notato cose... strane ultimamente?
+Signor Prestcot
+Sinceramente no, andava tutto bene fino a ieri.
+Detective
+Cosa è successo prima della scomparsa della ragazza?
+Signor Prestcot
+Verso le 22:30 facciamo l'ultimo spettacolo di ballo. Ruby era sparita e Josie ha dovuto ballare al posto suo.
+Detective
+E ci è riuscita?
+Signor Prestcot
+Si, anche se dalla sua faccia credo non fosse stata molto... contenta, ecco.
+
+
+
+
+Presentati
+Info sulla vittima
+Denuncia scomparsa
+Niente di strano?

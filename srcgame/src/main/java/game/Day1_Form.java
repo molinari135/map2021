@@ -46,7 +46,9 @@ public class Day1_Form extends javax.swing.JFrame {
     ActionHandler1 actHandler = new ActionHandler1(this);
 
     List<String> npcListD = new ArrayList<>();
-
+    
+    ArrayList<String> list = new ArrayList<>();
+    
     File file;
 
     /**
@@ -65,16 +67,12 @@ public class Day1_Form extends javax.swing.JFrame {
     public JRadioButton dialogueButton2[] = new JRadioButton[10];
     public JRadioButton dialogueButton3[] = new JRadioButton[10];
     public JRadioButton dialogueButton4[] = new JRadioButton[10];
-    public JRadioButton dialogue2Button1[] = new JRadioButton[10];
-    public JRadioButton dialogue2Button2[] = new JRadioButton[10];
-    public JRadioButton dialogue2Button3[] = new JRadioButton[10];
-    public JRadioButton dialogue2Button4[] = new JRadioButton[10];
-
+    
     public JLabel detectiveDestra[] = new JLabel[10];
     public JLabel detectiveSinistra[] = new JLabel[10];
     public JLabel icon[] = new JLabel[10];
 
-    ArrayList<String> list = new ArrayList<>();
+    
 
     public Day1_Form() {
         initComponents();

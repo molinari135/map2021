@@ -46,13 +46,14 @@ import type.Room;
 public class Day2_Form extends javax.swing.JFrame {
 
     Day1 d1;
-    int i=0; //va avanti dialoghi
-    NPC dolly,j_marple,corpse,lorrimer,a_bantry,haydock,b_blake = new NPC();
-    Room ballRoom,hallwayHM,reception,jeffersonRoom,balcony = new Room();
-    File file = new File(DialogHandler.dir + "\\src\\main\\resources\\dialogs\\a_bantry.txt");
+    int i = 0; //va avanti dialoghi
+
     //TODO spostare in DAY1
     ActionHandler2 actHandler = new ActionHandler2(this);
     InventoryDialog inv = new InventoryDialog(this, true);
+    List<String> npcListD = new ArrayList<>();
+    File file;
+    ArrayList<String> list = new ArrayList<>();
 
     /**
      * Creates new form Day1_Form
@@ -71,10 +72,9 @@ public class Day2_Form extends javax.swing.JFrame {
     public JRadioButton dialogueButton3[] = new JRadioButton[10];
     public JRadioButton dialogueButton4[] = new JRadioButton[10];
 
-    public JRadioButton dialogue2Button1[] = new JRadioButton[10];
-    public JRadioButton dialogue2Button2[] = new JRadioButton[10];
-    public JRadioButton dialogue2Button3[] = new JRadioButton[10];
-    public JRadioButton dialogue2Button4[] = new JRadioButton[10];
+    public JLabel detectiveDestra[] = new JLabel[10];
+    public JLabel detectiveSinistra[] = new JLabel[10];
+    public JLabel icon[] = new JLabel[10];
 
     public Day2_Form() {
         initComponents();
@@ -165,6 +165,19 @@ public class Day2_Form extends javax.swing.JFrame {
     }//GEN-LAST:event_continua2ActionPerformed
 
     //TODO SPOSTARE IN DAY 2
+    public void goToSceneXtoY(int x, int y) {
+        bgPanel[x].setVisible(false);
+        bgPanel[y].setVisible(true);
+    }
+
+    public void observeSceneX(int x, String roomDesc) {
+        textBox[x].setVisible(true);
+        textAreaBox[x].setVisible(true);
+        textButton[x].setVisible(true);
+        //TODO file
+        textAreaBox[x].setText(roomDesc);
+    }
+
     public void goToScene1() {          //RECEPTION
         bgPanel[2].setVisible(false);
         bgPanel[1].setVisible(true);
@@ -210,7 +223,7 @@ public class Day2_Form extends javax.swing.JFrame {
         textAreaBox[2].setVisible(true);
         textButton[2].setVisible(true);
         //TODO file
-        ballRoom = DataHandler.RoomFinder(listRoom, "ballRoom");
+        
         textAreaBox2[2].setText("Qui di seguito si trova la sala da ballo dell'hotel.");
     }
 
@@ -228,6 +241,144 @@ public class Day2_Form extends javax.swing.JFrame {
         textButton[4].setVisible(true);
         //TODO file
         textAreaBox[4].setText("Questo sembra essere lo studio del signor Bantry.");
+    }
+
+    public void observeNPC(int bgNum, NPC npc, String npcName) {
+        dialogueButton1[bgNum].setVisible(false);
+        dialogueButton2[bgNum].setVisible(false);
+        dialogueButton3[bgNum].setVisible(false);
+        dialogueButton4[bgNum].setVisible(false);
+        detectiveDestra[bgNum].setVisible(false);
+        detectiveSinistra[bgNum].setVisible(false);
+        textAreaBox[bgNum].setVisible(true);
+        icon[bgNum].setVisible(false);
+        textBox[bgNum].setVisible(true);
+        textAreaBox2[bgNum].setVisible(true);
+        textButton[bgNum].setVisible(true);
+        //TODO file
+        npc = DataHandler.NpcFinder(listNPC, npcName);
+        textAreaBox[bgNum].setText(npc.getName() + " " + npc.getSurname());
+        textAreaBox2[bgNum].setText(npc.getDescription());
+        textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
+    }
+    
+      public void talkNPC(int bgNum, String fileName, List<String> npc, String iconName, String id, Boolean labelSx) throws IOException  {
+        readFile(fileName);
+        npc = DialogHandler.SelectDialogOption(file, DialogHandler.DIALOG_OPTION_START, DialogHandler.DIALOG_OPTION_END);
+        talkDialogue(bgNum, iconName, id, npc, labelSx); //se bool vero, la label scelta è quella sx, destra altrimenti 
+    }     
+       public void talkDialogue(int bgNum, String icona, String input, List<String> npcName, Boolean labelSx) throws IOException {
+        i = 0;
+        detectiveSinistra[bgNum].setVisible(labelSx);
+        icon[bgNum].setVisible(true);
+        setIcon(bgNum, icona);
+        textButton[bgNum].setVisible(true);
+        textBox[bgNum].setVisible(true);
+        textAreaBox[bgNum].setVisible(true);
+        textAreaBox2[bgNum].setVisible(true);
+        dialogueButton1[bgNum].setVisible(true);
+        dialogueButton2[bgNum].setVisible(true);
+        dialogueButton3[bgNum].setVisible(true);
+        dialogueButton4[bgNum].setVisible(true);
+        detectiveDestra[bgNum].setVisible(!labelSx);
+        dialogueButton1[bgNum].setSelected(false);
+        dialogueButton2[bgNum].setSelected(false);
+        dialogueButton3[bgNum].setSelected(false);
+        dialogueButton4[bgNum].setSelected(false);
+        textAreaBox[bgNum].setText("");
+        textAreaBox2[bgNum].setText("");
+        textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
+        dialogueButton1[bgNum].setText(npcName.get(0));
+        dialogueButton2[bgNum].setText(npcName.get(1));
+        dialogueButton3[bgNum].setText(npcName.get(2));
+        dialogueButton4[bgNum].setText(npcName.get(3));
+        dialogueButton1[bgNum].addActionListener(actHandler);
+        dialogueButton1[bgNum].setActionCommand("scelta1" + input);
+        dialogueButton2[bgNum].addActionListener(actHandler);
+        dialogueButton2[bgNum].setActionCommand("scelta2" + input);
+        dialogueButton3[bgNum].addActionListener(actHandler);
+        dialogueButton3[bgNum].setActionCommand("scelta3" + input);
+        dialogueButton4[bgNum].addActionListener(actHandler);
+        dialogueButton4[bgNum].setActionCommand("scelta4" + input);
+
+    }    
+     public void choice1(int bgNum, String npcName, String filename) throws FileNotFoundException, IOException {
+        i = 0;
+        dialogueButton1[bgNum].setVisible(false);
+        dialogueButton2[bgNum].setVisible(false);
+        dialogueButton3[bgNum].setVisible(false);
+        dialogueButton4[bgNum].setVisible(false);
+        readFile(filename);
+
+        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.FIRST_DIALOG_START, DialogHandler.FIRST_DIALOG_END);
+        System.out.println(npcListD.get(i));
+        textAreaBox[bgNum].setText(npcListD.get(i));
+        textAreaBox2[bgNum].setText(npcListD.get(i + 1));
+        textButton[bgNum].setActionCommand("continueDialog" + bgNum);
+        textButton[bgNum].setText("Continua");
+    }
+
+    public void choice2(int bgNum, String npcName, String filename) throws IOException {
+        dialogueButton1[bgNum].setVisible(false);
+        dialogueButton2[bgNum].setVisible(false);
+        dialogueButton3[bgNum].setVisible(false);
+        dialogueButton4[bgNum].setVisible(false);
+        readFile(filename);
+
+        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.SECOND_DIALOG_START, DialogHandler.SECOND_DIALOG_END);
+        System.out.println(npcListD.get(i));
+        textAreaBox[bgNum].setText(npcListD.get(i));
+        textAreaBox2[bgNum].setText(npcListD.get(i + 1));
+        textButton[bgNum].setActionCommand("continueDialog" + bgNum);
+        textButton[bgNum].setText("Continua");
+    }
+
+    public void choice3(int bgNum, String npcName, String filename) throws IOException {
+        dialogueButton1[bgNum].setVisible(false);
+        dialogueButton2[bgNum].setVisible(false);
+        dialogueButton3[bgNum].setVisible(false);
+        dialogueButton4[bgNum].setVisible(false);
+        readFile(filename);
+
+        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.THIRD_DIALOG_START, DialogHandler.THIRD_DIALOG_END);
+        System.out.println(npcListD.get(i));
+        textAreaBox[bgNum].setText(npcListD.get(i));
+        textAreaBox2[bgNum].setText(npcListD.get(i + 1));
+        textButton[bgNum].setActionCommand("continueDialog" + bgNum);
+        textButton[bgNum].setText("Continua");
+
+    }
+
+    public void choice4(int bgNum, String npcName, String filename) throws IOException {
+        dialogueButton1[bgNum].setVisible(false);
+        dialogueButton2[bgNum].setVisible(false);
+        dialogueButton3[bgNum].setVisible(false);
+        dialogueButton4[bgNum].setVisible(false);
+        readFile(filename);
+        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.FORTH_DIALOG_START, DialogHandler.FORTH_DIALOG_END);
+        System.out.println(npcListD.get(i));
+        textAreaBox[bgNum].setText(npcListD.get(i));
+        textAreaBox2[bgNum].setText(npcListD.get(i + 1));
+        textButton[bgNum].setActionCommand("continueDialog" + bgNum);
+        textButton[bgNum].setText("Continua");
+    } 
+    
+    public void setIcon(int bgNum, String Filename) {
+        ImageIcon iconMini = new ImageIcon(getClass().getResource(Filename));
+        icon[bgNum].setIcon(iconMini);
+    }
+
+    public void readFile(String namefile) throws IOException {
+
+        try {
+
+            file = new File(DialogHandler.dir + "\\src\\main\\resources\\dialogs\\" + namefile);
+
+        } catch (Exception e) {
+            // Catch exception if any
+            System.err.println("Error: " + e.getMessage());
+        }
+
     }
 
     public void observeOwner() {
@@ -281,7 +432,7 @@ public class Day2_Form extends javax.swing.JFrame {
         dialogueButton4[1].setVisible(true);
         textAreaBox[1].setText("");
         textAreaBox2[1].setText("");
-        
+
     }
 
     public void talkJosephine() {
@@ -324,199 +475,12 @@ public class Day2_Form extends javax.swing.JFrame {
         textBox[2].setVisible(true);
         textAreaBox[2].setVisible(true);
         textButton[2].setVisible(true);
-        dialogue2Button1[2].setVisible(true);
-        dialogue2Button2[2].setVisible(true);
-        dialogue2Button3[2].setVisible(true);
-        dialogue2Button4[2].setVisible(true);
+        
 
         textAreaBox[2].setText("");
     }
 
-    public void choice1Owner() throws FileNotFoundException {
-        dialogueButton1[1].setVisible(false);
-        dialogueButton2[1].setVisible(false);
-        dialogueButton3[1].setVisible(false);
-        dialogueButton4[1].setVisible(false);
-        List<String> Owner =new ArrayList<String>();
-        Owner = DialogHandler.SelectDialogOption(file, DialogHandler.FIRST_DIALOG_START, DialogHandler.FIRST_DIALOG_END);
-        System.out.println(Owner.get(1));
-
-    }
-
-    public void choice2Owner() {
-        dialogueButton1[1].setVisible(false);
-        dialogueButton2[1].setVisible(false);
-        dialogueButton3[1].setVisible(false);
-        dialogueButton4[1].setVisible(false);
-
-        textAreaBox[1].setText("jamm bell uè");
-    }
-
-    public void choice3Owner() {
-        dialogueButton1[1].setVisible(false);
-        dialogueButton2[1].setVisible(false);
-        dialogueButton3[1].setVisible(false);
-        dialogueButton4[1].setVisible(false);
-
-        textAreaBox[1].setText("a fess e sort");
-    }
-
-    public void choice4Owner() {
-        dialogueButton1[1].setVisible(false);
-        dialogueButton2[1].setVisible(false);
-        dialogueButton3[1].setVisible(false);
-        dialogueButton4[1].setVisible(false);
-
-        textAreaBox[1].setText("sfacimm x2");
-    }
-
-    public void choice1Josephine() {
-        dialogueButton1[2].setVisible(false);
-        dialogueButton2[2].setVisible(false);
-        dialogueButton3[2].setVisible(false);
-        dialogueButton4[2].setVisible(false);
-
-        textAreaBox[2].setText("sfacimm");
-    }
-
-    public void choice2Josephine() {
-        dialogueButton1[2].setVisible(false);
-        dialogueButton2[2].setVisible(false);
-        dialogueButton3[2].setVisible(false);
-        dialogueButton4[2].setVisible(false);
-
-        textAreaBox[2].setText("jamm bell uè");
-    }
-
-    public void choice3Josephine() {
-        dialogueButton1[2].setVisible(false);
-        dialogueButton2[2].setVisible(false);
-        dialogueButton3[2].setVisible(false);
-        dialogueButton4[2].setVisible(false);
-
-        textAreaBox[2].setText("jamm bell uè");
-
-    }
-
-    public void choice4Josephine() {
-        dialogueButton1[2].setVisible(false);
-        dialogueButton2[2].setVisible(false);
-        dialogueButton3[2].setVisible(false);
-        dialogueButton4[2].setVisible(false);
-
-        textAreaBox[2].setText("jamm bell uè");
-
-    }
-
-    public void choice1Ramon() {
-        dialogue2Button1[2].setVisible(false);
-        dialogue2Button2[2].setVisible(false);
-        dialogue2Button3[2].setVisible(false);
-        dialogue2Button4[2].setVisible(false);
-
-        textAreaBox[2].setText("sfacimm");
-    }
-
-    public void choice2Ramon() {
-        dialogueButton1[2].setVisible(false);
-        dialogueButton2[2].setVisible(false);
-        dialogueButton3[2].setVisible(false);
-        dialogueButton4[2].setVisible(false);
-
-        textAreaBox[2].setText("jamm bell uè");
-    }
-
-    public void choice3Ramon() {
-        dialogueButton1[2].setVisible(false);
-        dialogueButton2[2].setVisible(false);
-        dialogueButton3[2].setVisible(false);
-        dialogueButton4[2].setVisible(false);
-
-        textAreaBox[2].setText("jamm bell uè");
-
-    }
-
-    public void choice4Ramon() {
-        dialogueButton1[2].setVisible(false);
-        dialogueButton2[2].setVisible(false);
-        dialogueButton3[2].setVisible(false);
-        dialogueButton4[2].setVisible(false);
-
-        textAreaBox[2].setText("jamm bell uè");
-
-    }
-
-    public void choice1Jefferson() {
-        dialogueButton1[4].setVisible(false);
-        dialogueButton2[4].setVisible(false);
-        dialogueButton3[4].setVisible(false);
-        dialogueButton4[4].setVisible(false);
-
-        textAreaBox[4].setText("sfacimm");
-    }
-
-    public void choice2Jefferson() {
-        dialogueButton1[4].setVisible(false);
-        dialogueButton2[4].setVisible(false);
-        dialogueButton3[4].setVisible(false);
-        dialogueButton4[4].setVisible(false);
-
-        textAreaBox[4].setText("sfacimm");
-    }
-
-    public void choice3Jefferson() {
-        dialogueButton1[4].setVisible(false);
-        dialogueButton2[4].setVisible(false);
-        dialogueButton3[4].setVisible(false);
-        dialogueButton4[4].setVisible(false);
-
-        textAreaBox[4].setText("sfacimm");
-    }
-
-    public void choice4Jefferson() {
-        dialogueButton1[4].setVisible(false);
-        dialogueButton2[4].setVisible(false);
-        dialogueButton3[4].setVisible(false);
-        dialogueButton4[4].setVisible(false);
-
-        textAreaBox[4].setText("sfacimm");
-    }
-
-    public void choice1Mark() {
-        dialogueButton1[5].setVisible(false);
-        dialogueButton2[5].setVisible(false);
-        dialogueButton3[5].setVisible(false);
-        dialogueButton4[5].setVisible(false);
-
-        textAreaBox[5].setText("sfacimm");
-    }
-
-    public void choice2Mark() {
-        dialogueButton1[5].setVisible(false);
-        dialogueButton2[5].setVisible(false);
-        dialogueButton3[5].setVisible(false);
-        dialogueButton4[5].setVisible(false);
-
-        textAreaBox[5].setText("sfacimm");
-    }
-
-    public void choice3Mark() {
-        dialogueButton1[5].setVisible(false);
-        dialogueButton2[5].setVisible(false);
-        dialogueButton3[5].setVisible(false);
-        dialogueButton4[5].setVisible(false);
-
-        textAreaBox[5].setText("sfacimm");
-    }
-
-    public void choice4Mark() {
-        dialogueButton1[5].setVisible(false);
-        dialogueButton2[5].setVisible(false);
-        dialogueButton3[5].setVisible(false);
-        dialogueButton4[5].setVisible(false);
-
-        textAreaBox[5].setText("sfacimm");
-    }
+    
 
     public void takeDress() {
         JButton item = new JButton();
@@ -686,94 +650,6 @@ public class Day2_Form extends javax.swing.JFrame {
         bgPanel[bgNum].add(textBox[bgNum]);
     }
 
-    public void createTextBox2(int bgNum, String npcName, String choice1, String choice2, String choice3, String choice4) {
-        //TODO FARE PIù PICCOLA TEXT_BOX
-
-        //creazione componenti
-        textBox[bgNum] = new JLabel();
-        textAreaBox[bgNum] = new JTextArea();
-        textButton[bgNum] = new JButton();
-        continueDialogue[bgNum] = new JButton();
-
-        ImageIcon boxIcon = new ImageIcon(getClass().getResource("/text_box.png"));
-        textBox[bgNum].setIcon(boxIcon);
-        textBox[bgNum].setBounds(300, 680, 1300, 320);
-        textAreaBox[bgNum].setBackground(new Color(0, 0, 0, 0));
-        textAreaBox[bgNum].setBounds(400, 740, 1000, 200);
-        textAreaBox[bgNum].setFont(new java.awt.Font("Courier New", 0, 30));
-        textAreaBox[bgNum].setForeground(Color.white);
-        textAreaBox[bgNum].setBorder(null);
-        textAreaBox[bgNum].setEditable(false);
-        textAreaBox[bgNum].setWrapStyleWord(true);
-        textAreaBox[bgNum].setLineWrap(true);
-
-        textButton[bgNum].setBackground(new Color(0, 0, 0));
-        textButton[bgNum].setBounds(1438, 920, 64, 26);
-        textButton[bgNum].setFont(new Font("Segoe UI", 2, 14)); // NOI18N
-        textButton[bgNum].setForeground(new Color(255, 255, 255));
-        textButton[bgNum].setText("Chiudi");
-        textButton[bgNum].setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED,
-                Color.lightGray, Color.white, Color.lightGray, Color.white));
-        textButton[bgNum].setContentAreaFilled(false);
-        textButton[bgNum].addActionListener(actHandler);
-        textButton[bgNum].setActionCommand("closeTextScene" + bgNum);
-
-        //DIALOGHI A SCELTA
-        dialogue2Button1[bgNum] = new JRadioButton(choice1);
-        dialogue2Button2[bgNum] = new JRadioButton(choice2);
-        dialogue2Button3[bgNum] = new JRadioButton(choice3);
-        dialogue2Button4[bgNum] = new JRadioButton(choice4);
-
-        dialogue2Button1[bgNum].setBounds(400, 750, 400, 50);
-        dialogue2Button2[bgNum].setBounds(950, 750, 400, 50);
-        dialogue2Button3[bgNum].setBounds(400, 880, 400, 50);
-        dialogue2Button4[bgNum].setBounds(950, 880, 400, 50);
-
-        dialogue2Button1[bgNum].setForeground(Color.white);
-        dialogue2Button2[bgNum].setForeground(Color.white);
-        dialogue2Button3[bgNum].setForeground(Color.white);
-        dialogue2Button4[bgNum].setForeground(Color.white);
-
-        dialogue2Button1[bgNum].setFont(new Font("Courier New", 0, 30));
-        dialogue2Button2[bgNum].setFont(new Font("Courier New", 0, 30));
-        dialogue2Button3[bgNum].setFont(new Font("Courier New", 0, 30));
-        dialogue2Button4[bgNum].setFont(new Font("Courier New", 0, 30));
-
-        dialogue2Button1[bgNum].addActionListener(actHandler);
-        dialogue2Button1[bgNum].setActionCommand("scelta1" + npcName);
-        dialogue2Button2[bgNum].addActionListener(actHandler);
-        dialogue2Button2[bgNum].setActionCommand("scelta2" + npcName);
-        dialogue2Button3[bgNum].addActionListener(actHandler);
-        dialogue2Button3[bgNum].setActionCommand("scelta3" + npcName);
-        dialogue2Button4[bgNum].addActionListener(actHandler);
-        dialogue2Button4[bgNum].setActionCommand("scelta4" + npcName);
-
-        ButtonGroup group = new ButtonGroup();
-        group.add(dialogue2Button1[bgNum]);
-        group.add(dialogue2Button2[bgNum]);
-        group.add(dialogue2Button3[bgNum]);
-        group.add(dialogue2Button4[bgNum]);
-
-        //visibility
-        textBox[bgNum].setVisible(false);
-        textAreaBox[bgNum].setVisible(false);
-        textButton[bgNum].setVisible(false);
-        continueDialogue[bgNum].setVisible(false);
-        dialogue2Button1[bgNum].setVisible(false);
-        dialogue2Button2[bgNum].setVisible(false);
-        dialogue2Button3[bgNum].setVisible(false);
-        dialogue2Button4[bgNum].setVisible(false);
-
-        bgPanel[bgNum].add(dialogue2Button4[bgNum]);
-        bgPanel[bgNum].add(dialogue2Button3[bgNum]);
-        bgPanel[bgNum].add(dialogue2Button2[bgNum]);
-        bgPanel[bgNum].add(dialogue2Button1[bgNum]);
-        bgPanel[bgNum].add(continueDialogue[bgNum]);
-        bgPanel[bgNum].add(textButton[bgNum]);
-        bgPanel[bgNum].add(textAreaBox[bgNum]);
-        bgPanel[bgNum].add(textBox[bgNum]);
-    }
-
     public void createArrowButton(int bgNum, int x, int y, String arrowFileName, String command) {
 
         ImageIcon arrowIcon = new ImageIcon(getClass().getResource(arrowFileName));
@@ -852,9 +728,8 @@ public class Day2_Form extends javax.swing.JFrame {
 
     public void generateScenes() throws FileNotFoundException {
         List<String> Owner1 = new ArrayList<String>();
-        
+
         Owner1 = DialogHandler.SelectDialogOption(file, DialogHandler.DIALOG_OPTION_START, DialogHandler.DIALOG_OPTION_END);
-       
 
         //SCENA 1 -> RECEPTION
         createScene(1, 0, -10, "/receptionhotel.png");
@@ -866,7 +741,7 @@ public class Day2_Form extends javax.swing.JFrame {
         //SCENA 2 -> SALA DA BALLO
         createScene(2, 0, 0, "/hall.png");
         createTextBox(2, "josephine", "anvedi che fre-", "uWu", "kawaii", "Cock rating?");
-        createTextBox2(2, "ramon", "a", "u", "kakarotto", "Cock rating?");
+     
         createArrowButton(2, 1750, 500, "/right_arrow.png", "goToReceptionFromHall");
         createArrowButton(2, 10, 500, "/left_arrow.png", "StaircaseUP2");
         createObject(2, 330, 600, 150, 330, "", "Parla", "Osserva", "", "TalkJosephine", "ObserveJosephine", "");
