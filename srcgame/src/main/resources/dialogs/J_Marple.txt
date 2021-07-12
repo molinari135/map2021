@@ -1,37 +1,60 @@
+Detective
 Si ricorda di me, Miss Marple?
+Jane Marple
 Oh, l'Ispettore Slack, certo che mi ricordo di lei.
+Detective
 La avverto, questo caso non fa per lei.
+Jane Marple
 Allora posso godermi il tè con la mia amica qui.
+Detective
 (Madonna se metti mani sulla scena del crimine te le spezzo.)
 
 
 
 
+Detective
 Siete amica dei Bantry?
+Jane Marple
 Si, Dolly mi ha telefonata stamattina presto e adesso sono qui.
+Detective
 Abitate qui vicino?
+Jane Marple
 Sono stata accompagnata dalla macchina dei Bantry, sto nel paesino a valle.
+Detective
 Non dubita dei signori Bantry? Potrebbero aver commesso loro l'omicidio.
+Jane Marple
 Ispettore, non faccia deduzioni avventate o rischierà di arrestare la persona sbagliata.
 
 
 
 
+Detective
 Per caso avete messo piede sulla scena del crimine?
+Jane Marple
 Ah, chissà, forse si, forse no.
+Detective
 Il mio intuito dice che ne ha messi due di piedi.
+Jane Marple
 Che ci posso fare, per quanto triste resta sempre affascinante la scena del crimine.
+Detective
 Ha trovato qualcosa di interessante?
+Jane Marple
 Mah, niente di chè, la solita giovanotta con le unghie mangiate.
 
 
 
 
+Detective
 Cosa stava facendo ieri sera verso le 23:00?
+Jane Marple
 Chiedo scusa Ispettore ma non credo di centrare qualcosa con il crimine.
+Detective
 Questo lo decido io. Mi risponda.
+Jane Marple
 Come vuole, ero a casa di una mia nipote, abbiamo cenato insieme.
+Detective
 Molto sospetto...
+Jane Marple
 Ahahahah, Ispettore lei è davvero simpatico sa?
 
 

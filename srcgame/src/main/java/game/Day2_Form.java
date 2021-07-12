@@ -333,8 +333,7 @@ public class Day2_Form extends javax.swing.JFrame {
         dialogueButton4[1].setVisible(false);
         List<String> Owner =new ArrayList<String>();
         Owner = DialogHandler.SelectDialogOption(file, DialogHandler.FIRST_DIALOG_START, DialogHandler.FIRST_DIALOG_END);
-        System.out.println(Owner.get(4));
-        textAreaBox2[1].setText(Owner.get(4)+ "vaffanculo");
+        System.out.println(Owner.get(1));
 
     }
 

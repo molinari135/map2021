@@ -1,38 +1,61 @@
+Detective
 Buongiorno, sono l'ispettore Slack.
+Dolly Bantry
 Salve, sono Dolly Bantry, è un omicidio interessante, vero?
+Detective
 Decisamente, mi occuperò delle investigazioni.
+Dolly Bantry
 Oh, fantastico, le consiglio di parlare con Miss Maple, se ne intende di omicidi.
+Detective
 Grazie per il consiglio, lo farò.
 
 
 
 
+Detective
 Conosce la ragazza?
-Mai vista pria, nemmeno mio marito la conosce.
+Dolly Bantry
+Mai vista prima, nemmeno mio marito la conosce.
+Detective
 (Sarà davvero così?)
+Dolly Bantry
 Ma non si preoccupi, c'è qui Miss Marple!
+Detective
 Sarebbe?
+Dolly Bantry
 La signora laggiù.
 
 
 
 
+Detective
 Dove posso trovare il signor Bantry?
+Dolly Bantry
 Sta nel suo studio, al secondo piano.
+Detective
 (Vediamo un po' chi è questo tizio.)
+Dolly Bantry
 Povera ragazza, così giovane.
+Detective
 Non si preoccupi, risolverò il caso.
+Dolly Bantry
 Buona fortuna Ispettore.
 
 
 
 
+Detective
 Cosa stava facendo ieri sera?
+Dolly Bantry
 Prima di andare a letto ero in biblioteca.
+Detective
 A che ora è andata a dormire?
+Dolly Bantry
 Era presto, dovevano essere le 22:30.
+Detective
 (Quindi alle 22:30 non c'era nessun cadavere.)
-Se vuole può chiede informazioni al nostro maggiordomo, lo trova in soggiorno.
+Dolly Bantry
+Se vuole può chiedere informazioni al nostro maggiordomo, lo trova in soggiorno.
 
 
 

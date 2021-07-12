@@ -7,9 +7,11 @@ package game;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 
 /**
  *
@@ -18,7 +20,7 @@ import java.util.logging.Logger;
 public class ActionHandler1 implements ActionListener {
 
     Day1_Form d1;
-
+   
     public ActionHandler1(Day1_Form d1) {
         this.d1 = d1;
     }
@@ -98,10 +100,12 @@ public class ActionHandler1 implements ActionListener {
                 d1.closeTextBox(6);
                 break;
 
-            case "continueDialog" :
+            case "continueDialog1" :
                 d1.continueDialog(1);
                 break;
-            
+            case "continueDialog2" :
+                d1.continueDialog(2);
+                break;
             case "continueDialog3" :
                 d1.continueDialog(3);
                 break;
@@ -145,6 +149,50 @@ public class ActionHandler1 implements ActionListener {
                 }
                 break;
             }
+             case "scelta1d_bantry":
+            {
+                try {
+                    d1.choice1(1,"d_bantry","d_bantry.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+
+            case "scelta2d_bantry":
+            {
+                try {
+                    d1.choice2(1, "d_bantry","d_bantry.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+            case "scelta3d_bantry":
+            {
+                try {
+                    d1.choice3(1, "d_bantry","d_bantry.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+            case "scelta4d_bantry":
+            {
+                try {
+                    d1.choice4(1, "d_bantry","d_bantry.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
 
             case "ObserveJane": {
                 d1.observeJaneMarple();
@@ -159,6 +207,50 @@ public class ActionHandler1 implements ActionListener {
             }
             break;
             }
+            
+             case "scelta1j_marple":
+            {
+                try {
+                    d1.choice1(1,"j_marple","j_marple.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+
+            case "scelta2j_marple":
+            {
+                try {
+                    d1.choice2(1, "j_marple","j_marple.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+            case "scelta3j_marple":
+            {
+                try {
+                    d1.choice3(1, "j_marple","j_marple.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+            case "scelta4j_marple":
+            {
+                try {
+                    d1.choice4(1, "j_marple","j_marple.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
 
             case "ObserveLorrimer": {
                 d1.observeLorrimer();
@@ -172,6 +264,50 @@ public class ActionHandler1 implements ActionListener {
             }
             break;
             }
+            case "scelta1lorrimer":
+            {
+                try {
+                    d1.choice1(3,"lorrimer","lorrimer.txt");
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }
+                break;
+
+
+            case "scelta2lorrimer":
+            {
+                try {
+                    d1.choice2(3, "lorrimer","lorrimer.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+            case "scelta3lorrimer":
+            {
+                try {
+                    d1.choice3(3, "lorrimer","lorrimer.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+            case "scelta4lorrimer":
+            {
+                try {
+                    d1.choice4(3, "lorrimer","lorrimer.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
              case "ObserveBasil": {
                 d1.observeBasil();
                 break;
@@ -184,6 +320,49 @@ public class ActionHandler1 implements ActionListener {
             }
             break;
             }
+            case "scelta1b_blake":
+            {
+                try {
+                    d1.choice1(5,"b_blake","b_blake.txt");
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }
+                break;
+
+
+            case "scelta2b_blake":
+            {
+                try {
+                    d1.choice2(5,"b_blake","b_blake.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+            case "scelta3b_blake":
+            {
+                try {
+                    d1.choice3(5,"b_blake","b_blake.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+            case "scelta4b_blake":
+            {
+                try {
+                    d1.choice4(5,"b_blake","b_blake.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
              case "ObserveABantry": {
                 d1.observeABantry();
                 break;
@@ -195,6 +374,49 @@ public class ActionHandler1 implements ActionListener {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
+            }
+            case "scelta1a_bantry":
+            {
+                try {
+                    d1.choice1(5,"a_bantry","a_bantry.txt");
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }
+                break;
+
+
+            case "scelta2a_bantry":
+            {
+                try {
+                    d1.choice2(5,"a_bantry","a_bantry.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+            case "scelta3a_bantry":
+            {
+                try {
+                    d1.choice3(5,"a_bantry","a_bantry.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+            case "scelta4a_bantry":
+            {
+                try {
+                    d1.choice4(5,"a_bantry","a_bantry.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
              case "ObserveHaydoc": {
                 d1.observeHaydoc();
@@ -209,6 +431,52 @@ public class ActionHandler1 implements ActionListener {
             }
             break;
             }
+            
+            case "scelta1haydock":
+            {
+                try {
+                    d1.choice1(6,"haydock","haydock.txt");
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }
+                break;
+
+
+            case "scelta2haydock":
+            {
+                try {
+                    d1.choice2(6,"haydock","haydock.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+            case "scelta3haydock":
+            {
+                try {
+                    d1.choice3(6,"haydock","haydock.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+
+            case "scelta4haydock":
+            {
+                try {
+                    d1.choice4(6,"haydock","haydock.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+            
              case "ObserveBody": {
                 d1.observeBody();
                 break;

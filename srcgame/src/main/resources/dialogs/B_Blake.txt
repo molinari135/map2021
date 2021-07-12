@@ -1,37 +1,60 @@
+Detective
 Sono l'Ispettore, mi sto occupando del caso.
+Basil Blake
 Ok.
+Detective
 Come, "ok"?
+Basil Blake
 Ho detto ok.
+Detective
 (Ma tutti a me capitano i casi umani...)
 
 
 
 
+Detective
 Devo farle alcune domande.
+Basil Blake
 Va bene.
+Detective
 Come si chiama?
+Basil Blake
 Basil Blake, pilastro del cinema britannico e hollywoodiano.
+Detective
 E, mh, che ci fa qui?
+Basil Blake
 Questo vecchio scemo mi ha urlato contro mentre passavo davanti a casa sua, non c'entro niente.
+Detective
 Capisco.
 
 
-
+Detective
 Conosce i Bantry?
+Basil Blake
 Si, la signora Bantry è un a-m-o-r-e, mi regala sampre i biscotti appena sfornati.
+Detective
 E il signor Bantry?
+Basil Blake
 Quel vecchio del diavolo, spero schiatti tra 30 secondi. Che boomer...
+Detective
 Come lo ha chiamato, scusi?
+Basil Blake
 B-o-o-m-e-r. Vecchio. Old. Do you understand, mister Ispettore?
 
 
 
 
+Detective
 Ha mai visto prima questa ragazza?
+Basil Blake
 Ispettore, lo so che lei dubita di me, glielo ha detto il vecchio.
+Detective
 Non sto dicendo questo, le ho solo chiesto se la conosce.
+Basil Blake
 Mai. Vista. Prima. Never ever. Peccato però, avrebbe avuto un futuro da attrice...
+Detective
 Pensa che venga da una contea confinante?
+Basil Blake
 Si, non ci sono chicas così hermosas qui. Quelle dommasge...
 
 
