@@ -82,7 +82,7 @@ public class Prologue_0 extends javax.swing.JFrame {
                 continuaActionPerformed(evt);
             }
         });
-        background.add(continua, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 550, -1, -1));
+        background.add(continua, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 550, -1, -1));
 
         jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);

@@ -25,7 +25,7 @@ public class DialogHandler {
     public static String dir = System.getProperty("user.dir");
     
     public static List<String> SelectDialogOption(File file, int startLine, int endLine) throws FileNotFoundException {
-        List<String> dialogList = new ArrayList<String>(); 
+        List<String> dialogList = new ArrayList<>(); 
         Scanner sc = new Scanner(file,"UTF-8");
         int lineNumber = 0;
         boolean flag = false; // true if lines == 5
@@ -45,7 +45,7 @@ public class DialogHandler {
     }
 
     public static List<String> Epilogue(File file) {
-        List<String> epilogue = new ArrayList<String>();
+        List<String> epilogue = new ArrayList<>();
         return epilogue;
     }
 }

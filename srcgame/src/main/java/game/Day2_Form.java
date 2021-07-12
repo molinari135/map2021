@@ -28,7 +28,6 @@ import javax.swing.JPopupMenu;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
-import static game.Main.listRoom;
 import static game.Main.listNPC;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -37,7 +36,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import type.NPC;
-import type.Room;
 
 /**
  *
@@ -174,74 +172,9 @@ public class Day2_Form extends javax.swing.JFrame {
         textBox[x].setVisible(true);
         textAreaBox[x].setVisible(true);
         textButton[x].setVisible(true);
-        //TODO file
-        textAreaBox[x].setText(roomDesc);
-    }
-
-    public void goToScene1() {          //RECEPTION
-        bgPanel[2].setVisible(false);
-        bgPanel[1].setVisible(true);
-    }
-
-    public void goToScene2FromScene1() {//REC -> HALL
-        bgPanel[1].setVisible(false);
-        bgPanel[2].setVisible(true);
-    }
-
-    public void goToScene2FromScene3() {//CORRIDOIO SUP -> HALL
-        bgPanel[3].setVisible(false);
-        bgPanel[2].setVisible(true);
-    }
-
-    public void goToScene3FromScene2() {//HALL -> CORRIDOIO SUP
-        bgPanel[2].setVisible(false);
-        bgPanel[3].setVisible(true);
-    }
-
-    public void goToScene4FromScene3() {//CORRIDOIO SUP -> CAMERA LETTO
-        bgPanel[3].setVisible(false);
-        bgPanel[4].setVisible(true);
-    }
-
-    public void goToScene3FromScene4() {//CAMERA LETTO -> CORRIDOIO SUP
-        bgPanel[4].setVisible(false);
-        bgPanel[3].setVisible(true);
-    }
-
-    public void goToScene5() {          //CAMERA LETTO -> VERANDA
-        bgPanel[4].setVisible(false);
-        bgPanel[5].setVisible(true);
-    }
-
-    public void goToScene4FromScene5() { //VERANDA -> CAMERA LETTO
-        bgPanel[5].setVisible(false);
-        bgPanel[4].setVisible(true);
-    }
-
-    public void observeScene1() {
-        textBox[2].setVisible(true);
-        textAreaBox[2].setVisible(true);
-        textButton[2].setVisible(true);
-        //TODO file
         
-        textAreaBox2[2].setText("Qui di seguito si trova la sala da ballo dell'hotel.");
-    }
-
-    public void observeScene3() {
-        textBox[2].setVisible(true);
-        textAreaBox[2].setVisible(true);
-        textButton[2].setVisible(true);
-        //TODO file
-        textAreaBox2[2].setText("Da qui sembra portare al soggiorno.");
-    }
-
-    public void observeScene5() {
-        textBox[4].setVisible(true);
-        textAreaBox[4].setVisible(true);
-        textButton[4].setVisible(true);
-        //TODO file
-        textAreaBox[4].setText("Questo sembra essere lo studio del signor Bantry.");
-    }
+        textAreaBox[x].setText(roomDesc);
+    }   
 
     public void observeNPC(int bgNum, NPC npc, String npcName) {
         dialogueButton1[bgNum].setVisible(false);
@@ -255,19 +188,20 @@ public class Day2_Form extends javax.swing.JFrame {
         textBox[bgNum].setVisible(true);
         textAreaBox2[bgNum].setVisible(true);
         textButton[bgNum].setVisible(true);
-        //TODO file
+        
         npc = DataHandler.NpcFinder(listNPC, npcName);
         textAreaBox[bgNum].setText(npc.getName() + " " + npc.getSurname());
         textAreaBox2[bgNum].setText(npc.getDescription());
         textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
     }
-    
-      public void talkNPC(int bgNum, String fileName, List<String> npc, String iconName, String id, Boolean labelSx) throws IOException  {
+
+    public void talkNPC(int bgNum, String fileName, List<String> npc, String iconName, String id, Boolean labelSx) throws IOException {
         readFile(fileName);
         npc = DialogHandler.SelectDialogOption(file, DialogHandler.DIALOG_OPTION_START, DialogHandler.DIALOG_OPTION_END);
         talkDialogue(bgNum, iconName, id, npc, labelSx); //se bool vero, la label scelta è quella sx, destra altrimenti 
-    }     
-       public void talkDialogue(int bgNum, String icona, String input, List<String> npcName, Boolean labelSx) throws IOException {
+    }
+
+    public void talkDialogue(int bgNum, String icona, String input, List<String> npcName, Boolean labelSx) throws IOException {
         i = 0;
         detectiveSinistra[bgNum].setVisible(labelSx);
         icon[bgNum].setVisible(true);
@@ -301,8 +235,9 @@ public class Day2_Form extends javax.swing.JFrame {
         dialogueButton4[bgNum].addActionListener(actHandler);
         dialogueButton4[bgNum].setActionCommand("scelta4" + input);
 
-    }    
-     public void choice1(int bgNum, String npcName, String filename) throws FileNotFoundException, IOException {
+    }
+
+    public void choice1(int bgNum, String npcName, String filename) throws FileNotFoundException, IOException {
         i = 0;
         dialogueButton1[bgNum].setVisible(false);
         dialogueButton2[bgNum].setVisible(false);
@@ -361,8 +296,8 @@ public class Day2_Form extends javax.swing.JFrame {
         textAreaBox2[bgNum].setText(npcListD.get(i + 1));
         textButton[bgNum].setActionCommand("continueDialog" + bgNum);
         textButton[bgNum].setText("Continua");
-    } 
-    
+    }
+
     public void setIcon(int bgNum, String Filename) {
         ImageIcon iconMini = new ImageIcon(getClass().getResource(Filename));
         icon[bgNum].setIcon(iconMini);
@@ -379,47 +314,7 @@ public class Day2_Form extends javax.swing.JFrame {
             System.err.println("Error: " + e.getMessage());
         }
 
-    }
-
-    public void observeOwner() {
-        textBox[1].setVisible(true);
-        textAreaBox[1].setVisible(true);
-        textButton[1].setVisible(true);
-        //TODO file
-        textAreaBox[1].setText("L'uomo dietro al bancone suppongo sia semplicemente un receptionist.");
-    }
-
-    public void observeRamon() {
-        textBox[2].setVisible(true);
-        textAreaBox[2].setVisible(true);
-        textButton[2].setVisible(true);
-        //TODO file
-        textAreaBox[2].setText("Che bel uaglione");
-    }
-
-    public void observeJosephine() {
-        textBox[2].setVisible(true);
-        textAreaBox[2].setVisible(true);
-        textButton[2].setVisible(true);
-        //TODO file
-        textAreaBox[2].setText("Anvedi che freg-");
-    }
-
-    public void observeJefferson() {
-        textBox[4].setVisible(true);
-        textAreaBox[4].setVisible(true);
-        textButton[4].setVisible(true);
-        //TODO file
-        textAreaBox[4].setText("Quel vecchio mi sta imbruttendo brutto...");
-    }
-
-    public void observeMark() {
-        textBox[5].setVisible(true);
-        textAreaBox[5].setVisible(true);
-        textButton[5].setVisible(true);
-        //TODO file
-        textAreaBox[5].setText("Napoli?!");
-    }
+    }    
 
     public void talkOwner() throws FileNotFoundException {
         textBox[1].setVisible(true);
@@ -475,12 +370,9 @@ public class Day2_Form extends javax.swing.JFrame {
         textBox[2].setVisible(true);
         textAreaBox[2].setVisible(true);
         textButton[2].setVisible(true);
-        
 
         textAreaBox[2].setText("");
     }
-
-    
 
     public void takeDress() {
         JButton item = new JButton();
@@ -549,7 +441,7 @@ public class Day2_Form extends javax.swing.JFrame {
         this.add(bgPanel[bgNum]);
     }
 
-    public void createTextBox(int bgNum, String npcName, String choice1, String choice2, String choice3, String choice4) {
+    public void createTextBox(int bgNum) {
         //TODO FARE PIù PICCOLA TEXT_BOX
 
         //creazione componenti
@@ -593,10 +485,10 @@ public class Day2_Form extends javax.swing.JFrame {
         textButton[bgNum].setActionCommand("closeTextScene" + bgNum);
 
         //DIALOGHI A SCELTA
-        dialogueButton1[bgNum] = new JRadioButton(choice1);
-        dialogueButton2[bgNum] = new JRadioButton(choice2);
-        dialogueButton3[bgNum] = new JRadioButton(choice3);
-        dialogueButton4[bgNum] = new JRadioButton(choice4);
+        dialogueButton1[bgNum] = new JRadioButton();
+        dialogueButton2[bgNum] = new JRadioButton();
+        dialogueButton3[bgNum] = new JRadioButton();
+        dialogueButton4[bgNum] = new JRadioButton();
 
         dialogueButton1[bgNum].setBounds(400, 750, 400, 50);
         dialogueButton2[bgNum].setBounds(950, 750, 400, 50);
@@ -612,15 +504,6 @@ public class Day2_Form extends javax.swing.JFrame {
         dialogueButton2[bgNum].setFont(new Font("Courier New", 0, 30));
         dialogueButton3[bgNum].setFont(new Font("Courier New", 0, 30));
         dialogueButton4[bgNum].setFont(new Font("Courier New", 0, 30));
-
-        dialogueButton1[bgNum].addActionListener(actHandler);
-        dialogueButton1[bgNum].setActionCommand("scelta1" + npcName);
-        dialogueButton2[bgNum].addActionListener(actHandler);
-        dialogueButton2[bgNum].setActionCommand("scelta2" + npcName);
-        dialogueButton3[bgNum].addActionListener(actHandler);
-        dialogueButton3[bgNum].setActionCommand("scelta3" + npcName);
-        dialogueButton4[bgNum].addActionListener(actHandler);
-        dialogueButton4[bgNum].setActionCommand("scelta4" + npcName);
 
         ButtonGroup group = new ButtonGroup();
         group.add(dialogueButton1[bgNum]);
@@ -727,21 +610,18 @@ public class Day2_Form extends javax.swing.JFrame {
     }
 
     public void generateScenes() throws FileNotFoundException {
-        List<String> Owner1 = new ArrayList<String>();
-
-        Owner1 = DialogHandler.SelectDialogOption(file, DialogHandler.DIALOG_OPTION_START, DialogHandler.DIALOG_OPTION_END);
 
         //SCENA 1 -> RECEPTION
         createScene(1, 0, -10, "/receptionhotel.png");
-        createTextBox(1, "owner", Owner1.get(0), Owner1.get(1), Owner1.get(2), Owner1.get(3));
+        createTextBox(1);
         createArrowButton(1, 10, 500, "/left_arrow.png", "goToHallFromReception");
         createObject(1, 1000, 250, 200, 400, "", "Parla", "Osserva", "", "TalkOwner", "ObserveOwner", "");
         bgPanel[1].add(bgLabel[1]);
 
         //SCENA 2 -> SALA DA BALLO
         createScene(2, 0, 0, "/hall.png");
-        createTextBox(2, "josephine", "anvedi che fre-", "uWu", "kawaii", "Cock rating?");
-     
+        createTextBox(2);
+
         createArrowButton(2, 1750, 500, "/right_arrow.png", "goToReceptionFromHall");
         createArrowButton(2, 10, 500, "/left_arrow.png", "StaircaseUP2");
         createObject(2, 330, 600, 150, 330, "", "Parla", "Osserva", "", "TalkJosephine", "ObserveJosephine", "");
@@ -751,14 +631,14 @@ public class Day2_Form extends javax.swing.JFrame {
 
         //SCENA 3 -> CORRIDOIO
         createScene(3, 352, -10, "/corridoiohotel.png");
-        createTextBox(3, "", "", "", "", "");
+        createTextBox(3);
         createArrowButton(3, 850, 850, "/down_arrow.png", "StaircaseDown2");
         createObject(3, 360, 100, 200, 850, "", "Bussa", "Entra (senza bussare è maleducazione...)", "", "KnockRoom", "goToRoomFromCorridor", "");
         bgPanel[3].add(bgLabel[3]);
 
         //SCENA 4 -> ROOM
         createScene(4, 0, -10, "/bedroom.png");
-        createTextBox(4, "jefferson", "", "", "", "");
+        createTextBox(4);
         createArrowButton(4, 10, 500, "/left_arrow.png", "goToVeranda");
         createArrowButton(4, 1750, 500, "/right_arrow.png", "goToCorridor");
         createObject(4, 650, 200, 200, 700, "", "Parla", "Osserva", "", "TalkJefferson", "ObserveJefferson", "");
@@ -766,7 +646,7 @@ public class Day2_Form extends javax.swing.JFrame {
 
         //SCENA 5 -> VERANDA
         createScene(5, 0, -10, "/veranda.png");
-        createTextBox(5, "mark", "", "", "", "");
+        createTextBox(5);
         createArrowButton(5, 1750, 500, "/right_arrow.png", "goToRoomFromVeranda");
         createObject(5, 200, 70, 200, 830, "", "Parla", "Osserva", "", "TalkMark", "ObserveMark", "");
         bgPanel[5].add(bgLabel[5]);

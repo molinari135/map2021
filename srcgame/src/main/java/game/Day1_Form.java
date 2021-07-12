@@ -403,10 +403,10 @@ public class Day1_Form extends javax.swing.JFrame {
         detectiveSinistra[bgNum].setIcon(detective);
         ImageIcon boxIcon = new ImageIcon(getClass().getResource("/text_box.png"));
         textBox[bgNum].setIcon(boxIcon);
-        textBox[bgNum].setBounds(300, 680, 1300, 320);
+        textBox[bgNum].setBounds(318, 680, 1270, 320);
         textAreaBox[bgNum].setBackground(new Color(0, 0, 0, 0));
         textAreaBox[bgNum].setOpaque(false);
-        textAreaBox[bgNum].setBounds(400, 740, 1000, 200);
+        textAreaBox[bgNum].setBounds(410, 740, 1000, 200);
         textAreaBox[bgNum].setFont(new java.awt.Font("Courier New", 0, 30));
         textAreaBox[bgNum].setForeground(Color.yellow);
         textAreaBox[bgNum].setBorder(null);
@@ -415,7 +415,7 @@ public class Day1_Form extends javax.swing.JFrame {
         textAreaBox[bgNum].setLineWrap(true);
         textAreaBox2[bgNum].setBackground(new Color(0, 0, 0, 0));
         textAreaBox2[bgNum].setOpaque(false);
-        textAreaBox2[bgNum].setBounds(400, 790, 1000, 200);
+        textAreaBox2[bgNum].setBounds(410, 790, 1000, 200);
         textAreaBox2[bgNum].setFont(new java.awt.Font("Courier New", 0, 30));
         textAreaBox2[bgNum].setForeground(Color.white);
         textAreaBox2[bgNum].setBorder(null);
@@ -424,7 +424,7 @@ public class Day1_Form extends javax.swing.JFrame {
         textAreaBox2[bgNum].setLineWrap(true);
 
         textButton[bgNum].setBackground(new Color(0, 0, 0));
-        textButton[bgNum].setBounds(1420, 920, 64, 26);
+        textButton[bgNum].setBounds(1426, 920, 64, 26);
         textButton[bgNum].setFont(new Font("Segoe UI", 2, 14)); // NOI18N
         textButton[bgNum].setForeground(new Color(255, 255, 255));
         textButton[bgNum].setText("Chiudi");
@@ -441,10 +441,10 @@ public class Day1_Form extends javax.swing.JFrame {
         dialogueButton3[bgNum] = new JRadioButton();
         dialogueButton4[bgNum] = new JRadioButton();
 
-        dialogueButton1[bgNum].setBounds(395, 750, 600, 50);
-        dialogueButton2[bgNum].setBounds(955, 750, 600, 50);
-        dialogueButton3[bgNum].setBounds(395, 860, 600, 50);
-        dialogueButton4[bgNum].setBounds(955, 860, 600, 50);
+        dialogueButton1[bgNum].setBounds(410, 750, 600, 50);
+        dialogueButton2[bgNum].setBounds(960, 750, 600, 50);
+        dialogueButton3[bgNum].setBounds(410, 860, 600, 50);
+        dialogueButton4[bgNum].setBounds(960, 860, 600, 50);
         dialogueButton1[bgNum].setSelected(false);
         dialogueButton2[bgNum].setSelected(false);
         dialogueButton3[bgNum].setSelected(false);

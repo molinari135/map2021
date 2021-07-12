@@ -126,342 +126,311 @@ public class ActionHandler1 implements ActionListener {
                 d1.continueDialogue(6);
                 break;
 
-            case "ObserveDiningRoom": {
+            case "ObserveDiningRoom":
                 d1.observeSceneX(2, "Da qui sembra portare alla sala da pranzo di Gossington Hall.");
                 break;
-            }
 
-            case "ObserveLivingRoom": {
+            case "ObserveLivingRoom":
                 d1.observeSceneX(2, "Da qui sembra portare al soggiorno.");
                 break;
-            }
 
-            case "ObserveStudy": {
+            case "ObserveStudy":
                 d1.observeSceneX(4, "Questo sembra essere lo studio del signor Bantry.");
                 break;
-            }
 
-            case "ObserveLibrary": {
+            case "ObserveLibrary":
                 d1.observeSceneX(4, "Di qui c'è l'imponente biblioteca di Gossington Hall.");
                 break;
-            }
 
-            case "ObserveDolly": {
+            case "ObserveDolly":
                 d1.observeNPC(1, dolly, "d_bantry");
                 break;
-            }
 
-            case "TalkDolly": {
+            case "TalkDolly": 
                 try {
-                    d1.talkNPC(1, "d_bantry.txt", D_bantry, "/IconDollyB.png", "d_bantry", true);
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
-                break;
-            }
-            case "scelta1d_bantry": {
-                try {
-                    d1.choice1(1, "d_bantry", "d_bantry.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.talkNPC(1, "d_bantry.txt", D_bantry, "/IconDollyB.png", "d_bantry", true);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
             }
             break;
 
-            case "scelta2d_bantry": {
+            case "scelta1d_bantry": 
                 try {
-                    d1.choice2(1, "d_bantry", "d_bantry.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice1(1, "d_bantry", "d_bantry.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta2d_bantry": 
+                try {
+                d1.choice2(1, "d_bantry", "d_bantry.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta3d_bantry": 
+                try {
+                d1.choice3(1, "d_bantry", "d_bantry.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta4d_bantry": 
+                try {
+                d1.choice4(1, "d_bantry", "d_bantry.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta3d_bantry": {
-                try {
-                    d1.choice3(1, "d_bantry", "d_bantry.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            break;
-
-            case "scelta4d_bantry": {
-                try {
-                    d1.choice4(1, "d_bantry", "d_bantry.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            break;
-
-            case "ObserveJane": {
+            case "ObserveJane":
                 d1.observeNPC(1, j_marple, "j_marple");
                 break;
-            }
 
-            case "TalkJane": {
+            case "TalkJane": 
                 try {
-                    d1.talkNPC(1, "j_marple.txt", Jane_marple, "/IconMarple.png", "j_marple", false);
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                break;
-            }
-
-            case "scelta1j_marple": {
-                try {
-                    d1.choice1(1, "j_marple", "j_marple.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.talkNPC(1, "j_marple.txt", Jane_marple, "/IconMarple.png", "j_marple", false);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta2j_marple": {
+            case "scelta1j_marple": 
                 try {
-                    d1.choice2(1, "j_marple", "j_marple.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice1(1, "j_marple", "j_marple.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta3j_marple": {
+            case "scelta2j_marple": 
                 try {
-                    d1.choice3(1, "j_marple", "j_marple.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice2(1, "j_marple", "j_marple.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta4j_marple": {
+            case "scelta3j_marple": 
                 try {
-                    d1.choice4(1, "j_marple", "j_marple.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice3(1, "j_marple", "j_marple.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "ObserveLorrimer": {
+            case "scelta4j_marple": 
+                try {
+                d1.choice4(1, "j_marple", "j_marple.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            break;
+
+            case "ObserveLorrimer":
                 d1.observeNPC(3, lorrimer, "lorrimer");
                 break;
-            }
 
-            case "TalkLorrimer": {
+            case "TalkLorrimer": 
                 try {
-                    d1.talkNPC(3, "lorrimer.txt", Lorri, "/IconLorrimer.png", "lorrimer", true);
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                break;
-            }
-
-            case "scelta1lorrimer": {
-                try {
-                    d1.choice1(3, "lorrimer", "lorrimer.txt");
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.talkNPC(3, "lorrimer.txt", Lorri, "/IconLorrimer.png", "lorrimer", true);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta2lorrimer": {
+            case "scelta1lorrimer": 
                 try {
-                    d1.choice2(3, "lorrimer", "lorrimer.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice1(3, "lorrimer", "lorrimer.txt");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta3lorrimer": {
+            case "scelta2lorrimer": 
                 try {
-                    d1.choice3(3, "lorrimer", "lorrimer.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice2(3, "lorrimer", "lorrimer.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta4lorrimer": {
+            case "scelta3lorrimer": 
                 try {
-                    d1.choice4(3, "lorrimer", "lorrimer.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice3(3, "lorrimer", "lorrimer.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "ObserveBasil": {
+            case "scelta4lorrimer": 
+                try {
+                d1.choice4(3, "lorrimer", "lorrimer.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            break;
+
+            case "ObserveBasil":
                 d1.observeNPC(5, b_blake, "b_blake");
                 break;
-            }
 
-            case "TalkBasil": {
+            case "TalkBasil": 
                 try {
-                    d1.talkNPC(5, "b_blake.txt", Basil, "/IconBlake.png", "b_blake", true);
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                break;
-            }
-
-            case "scelta1b_blake": {
-                try {
-                    d1.choice1(5, "b_blake", "b_blake.txt");
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.talkNPC(5, "b_blake.txt", Basil, "/IconBlake.png", "b_blake", true);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta2b_blake": {
+            case "scelta1b_blake": 
                 try {
-                    d1.choice2(5, "b_blake", "b_blake.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice1(5, "b_blake", "b_blake.txt");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta3b_blake": {
+            case "scelta2b_blake": 
                 try {
-                    d1.choice3(5, "b_blake", "b_blake.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice2(5, "b_blake", "b_blake.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta4b_blake": {
+            case "scelta3b_blake": 
                 try {
-                    d1.choice4(5, "b_blake", "b_blake.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice3(5, "b_blake", "b_blake.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "ObserveABantry": {
+            case "scelta4b_blake": 
+                try {
+                d1.choice4(5, "b_blake", "b_blake.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            break;
+
+            case "ObserveABantry":
                 d1.observeNPC(5, a_bantry, "a_bantry");
                 break;
-            }
 
-            case "TalkABantry": {
+            case "TalkABantry": 
                 try {
-                    d1.talkNPC(5, "a_bantry.txt", Arthur, "/IconArthur.png", "a_bantry", false);
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                break;
-            }
-            case "scelta1a_bantry": {
-                try {
-                    d1.choice1(5, "a_bantry", "a_bantry.txt");
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.talkNPC(5, "a_bantry.txt", Arthur, "/IconArthur.png", "a_bantry", false);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta2a_bantry": {
+            case "scelta1a_bantry": 
                 try {
-                    d1.choice2(5, "a_bantry", "a_bantry.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice1(5, "a_bantry", "a_bantry.txt");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta2a_bantry": 
+                try {
+                d1.choice2(5, "a_bantry", "a_bantry.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta3a_bantry": 
+                try {
+                d1.choice3(5, "a_bantry", "a_bantry.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta4a_bantry": 
+                try {
+                d1.choice4(5, "a_bantry", "a_bantry.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta3a_bantry": {
-                try {
-                    d1.choice3(5, "a_bantry", "a_bantry.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            break;
-
-            case "scelta4a_bantry": {
-                try {
-                    d1.choice4(5, "a_bantry", "a_bantry.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-
-            case "ObserveHaydoc": {
+            case "ObserveHaydoc":
                 d1.observeNPC(6, haydock, "haydock");
                 break;
-            }
 
-            case "TalkHaydoc": {
+            case "TalkHaydoc": 
                 try {
-                    d1.talkNPC(6, "haydock.txt", Doc, "/IconDoc.png", "haydock", false);
-                    d1.takeDress();                    
+                d1.talkNPC(6, "haydock.txt", Doc, "/IconDoc.png", "haydock", false);
+                d1.takeDress();
 
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                break;
-            }
-
-            case "scelta1haydock": {
-                try {
-                    d1.choice1(6, "haydock", "haydock.txt");
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta2haydock": {
+            case "scelta1haydock": 
                 try {
-                    d1.choice2(6, "haydock", "haydock.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice1(6, "haydock", "haydock.txt");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta2haydock": 
+                try {
+                d1.choice2(6, "haydock", "haydock.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta3haydock": {
+            case "scelta3haydock": 
                 try {
-                    d1.choice3(6, "haydock", "haydock.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice3(6, "haydock", "haydock.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "scelta4haydock": {
+            case "scelta4haydock": 
                 try {
-                    d1.choice4(6, "haydock", "haydock.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                d1.choice4(6, "haydock", "haydock.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "ObserveBody": {
+            case "ObserveBody":
                 d1.observeNPC(6, corpse, "corpse");
                 break;
-            }
 
-            case "AnalizeBody": {
+            case "AnalizeBody":
                 d1.analizeBody();
                 break;
-            }
+
         }
     }
 }

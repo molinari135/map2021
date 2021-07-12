@@ -8,10 +8,12 @@ package game;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import type.NPC;
-import type.Room;
 
 /**
  *
@@ -21,8 +23,8 @@ public class ActionHandler2 implements ActionListener {
 
     Day2_Form d2;
 
-    NPC dolly, j_marple, corpse, lorrimer, a_bantry, haydock, b_blake = new NPC();
-    Room ballRoom, hallwayHM, reception, jeffersonRoom, balcony = new Room();
+    NPC prestcot, j_turner, r_starr, c_jefferson, m_gaskell = new NPC();
+    List<String> Prestcot, J_Turner, Ramon, Jeff, Mark = new ArrayList<>();
 
     public ActionHandler2(Day2_Form d2) {
         this.d2 = d2;
@@ -31,196 +33,309 @@ public class ActionHandler2 implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        try {
-            String eventCommand = e.getActionCommand();
+        String eventCommand = e.getActionCommand();
 
-            switch (eventCommand) {
-                case "goToReceptionFromHall":
-                    d2.goToScene1();  //HALL -> RECEPTION
-                    break;
+        switch (eventCommand) {
+            case "goToReceptionFromHall":
+                d2.goToSceneXtoY(2, 1);  //HALL -> RECEPTION
+                break;
 
-                case "goToHallFromReception":
-                    d2.goToScene2FromScene1();  //RECEPTION -> HALL
-                    break;
+            case "goToHallFromReception":
+                d2.goToSceneXtoY(1, 2);  //RECEPTION -> HALL
+                break;
 
-                case "StaircaseUP2":
-                    d2.goToScene3FromScene2(); //HALL -> SUP
-                    break;
+            case "StaircaseUP2":
+                d2.goToSceneXtoY(2, 3); //HALL -> SUP
+                break;
 
-                case "StaircaseDown2":
-                    d2.goToScene2FromScene3(); //CORRIDOIO SUP -> HALL
-                    break;
+            case "StaircaseDown2":
+                d2.goToSceneXtoY(3, 2); //CORRIDOIO SUP -> HALL
+                break;
 
-                case "goToRoomFromCorridor":
-                    d2.goToScene4FromScene3();  //CORRID. -> CAMERA LETTO
-                    break;
+            case "goToRoomFromCorridor":
+                d2.goToSceneXtoY(3, 4); //CORRID. -> CAMERA LETTO
+                break;
 
-                case "goToCorridor":
-                    d2.goToScene3FromScene4();  //CAMERA LETTO -> CORRID.
-                    break;
+            case "goToCorridor":
+                d2.goToSceneXtoY(4, 3);  //CAMERA LETTO -> CORRID.
+                break;
 
-                case "KnockRoom":
-                    d2.knockRoom();
-                    break;
+            case "goToVeranda":
+                d2.goToSceneXtoY(4, 5);  //VERANDA
+                break;
 
-                case "goToVeranda":
-                    d2.goToScene5();  //VERANDA
-                    break;
+            case "goToRoomFromVeranda":
+                d2.goToSceneXtoY(5, 4); //VERANDA -> CAMERA LETTO
+                break;
 
-                case "goToRoomFromVeranda":
-                    d2.goToScene4FromScene5(); //VERANDA -> CAMERA LETTO
-                    break;
+            case "openInventory":
+                d2.inv.setVisible(true);
+                break;
 
-                case "openInventory":
-                    d2.inv.setVisible(true);
-                    break;
+            case "KnockRoom":
+                d2.knockRoom();
+                break;
 
-                case "closeTextScene1":
-                    d2.closeTextBox(1);
-                    break;
+            case "closeTextScene1":
+                d2.closeTextBox(1);
+                break;
 
-                case "closeTextScene2":
-                    d2.closeTextBox(2);
-                    break;
+            case "closeTextScene2":
+                d2.closeTextBox(2);
+                break;
 
-                case "closeTextScene3":
-                    d2.closeTextBox(3);
-                    break;
+            case "closeTextScene3":
+                d2.closeTextBox(3);
+                break;
 
-                case "closeTextScene4":
-                    d2.closeTextBox(4);
-                    break;
+            case "closeTextScene4":
+                d2.closeTextBox(4);
+                break;
 
-                case "closeTextScene5":
-                    d2.closeTextBox(5);
-                    break;
+            case "closeTextScene5":
+                d2.closeTextBox(5);
+                break;
 
-                case "ObserveOwner":
-                    d2.observeOwner();
-                    break;
+            case "ObserveOwner":
+                d2.observeNPC(1, prestcot, "prestcot");
+                break;
 
-                case "ObserveRamon":
-                    d2.observeRamon();
-                    break;
+            case "ObserveRamon":
+                d2.observeNPC(2, r_starr, "r_starr");
+                break;
 
-                case "ObserveJosephine":
-                    d2.observeJosephine();
-                    break;
+            case "ObserveJosephine":
+                d2.observeNPC(2, j_turner, "j_turner");
+                break;
 
-                case "ObserveJefferson":
-                    d2.observeJefferson();
-                    break;
+            case "ObserveJefferson":
+                d2.observeNPC(4, c_jefferson, "c_jefferson");
+                break;
 
-                case "ObserveMark":
-                    d2.observeMark();
-                    break;
+            case "ObserveMark":
+                d2.observeNPC(5, m_gaskell, "m_gaskell");
+                break;
 
-                case "TalkOwner":
-                    d2.talkOwner();
-                    break;
-
-                case "TalkRamon":
-                    d2.talkRamon();
-                    break;
-
-                case "TalkJosephine":
-                    d2.talkJosephine();
-                    break;
-
-                case "TalkJefferson":
-                    d2.talkJefferson();
-                    break;
-
-                case "TalkMark":
-                    d2.talkMark();
-                    break;
-
-                case "scelta1owner":
-                    d2.choice1Owner();
-                    break;
-
-                case "scelta2owner":
-                    d2.choice2Owner();
-                    break;
-
-                case "scelta3owner":
-                    d2.choice3Owner();
-                    break;
-
-                case "scelta4owner":
-                    d2.choice4Owner();
-                    break;
-
-                case "scelta1josephine":
-                    d2.choice1Josephine();
-                    break;
-
-                case "scelta2josephine":
-                    d2.choice2Josephine();
-                    break;
-
-                case "scelta3josephine":
-                    d2.choice3Josephine();
-                    break;
-
-                case "scelta4josephine":
-                    d2.choice4Josephine();
-                    break;
-
-                case "scelta1ramon":
-                    d2.choice1Ramon();
-                    break;
-
-                case "scelta2ramon":
-                    d2.choice2Ramon();
-                    break;
-
-                case "scelta3ramon":
-                    d2.choice3Ramon();
-                    break;
-
-                case "scelta4ramon":
-                    d2.choice4Ramon();
-                    break;
-
-                case "scelta1jefferson":
-                    d2.choice1Jefferson();
-                    break;
-
-                case "scelta2jefferson":
-                    d2.choice2Jefferson();
-                    break;
-
-                case "scelta3jefferson":
-                    d2.choice3Jefferson();
-                    break;
-
-                case "scelta4jefferson":
-                    d2.choice4Jefferson();
-                    break;
-
-                case "scelta1mark":
-                    d2.choice1Mark();
-                    break;
-
-                case "scelta2mark":
-                    d2.choice2Mark();
-                    break;
-
-                case "scelta3mark":
-                    d2.choice3Mark();
-                    break;
-
-                case "scelta4mark":
-                    d2.choice4Mark();
-                    break;
-
-                case "TakeDress":
-                    d2.takeDress();
-                    break;
+            case "TalkOwner":
+                try {
+                d2.talkNPC(1, "prestcot.txt", Prestcot, "/IconPrestcot.png", "prestcot", false);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(ActionHandler2.class.getName()).log(Level.SEVERE, null, ex);
+                break;
+
+            case "TalkRamon":
+                try {
+                d2.talkNPC(1, "r_starr.txt", Ramon, "/IconRamon.png", "r_starr", false);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                break;
+
+            case "TalkJosephine":
+                try {
+                d2.talkNPC(1, "j_turner.txt", J_Turner, "/IconJosephine.png", "j_turner", false);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                break;
+
+            case "TalkJefferson":
+                try {
+                d2.talkNPC(1, "c_jefferson.txt", Jeff, "/IconJeff.png", "c_jefferson", false);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                break;
+
+            case "TalkMark":
+                try {
+                d2.talkNPC(1, "m_gaskell.txt", Mark, "/IconMark.png", "m_gaskell", false);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                break;
+
+            case "scelta1owner": 
+                try {
+                d2.choice1(1, "prestcot", "prestcot.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta2owner": 
+                try {
+                d2.choice2(1, "prestcot", "prestcot.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta3owner": 
+                try {
+                d2.choice3(1, "prestcot", "prestcot.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta4owner": 
+                try {
+                d2.choice4(1, "prestcot", "prestcot.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta1josephine": 
+                try {
+                d2.choice1(1, "j_turner", "j_turner.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta2josephine": 
+                try {
+                d2.choice2(1, "j_turner", "j_turner.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta3josephine": 
+                try {
+                d2.choice3(1, "j_turner", "j_turner.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta4josephine": 
+                try {
+                d2.choice4(1, "j_turner", "j_turner.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta1ramon": 
+                try {
+                d2.choice1(1, "r_starr", "r_starr.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta2ramon": 
+                try {
+                d2.choice2(1, "r_starr", "r_starr.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta3ramon": 
+                try {
+                d2.choice3(1, "r_starr", "r_starr.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta4ramon": 
+                try {
+                d2.choice4(1, "r_starr", "r_starr.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta1jefferson": 
+                try {
+                d2.choice1(1, "c_jefferson", "c_jefferson.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta2jefferson": 
+                try {
+                d2.choice2(1, "c_jefferson", "c_jefferson.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta3jefferson": 
+                try {
+                d2.choice3(1, "c_jefferson", "c_jefferson.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta4jefferson": 
+                try {
+                d2.choice4(1, "c_jefferson", "c_jefferson.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta1mark": 
+                try {
+                d2.choice1(1, "m_gaskell", "m_gaskell.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta2mark": 
+                try {
+                d2.choice2(1, "m_gaskell", "m_gaskell.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta3mark": 
+                try {
+                d2.choice3(1, "m_gaskell", "m_gaskell.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
+            case "scelta4mark": 
+                try {
+                d2.choice4(1, "m_gaskell", "m_gaskell.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            break;
+
         }
 
     }
