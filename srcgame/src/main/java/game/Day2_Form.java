@@ -162,19 +162,19 @@ public class Day2_Form extends javax.swing.JFrame {
         bgPanel[1].setVisible(true);
     }//GEN-LAST:event_continua2ActionPerformed
 
-    //TODO SPOSTARE IN DAY 2
     public void goToSceneXtoY(int x, int y) {
         bgPanel[x].setVisible(false);
         bgPanel[y].setVisible(true);
+        closeTextBox(x);
     }
 
     public void observeSceneX(int x, String roomDesc) {
         textBox[x].setVisible(true);
         textAreaBox[x].setVisible(true);
         textButton[x].setVisible(true);
-        
+        //TODO file
         textAreaBox[x].setText(roomDesc);
-    }   
+    }
 
     public void observeNPC(int bgNum, NPC npc, String npcName) {
         dialogueButton1[bgNum].setVisible(false);
@@ -188,54 +188,18 @@ public class Day2_Form extends javax.swing.JFrame {
         textBox[bgNum].setVisible(true);
         textAreaBox2[bgNum].setVisible(true);
         textButton[bgNum].setVisible(true);
-        
+        //TODO file
         npc = DataHandler.NpcFinder(listNPC, npcName);
         textAreaBox[bgNum].setText(npc.getName() + " " + npc.getSurname());
         textAreaBox2[bgNum].setText(npc.getDescription());
         textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
-    }
-
-    public void talkNPC(int bgNum, String fileName, List<String> npc, String iconName, String id, Boolean labelSx) throws IOException {
+    }    
+    
+    public void talkNPC(int bgNum, String fileName, List<String> npc, String iconName, String id, Boolean labelSx) throws IOException  {
         readFile(fileName);
         npc = DialogHandler.SelectDialogOption(file, DialogHandler.DIALOG_OPTION_START, DialogHandler.DIALOG_OPTION_END);
         talkDialogue(bgNum, iconName, id, npc, labelSx); //se bool vero, la label scelta è quella sx, destra altrimenti 
-    }
-
-    public void talkDialogue(int bgNum, String icona, String input, List<String> npcName, Boolean labelSx) throws IOException {
-        i = 0;
-        detectiveSinistra[bgNum].setVisible(labelSx);
-        icon[bgNum].setVisible(true);
-        setIcon(bgNum, icona);
-        textButton[bgNum].setVisible(true);
-        textBox[bgNum].setVisible(true);
-        textAreaBox[bgNum].setVisible(true);
-        textAreaBox2[bgNum].setVisible(true);
-        dialogueButton1[bgNum].setVisible(true);
-        dialogueButton2[bgNum].setVisible(true);
-        dialogueButton3[bgNum].setVisible(true);
-        dialogueButton4[bgNum].setVisible(true);
-        detectiveDestra[bgNum].setVisible(!labelSx);
-        dialogueButton1[bgNum].setSelected(false);
-        dialogueButton2[bgNum].setSelected(false);
-        dialogueButton3[bgNum].setSelected(false);
-        dialogueButton4[bgNum].setSelected(false);
-        textAreaBox[bgNum].setText("");
-        textAreaBox2[bgNum].setText("");
-        textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
-        dialogueButton1[bgNum].setText(npcName.get(0));
-        dialogueButton2[bgNum].setText(npcName.get(1));
-        dialogueButton3[bgNum].setText(npcName.get(2));
-        dialogueButton4[bgNum].setText(npcName.get(3));
-        dialogueButton1[bgNum].addActionListener(actHandler);
-        dialogueButton1[bgNum].setActionCommand("scelta1" + input);
-        dialogueButton2[bgNum].addActionListener(actHandler);
-        dialogueButton2[bgNum].setActionCommand("scelta2" + input);
-        dialogueButton3[bgNum].addActionListener(actHandler);
-        dialogueButton3[bgNum].setActionCommand("scelta3" + input);
-        dialogueButton4[bgNum].addActionListener(actHandler);
-        dialogueButton4[bgNum].setActionCommand("scelta4" + input);
-
-    }
+    }         
 
     public void choice1(int bgNum, String npcName, String filename) throws FileNotFoundException, IOException {
         i = 0;
@@ -298,117 +262,76 @@ public class Day2_Form extends javax.swing.JFrame {
         textButton[bgNum].setText("Continua");
     }
 
-    public void setIcon(int bgNum, String Filename) {
-        ImageIcon iconMini = new ImageIcon(getClass().getResource(Filename));
-        icon[bgNum].setIcon(iconMini);
-    }
-
-    public void readFile(String namefile) throws IOException {
-
-        try {
-
-            file = new File(DialogHandler.dir + "\\src\\main\\resources\\dialogs\\" + namefile);
-
-        } catch (Exception e) {
-            // Catch exception if any
-            System.err.println("Error: " + e.getMessage());
-        }
-
-    }    
-
-    public void talkOwner() throws FileNotFoundException {
-        textBox[1].setVisible(true);
-        textAreaBox[1].setVisible(true);
-        textButton[1].setVisible(true);
-        textAreaBox2[1].setVisible(true);
-        dialogueButton1[1].setVisible(true);
-        dialogueButton2[1].setVisible(true);
-        dialogueButton3[1].setVisible(true);
-        dialogueButton4[1].setVisible(true);
-        textAreaBox[1].setText("");
-        textAreaBox2[1].setText("");
-
-    }
-
-    public void talkJosephine() {
-        textBox[2].setVisible(true);
-        textAreaBox[2].setVisible(true);
-        textButton[2].setVisible(true);
-        dialogueButton1[2].setVisible(true);
-        dialogueButton2[2].setVisible(true);
-        dialogueButton3[2].setVisible(true);
-        dialogueButton4[2].setVisible(true);
-
-        textAreaBox[2].setText("");
-    }
-
-    public void talkJefferson() {
-        textBox[4].setVisible(true);
-        textAreaBox[4].setVisible(true);
-        textButton[4].setVisible(true);
-        dialogueButton1[4].setVisible(true);
-        dialogueButton2[4].setVisible(true);
-        dialogueButton3[4].setVisible(true);
-        dialogueButton4[4].setVisible(true);
-
-        textAreaBox[4].setText("");
-    }
-
-    public void talkMark() {
-        textBox[5].setVisible(true);
-        textAreaBox[5].setVisible(true);
-        textButton[5].setVisible(true);
-        dialogueButton1[5].setVisible(true);
-        dialogueButton2[5].setVisible(true);
-        dialogueButton3[5].setVisible(true);
-        dialogueButton4[5].setVisible(true);
-
-        textAreaBox[5].setText("");
-    }
-
-    public void talkRamon() {
-        textBox[2].setVisible(true);
-        textAreaBox[2].setVisible(true);
-        textButton[2].setVisible(true);
-
-        textAreaBox[2].setText("");
-    }
-
-    public void takeDress() {
-        JButton item = new JButton();
-        Component[] object = bgPanel[2].getComponents();
-        object[21].setVisible(false);
-        //inv.getItem_1().setIcon(new ImageIcon(getClass().getResource("/dress1.png")));
-    }
-
-    public void knockRoom() {
-        try {
-            Clip clip = AudioSystem.getClip();
-            AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                    getClass().getClassLoader().getResource("Knocking-on-door.wav")
-            );
-            clip.open(inputStream);
-            clip.start();
-        } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
-            System.err.println(e.getMessage());
-        }
-
-        textBox[3].setVisible(true);
-        textAreaBox[3].setVisible(true);
-        textButton[3].setVisible(true);
-        //TODO file
-        textAreaBox[3].setText("Prego, chiunque lei sia può entrare, se una bella ragazza anche ben volentieri.");
-    }
-
     public void closeTextBox(int bgNum) {
         textBox[bgNum].setVisible(false);
         textAreaBox[bgNum].setVisible(false);
+        textAreaBox2[bgNum].setVisible(false);
         textButton[bgNum].setVisible(false);
+        detectiveDestra[bgNum].setVisible(false);
+        detectiveSinistra[bgNum].setVisible(false);
+        icon[bgNum].setVisible(false);
         dialogueButton1[bgNum].setVisible(false);
         dialogueButton2[bgNum].setVisible(false);
         dialogueButton3[bgNum].setVisible(false);
         dialogueButton4[bgNum].setVisible(false);
+
     }
+
+    public void continueDialogue(int bgNum) {
+        dialogueButton1[bgNum].setVisible(false);
+        dialogueButton2[bgNum].setVisible(false);
+        dialogueButton3[bgNum].setVisible(false);
+        dialogueButton4[bgNum].setVisible(false);
+        i = i + 2;
+
+        System.out.println("CONTINUADIALOGO");
+        if (i < npcListD.size()) {
+            textAreaBox[bgNum].setText(npcListD.get(i));
+            textAreaBox2[bgNum].setText(npcListD.get(i + 1));
+
+        } else {
+            textButton[bgNum].setText("Chiudi");
+            textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
+            closeTextBox(bgNum);
+        }
+
+    }
+    
+    public void talkDialogue(int bgNum, String icona, String input, List<String> npcName, Boolean labelSx) throws IOException {
+        i = 0;
+        detectiveSinistra[bgNum].setVisible(labelSx);
+        icon[bgNum].setVisible(true);
+        setIcon(bgNum, icona);
+        textButton[bgNum].setVisible(true);
+        textBox[bgNum].setVisible(true);
+        textAreaBox[bgNum].setVisible(true);
+        textAreaBox2[bgNum].setVisible(true);
+        dialogueButton1[bgNum].setVisible(true);
+        dialogueButton2[bgNum].setVisible(true);
+        dialogueButton3[bgNum].setVisible(true);
+        dialogueButton4[bgNum].setVisible(true);
+        detectiveDestra[bgNum].setVisible(!labelSx);
+        dialogueButton1[bgNum].setSelected(false);
+        dialogueButton2[bgNum].setSelected(false);
+        dialogueButton3[bgNum].setSelected(false);
+        dialogueButton4[bgNum].setSelected(false);
+        textAreaBox[bgNum].setText("");
+        textAreaBox2[bgNum].setText("");
+        textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
+        dialogueButton1[bgNum].setText(npcName.get(0));
+        dialogueButton2[bgNum].setText(npcName.get(1));
+        dialogueButton3[bgNum].setText(npcName.get(2));
+        dialogueButton4[bgNum].setText(npcName.get(3));
+        dialogueButton1[bgNum].addActionListener(actHandler);
+        dialogueButton1[bgNum].setActionCommand("scelta1" + input);
+        dialogueButton2[bgNum].addActionListener(actHandler);
+        dialogueButton2[bgNum].setActionCommand("scelta2" + input);
+        dialogueButton3[bgNum].addActionListener(actHandler);
+        dialogueButton3[bgNum].setActionCommand("scelta3" + input);
+        dialogueButton4[bgNum].addActionListener(actHandler);
+        dialogueButton4[bgNum].setActionCommand("scelta4" + input);
+
+    }    
 
     public void createScene(int bgNum, int x, int y, String bgFileName) {
 
@@ -450,13 +373,22 @@ public class Day2_Form extends javax.swing.JFrame {
         textAreaBox2[bgNum] = new JTextArea();
         textButton[bgNum] = new JButton();
         continueDialogue[bgNum] = new JButton();
+        detectiveDestra[bgNum] = new JLabel();
+        detectiveSinistra[bgNum] = new JLabel();
+        icon[bgNum] = new JLabel();
 
+        ImageIcon detective = new ImageIcon(getClass().getResource("/detective.png"));
+        ImageIcon detectiveflip = new ImageIcon(getClass().getResource("/detective_flip.png"));
+        detectiveDestra[bgNum].setBounds(100, 200, 673, 873);
+        detectiveSinistra[bgNum].setBounds(1000, 200, 673, 873);
+        detectiveDestra[bgNum].setIcon(detectiveflip);
+        detectiveSinistra[bgNum].setIcon(detective);
         ImageIcon boxIcon = new ImageIcon(getClass().getResource("/text_box.png"));
         textBox[bgNum].setIcon(boxIcon);
-        textBox[bgNum].setBounds(300, 680, 1300, 320);
+        textBox[bgNum].setBounds(318, 680, 1270, 320);
         textAreaBox[bgNum].setBackground(new Color(0, 0, 0, 0));
         textAreaBox[bgNum].setOpaque(false);
-        textAreaBox[bgNum].setBounds(400, 740, 1000, 200);
+        textAreaBox[bgNum].setBounds(410, 740, 1000, 200);
         textAreaBox[bgNum].setFont(new java.awt.Font("Courier New", 0, 30));
         textAreaBox[bgNum].setForeground(Color.yellow);
         textAreaBox[bgNum].setBorder(null);
@@ -465,7 +397,7 @@ public class Day2_Form extends javax.swing.JFrame {
         textAreaBox[bgNum].setLineWrap(true);
         textAreaBox2[bgNum].setBackground(new Color(0, 0, 0, 0));
         textAreaBox2[bgNum].setOpaque(false);
-        textAreaBox2[bgNum].setBounds(400, 790, 1000, 200);
+        textAreaBox2[bgNum].setBounds(410, 790, 1000, 200);
         textAreaBox2[bgNum].setFont(new java.awt.Font("Courier New", 0, 30));
         textAreaBox2[bgNum].setForeground(Color.white);
         textAreaBox2[bgNum].setBorder(null);
@@ -474,7 +406,7 @@ public class Day2_Form extends javax.swing.JFrame {
         textAreaBox2[bgNum].setLineWrap(true);
 
         textButton[bgNum].setBackground(new Color(0, 0, 0));
-        textButton[bgNum].setBounds(1438, 920, 64, 26);
+        textButton[bgNum].setBounds(1426, 920, 64, 26);
         textButton[bgNum].setFont(new Font("Segoe UI", 2, 14)); // NOI18N
         textButton[bgNum].setForeground(new Color(255, 255, 255));
         textButton[bgNum].setText("Chiudi");
@@ -482,7 +414,8 @@ public class Day2_Form extends javax.swing.JFrame {
                 Color.lightGray, Color.white, Color.lightGray, Color.white));
         textButton[bgNum].setContentAreaFilled(false);
         textButton[bgNum].addActionListener(actHandler);
-        textButton[bgNum].setActionCommand("closeTextScene" + bgNum);
+        textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
+        icon[bgNum].setBounds(1400, 790, 100, 100);
 
         //DIALOGHI A SCELTA
         dialogueButton1[bgNum] = new JRadioButton();
@@ -490,20 +423,31 @@ public class Day2_Form extends javax.swing.JFrame {
         dialogueButton3[bgNum] = new JRadioButton();
         dialogueButton4[bgNum] = new JRadioButton();
 
-        dialogueButton1[bgNum].setBounds(400, 750, 400, 50);
-        dialogueButton2[bgNum].setBounds(950, 750, 400, 50);
-        dialogueButton3[bgNum].setBounds(400, 880, 400, 50);
-        dialogueButton4[bgNum].setBounds(950, 880, 400, 50);
-
+        dialogueButton1[bgNum].setBounds(410, 750, 600, 50);
+        dialogueButton2[bgNum].setBounds(960, 750, 600, 50);
+        dialogueButton3[bgNum].setBounds(410, 860, 600, 50);
+        dialogueButton4[bgNum].setBounds(960, 860, 600, 50);
+        dialogueButton1[bgNum].setSelected(false);
+        dialogueButton2[bgNum].setSelected(false);
+        dialogueButton3[bgNum].setSelected(false);
+        dialogueButton4[bgNum].setSelected(false);
         dialogueButton1[bgNum].setForeground(Color.white);
         dialogueButton2[bgNum].setForeground(Color.white);
         dialogueButton3[bgNum].setForeground(Color.white);
         dialogueButton4[bgNum].setForeground(Color.white);
+        dialogueButton1[bgNum].setBackground(new Color(0, 0, 0));
+        dialogueButton1[bgNum].setOpaque(false);
+        dialogueButton2[bgNum].setBackground(new Color(0, 0, 0));
+        dialogueButton2[bgNum].setOpaque(false);
+        dialogueButton3[bgNum].setBackground(new Color(0, 0, 0));
+        dialogueButton3[bgNum].setOpaque(false);
+        dialogueButton4[bgNum].setBackground(new Color(0, 0, 0));
+        dialogueButton4[bgNum].setOpaque(false);
 
-        dialogueButton1[bgNum].setFont(new Font("Courier New", 0, 30));
-        dialogueButton2[bgNum].setFont(new Font("Courier New", 0, 30));
-        dialogueButton3[bgNum].setFont(new Font("Courier New", 0, 30));
-        dialogueButton4[bgNum].setFont(new Font("Courier New", 0, 30));
+        dialogueButton1[bgNum].setFont(new Font("Courier New", 0, 28));
+        dialogueButton2[bgNum].setFont(new Font("Courier New", 0, 28));
+        dialogueButton3[bgNum].setFont(new Font("Courier New", 0, 28));
+        dialogueButton4[bgNum].setFont(new Font("Courier New", 0, 28));
 
         ButtonGroup group = new ButtonGroup();
         group.add(dialogueButton1[bgNum]);
@@ -521,7 +465,11 @@ public class Day2_Form extends javax.swing.JFrame {
         dialogueButton2[bgNum].setVisible(false);
         dialogueButton3[bgNum].setVisible(false);
         dialogueButton4[bgNum].setVisible(false);
+        detectiveDestra[bgNum].setVisible(false);
+        detectiveSinistra[bgNum].setVisible(false);
+        icon[bgNum].setVisible(false);
 
+        bgPanel[bgNum].add(icon[bgNum]);
         bgPanel[bgNum].add(dialogueButton4[bgNum]);
         bgPanel[bgNum].add(dialogueButton3[bgNum]);
         bgPanel[bgNum].add(dialogueButton2[bgNum]);
@@ -531,6 +479,26 @@ public class Day2_Form extends javax.swing.JFrame {
         bgPanel[bgNum].add(textAreaBox[bgNum]);
         bgPanel[bgNum].add(textAreaBox2[bgNum]);
         bgPanel[bgNum].add(textBox[bgNum]);
+        bgPanel[bgNum].add(detectiveDestra[bgNum]);
+        bgPanel[bgNum].add(detectiveSinistra[bgNum]);
+    }
+
+    public void setIcon(int bgNum, String Filename) {
+        ImageIcon iconMini = new ImageIcon(getClass().getResource(Filename));
+        icon[bgNum].setIcon(iconMini);
+    }
+
+    public void readFile(String namefile) throws IOException {
+
+        try {
+
+            file = new File(DialogHandler.dir + "\\src\\main\\resources\\dialogs\\" + namefile);
+
+        } catch (Exception e) {
+            // Catch exception if any
+            System.err.println("Error: " + e.getMessage());
+        }
+
     }
 
     public void createArrowButton(int bgNum, int x, int y, String arrowFileName, String command) {
@@ -608,6 +576,34 @@ public class Day2_Form extends javax.swing.JFrame {
         bgPanel[bgNum].add(objectLabel);
 
     }
+
+    public void takeDress() {
+        JButton item = new JButton();
+        Component[] object = bgPanel[2].getComponents();
+        object[21].setVisible(false);
+        //inv.getItem_1().setIcon(new ImageIcon(getClass().getResource("/dress1.png")));
+    }
+
+    public void knockRoom() {
+        try {
+            Clip clip = AudioSystem.getClip();
+            AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+                    getClass().getClassLoader().getResource("Knocking-on-door.wav")
+            );
+            clip.open(inputStream);
+            clip.start();
+        } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            System.err.println(e.getMessage());
+        }
+
+        textBox[3].setVisible(true);
+        textAreaBox[3].setVisible(true);
+        textButton[3].setVisible(true);
+        //TODO file
+        textAreaBox[3].setText("Prego, chiunque lei sia può entrare, se una bella ragazza anche ben volentieri.");
+    }
+
+   
 
     public void generateScenes() throws FileNotFoundException {
 

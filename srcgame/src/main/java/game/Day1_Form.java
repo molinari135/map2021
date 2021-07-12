@@ -166,6 +166,7 @@ public class Day1_Form extends javax.swing.JFrame {
     public void goToSceneXtoY(int x, int y) {
         bgPanel[x].setVisible(false);
         bgPanel[y].setVisible(true);
+        closeTextBox(x);
     }
 
     public void observeSceneX(int x, String roomDesc) {
@@ -625,9 +626,12 @@ public class Day1_Form extends javax.swing.JFrame {
         createScene(4, 352, 0, "/corridoio2.png");
         createTextBox(4);
         createArrowButton(4, 850, 850, "/down_arrow.png", "StaircaseDown1");
+        createArrowButton(4, 400, 850, "/up_arrow.png", "Day2");
         createObject(4, 550, 300, 150, 650, "", "Entra", "Osserva", "", "WestRoomCorridor2", "ObserveStudy", "");
         createObject(4, 1120, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor2", "ObserveLibrary", "");
         bgPanel[4].add(bgLabel[4]);
+       
+        
 
         //SCENA 5 -> STUDIO
         createScene(5, 0, -10, "/studio.png");

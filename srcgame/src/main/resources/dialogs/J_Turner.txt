@@ -1,5 +1,5 @@
 Detective
-Per caso lei è la signorina Turner?
+Per caso lei Ã¨ la signorina Turner?
 Josephine Turner
 Si, lei sarebbe invece?
 Detective
@@ -7,7 +7,7 @@ Ispettore Slack, sto investigando sulla scomparsa di Ruby Keene.
 Josephine Turner
 Ah... mia cugina.
 Detective
-(Di questo passo mi servirà un libro intero per segnare i nomi delle persone sospette.)
+(Di questo passo mi servirÃ  un libro intero per segnare i nomi delle persone sospette.)
 
 
 
@@ -17,7 +17,7 @@ La prego di rispondere alle mie domande. Quando ha visto per l'ultima volta la r
 Josephine Turner
 Stava nella sala da ballo ma dove stanno i tavoli del bridge. Insieme ai Jefferson.
 Detective
-E poi? Cosa è successo?
+E poi? Cosa Ã¨ successo?
 Josephine Turner
 Mah, mi ha detto, "Mi fa male la testa, vado in camera a cambiarmi" e puff... sparita.
 Detective
@@ -31,11 +31,11 @@ Si, usava questo abito rosso.
 Detective
 Chi ballava con Ruby?
 Josephine Turner
-Quel ragazzo laggiù, si chiama Ramòn.
+Quel ragazzo laggiÃ¹, si chiama RamÃ²n.
 Detective
 Pensa che potesse essere un suo pretendente?
 Josephine Turner
-Chi? Ramòn? Ahahahah ma no.
+Chi? RamÃ²n? Ahahahah ma no.
 Detective
 Quindi ieri sera alla fine ha ballato lei al posto di Ruby?
 Josephine Turner
@@ -45,7 +45,7 @@ Si. Avrei voluto ucciderla, ma a quanto pare ci ha pensato qualcun altro. Non ha
 
 
 Detective
-Mi può parlare del signor Jefferson?
+Mi puÃ² parlare del signor Jefferson?
 Josephine Turner
 Viene ogni anno con la sua famiglia qui, passano qualche settimana e poi se ne vanno.
 Detective

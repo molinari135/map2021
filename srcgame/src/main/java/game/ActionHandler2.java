@@ -76,6 +76,49 @@ public class ActionHandler2 implements ActionListener {
                 d2.knockRoom();
                 break;
 
+            case "continueTextScene1":
+                d2.closeTextBox(1);
+                break;
+
+            case "continueTextScene2":
+                d2.closeTextBox(2);
+                break;
+
+            case "continueTextScene3":
+                d2.closeTextBox(3);
+                break;
+
+            case "continueTextScene4":
+                d2.closeTextBox(4);
+                break;
+
+            case "continueTextScene5":
+                d2.closeTextBox(5);
+                break;
+
+            case "continueTextScene6":
+                d2.closeTextBox(6);
+                break;
+
+            case "continueDialog1":
+                d2.continueDialogue(1);
+                break;
+
+            case "continueDialog2":
+                d2.continueDialogue(2);
+                break;
+
+            case "continueDialog3":
+                d2.continueDialogue(3);
+                break;
+
+            case "continueDialog5":
+                d2.continueDialogue(5);
+                break;
+
+            case "continueDialog4":
+                d2.continueDialogue(4);
+                break;    
             case "closeTextScene1":
                 d2.closeTextBox(1);
                 break;
@@ -126,7 +169,7 @@ public class ActionHandler2 implements ActionListener {
 
             case "TalkRamon":
                 try {
-                d2.talkNPC(1, "r_starr.txt", Ramon, "/IconRamon.png", "r_starr", false);
+                d2.talkNPC(2, "r_starr.txt", Ramon, "/IconRamon.png", "r_starr", false);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -134,7 +177,7 @@ public class ActionHandler2 implements ActionListener {
 
             case "TalkJosephine":
                 try {
-                d2.talkNPC(1, "j_turner.txt", J_Turner, "/IconJosephine.png", "j_turner", false);
+                d2.talkNPC(2, "j_turner.txt", J_Turner, "/IconJosephine.png", "j_turner", false);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -142,7 +185,7 @@ public class ActionHandler2 implements ActionListener {
 
             case "TalkJefferson":
                 try {
-                d2.talkNPC(1, "c_jefferson.txt", Jeff, "/IconJeff.png", "c_jefferson", false);
+                d2.talkNPC(4, "c_jefferson.txt", Jeff, "/IconJeff.png", "c_jefferson", false);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -150,13 +193,13 @@ public class ActionHandler2 implements ActionListener {
 
             case "TalkMark":
                 try {
-                d2.talkNPC(1, "m_gaskell.txt", Mark, "/IconMark.png", "m_gaskell", false);
+                d2.talkNPC(5, "m_gaskell.txt", Mark, "/IconMark.png", "m_gaskell", false);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
                 break;
 
-            case "scelta1owner": 
+            case "scelta1prestcot": 
                 try {
                 d2.choice1(1, "prestcot", "prestcot.txt");
             } catch (IOException ex) {
@@ -165,7 +208,7 @@ public class ActionHandler2 implements ActionListener {
 
             break;
 
-            case "scelta2owner": 
+            case "scelta2prestcot": 
                 try {
                 d2.choice2(1, "prestcot", "prestcot.txt");
             } catch (IOException ex) {
@@ -174,7 +217,7 @@ public class ActionHandler2 implements ActionListener {
 
             break;
 
-            case "scelta3owner": 
+            case "scelta3prestcot": 
                 try {
                 d2.choice3(1, "prestcot", "prestcot.txt");
             } catch (IOException ex) {
@@ -183,7 +226,7 @@ public class ActionHandler2 implements ActionListener {
 
             break;
 
-            case "scelta4owner": 
+            case "scelta4prestcot": 
                 try {
                 d2.choice4(1, "prestcot", "prestcot.txt");
             } catch (IOException ex) {
@@ -192,144 +235,144 @@ public class ActionHandler2 implements ActionListener {
 
             break;
 
-            case "scelta1josephine": 
+            case "scelta1j_turner": 
                 try {
-                d2.choice1(1, "j_turner", "j_turner.txt");
+                d2.choice1(2, "j_turner", "j_turner.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta2josephine": 
+            case "scelta2j_turner": 
                 try {
-                d2.choice2(1, "j_turner", "j_turner.txt");
+                d2.choice2(2, "j_turner", "j_turner.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta3josephine": 
+            case "scelta3j_turner": 
                 try {
-                d2.choice3(1, "j_turner", "j_turner.txt");
+                d2.choice3(2, "j_turner", "j_turner.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta4josephine": 
+            case "scelta4j_turner": 
                 try {
-                d2.choice4(1, "j_turner", "j_turner.txt");
+                d2.choice4(2, "j_turner", "j_turner.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta1ramon": 
+            case "scelta1r_starr": 
                 try {
-                d2.choice1(1, "r_starr", "r_starr.txt");
+                d2.choice1(2, "r_starr", "r_starr.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta2ramon": 
+            case "scelta2r_starr": 
                 try {
-                d2.choice2(1, "r_starr", "r_starr.txt");
+                d2.choice2(2, "r_starr", "r_starr.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta3ramon": 
+            case "scelta3r_starr": 
                 try {
-                d2.choice3(1, "r_starr", "r_starr.txt");
+                d2.choice3(2, "r_starr", "r_starr.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta4ramon": 
+            case "scelta4r_starr": 
                 try {
-                d2.choice4(1, "r_starr", "r_starr.txt");
+                d2.choice4(2, "r_starr", "r_starr.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta1jefferson": 
+            case "scelta1c_jefferson": 
                 try {
-                d2.choice1(1, "c_jefferson", "c_jefferson.txt");
+                d2.choice1(4, "c_jefferson", "c_jefferson.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta2jefferson": 
+            case "scelta2c_jefferson": 
                 try {
-                d2.choice2(1, "c_jefferson", "c_jefferson.txt");
+                d2.choice2(4, "c_jefferson", "c_jefferson.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta3jefferson": 
+            case "scelta3c_jefferson": 
                 try {
-                d2.choice3(1, "c_jefferson", "c_jefferson.txt");
+                d2.choice3(4, "c_jefferson", "c_jefferson.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta4jefferson": 
+            case "scelta4c_jefferson": 
                 try {
-                d2.choice4(1, "c_jefferson", "c_jefferson.txt");
+                d2.choice4(4, "c_jefferson", "c_jefferson.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta1mark": 
+            case "scelta1m_gaskell": 
                 try {
-                d2.choice1(1, "m_gaskell", "m_gaskell.txt");
+                d2.choice1(5, "m_gaskell", "m_gaskell.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta2mark": 
+            case "scelta2m_gaskell": 
                 try {
-                d2.choice2(1, "m_gaskell", "m_gaskell.txt");
+                d2.choice2(5, "m_gaskell", "m_gaskell.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta3mark": 
+            case "scelta3m_gaskell": 
                 try {
-                d2.choice3(1, "m_gaskell", "m_gaskell.txt");
+                d2.choice3(5, "m_gaskell", "m_gaskell.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta4mark": 
+            case "scelta4m_gaskell": 
                 try {
-                d2.choice4(1, "m_gaskell", "m_gaskell.txt");
+                d2.choice4(5, "m_gaskell", "m_gaskell.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }

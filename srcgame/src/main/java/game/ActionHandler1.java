@@ -61,6 +61,10 @@ public class ActionHandler1 implements ActionListener {
             case "StaircaseDown1":
                 d1.goToSceneXtoY(4, 2); //CORRIDOIO SUP -> INF
                 break;
+            case "Day2":
+                new Day2_Form().setVisible(true);
+                d1.setVisible(false);
+                break;
 
             case "WestRoomCorridor2":
                 d1.goToSceneXtoY(4, 5);  //STUDY
