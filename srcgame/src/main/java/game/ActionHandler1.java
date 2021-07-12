@@ -354,7 +354,6 @@ public class ActionHandler1 implements ActionListener {
             }
                 break;
 
-
             case "scelta4b_blake":
             {
                 try {
@@ -363,10 +362,13 @@ public class ActionHandler1 implements ActionListener {
                     Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-             case "ObserveABantry": {
+            break;
+            
+            case "ObserveABantry": {
                 d1.observeABantry();
                 break;
             }
+            
             case "TalkABantry":{
             try {
                 d1.talkABantry();

@@ -34,6 +34,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import type.NPC;
 import type.Room;
 
@@ -153,7 +155,11 @@ public class Day2_Form extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void continua2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continua2ActionPerformed
-        generateScenes();
+        try {
+            generateScenes();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Day2_Form.class.getName()).log(Level.SEVERE, null, ex);
+        }
         background2.setVisible(false);
         bgPanel[1].setVisible(true);
     }//GEN-LAST:event_continua2ActionPerformed
