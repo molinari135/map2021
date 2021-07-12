@@ -432,7 +432,10 @@ public class Day1_Form extends javax.swing.JFrame {
     }
 
     public void continueDialog(int bgNum) {
-        
+        dialogueButton1[bgNum].setVisible(false);
+        dialogueButton2[bgNum].setVisible(false);
+        dialogueButton3[bgNum].setVisible(false);
+        dialogueButton4[bgNum].setVisible(false);
         i=i+2;
         
         System.out.println("CONTINUADIALOGO");
@@ -469,6 +472,7 @@ public class Day1_Form extends javax.swing.JFrame {
         dialogueButton4[bgNum].setSelected(false);
         textAreaBox[bgNum].setText("");
         textAreaBox2[bgNum].setText("");
+        textButton[bgNum].setActionCommand("continueTextScene"+ bgNum);
         dialogueButton1[bgNum].setText(npcName.get(0));
         dialogueButton2[bgNum].setText(npcName.get(1));
         dialogueButton3[bgNum].setText(npcName.get(2));
@@ -505,6 +509,7 @@ public class Day1_Form extends javax.swing.JFrame {
         detectiveSinistra[bgNum].setVisible(true);
         textAreaBox[bgNum].setText("");
         textAreaBox2[bgNum].setText("");
+        textButton[bgNum].setActionCommand("continueTextScene"+ bgNum);
         dialogueButton1[bgNum].setText(npcName.get(0));
         dialogueButton2[bgNum].setText(npcName.get(1));
         dialogueButton3[bgNum].setText(npcName.get(2));
