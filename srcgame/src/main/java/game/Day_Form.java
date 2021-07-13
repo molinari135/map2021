@@ -35,22 +35,25 @@ import type.NPC;
  *
  * @author tom
  */
-public class Day1_Form extends javax.swing.JFrame {
+public class Day_Form extends javax.swing.JFrame {
 
     Day1 d1;
     boolean object_available = false;
     InventoryDialog inv = new InventoryDialog(this, true);
-    int i = 0; //per continuare dialoghi
-
+    int i = 0;
     //TODO spostare in DAY1
-    ActionHandler1 actHandler = new ActionHandler1(this);
+    //per continuare dialoghi
+    ActionHandler actHandler1;
+    
+    ActionHandler actHandler2;
 
     List<String> npcListD = new ArrayList<>();
-    
-    ArrayList<String> list = new ArrayList<>();
-    
-    File file;
 
+    ArrayList<String> list = new ArrayList<>();
+
+    File file;
+    
+    
     /**
      * Creates new form Day1_Form
      */
@@ -67,16 +70,20 @@ public class Day1_Form extends javax.swing.JFrame {
     public JRadioButton dialogueButton2[] = new JRadioButton[10];
     public JRadioButton dialogueButton3[] = new JRadioButton[10];
     public JRadioButton dialogueButton4[] = new JRadioButton[10];
-    
+
     public JLabel detectiveDestra[] = new JLabel[10];
     public JLabel detectiveSinistra[] = new JLabel[10];
     public JLabel icon[] = new JLabel[10];
+    public DayDescription d;
+
+    public Day_Form(DayDescription d) {
+        this.actHandler1 = new ActionHandler1(d);
+        this.actHandler2 = new ActionHandler2(d);
+        initComponents();
+        this.d = d;
+    }
 
     
-
-    public Day1_Form() {
-        initComponents();
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -155,204 +162,19 @@ public class Day1_Form extends javax.swing.JFrame {
         try {
             generateScenes();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Day1_Form.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Day_Form.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(Day1_Form.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Day_Form.class.getName()).log(Level.SEVERE, null, ex);
         }
         background1.setVisible(false);
         bgPanel[1].setVisible(true);
     }//GEN-LAST:event_continua1ActionPerformed
 
-    public void goToSceneXtoY(int x, int y) {
-        bgPanel[x].setVisible(false);
-        bgPanel[y].setVisible(true);
-        closeTextBox(x);
-    }
 
-    public void observeSceneX(int x, String roomDesc) {
-        textBox[x].setVisible(true);
-        textAreaBox[x].setVisible(true);
-        textButton[x].setVisible(true);
-        //TODO file
-        textAreaBox[x].setText(roomDesc);
-    }
+   
 
-    public void observeNPC(int bgNum, NPC npc, String npcName) {
-        dialogueButton1[bgNum].setVisible(false);
-        dialogueButton2[bgNum].setVisible(false);
-        dialogueButton3[bgNum].setVisible(false);
-        dialogueButton4[bgNum].setVisible(false);
-        detectiveDestra[bgNum].setVisible(false);
-        detectiveSinistra[bgNum].setVisible(false);
-        textAreaBox[bgNum].setVisible(true);
-        icon[bgNum].setVisible(false);
-        textBox[bgNum].setVisible(true);
-        textAreaBox2[bgNum].setVisible(true);
-        textButton[bgNum].setVisible(true);
-        //TODO file
-        npc = DataHandler.NpcFinder(listNPC, npcName);
-        textAreaBox[bgNum].setText(npc.getName() + " " + npc.getSurname());
-        textAreaBox2[bgNum].setText(npc.getDescription());
-        textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
-    }    
-    
-    public void talkNPC(int bgNum, String fileName, List<String> npc, String iconName, String id, Boolean labelSx) throws IOException  {
-        readFile(fileName);
-        npc = DialogHandler.SelectDialogOption(file, DialogHandler.DIALOG_OPTION_START, DialogHandler.DIALOG_OPTION_END);
-        talkDialogue(bgNum, iconName, id, npc, labelSx); //se bool vero, la label scelta è quella sx, destra altrimenti 
-    }           
-    
 
-    public void analizeBody() {
-        textBox[6].setVisible(true);
-        textButton[6].setVisible(true);
-        textAreaBox2[6].setVisible(true);
-        textAreaBox2[6].setText("Ispezionando il cadavere , hai ottenuto ABITO BIANCO");
-        inv.getItem_2().setIcon(new ImageIcon(getClass().getResource("/dress1.png")));
-        inv.getItem_2().setText("");
-        textButton[6].setText("Chiudi");
-        textButton[6].setActionCommand("continueTextScene" + 6);
-
-    }
-    
-    public void takeDress() {
-       inv.getItem_1().setIcon(new ImageIcon(getClass().getResource("/doc_autopsia.png")));
-       inv.getItem_1().setText("");
-    }
-
-    public void choice1(int bgNum, String npcName, String filename) throws FileNotFoundException, IOException {
-        i = 0;
-        dialogueButton1[bgNum].setVisible(false);
-        dialogueButton2[bgNum].setVisible(false);
-        dialogueButton3[bgNum].setVisible(false);
-        dialogueButton4[bgNum].setVisible(false);
-        readFile(filename);
-
-        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.FIRST_DIALOG_START, DialogHandler.FIRST_DIALOG_END);
-        System.out.println(npcListD.get(i));
-        textAreaBox[bgNum].setText(npcListD.get(i));
-        textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        textButton[bgNum].setActionCommand("continueDialog" + bgNum);
-        textButton[bgNum].setText("Continua");
-    }
-
-    public void choice2(int bgNum, String npcName, String filename) throws IOException {
-        dialogueButton1[bgNum].setVisible(false);
-        dialogueButton2[bgNum].setVisible(false);
-        dialogueButton3[bgNum].setVisible(false);
-        dialogueButton4[bgNum].setVisible(false);
-        readFile(filename);
-
-        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.SECOND_DIALOG_START, DialogHandler.SECOND_DIALOG_END);
-        System.out.println(npcListD.get(i));
-        textAreaBox[bgNum].setText(npcListD.get(i));
-        textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        textButton[bgNum].setActionCommand("continueDialog" + bgNum);
-        textButton[bgNum].setText("Continua");
-    }
-
-    public void choice3(int bgNum, String npcName, String filename) throws IOException {
-        dialogueButton1[bgNum].setVisible(false);
-        dialogueButton2[bgNum].setVisible(false);
-        dialogueButton3[bgNum].setVisible(false);
-        dialogueButton4[bgNum].setVisible(false);
-        readFile(filename);
-
-        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.THIRD_DIALOG_START, DialogHandler.THIRD_DIALOG_END);
-        System.out.println(npcListD.get(i));
-        textAreaBox[bgNum].setText(npcListD.get(i));
-        textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        textButton[bgNum].setActionCommand("continueDialog" + bgNum);
-        textButton[bgNum].setText("Continua");
-
-    }
-
-    public void choice4(int bgNum, String npcName, String filename) throws IOException {
-        dialogueButton1[bgNum].setVisible(false);
-        dialogueButton2[bgNum].setVisible(false);
-        dialogueButton3[bgNum].setVisible(false);
-        dialogueButton4[bgNum].setVisible(false);
-        readFile(filename);
-        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.FORTH_DIALOG_START, DialogHandler.FORTH_DIALOG_END);
-        System.out.println(npcListD.get(i));
-        textAreaBox[bgNum].setText(npcListD.get(i));
-        textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        textButton[bgNum].setActionCommand("continueDialog" + bgNum);
-        textButton[bgNum].setText("Continua");
-    }
-
-    public void closeTextBox(int bgNum) {
-        textBox[bgNum].setVisible(false);
-        textAreaBox[bgNum].setVisible(false);
-        textAreaBox2[bgNum].setVisible(false);
-        textButton[bgNum].setVisible(false);
-        detectiveDestra[bgNum].setVisible(false);
-        detectiveSinistra[bgNum].setVisible(false);
-        icon[bgNum].setVisible(false);
-        dialogueButton1[bgNum].setVisible(false);
-        dialogueButton2[bgNum].setVisible(false);
-        dialogueButton3[bgNum].setVisible(false);
-        dialogueButton4[bgNum].setVisible(false);
-
-    }
-
-    public void continueDialogue(int bgNum) {
-        dialogueButton1[bgNum].setVisible(false);
-        dialogueButton2[bgNum].setVisible(false);
-        dialogueButton3[bgNum].setVisible(false);
-        dialogueButton4[bgNum].setVisible(false);
-        i = i + 2;
-
-        System.out.println("CONTINUADIALOGO");
-        if (i < npcListD.size()) {
-            textAreaBox[bgNum].setText(npcListD.get(i));
-            textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-
-        } else {
-            textButton[bgNum].setText("Chiudi");
-            textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
-            closeTextBox(bgNum);
-        }
-
-    }
-    
-    public void talkDialogue(int bgNum, String icona, String input, List<String> npcName, Boolean labelSx) throws IOException {
-        i = 0;
-        detectiveSinistra[bgNum].setVisible(labelSx);
-        icon[bgNum].setVisible(true);
-        setIcon(bgNum, icona);
-        textButton[bgNum].setVisible(true);
-        textBox[bgNum].setVisible(true);
-        textAreaBox[bgNum].setVisible(true);
-        textAreaBox2[bgNum].setVisible(true);
-        dialogueButton1[bgNum].setVisible(true);
-        dialogueButton2[bgNum].setVisible(true);
-        dialogueButton3[bgNum].setVisible(true);
-        dialogueButton4[bgNum].setVisible(true);
-        detectiveDestra[bgNum].setVisible(!labelSx);
-        dialogueButton1[bgNum].setSelected(false);
-        dialogueButton2[bgNum].setSelected(false);
-        dialogueButton3[bgNum].setSelected(false);
-        dialogueButton4[bgNum].setSelected(false);
-        textAreaBox[bgNum].setText("");
-        textAreaBox2[bgNum].setText("");
-        textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
-        dialogueButton1[bgNum].setText(npcName.get(0));
-        dialogueButton2[bgNum].setText(npcName.get(1));
-        dialogueButton3[bgNum].setText(npcName.get(2));
-        dialogueButton4[bgNum].setText(npcName.get(3));
-        dialogueButton1[bgNum].addActionListener(actHandler);
-        dialogueButton1[bgNum].setActionCommand("scelta1" + input);
-        dialogueButton2[bgNum].addActionListener(actHandler);
-        dialogueButton2[bgNum].setActionCommand("scelta2" + input);
-        dialogueButton3[bgNum].addActionListener(actHandler);
-        dialogueButton3[bgNum].setActionCommand("scelta3" + input);
-        dialogueButton4[bgNum].addActionListener(actHandler);
-        dialogueButton4[bgNum].setActionCommand("scelta4" + input);
-
-    }    
-
-    public void createScene(int bgNum, int x, int y, String bgFileName) {
+    public void createScene(int bgNum, int x, int y, String bgFileName,ActionHandler actHandler) {
 
         //panel
         bgPanel[bgNum] = new JPanel();
@@ -383,7 +205,7 @@ public class Day1_Form extends javax.swing.JFrame {
         this.add(bgPanel[bgNum]);
     }
 
-    public void createTextBox(int bgNum) {
+    public void createTextBox(int bgNum,ActionHandler actHandler) {
         //TODO FARE PIù PICCOLA TEXT_BOX
 
         //creazione componenti
@@ -502,25 +324,9 @@ public class Day1_Form extends javax.swing.JFrame {
         bgPanel[bgNum].add(detectiveSinistra[bgNum]);
     }
 
-    public void setIcon(int bgNum, String Filename) {
-        ImageIcon iconMini = new ImageIcon(getClass().getResource(Filename));
-        icon[bgNum].setIcon(iconMini);
-    }
+    
 
-    public void readFile(String namefile) throws IOException {
-
-        try {
-
-            file = new File(DialogHandler.dir + "\\src\\main\\resources\\dialogs\\" + namefile);
-
-        } catch (Exception e) {
-            // Catch exception if any
-            System.err.println("Error: " + e.getMessage());
-        }
-
-    }
-
-    public void createArrowButton(int bgNum, int x, int y, String arrowFileName, String command) {
+    public void createArrowButton(int bgNum, int x, int y, String arrowFileName, String command,ActionHandler actHandler) {
 
         ImageIcon arrowIcon = new ImageIcon(getClass().getResource(arrowFileName));
 
@@ -538,7 +344,7 @@ public class Day1_Form extends javax.swing.JFrame {
     }
 
     public void createObject(int bgNum, int objx, int objy, int objWidth, int objHeight, String objFileName,
-            String choice1Name, String choice2Name, String choice3Name, String choice1Command, String Choice2Command, String Choice3Command) {
+            String choice1Name, String choice2Name, String choice3Name, String choice1Command, String Choice2Command, String Choice3Command, ActionHandler actHandler) {
 
         // CREATE POP MENU
         JPopupMenu popMenu = new JPopupMenu();
@@ -599,93 +405,96 @@ public class Day1_Form extends javax.swing.JFrame {
     public void generateScenes() throws FileNotFoundException, IOException {
 
         //SCENA 1 -> DINING ROOM
-        createScene(1, 0, -10, "/diningroommod.png");
-        createTextBox(1);
+        createScene(1, 0, -10, "/diningroommod.png",actHandler1);
+        createTextBox(1,actHandler1);
 
-        createArrowButton(1, 1750, 500, "/right_arrow.png", "goToCorridorFromDRoom");
-        createObject(1, 200, 220, 200, 700, "", "Parla", "Osserva", "", "TalkDolly", "ObserveDolly", "");
-        createObject(1, 1550, 210, 220, 700, "", "Parla", "Osserva", "", "TalkJane", "ObserveJane", "");
+        createArrowButton(1, 1750, 500, "/right_arrow.png", "goToCorridorFromDRoom",actHandler1);
+        createObject(1, 200, 220, 200, 700, "", "Parla", "Osserva", "", "TalkDolly", "ObserveDolly", "",actHandler1);
+        createObject(1, 1550, 210, 220, 700, "", "Parla", "Osserva", "", "TalkJane", "ObserveJane", "",actHandler1);
         bgPanel[1].add(bgLabel[1]);
 
         //SCENA 2 -> CORRIDOIO PIANO TERRA
-        createScene(2, 352, 0, "/corridoio1.png");
-        createObject(2, 620, 300, 150, 650, "", "Entra", "Osserva", "", "WestRoomCorridor1", "ObserveDiningRoom", "");
-        createObject(2, 1215, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor1", "ObserveLivingRoom", "");
-        createObject(2, 850, 350, 300, 500, "", "Sali al piano superiore", "", "", "StaircaseUP1", "", "");
-        createTextBox(2);
+        createScene(2, 352, 0, "/corridoio1.png",actHandler1);
+        createObject(2, 620, 300, 150, 650, "", "Entra", "Osserva", "", "WestRoomCorridor1", "ObserveDiningRoom", "",actHandler1);
+        createObject(2, 1215, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor1", "ObserveLivingRoom", "",actHandler1);
+        createObject(2, 850, 350, 300, 500, "", "Sali al piano superiore", "", "", "StaircaseUP1", "", "",actHandler1);
+        createTextBox(2,actHandler1);
         bgPanel[2].add(bgLabel[2]);
 
         //SCENA 3 -> LIVING ROOM 
-        createScene(3, 0, -10, "/livingroom.png");
-        createTextBox(3);
-        createArrowButton(3, 10, 500, "/left_arrow.png", "goToCorridorFromLRoom");
-        createObject(3, 250, 250, 200, 650, "", "Parla", "Osserva", "puntagli il ferro", "TalkLorrimer", "ObserveLorrimer", "");
+        createScene(3, 0, -10, "/livingroom.png",actHandler1);
+        createTextBox(3,actHandler1);
+        createArrowButton(3, 10, 500, "/left_arrow.png", "goToCorridorFromLRoom",actHandler1);
+        createObject(3, 250, 250, 200, 650, "", "Parla", "Osserva", "puntagli il ferro", "TalkLorrimer", "ObserveLorrimer", "",actHandler1);
         bgPanel[3].add(bgLabel[3]);
 
         //SCENA 4 -> CORRIDOIO PRIMO PIANO
-        createScene(4, 352, 0, "/corridoio2.png");
-        createTextBox(4);
-        createArrowButton(4, 850, 850, "/down_arrow.png", "StaircaseDown1");
-        createArrowButton(4, 400, 850, "/up_arrow.png", "Day2");
-        createObject(4, 550, 300, 150, 650, "", "Entra", "Osserva", "", "WestRoomCorridor2", "ObserveStudy", "");
-        createObject(4, 1120, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor2", "ObserveLibrary", "");
+        createScene(4, 352, 0, "/corridoio2.png",actHandler1);
+        createTextBox(4,actHandler1);
+        createArrowButton(4, 850, 850, "/down_arrow.png", "StaircaseDown1",actHandler1);
+        createArrowButton(4, 400, 850, "/up_arrow.png", "Day2",actHandler1);
+        createObject(4, 550, 300, 150, 650, "", "Entra", "Osserva", "", "WestRoomCorridor2", "ObserveStudy", "",actHandler1);
+        createObject(4, 1120, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor2", "ObserveLibrary", "",actHandler1);
         bgPanel[4].add(bgLabel[4]);
-       
-        
 
         //SCENA 5 -> STUDIO
-        createScene(5, 0, -10, "/studio.png");
-        createTextBox(5);
-        createArrowButton(5, 1750, 500, "/right_arrow.png", "goToCorridorFromStudy");
-        createObject(5, 390, 250, 200, 700, "", "Parla", "Osserva", "", "TalkBasil", "ObserveBasil", "");
-        createObject(5, 1350, 250, 220, 700, "", "Parla", "Osserva", "", "TalkABantry", "ObserveABantry", "");
+        createScene(5, 0, -10, "/studio.png",actHandler1);
+        createTextBox(5,actHandler1);
+        createArrowButton(5, 1750, 500, "/right_arrow.png", "goToCorridorFromStudy",actHandler1);
+        createObject(5, 390, 250, 200, 700, "", "Parla", "Osserva", "", "TalkBasil", "ObserveBasil", "",actHandler1);
+        createObject(5, 1350, 250, 220, 700, "", "Parla", "Osserva", "", "TalkABantry", "ObserveABantry", "",actHandler1);
         bgPanel[5].add(bgLabel[5]);
 
         //SCENA 6 -> BIBLIOTECA
-        createScene(6, 0, -10, "/Library.png");
-        createTextBox(6);
-        createArrowButton(6, 10, 500, "/left_arrow.png", "goToCorridorFromLibrary");
-        createObject(6, 250, 700, 600, 170, "", "Osserva", "Ispeziona", "", "ObserveBody", "AnalizeBody", "");
-        createObject(6, 1000, 400, 220, 500, "", "Parla", "Osserva", "", "TalkHaydoc", "ObserveHaydoc", "");
+        createScene(6, 0, -10, "/Library.png",actHandler1);
+        createTextBox(6,actHandler1);
+        createArrowButton(6, 10, 500, "/left_arrow.png", "goToCorridorFromLibrary",actHandler1);
+        createObject(6, 250, 700, 600, 170, "", "Osserva", "Ispeziona", "", "ObserveBody", "AnalizeBody", "",actHandler1);
+        createObject(6, 1000, 400, 220, 500, "", "Parla", "Osserva", "", "TalkHaydoc", "ObserveHaydoc", "",actHandler1);
         bgPanel[6].add(bgLabel[6]);
 
+        //SCENA 8 -> RECEPTION
+        createScene(8, 0, -10, "/receptionhotel.png",actHandler2);
+        createTextBox(8,actHandler2);
+        createArrowButton(8, 10, 500, "/left_arrow.png", "goToHallFromReception",actHandler2);
+        createObject(8, 1000, 250, 200, 400, "", "Parla", "Osserva", "", "TalkOwner", "ObserveOwner", "",actHandler2);
+        bgPanel[8].add(bgLabel[8]);
+
+        //SCENA 9 -> SALA DA BALLO
+        createScene(9, 0, 0, "/hall.png",actHandler2);
+        createTextBox(9,actHandler2);
+
+        createArrowButton(9, 1750, 500, "/right_arrow.png", "goToReceptionFromHall",actHandler2);
+        createArrowButton(9, 10, 500, "/left_arrow.png", "StaircaseUP2",actHandler2);
+        createObject(9, 330, 600, 150, 330, "", "Parla", "Osserva", "", "TalkJosephine", "ObserveJosephine", "",actHandler2);
+        createObject(9, 1430, 600, 150, 330, "", "Parla", "Osserva", "", "TalkRamon", "ObserveRamon", "",actHandler2);
+        createObject(9, 1000, 700, 160, 226, "/dressDance.png", "Osserva", "Raccogli", "", "ObserveDress", "TakeDress", "",actHandler2);
+        bgPanel[9].add(bgLabel[9]);
+
+        //SCENA 10 -> CORRIDOIO
+        createScene(10, 352, -10, "/corridoiohotel.png",actHandler2);
+        createTextBox(10,actHandler2);
+        createArrowButton(10, 850, 850, "/down_arrow.png", "StaircaseDown2",actHandler2);
+        createObject(10, 360, 100, 200, 850, "", "Bussa", "Entra (senza bussare è maleducazione...)", "", "KnockRoom", "goToRoomFromCorridor", "",actHandler2);
+        bgPanel[10].add(bgLabel[10]);
+
+        //SCENA 11 -> ROOM
+        createScene(11, 0, -10, "/bedroom.png",actHandler2);
+        createTextBox(11,actHandler2);
+        createArrowButton(11, 10, 500, "/left_arrow.png", "goToVeranda",actHandler2);
+        createArrowButton(11, 1750, 500, "/right_arrow.png", "goToCorridor",actHandler2);
+        createObject(11, 650, 200, 200, 700, "", "Parla", "Osserva", "", "TalkJefferson", "ObserveJefferson", "",actHandler2);
+        bgPanel[11].add(bgLabel[4]);
+
+        //SCENA 12 -> VERANDA
+        createScene(12, 0, -10, "/veranda.png",actHandler2);
+        createTextBox(12,actHandler2);
+        createArrowButton(12, 1750, 500, "/right_arrow.png", "goToRoomFromVeranda",actHandler2);
+        createObject(12, 200, 70, 200, 830, "", "Parla", "Osserva", "", "TalkMark", "ObserveMark", "",actHandler2);
+        bgPanel[12].add(bgLabel[12]);
     }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Day1_Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Day1_Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Day1_Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Day1_Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new Day1_Form().setVisible(true);
-            }
-        });
-    }
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background1;
@@ -694,8 +503,5 @@ public class Day1_Form extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
-
-    
-  
 
 }

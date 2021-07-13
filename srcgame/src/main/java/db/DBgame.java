@@ -54,7 +54,9 @@ public class DBgame {
             + "desc VARCHAR(1024),"                 // descrizione del personaggio
             + "room VARCHAR(50),"                   // stanza in cui è presente il personaggio
             + "talked BOOLEAN)";                    // true se si ha già parlato, false altrimenti
-    
+    public static final String JOIN_TABLE = "SELECT *"
+            + "FROM npc JOIN room ON npc.room = room.roomId"
+            + "AS table";
     public static final String CLEAR_TABLE_PLACE = "TRUNCATE TABLE place";
     public static final String CLEAR_TABLE_ITEM = "TRUNCATE TABLE item";
     public static final String CLEAR_TABLE_ROOM = "TRUNCATE TABLE room";
@@ -141,6 +143,15 @@ public class DBgame {
         }
     }
     
+    public void joinManager(String query) {
+        try{
+            Statement stm = connection.createStatement();
+            stm.executeQuery(query);
+            stm.close();
+        }catch(SQLException ex) {
+            System.err.println(ex.getSQLState() + ": " + ex.getMessage());
+        }
+    }
     public void printPlace() throws SQLException {
         Statement stm = connection.createStatement();
         ResultSet rs = stm.executeQuery("SELECT * FROM place");

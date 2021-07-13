@@ -31,7 +31,8 @@ public class Scene1 {
     JLabel auto = new JLabel();
     JTextField data = new JTextField();
     JTextArea testoPrologo = new JTextArea();
-    JButton continua = new JButton();    
+    JButton continua = new JButton();
+    
 
     JFrame frame;
 
@@ -125,7 +126,7 @@ public class Scene1 {
                 clipRain.stop();
                 clipJazz.stop();
                 //TODO chiamare metodo di Day1
-                new Day1_Form().setVisible(true);
+                new Day_Form().setVisible(true);
                 break;
                 
             default:

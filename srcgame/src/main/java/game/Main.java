@@ -21,6 +21,8 @@ import type.Room;
 public class Main {   
      public static List<NPC> listNPC = new ArrayList<NPC>();
      public static List<Room> listRoom = new ArrayList<Room>();
+     public static List<Item> listItem = new ArrayList<Item>();
+   
   
     public static void main(String[] args) {
         new Start().setVisible(true);  
@@ -52,21 +54,23 @@ public class Main {
             DBgame.getIstance().printRoom();
             System.out.println("\n >>> Fine stampa Room <<<\n");
             // controllo metodi
-            
+            DBgame.getIstance().joinManager(DBgame.JOIN_TABLE);
             
             
             NPC a_bantry = new NPC();
-            a_bantry = DBgame.getIstance().getNpc("arthur");
+            a_bantry = DBgame.getIstance().getNpc("a_bantry");
             System.out.println("Nome(ID): " + a_bantry.getName() + "(" + a_bantry.getId() + ")");
             
             Room cucina = new Room();
-            cucina = DBgame.getIstance().getRoom("cucina");
+            cucina = DBgame.getIstance().getRoom("livingRoom");
             System.out.println("Nome(ID): " + cucina.getName() + "(" + cucina.getId() + ")");
             
             Item autopsia1 = new Item();
-            autopsia1 = DBgame.getIstance().getItem("autopsia di");
+            autopsia1 = DBgame.getIstance().getItem("autopsy");
             System.out.println("Nome(ID): " + autopsia1.getName() + "(" + autopsia1.getId() + ")");
             
+            //listPlace = DBgame.getIstance().getPlaceList();
+            listItem = DBgame.getIstance().getItemList();
             listRoom = DBgame.getIstance().getRoomList();
             listNPC = DBgame.getIstance().getNpcList();
             // fine controllo metodi
