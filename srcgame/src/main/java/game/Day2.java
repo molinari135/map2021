@@ -5,8 +5,12 @@
  */
 package game;
 
+import type.NPC;
+
 import java.awt.Component;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -24,6 +28,9 @@ public class Day2 extends DayDescription {
     public Day2(GameHandler gh) {
         super(gh);
     }
+
+    NPC prestcot, j_turner, r_starr, c_jefferson, m_gaskell = new NPC();
+    List<String> Prestcot, J_Turner, Ramon, Jeff, Mark = new ArrayList<>();
 
     public void takeDress() {
         Component[] object = gh.form.bgPanel[2].getComponents();

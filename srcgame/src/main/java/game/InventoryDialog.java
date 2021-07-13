@@ -5,33 +5,46 @@
  */
 package game;
 
+import db.DataHandler;
+import static game.Main.listItem;
+import static game.Main.listNPC;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.SwingUtilities;
+import type.Item;
 
 /**
  *
  * @author tom
  */
 public class InventoryDialog extends javax.swing.JDialog {
-    
-  
+
+    GameHandler gh;
+    ActionHandler invHandler = new InventoryHandler(gh);
+
     
     /**
      * Creates new form InventoryDialog
+     *
      * @param parent
      * @param modal
      */
-    public InventoryDialog(java.awt.Frame parent, boolean modal) {
+    public InventoryDialog(java.awt.Frame parent, boolean modal,GameHandler gh) {
         super(parent, modal);
-        initComponents();        
+        this.gh = gh;
+        initComponents();
+
     }
 
     public JButton getItem_1() {
@@ -47,14 +60,14 @@ public class InventoryDialog extends javax.swing.JDialog {
     }
 
     public void setItem_1(JButton item_1) {
-//        createObject(item_1, "Osserva", "Cancella");
+
         this.item_1 = item_1;
     }
 
     public void setItem_2(JButton item_2) {
-//        createObject(item_2, "Osserva", "Cancella");
+
         this.item_2 = item_2;
-        
+
     }
 
     public JButton getItem_10() {
@@ -62,9 +75,9 @@ public class InventoryDialog extends javax.swing.JDialog {
     }
 
     public void setItem_10(JButton item_10) {
-//        createObject(item_10, "Osserva", "Cancella");
+
         this.item_10 = item_10;
-        
+
     }
 
     public JButton getItem_11() {
@@ -72,9 +85,9 @@ public class InventoryDialog extends javax.swing.JDialog {
     }
 
     public void setItem_11(JButton item_11) {
-//        createObject(item_11, "Osserva", "Cancella");
+
         this.item_11 = item_11;
-        
+
     }
 
     public JButton getItem_12() {
@@ -124,8 +137,6 @@ public class InventoryDialog extends javax.swing.JDialog {
     public void setItem_9(JButton item_9) {
         this.item_9 = item_9;
     }
-    
-  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -166,16 +177,20 @@ public class InventoryDialog extends javax.swing.JDialog {
 
         item_1.setForeground(new java.awt.Color(255, 255, 255));
         item_1.setText("ITEM 1");
+        createObject(60, 30, 128, 128, "", "Osserva", "Butta", "ObserveItem_1", "",invHandler,item_1);
         item_1.setComponentPopupMenu(jPopupMenu2);
         item_1.setContentAreaFilled(false);
         item_1.setMinimumSize(new java.awt.Dimension(128, 128));
         item_1.setPreferredSize(new java.awt.Dimension(128, 128));
         getContentPane().add(item_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 170, 160));
+        item_1.setVisible(true);
 
         item_2.setForeground(new java.awt.Color(255, 255, 255));
         item_2.setText("ITEM 2");
         item_2.setContentAreaFilled(false);
-        getContentPane().add(item_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 160, 160));
+        getContentPane().add(item_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 170, 160));
+        createObject(270, 30, 128, 128, "", "Osserva", "Butta", "ObserveItem_2", "",invHandler,item_2);
+        item_2.setVisible(false);
 
         item_3.setForeground(new java.awt.Color(255, 255, 255));
         item_3.setText("ITEM 3");
@@ -185,13 +200,13 @@ public class InventoryDialog extends javax.swing.JDialog {
         item_4.setForeground(new java.awt.Color(255, 255, 255));
         item_4.setText("ITEM 4");
         item_4.setContentAreaFilled(false);
-        getContentPane().add(item_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 160, 160));
+        getContentPane().add(item_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 170, 160));
 
         item_5.setForeground(new java.awt.Color(255, 255, 255));
         item_5.setText("ITEM 5");
         item_5.setToolTipText("");
         item_5.setContentAreaFilled(false);
-        getContentPane().add(item_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 180, 170));
+        getContentPane().add(item_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 170, 160));
 
         item_6.setForeground(new java.awt.Color(255, 255, 255));
         item_6.setText("ITEM 6");
@@ -201,17 +216,17 @@ public class InventoryDialog extends javax.swing.JDialog {
         item_7.setForeground(new java.awt.Color(255, 255, 255));
         item_7.setText("ITEM 7");
         item_7.setContentAreaFilled(false);
-        getContentPane().add(item_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 140, 140));
+        getContentPane().add(item_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 170, 160));
 
         item_8.setForeground(new java.awt.Color(255, 255, 255));
         item_8.setText("ITEM 8");
         item_8.setContentAreaFilled(false);
-        getContentPane().add(item_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, 170, 170));
+        getContentPane().add(item_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, 170, 160));
 
         item_9.setForeground(new java.awt.Color(255, 255, 255));
         item_9.setText("ITEM 9");
         item_9.setContentAreaFilled(false);
-        getContentPane().add(item_9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 100, 100));
+        getContentPane().add(item_9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 170, 160));
 
         item_10.setForeground(new java.awt.Color(255, 255, 255));
         item_10.setText("ITEM 10");
@@ -236,52 +251,67 @@ public class InventoryDialog extends javax.swing.JDialog {
 
     private void popupMenu1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_popupMenu1KeyPressed
         // TODO add your handling code here:
-//        createObject(item_1, "Osserva", "Cancella");
+
     }//GEN-LAST:event_popupMenu1KeyPressed
 
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+    public void createObject(int objx, int objy, int objWidth, int objHeight, String objFileName,
+            String choice1Name, String choice2Name, String choice1Command, String Choice2Command, ActionHandler actHandler, JButton item) {
+
+        // CREATE POP MENU
+        JPopupMenu popMenu = new JPopupMenu();
+        // CREATE POP MENU ITEMS
+        JMenuItem menuItem[] = new JMenuItem[3]; // Use [1],[2],[3]
+        menuItem[1] = new JMenuItem(choice1Name);
+        menuItem[1].addActionListener(actHandler);
+        menuItem[1].setActionCommand(choice1Command);
+        popMenu.add(menuItem[1]);
+
+        menuItem[2] = new JMenuItem(choice2Name);
+        menuItem[2].addActionListener(actHandler);
+        menuItem[2].setActionCommand(Choice2Command);
+        popMenu.add(menuItem[2]);
+
+        // CREATE OBJECTS
+        item.setBounds(objx, objy, objWidth, objHeight);
+        item.setOpaque(false);
+        //objectLabel.setBackground(Color.blue);
+
+        ImageIcon objectIcon = new ImageIcon(getClass().getResource(objFileName));
+        item.setIcon(objectIcon);
+
+        item.addMouseListener(new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if (SwingUtilities.isLeftMouseButton(e)) {
+                    popMenu.show(item, e.getX(), e.getY());
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InventoryDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InventoryDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InventoryDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InventoryDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                InventoryDialog dialog = new InventoryDialog(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+            public void mouseReleased(MouseEvent e) {
             }
+
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            public void mouseExited(MouseEvent e) {
+            }
+
         });
+
     }
+
+    public void observeItem(Item item,String itemName) {
+        //TODO file
+        item = DataHandler.ItemFinder(listItem, itemName);
+        JOptionPane.showMessageDialog(this,item.getDescription());
+    }
+
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;

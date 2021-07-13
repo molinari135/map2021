@@ -37,8 +37,8 @@ import type.NPC;
  * @author tom
  */
 public class Day_Form extends javax.swing.JFrame {
-
-    InventoryDialog inv = new InventoryDialog(this, true);
+    GameHandler gh;
+    InventoryDialog inv = new InventoryDialog(this, true,gh);
 
     int i = 0;
 
@@ -48,7 +48,7 @@ public class Day_Form extends javax.swing.JFrame {
 
     File file;
 
-    GameHandler gh;
+
 
     /**
      * Creates new form Day1_Form

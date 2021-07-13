@@ -23,8 +23,7 @@ public class ActionHandler2 extends ActionHandler {
     
     GameHandler gh;
     
-    NPC prestcot, j_turner, r_starr, c_jefferson, m_gaskell = new NPC();
-    List<String> Prestcot, J_Turner, Ramon, Jeff, Mark = new ArrayList<>();
+
 
     public ActionHandler2(GameHandler gh) {
         this.gh = gh;
@@ -147,28 +146,28 @@ public class ActionHandler2 extends ActionHandler {
                 break;
 
             case "ObserveOwner":
-                gh.day.observeNPC(8, prestcot, "prestcot");
+                gh.day.observeNPC(8, gh.day2.prestcot, "prestcot");
                 break;
 
             case "ObserveRamon":
-                gh.day.observeNPC(9, r_starr, "r_starr");
+                gh.day.observeNPC(9, gh.day2.r_starr, "r_starr");
                 break;
 
             case "ObserveJosephine":
-                gh.day.observeNPC(9, j_turner, "j_turner");
+                gh.day.observeNPC(9, gh.day2.j_turner, "j_turner");
                 break;
 
             case "ObserveJefferson":
-                gh.day.observeNPC(11, c_jefferson, "c_jefferson");
+                gh.day.observeNPC(11, gh.day2.c_jefferson, "c_jefferson");
                 break;
 
             case "ObserveMark":
-                gh.day.observeNPC(12, m_gaskell, "m_gaskell");
+                gh.day.observeNPC(12, gh.day2.m_gaskell, "m_gaskell");
                 break;
 
             case "TalkOwner":
                 try {
-                gh.day.talkNPC(8, "prestcot.txt", Prestcot, "/IconPrestcot.png", "prestcot", false,this);
+                gh.day.talkNPC(8, "prestcot.txt", gh.day2.Prestcot, "/IconPrestcot.png", "prestcot", false,this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -176,7 +175,7 @@ public class ActionHandler2 extends ActionHandler {
 
             case "TalkRamon":
                 try {
-                gh.day.talkNPC(9, "r_starr.txt", Ramon, "/IconRamon.png", "r_starr", false,this);
+                gh.day.talkNPC(9, "r_starr.txt", gh.day2.Ramon, "/IconRamon.png", "r_starr", false,this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -184,7 +183,7 @@ public class ActionHandler2 extends ActionHandler {
 
             case "TalkJosephine":
                 try {
-                gh.day.talkNPC(9, "j_turner.txt", J_Turner, "/IconJosephine.png", "j_turner", false,this);
+                gh.day.talkNPC(9, "j_turner.txt", gh.day2.J_Turner, "/IconJosephine.png", "j_turner", false,this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -192,7 +191,7 @@ public class ActionHandler2 extends ActionHandler {
 
             case "TalkJefferson":
                 try {
-                gh.day.talkNPC(11, "c_jefferson.txt", Jeff, "/IconJeff.png", "c_jefferson", false,this);
+                gh.day.talkNPC(11, "c_jefferson.txt", gh.day2.Jeff, "/IconJeff.png", "c_jefferson", false,this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -200,7 +199,7 @@ public class ActionHandler2 extends ActionHandler {
 
             case "TalkMark":
                 try {
-                gh.day.talkNPC(12, "m_gaskell.txt", Mark, "/IconMark.png", "m_gaskell", false,this);
+                gh.day.talkNPC(12, "m_gaskell.txt", gh.day2.Mark, "/IconMark.png", "m_gaskell", false,this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }

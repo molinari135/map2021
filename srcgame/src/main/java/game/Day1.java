@@ -5,7 +5,12 @@
  */
 package game;
 
+import type.Item;
+import type.NPC;
+
 import javax.swing.ImageIcon;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -17,6 +22,10 @@ public class Day1 extends DayDescription {
     public Day1(GameHandler gh) {
         super(gh);
     }
+
+    NPC dolly, j_marple, corpse, lorrimer, a_bantry, haydock, b_blake = new NPC();
+    Item autopsy,dress1 = new Item();
+    List<String> D_bantry, Jane_marple, Lorri, Corp, Arthur, Doc, Basil = new ArrayList<>();
 
     public void analizeBody() {
         gh.form.textBox[6].setVisible(true);

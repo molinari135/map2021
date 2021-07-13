@@ -22,10 +22,6 @@ public class ActionHandler1 extends ActionHandler {
 
     GameHandler gh;
 
-    //TODO SPOSTARE DA QUA, metterli in DAY 1
-    NPC dolly, j_marple, corpse, lorrimer, a_bantry, haydock, b_blake = new NPC();
-    List<String> D_bantry, Jane_marple, Lorri, Corp, Arthur, Doc, Basil = new ArrayList<>();
-
     public ActionHandler1(GameHandler gh) {
         this.gh = gh;
     }
@@ -145,12 +141,12 @@ public class ActionHandler1 extends ActionHandler {
                 break;
 
             case "ObserveDolly":
-                gh.day.observeNPC(1, dolly, "d_bantry");
+                gh.day.observeNPC(1, gh.day1.dolly, "d_bantry");
                 break;
 
             case "TalkDolly": 
                 try {
-                gh.day.talkNPC(1, "d_bantry.txt", D_bantry, "/IconDollyB.png", "d_bantry", true, this);
+                gh.day.talkNPC(1, "d_bantry.txt", gh.day1.D_bantry, "/IconDollyB.png", "d_bantry", true, this);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -192,12 +188,12 @@ public class ActionHandler1 extends ActionHandler {
             break;
 
             case "ObserveJane":
-                gh.day.observeNPC(1, j_marple, "j_marple");
+                gh.day.observeNPC(1, gh.day1.j_marple, "j_marple");
                 break;
 
             case "TalkJane": 
                 try {
-                gh.day.talkNPC(1, "j_marple.txt", Jane_marple, "/IconMarple.png", "j_marple", false, this);
+                gh.day.talkNPC(1, "j_marple.txt", gh.day1.Jane_marple, "/IconMarple.png", "j_marple", false, this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -236,12 +232,12 @@ public class ActionHandler1 extends ActionHandler {
             break;
 
             case "ObserveLorrimer":
-                gh.day.observeNPC(3, lorrimer, "lorrimer");
+                gh.day.observeNPC(3, gh.day1.lorrimer, "lorrimer");
                 break;
 
             case "TalkLorrimer": 
                 try {
-                gh.day.talkNPC(3, "lorrimer.txt", Lorri, "/IconLorrimer.png", "lorrimer", true, this);
+                gh.day.talkNPC(3, "lorrimer.txt", gh.day1.Lorri, "/IconLorrimer.png", "lorrimer", true, this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -282,12 +278,12 @@ public class ActionHandler1 extends ActionHandler {
             break;
 
             case "ObserveBasil":
-                gh.day.observeNPC(5, b_blake, "b_blake");
+                gh.day.observeNPC(5, gh.day1.b_blake, "b_blake");
                 break;
 
             case "TalkBasil": 
                 try {
-                gh.day.talkNPC(5, "b_blake.txt", Basil, "/IconBlake.png", "b_blake", true, this);
+                gh.day.talkNPC(5, "b_blake.txt", gh.day1.Basil, "/IconBlake.png", "b_blake", true, this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -328,12 +324,12 @@ public class ActionHandler1 extends ActionHandler {
             break;
 
             case "ObserveABantry":
-                gh.day.observeNPC(5, a_bantry, "a_bantry");
+                gh.day.observeNPC(5, gh.day1.a_bantry, "a_bantry");
                 break;
 
             case "TalkABantry": 
                 try {
-                gh.day.talkNPC(5, "a_bantry.txt", Arthur, "/IconArthur.png", "a_bantry", false, this);
+                gh.day.talkNPC(5, "a_bantry.txt", gh.day1.Arthur, "/IconArthur.png", "a_bantry", false, this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -377,12 +373,12 @@ public class ActionHandler1 extends ActionHandler {
             break;
 
             case "ObserveHaydoc":
-                gh.day.observeNPC(6, haydock, "haydock");
+                gh.day.observeNPC(6, gh.day1.haydock, "haydock");
                 break;
 
             case "TalkHaydoc": 
                 try {
-                gh.day.talkNPC(6, "haydock.txt", Doc, "/IconDoc.png", "haydock", false, this);
+                gh.day.talkNPC(6, "haydock.txt", gh.day1.Doc, "/IconDoc.png", "haydock", false, this);
                 gh.day1.takeAutopsy();
 
             } catch (IOException ex) {
@@ -426,7 +422,7 @@ public class ActionHandler1 extends ActionHandler {
             break;
 
             case "ObserveBody":
-                gh.day.observeNPC(6, corpse, "corpse");
+                gh.day.observeNPC(6, gh.day1.corpse, "corpse");
                 break;
 
             case "AnalizeBody":
