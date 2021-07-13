@@ -19,6 +19,7 @@ import type.Room;
  * @author giaco
  */
 public class Main {   
+    
      public static List<NPC> listNPC = new ArrayList<NPC>();
      public static List<Room> listRoom = new ArrayList<Room>();
      public static List<Item> listItem = new ArrayList<Item>();

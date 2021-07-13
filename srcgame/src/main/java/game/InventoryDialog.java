@@ -22,8 +22,7 @@ import javax.swing.SwingUtilities;
  */
 public class InventoryDialog extends javax.swing.JDialog {
     
-    InventoryHandler actHandler = new InventoryHandler(this);
-   
+  
     
     /**
      * Creates new form InventoryDialog
@@ -48,12 +47,12 @@ public class InventoryDialog extends javax.swing.JDialog {
     }
 
     public void setItem_1(JButton item_1) {
-        createObject(item_1, "Osserva", "Cancella");
+//        createObject(item_1, "Osserva", "Cancella");
         this.item_1 = item_1;
     }
 
     public void setItem_2(JButton item_2) {
-        createObject(item_2, "Osserva", "Cancella");
+//        createObject(item_2, "Osserva", "Cancella");
         this.item_2 = item_2;
         
     }
@@ -63,7 +62,7 @@ public class InventoryDialog extends javax.swing.JDialog {
     }
 
     public void setItem_10(JButton item_10) {
-        createObject(item_10, "Osserva", "Cancella");
+//        createObject(item_10, "Osserva", "Cancella");
         this.item_10 = item_10;
         
     }
@@ -73,7 +72,7 @@ public class InventoryDialog extends javax.swing.JDialog {
     }
 
     public void setItem_11(JButton item_11) {
-        createObject(item_11, "Osserva", "Cancella");
+//        createObject(item_11, "Osserva", "Cancella");
         this.item_11 = item_11;
         
     }
@@ -237,56 +236,10 @@ public class InventoryDialog extends javax.swing.JDialog {
 
     private void popupMenu1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_popupMenu1KeyPressed
         // TODO add your handling code here:
-        createObject(item_1, "Osserva", "Cancella");
+//        createObject(item_1, "Osserva", "Cancella");
     }//GEN-LAST:event_popupMenu1KeyPressed
 
-    public void createObject(JButton item, String choice1Command, String Choice2Command) {
-
-        // CREATE POP MENU
-        
-        // CREATE POP MENU ITEMS
-       
-       
-        item.addActionListener(actHandler);
-        item.setActionCommand(choice1Command);
-        popupMenu1.add(item);
-
-        item.addActionListener(actHandler);
-        item.setActionCommand(choice1Command);
-        popupMenu1.add(item);
-
-        
-
-        item.addMouseListener(new MouseListener() {
-
-            @Override
-            public void mouseClicked(MouseEvent e) {
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                if (SwingUtilities.isLeftMouseButton(e)) {
-                    popupMenu1.show(item, e.getX(), e.getY());
-                }
-            }
-
-            public void mouseReleased(MouseEvent e) {
-            }
-
-            public void mouseEntered(MouseEvent e) {
-            }
-
-            public void mouseExited(MouseEvent e) {
-            }
-
-        });
-
-        
-
-    }
-    public void observeItem(int bgNUM){
-        
-    }
+    
     /**
      * @param args the command line arguments
      */

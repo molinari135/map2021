@@ -24,6 +24,8 @@ public class Start extends javax.swing.JFrame {
     
     Clip clipJazz;
     
+    GameHandler gh = new GameHandler();
+    
     public Start() {
         initComponents();
         playSound();
@@ -122,7 +124,7 @@ public class Start extends javax.swing.JFrame {
 
     private void giocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_giocaActionPerformed
         this.dispose();
-        new Prologue_0(clipJazz).setVisible(true);
+        new Prologue_0(clipJazz, gh).setVisible(true);
     }//GEN-LAST:event_giocaActionPerformed
 
     private void esciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_esciActionPerformed

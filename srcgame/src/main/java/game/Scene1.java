@@ -32,7 +32,6 @@ public class Scene1 {
     JTextField data = new JTextField();
     JTextArea testoPrologo = new JTextArea();
     JButton continua = new JButton();
-    
 
     JFrame frame;
 
@@ -40,12 +39,15 @@ public class Scene1 {
 
     Clip clipRain;
     Clip clipJazz;
-
-    public Scene1(JFrame frame, Clip clipRain, Clip clipJazz) {
+       
+    GameHandler gh;
+    
+    public Scene1(JFrame frame, Clip clipRain, Clip clipJazz, GameHandler gh) {
 
         this.frame = frame;
         this.clipRain = clipRain;
         this.clipJazz = clipJazz;
+        this.gh = gh;
 
         carSound();
 
@@ -125,8 +127,9 @@ public class Scene1 {
                 frame.dispose();
                 clipRain.stop();
                 clipJazz.stop();
-                //TODO chiamare metodo di Day1
-                new Day_Form().setVisible(true);
+                
+                gh.form.setVisible(true);
+                
                 break;
                 
             default:

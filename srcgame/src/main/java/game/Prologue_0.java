@@ -26,11 +26,14 @@ public class Prologue_0 extends javax.swing.JFrame {
 
     Clip clipRain;
     Clip clipJazz;
+    
+    GameHandler gh;
 
-    public Prologue_0(Clip clipJazz) {
+    public Prologue_0(Clip clipJazz, GameHandler gh) {
         initComponents();
         playSound();
         this.clipJazz = clipJazz;
+        this.gh = gh;
     }
 
     private void playSound() {
@@ -150,7 +153,7 @@ public class Prologue_0 extends javax.swing.JFrame {
     //TODO SPOSTARE SCENA 1 QUI
     public void goToScene1() {
         background.setVisible(false);
-        Scene1 scene1 = new Scene1(this, clipRain, clipJazz);
+        Scene1 scene1 = new Scene1(this, clipRain, clipJazz, gh);
 
     }
 

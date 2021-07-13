@@ -1,8 +1,5 @@
 package type;
 
-import java.util.Iterator;
-import java.util.List;
-
 /**
  * 
  * @author giaco

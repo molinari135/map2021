@@ -20,11 +20,15 @@ import javax.swing.JButton;
  * @author giaco
  */
 public class Day2 extends DayDescription {
-    
+
+    public Day2(GameHandler gh) {
+        super(gh);
+    }
+
     public void takeDress() {
-        Component[] object = form.bgPanel[2].getComponents();
+        Component[] object = gh.form.bgPanel[2].getComponents();
         object[21].setVisible(false);
-        form.inv.getItem_3().setIcon(new ImageIcon(getClass().getResource("/dress1.png")));
+        gh.form.inv.getItem_3().setIcon(new ImageIcon(getClass().getResource("/dress1.png")));
     }
 
     public void knockRoom() {
@@ -39,11 +43,11 @@ public class Day2 extends DayDescription {
             System.err.println(e.getMessage());
         }
 
-        form.textBox[3].setVisible(true);
-        form.textAreaBox[3].setVisible(true);
-        form.textButton[3].setVisible(true);
+        gh.form.textBox[3].setVisible(true);
+        gh.form.textAreaBox[3].setVisible(true);
+        gh.form.textButton[3].setVisible(true);
         //TODO file
-        form.textAreaBox[3].setText("Prego, chiunque lei sia può entrare, se una bella ragazza anche ben volentieri.");
+        gh.form.textAreaBox[3].setText("Prego, chiunque lei sia può entrare, se una bella ragazza anche ben volentieri.");
     }
 
 }
