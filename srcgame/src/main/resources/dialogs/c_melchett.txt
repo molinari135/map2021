@@ -1,0 +1,66 @@
+Detective
+Ispettore Slack a rapporto.
+Colonnello Melchett
+Mi aggiorni sulla situazione.
+Detective
+Ho interrogato tutti, penso di aver capito chi è stato.
+Colonnello Melchett
+Molto bene, vada nella sala interrogatori.
+Detective
+(Si va in scena.)
+
+
+
+
+Detective
+Come funziona l'interrogatorio?
+Colonnello Melchett
+Vada nella sala sulla sinistra, le verrà chiesto chi vorrà interrogare.
+Detective
+Poi?
+Colonnello Melchett
+Poi, deve fare tutto lei, incastri il colpevole con quello che ha scoperto.
+Detective
+Ci pensate voi all'arresto?
+Colonnello Melchett
+Si, la aspettiamo fuori dalla sala e lo portiamo al fresco.
+
+
+
+
+Detective
+Ci sono altri casi su cui investigare?
+Colonnello Melchett
+Nah, va tutto bene. Piuttosto si sbrighi ad arrestare l'assassino.
+Detective
+Vabbè, assassino mi pare esagerato...
+Colonnello Melchett
+Se ha ucciso una volta, può farlo un'altra volta tranquillamente.
+Detective
+Deve essere un cretino, allora.
+Colonnello Melchett
+Lei si sbrighi.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rapporto
+Sala interrogatori
+C'è altro?
+z

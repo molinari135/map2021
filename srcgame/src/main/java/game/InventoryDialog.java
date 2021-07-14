@@ -32,6 +32,7 @@ public class InventoryDialog extends javax.swing.JDialog {
 
     GameHandler gh;
     ActionHandler invHandler = new InventoryHandler(gh);
+    
 
     
     /**

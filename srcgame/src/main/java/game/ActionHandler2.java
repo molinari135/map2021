@@ -36,6 +36,11 @@ public class ActionHandler2 extends ActionHandler {
         String eventCommand = e.getActionCommand();
 
         switch (eventCommand) {
+            
+            case "goToPoliceStation":
+                gh.day.goToSceneXtoY(8, 13);
+                break;
+            
             case "goToReceptionFromHall":
                 gh.day.goToSceneXtoY(9, 8);  //HALL -> RECEPTION
                 break;

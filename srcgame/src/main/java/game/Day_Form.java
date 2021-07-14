@@ -53,22 +53,22 @@ public class Day_Form extends javax.swing.JFrame {
     /**
      * Creates new form Day1_Form
      */
-    public JPanel bgPanel[] = new JPanel[20];
-    public JLabel bgLabel[] = new JLabel[20];
+    public JPanel bgPanel[] = new JPanel[25];
+    public JLabel bgLabel[] = new JLabel[25];
           
-    public JLabel textBox[] = new JLabel[20];
-    public JTextArea textAreaBox[] = new JTextArea[20];
-    public JTextArea textAreaBox2[] = new JTextArea[20];
-    public JButton textButton[] = new JButton[20];
-    public JButton continueDialogue[] = new JButton[20];
-    public JRadioButton dialogueButton1[] = new JRadioButton[20];
-    public JRadioButton dialogueButton2[] = new JRadioButton[20];
-    public JRadioButton dialogueButton3[] = new JRadioButton[20];
-    public JRadioButton dialogueButton4[] = new JRadioButton[20];
+    public JLabel textBox[] = new JLabel[25];
+    public JTextArea textAreaBox[] = new JTextArea[25];
+    public JTextArea textAreaBox2[] = new JTextArea[25];
+    public JButton textButton[] = new JButton[25];
+    public JButton continueDialogue[] = new JButton[25];
+    public JRadioButton dialogueButton1[] = new JRadioButton[25];
+    public JRadioButton dialogueButton2[] = new JRadioButton[25];
+    public JRadioButton dialogueButton3[] = new JRadioButton[25];
+    public JRadioButton dialogueButton4[] = new JRadioButton[25];
 
-    public JLabel detectiveDestra[] = new JLabel[20];
-    public JLabel detectiveSinistra[] = new JLabel[20];
-    public JLabel icon[] = new JLabel[20];
+    public JLabel detectiveDestra[] = new JLabel[25];
+    public JLabel detectiveSinistra[] = new JLabel[25];
+    public JLabel icon[] = new JLabel[25];
     public DayDescription d;
 
     public Day_Form(GameHandler gh) {
@@ -386,6 +386,55 @@ public class Day_Form extends javax.swing.JFrame {
         bgPanel[bgNum].add(objectLabel);
 
     }
+    public void createStartDay(int bgNum, String objFileName,
+            String choice1Name, String choice2Name, String choice3Name,ActionHandler actHandler){
+        JButton continua = new JButton();        
+        continua.setBackground(new Color(0, 0, 0));
+        continua.setBounds(900, 900, 64, 26);
+        continua.setFont(new Font("Segoe UI", 2, 14)); // NOI18N
+        continua.setForeground(new Color(255, 255, 255));
+        continua.setText("Continua");
+        continua.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED,
+                Color.lightGray, Color.white, Color.lightGray, Color.white));
+        continua.setContentAreaFilled(false);
+        continua.addActionListener(actHandler);
+        continua.setActionCommand(objFileName);         
+                
+        JTextField placeDescription1 = new JTextField();
+        JTextField placeDescription2 = new JTextField();
+        JTextField placeDescription3 = new JTextField();
+        
+        placeDescription1.setEditable(false);
+        placeDescription1.setBackground(new java.awt.Color(0, 0, 0));
+        placeDescription1.setFont(new java.awt.Font("Californian FB", 3, 48)); // NOI18N
+        placeDescription1.setForeground(new java.awt.Color(255, 255, 255));
+        placeDescription1.setText(choice1Name);
+        placeDescription1.setBorder(null);
+        placeDescription1.setBounds(750, 300, 800, 40);  
+        
+        placeDescription2.setEditable(false);
+        placeDescription2.setBackground(new java.awt.Color(0, 0, 0));
+        placeDescription2.setFont(new java.awt.Font("Californian FB", 1, 48)); // NOI18N
+        placeDescription2.setForeground(new java.awt.Color(255, 255, 255));
+        placeDescription2.setText(choice2Name);
+        placeDescription2.setBorder(null);
+        placeDescription2.setBounds(750, 500, 800, 50);        
+
+        placeDescription3.setEditable(false);
+        placeDescription3.setBackground(new java.awt.Color(0, 0, 0));
+        placeDescription3.setFont(new java.awt.Font("Californian FB", 1, 36)); // NOI18N
+        placeDescription3.setForeground(new java.awt.Color(255, 255, 255));
+        placeDescription3.setText(choice3Name);
+        placeDescription3.setBorder(null);
+        placeDescription3.setBounds(700, 600, 1100, 40);        
+        
+        bgPanel[bgNum].add(placeDescription1);
+        bgPanel[bgNum].add(placeDescription2);
+        bgPanel[bgNum].add(placeDescription3);
+        bgPanel[bgNum].add(continua);
+        
+        bgPanel[bgNum].add(bgLabel[bgNum]); 
+    }
 
     public void generateScenes() throws FileNotFoundException, IOException {
 
@@ -440,54 +489,9 @@ public class Day_Form extends javax.swing.JFrame {
         
         //SCENA 7 -> HOTEL BLACK SCREEN
         createScene(7, 0, 0, "", gh.actHandler1);
-        createTextBox(7, gh.actHandler2);        
+        createTextBox(7, gh.actHandler2);   
+        createStartDay(7,"enterHotel","St. Mary Mead, Ottobre 1982","Majestic Hotel","Lussuoso Hotel dove viene rinvenuto il secondo cadavere",gh.actHandler2);
         
-        JButton continua = new JButton();        
-        continua.setBackground(new Color(0, 0, 0));
-        continua.setBounds(900, 900, 64, 26);
-        continua.setFont(new Font("Segoe UI", 2, 14)); // NOI18N
-        continua.setForeground(new Color(255, 255, 255));
-        continua.setText("Continua");
-        continua.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED,
-                Color.lightGray, Color.white, Color.lightGray, Color.white));
-        continua.setContentAreaFilled(false);
-        continua.addActionListener(gh.actHandler2);
-        continua.setActionCommand("enterHotel");         
-                
-        JTextField placeDescription1 = new JTextField();
-        JTextField placeDescription2 = new JTextField();
-        JTextField placeDescription3 = new JTextField();
-        
-        placeDescription1.setEditable(false);
-        placeDescription1.setBackground(new java.awt.Color(0, 0, 0));
-        placeDescription1.setFont(new java.awt.Font("Californian FB", 3, 48)); // NOI18N
-        placeDescription1.setForeground(new java.awt.Color(255, 255, 255));
-        placeDescription1.setText("St. Mary Mead, Ottobre 1982");
-        placeDescription1.setBorder(null);
-        placeDescription1.setBounds(750, 300, 800, 40);  
-        
-        placeDescription2.setEditable(false);
-        placeDescription2.setBackground(new java.awt.Color(0, 0, 0));
-        placeDescription2.setFont(new java.awt.Font("Californian FB", 1, 48)); // NOI18N
-        placeDescription2.setForeground(new java.awt.Color(255, 255, 255));
-        placeDescription2.setText("Majestic Hotel");
-        placeDescription2.setBorder(null);
-        placeDescription2.setBounds(750, 500, 800, 50);        
-
-        placeDescription3.setEditable(false);
-        placeDescription3.setBackground(new java.awt.Color(0, 0, 0));
-        placeDescription3.setFont(new java.awt.Font("Californian FB", 1, 36)); // NOI18N
-        placeDescription3.setForeground(new java.awt.Color(255, 255, 255));
-        placeDescription3.setText("Lussuoso Hotel dove viene rinvenuto il secondo cadavere");
-        placeDescription3.setBorder(null);
-        placeDescription3.setBounds(700, 600, 1100, 40);        
-        
-        bgPanel[7].add(placeDescription1);
-        bgPanel[7].add(placeDescription2);
-        bgPanel[7].add(placeDescription3);
-        bgPanel[7].add(continua);
-        
-        bgPanel[7].add(bgLabel[7]); 
 
         //SCENA 8 -> RECEPTION
         createScene(8, 0, -10, "/receptionhotel.png", gh.actHandler2);
@@ -495,6 +499,7 @@ public class Day_Form extends javax.swing.JFrame {
         createArrowButton(8, 1750, 500, "/right_arrow.png", "goToGossingtonHall", gh.actHandler2);
         createArrowButton(8, 10, 500, "/left_arrow.png", "goToHallFromReception", gh.actHandler2);
         createObject(8, 1000, 250, 200, 400, "", "Parla", "Osserva", "", "TalkOwner", "ObserveOwner", "", gh.actHandler2);
+        createArrowButton(8, 1750, 800, "/right_arrow.png", "goToPoliceStation", gh.actHandler2);
         bgPanel[8].add(bgLabel[8]);
 
         //SCENA 9 -> SALA DA BALLO
@@ -529,6 +534,31 @@ public class Day_Form extends javax.swing.JFrame {
         createArrowButton(12, 1750, 500, "/right_arrow.png", "goToRoomFromVeranda", gh.actHandler2);
         createObject(12, 200, 70, 200, 830, "", "Parla", "Osserva", "", "TalkMark", "ObserveMark", "", gh.actHandler2);
         bgPanel[12].add(bgLabel[12]);
+        
+        //SCENA 13 -> STAZIONE DI POLIZIA BLACK SCREEN
+        createScene(13, 0, 0, "", gh.actHandler3);
+        createTextBox(13, gh.actHandler3);   
+        createStartDay(13,"enterPoliceStation","St. Mary Mead, Ottobre 1982","Police Station","Centrale di Polizia",gh.actHandler3);
+        
+        //SCENA 14 -> POLICE STATION
+        createScene(14, 0, -10, "/stazione_polizia.png", gh.actHandler3);
+        createTextBox(14, gh.actHandler3);
+        createArrowButton(14, 10, 500, "/left_arrow.png", "goToInterrogation", gh.actHandler3);
+        createObject(14, 380, 250, 250, 400, "", "Parla", "Osserva", "", "TalkMelchett", "ObserveOwnerMelchett", "", gh.actHandler3);
+        createObject(14, 1220, 230, 200, 400, "", "Parla", "Osserva", "", "TalkPalck", "ObservePalck", "", gh.actHandler3);
+        createArrowButton(14, 850, 850, "/down_arrow.png", "goToReceptionFromStation", gh.actHandler3);
+        bgPanel[14].add(bgLabel[14]);
+        
+        //SCENA 15 -> STANZA DEGLI INTERROGATORI
+        createScene(15, 0, -10, "/interrogatorio.png", gh.actHandler3);
+        createTextBox(15, gh.actHandler3);
+        createArrowButton(15, 1750, 500, "/right_arrow.png", "goToStationFromInterrogation", gh.actHandler3);
+        createArrowButton(15,990,500,"/interrogationbutton.png","interroga",gh.actHandler3);
+        createObject(15, 280, 280, 376, 770, "/rinotipuntailferro.png", "Parla", "Osserva", "", "TalkSuspected", "ObserveSuspected", "", gh.actHandler3);
+        //createObject(15, 280, 280, 290, 770, "", "Parla", "Osserva", "", "TalkSuspected", "ObserveSuspected", "", gh.actHandler3);
+        bgPanel[15].add(bgLabel[15]);
+    
+    
     }
 
 
