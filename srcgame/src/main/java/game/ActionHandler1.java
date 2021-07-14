@@ -77,7 +77,7 @@ public class ActionHandler1 extends ActionHandler {
                 break;
 
             case "openInventory":
-                gh.form.inv.setVisible(true);
+                gh.inv.setVisible(true);
                 break;
 
             case "continueTextScene1":
@@ -125,23 +125,23 @@ public class ActionHandler1 extends ActionHandler {
                 break;
 
             case "ObserveDiningRoom":
-                gh.day.observeSceneX(2, "Da qui sembra portare alla sala da pranzo di Gossington Hall.");
+                gh.day.observeSceneX(2, gh.day1.rooms, "diningRoom");
                 break;
 
             case "ObserveLivingRoom":
-                gh.day.observeSceneX(2, "Da qui sembra portare al soggiorno.");
+                gh.day.observeSceneX(2, gh.day1.rooms, "livingRoom");
                 break;
 
             case "ObserveStudy":
-                gh.day.observeSceneX(4, "Questo sembra essere lo studio del signor Bantry.");
+                gh.day.observeSceneX(4, gh.day1.rooms, "studio");
                 break;
 
             case "ObserveLibrary":
-                gh.day.observeSceneX(4, "Di qui c'è l'imponente biblioteca di Gossington Hall.");
+                gh.day.observeSceneX(4, gh.day1.rooms, "library");
                 break;
 
             case "ObserveDolly":
-                gh.day.observeNPC(1, gh.day1.dolly, "d_bantry");
+                gh.day.observeNPC(1, gh.day1.person, "d_bantry");
                 break;
 
             case "TalkDolly": 
@@ -188,7 +188,7 @@ public class ActionHandler1 extends ActionHandler {
             break;
 
             case "ObserveJane":
-                gh.day.observeNPC(1, gh.day1.j_marple, "j_marple");
+                gh.day.observeNPC(1, gh.day1.person, "j_marple");
                 break;
 
             case "TalkJane": 
@@ -232,7 +232,7 @@ public class ActionHandler1 extends ActionHandler {
             break;
 
             case "ObserveLorrimer":
-                gh.day.observeNPC(3, gh.day1.lorrimer, "lorrimer");
+                gh.day.observeNPC(3, gh.day1.person, "lorrimer");
                 break;
 
             case "TalkLorrimer": 
@@ -278,7 +278,7 @@ public class ActionHandler1 extends ActionHandler {
             break;
 
             case "ObserveBasil":
-                gh.day.observeNPC(5, gh.day1.b_blake, "b_blake");
+                gh.day.observeNPC(5, gh.day1.person, "b_blake");
                 break;
 
             case "TalkBasil": 
@@ -324,7 +324,7 @@ public class ActionHandler1 extends ActionHandler {
             break;
 
             case "ObserveABantry":
-                gh.day.observeNPC(5, gh.day1.a_bantry, "a_bantry");
+                gh.day.observeNPC(5, gh.day1.person, "a_bantry");
                 break;
 
             case "TalkABantry": 
@@ -373,7 +373,7 @@ public class ActionHandler1 extends ActionHandler {
             break;
 
             case "ObserveHaydoc":
-                gh.day.observeNPC(6, gh.day1.haydock, "haydock");
+                gh.day.observeNPC(6, gh.day1.person, "haydock");
                 break;
 
             case "TalkHaydoc": 
@@ -422,7 +422,7 @@ public class ActionHandler1 extends ActionHandler {
             break;
 
             case "ObserveBody":
-                gh.day.observeNPC(6, gh.day1.corpse, "corpse");
+                gh.day.observeNPC(6, gh.day1.person, "corpse");
                 break;
 
             case "AnalizeBody":

@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package type;
 
 /**
@@ -10,13 +15,13 @@ public class Room {
     private String name;
     private String description;  
     private int floor;  
-    private int place;
+    private String place;
     
     public Room() {
         
     }
     
-    public Room(String id, String name, String description, int floor, int place) {
+    public Room(String id, String name, String description, int floor, String place) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -40,7 +45,7 @@ public class Room {
         this.floor = floor;
     }
 
-    public void setPlace(int place) {
+    public void setPlace(String place) {
         this.place = place;
     }
     
@@ -60,7 +65,7 @@ public class Room {
         return floor;
     }
     
-    public int getPlace() {
+    public String getPlace() {
         return place;
     }
     

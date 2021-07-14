@@ -27,6 +27,9 @@ public class ActionHandler3 extends ActionHandler {
         String eventCommand = e.getActionCommand();
 
         switch (eventCommand) {
+            case "openInventory":
+                gh.inv.setVisible(true);
+                break;
             case "enterPoliceStation":
                 gh.day.goToSceneXtoY(13, 14);
                 break;
@@ -59,24 +62,29 @@ public class ActionHandler3 extends ActionHandler {
                 gh.day.closeTextBox(14);
                 break;
 
-            case "closeTextScene12":
+            case "closeTextScene15":
                 gh.day.closeTextBox(15);
                 break;
+           
             case "ObserveMelchett":
-                gh.day.observeNPC(14, gh.day2.prestcot, "prestcot");
+                gh.day.observeNPC(14, gh.day3.person, "c_melchett");
                 break;
 
             case "ObservePalck":
-                gh.day.observeNPC(14, gh.day2.r_starr, "r_starr");
+                gh.day.observeNPC(14, gh.day3.person, "a_palk");
                 break;
 
-            case "ObserveSuspected":
-                
+            case "ObserveBasil":
+                gh.day.observeNPC(15, gh.day3.person, "b_blake");
                 break;
-                
+
+            case "ObserveJefferson":
+                gh.day.observeNPC(15, gh.day3.person, "c_jefferson");
+                break;
+            
             case "TalkMelchett":
                 try {
-                gh.day.talkNPC(14, "c_melchett.txt", gh.day3.A_palck, "/IconPrestcot.png", "c_melchett", true, this);
+                gh.day.talkNPC(14, "c_melchett.txt", gh.day3.A_palck, "/IconMelchett.png", "c_melchett", true, this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -84,37 +92,56 @@ public class ActionHandler3 extends ActionHandler {
 
             case "TalkPalck":
                 try {
-                gh.day.talkNPC(14, "palk.txt", gh.day3.C_melch, "/IconRamon.png", "palck", false, this);
+                gh.day.talkNPC(14, "palk.txt", gh.day3.C_melch, "/IconPalk.png", "palk", false, this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
-            case "TalkSuspected":
-             
+            case "TalkBasil":
+                    try {
+                gh.day3.talkNPCLast(15, "b_blake_ending.txt", "/IconBlake.png", "b_blake", true, this);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
             break;
-            
-             case "scelta1palck": 
+            case "TalkJefferson":
+                    try {
+                gh.day3.talkNPCLast(15, "b_blake_ending.txt", "/IconJeff.png", "c_jefferson", true, this);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            break;
+
+            case "TalkMarkJosephine":
+                    try {
+                gh.day3.talkNPCLast(15, "true_ending.txt", "/IconJosephine.png", "m_j_gaskell", true, this);
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            break;
+
+            case "scelta1palk": 
                 try {
-                gh.day.choice1(14, "palck", "palk.txt");
+                gh.day.choice1(14, "palk", "palk.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta2palck": 
+            case "scelta2palk": 
                 try {
-                gh.day.choice2(14, "palck", "palk.txt");
+                gh.day.choice2(14, "palk", "palk.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
 
-            case "scelta3palck": 
+            case "scelta3palk": 
                 try {
-                gh.day.choice3(14, "palck", "palk.txt");
+                gh.day.choice3(14, "palk", "palk.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -148,9 +175,40 @@ public class ActionHandler3 extends ActionHandler {
 
             break;
 
-            case "interroga":
-                gh.day3.createInterrogation();
+            case "chooseSuspected":
+                gh.day3.chooseSuspected();
                 break;
+
+            case "scelta1rino":
+                gh.day3.setSuspectedFalse(16);
+                gh.day3.setSuspectedFalse(17);
+                gh.day3.setSuspectedFalse(18);
+                gh.day3.setSuspectedTrue(15);
+
+                break;
+            case "scelta2jefferson":
+                gh.day3.setSuspectedFalse(15);
+                gh.day3.setSuspectedFalse(17);
+                gh.day3.setSuspectedFalse(18);
+                gh.day3.setSuspectedTrue(16);
+
+                break;
+
+            case "scelta3basil":
+                gh.day3.setSuspectedFalse(15);
+                gh.day3.setSuspectedFalse(17);
+                gh.day3.setSuspectedFalse(16);
+                gh.day3.setSuspectedTrue(17);
+                break;
+
+            case "scelta4markjosephine":
+                gh.day3.setSuspectedFalse(15);
+                gh.day3.setSuspectedFalse(17);
+                gh.day3.setSuspectedFalse(16);
+                gh.day3.setSuspectedTrue(18);
+
+                break;
+
         }
     }
 

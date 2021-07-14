@@ -18,7 +18,7 @@ public class InventoryHandler extends ActionHandler {
         switch (eventCommand) {
             case "ObserveItem_1":
                 System.out.println("asd");
-                gh.inv.observeItem(gh.day1.autopsy, "autopsy");
+                gh.inv.observeItem(gh.day1.element, "autopsy");
 
                 break;
         }

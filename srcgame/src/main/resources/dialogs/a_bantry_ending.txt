@@ -1,0 +1,50 @@
+Detective
+Bene, signor Bantry. A quanto pare è molto bravo a fingere.
+Arthur Bantry
+Non sto capendo, mi scusi.
+Detective
+La smetta di fare il finto tonto, è stato lei.
+Arthur Bantry
+Io? Io, cosa, mi scusi.
+Detective
+Lei ha ucciso Ruby Keene, lo ammetta.
+Detective
+Ma che diavolo va dicendo, Ispettore. Nemmeno la conoscevo.
+Arthur Bantry
+Si certo, come no. Le conviene dire tutto o non riuscirà a godersi la sua pensione.
+Detective
+Senta, io non ho fatto proprio un bel niente. Non scherzi con me.
+Arthur Bantry
+Questo lo dico io, ho un mandato di arresto per omicidio per lei.
+Detective
+Ma che diamine...
+Arthur Bantry
+Mi dispiace, ma la sua avventura finisce qui.
+
+Il giorno dopo arriva una chiamata in stazione.
+
+In una stanza dell'Hotel Majestic è stato commesso un omicidio.
+
+La vittima è il signor Conway Jefferson.
+
+L'assassino è ancora a piede libero.
+
+Vuoi riprovare?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

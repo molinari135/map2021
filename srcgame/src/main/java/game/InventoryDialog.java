@@ -30,9 +30,13 @@ import type.Item;
  */
 public class InventoryDialog extends javax.swing.JDialog {
 
-    GameHandler gh;
+     GameHandler gh;
     ActionHandler invHandler = new InventoryHandler(gh);
-    
+
+    Item autopsy = DataHandler.ItemFinder(listItem, "autopsy");
+    Item dress1 = DataHandler.ItemFinder(listItem, "ball_dress");
+
+    JButton ArrayButton[];
 
     
     /**
@@ -45,8 +49,27 @@ public class InventoryDialog extends javax.swing.JDialog {
         super(parent, modal);
         this.gh = gh;
         initComponents();
+        setDefaultVisible();
+
+        this.ArrayButton = new JButton[]{item_1, item_2, item_3, item_4, item_5, item_6, item_7, item_8, item_9, item_10, item_11, item_12};
+    }
+    
+    private void setDefaultVisible() {
+        item_1.setVisible(false);
+        item_2.setVisible(false);
+        item_3.setVisible(false);
+        item_4.setVisible(false);
+        item_5.setVisible(false);
+        item_6.setVisible(false);
+        item_7.setVisible(false);
+        item_8.setVisible(false);
+        item_9.setVisible(false);
+        item_10.setVisible(false);
+        item_11.setVisible(false);
+        item_12.setVisible(false);
 
     }
+
 
     public JButton getItem_1() {
         return item_1;
@@ -178,70 +201,126 @@ public class InventoryDialog extends javax.swing.JDialog {
 
         item_1.setForeground(new java.awt.Color(255, 255, 255));
         item_1.setText("ITEM 1");
-        createObject(60, 30, 128, 128, "", "Osserva", "Butta", "ObserveItem_1", "",invHandler,item_1);
         item_1.setComponentPopupMenu(jPopupMenu2);
         item_1.setContentAreaFilled(false);
         item_1.setMinimumSize(new java.awt.Dimension(128, 128));
         item_1.setPreferredSize(new java.awt.Dimension(128, 128));
+        item_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(item_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 170, 160));
-        item_1.setVisible(true);
 
         item_2.setForeground(new java.awt.Color(255, 255, 255));
         item_2.setText("ITEM 2");
         item_2.setContentAreaFilled(false);
-        getContentPane().add(item_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 170, 160));
-        createObject(270, 30, 128, 128, "", "Osserva", "Butta", "ObserveItem_2", "",invHandler,item_2);
-        item_2.setVisible(false);
+        item_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(item_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 160, 160));
 
         item_3.setForeground(new java.awt.Color(255, 255, 255));
         item_3.setText("ITEM 3");
         item_3.setContentAreaFilled(false);
+        item_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(item_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, 170, 160));
 
         item_4.setForeground(new java.awt.Color(255, 255, 255));
         item_4.setText("ITEM 4");
         item_4.setContentAreaFilled(false);
-        getContentPane().add(item_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 170, 160));
+        item_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(item_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 160, 160));
 
         item_5.setForeground(new java.awt.Color(255, 255, 255));
         item_5.setText("ITEM 5");
         item_5.setToolTipText("");
         item_5.setContentAreaFilled(false);
-        getContentPane().add(item_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 170, 160));
+        item_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(item_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 180, 170));
 
         item_6.setForeground(new java.awt.Color(255, 255, 255));
         item_6.setText("ITEM 6");
         item_6.setContentAreaFilled(false);
+        item_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_6ActionPerformed(evt);
+            }
+        });
         getContentPane().add(item_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 170, 160));
 
         item_7.setForeground(new java.awt.Color(255, 255, 255));
         item_7.setText("ITEM 7");
         item_7.setContentAreaFilled(false);
-        getContentPane().add(item_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 170, 160));
+        item_7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(item_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 140, 140));
 
         item_8.setForeground(new java.awt.Color(255, 255, 255));
         item_8.setText("ITEM 8");
         item_8.setContentAreaFilled(false);
-        getContentPane().add(item_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, 170, 160));
+        item_8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(item_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, 170, 170));
 
         item_9.setForeground(new java.awt.Color(255, 255, 255));
         item_9.setText("ITEM 9");
         item_9.setContentAreaFilled(false);
-        getContentPane().add(item_9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 170, 160));
+        item_9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(item_9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 100, 100));
 
         item_10.setForeground(new java.awt.Color(255, 255, 255));
         item_10.setText("ITEM 10");
         item_10.setContentAreaFilled(false);
+        item_10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_10ActionPerformed(evt);
+            }
+        });
         getContentPane().add(item_10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 100, 100));
 
         item_11.setForeground(new java.awt.Color(255, 255, 255));
         item_11.setText("ITEM 11");
         item_11.setContentAreaFilled(false);
+        item_11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_11ActionPerformed(evt);
+            }
+        });
         getContentPane().add(item_11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, 190, 210));
 
         item_12.setForeground(new java.awt.Color(255, 255, 255));
         item_12.setText("ITEM 12");
         item_12.setContentAreaFilled(false);
+        item_12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_12ActionPerformed(evt);
+            }
+        });
         getContentPane().add(item_12, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 370, 180, 190));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brown-leather.png"))); // NOI18N
@@ -252,8 +331,96 @@ public class InventoryDialog extends javax.swing.JDialog {
 
     private void popupMenu1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_popupMenu1KeyPressed
         // TODO add your handling code here:
-
+        
     }//GEN-LAST:event_popupMenu1KeyPressed
+
+    private void item_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_1ActionPerformed
+        // TODO add your handling code here:
+        createPopup("Osserva", "Getta", autopsy, "autopsy", item_1, 1); 
+    }//GEN-LAST:event_item_1ActionPerformed
+
+    private void item_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_2ActionPerformed
+        // TODO add your handling code here:
+        createPopup("Osserva", "Getta", dress1, "white_dress", item_2, 2);
+    }//GEN-LAST:event_item_2ActionPerformed
+
+    private void item_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_3ActionPerformed
+        // TODO add your handling code here:
+        createPopup("Osserva", "Getta", autopsy, "autopsy", item_1, 3);
+    }//GEN-LAST:event_item_3ActionPerformed
+
+    private void item_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_5ActionPerformed
+        // TODO add your handling code here:
+       createPopup("Osserva", "Getta", autopsy, "autopsy", item_1, 5);
+    }//GEN-LAST:event_item_5ActionPerformed
+
+    private void item_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_6ActionPerformed
+        // TODO add your handling code here:
+        createPopup("Osserva", "Getta", autopsy, "autopsy", item_1, 6);
+    }//GEN-LAST:event_item_6ActionPerformed
+
+    private void item_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_7ActionPerformed
+        // TODO add your handling code here:
+        createPopup("Osserva", "Getta", autopsy, "autopsy", item_1, 7);
+    }//GEN-LAST:event_item_7ActionPerformed
+
+    private void item_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_9ActionPerformed
+        // TODO add your handling code here:
+        createPopup("Osserva", "Getta", autopsy, "autopsy", item_1, 9);
+        
+    }//GEN-LAST:event_item_9ActionPerformed
+
+    private void item_10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_10ActionPerformed
+        // TODO add your handling code here:
+        createPopup("Osserva", "Getta", autopsy, "autopsy", item_1, 10);
+    }//GEN-LAST:event_item_10ActionPerformed
+
+    private void item_11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_11ActionPerformed
+        // TODO add your handling code here:
+        createPopup("Osserva", "Getta", autopsy, "autopsy", item_1, 11);
+    }//GEN-LAST:event_item_11ActionPerformed
+
+    private void item_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_4ActionPerformed
+        // TODO add your handling code here:
+        createPopup("Osserva", "Getta", autopsy, "autopsy", item_1, 4);
+    }//GEN-LAST:event_item_4ActionPerformed
+
+    private void item_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_8ActionPerformed
+        // TODO add your handling code here:
+         createPopup("Osserva", "Getta", autopsy, "autopsy", item_1, 8);
+    }//GEN-LAST:event_item_8ActionPerformed
+
+    private void item_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_12ActionPerformed
+        // TODO add your handling code here:
+        createPopup("Osserva", "Getta", autopsy, "autopsy", item_1, 12);
+    }//GEN-LAST:event_item_12ActionPerformed
+
+     public void createPopup(String choice1Name, String choice2Name, Item item, String itemName, JButton itemButton, int index) {
+
+        // CREATE POP MENU
+        JPopupMenu popupMenu = new JPopupMenu();
+        // CREATE POP MENU ITEMS
+        JMenuItem menuItem[] = new JMenuItem[3];
+        menuItem[1] = new JMenuItem(choice1Name);
+        menuItem[1].addActionListener((ActionEvent e) -> {
+            observeItem(item, itemName);
+        });
+
+        popupMenu.add(menuItem[1]);
+
+        menuItem[2] = new JMenuItem(choice2Name);
+        menuItem[2].addActionListener((ActionEvent e) -> {
+            //observeItem(item, itemName);
+        });
+
+        popupMenu.add(menuItem[2]);
+        
+        if (DataHandler.ItemFinder(gh.getPlayer().getInventory(), itemName) != null) {            
+            int i = gh.getPlayer().getInventory().indexOf(item);            
+            i += index;                  
+            ArrayButton[i].setComponentPopupMenu(popupMenu);      
+        }
+    }
 
     public void createObject(int objx, int objy, int objWidth, int objHeight, String objFileName,
             String choice1Name, String choice2Name, String choice1Command, String Choice2Command, ActionHandler actHandler, JButton item) {

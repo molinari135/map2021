@@ -3,6 +3,7 @@ package game;
 import db.DataHandler;
 import db.DialogHandler;
 import static game.Main.listNPC;
+import static game.Main.listRoom;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
 import type.NPC;
+import type.Room;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -23,7 +25,7 @@ import type.NPC;
 public class DayDescription {
 
     GameHandler gh;
-    
+
     int i = 0;
 
     List<String> npcListD = new ArrayList<>();
@@ -42,12 +44,16 @@ public class DayDescription {
         closeTextBox(x);
     }
 
-    public void observeSceneX(int x, String roomDesc) {
+    public void observeSceneX(int x, Room room, String roomName) {
         gh.form.textBox[x].setVisible(true);
         gh.form.textAreaBox[x].setVisible(true);
         gh.form.textButton[x].setVisible(true);
+        gh.form.textAreaBox2[x].setVisible(true);
         //TODO file
-        gh.form.textAreaBox[x].setText(roomDesc);
+        room = DataHandler.RoomFinder(listRoom, roomName);
+        gh.form.textAreaBox[x].setText(room.getName());
+        gh.form.textAreaBox2[x].setText(room.getDescription());
+        gh.form.textButton[x].setActionCommand("continueTextScene" + x);
     }
 
     public void observeNPC(int bgNum, NPC npc, String npcName) {
@@ -179,12 +185,14 @@ public class DayDescription {
         gh.form.dialogueButton4[bgNum].setVisible(false);
         i = i + 2;
 
-        System.out.println("CONTINUADIALOGO");
+        
         if (i < npcListD.size()) {
+            System.out.println("CONTINUADIALOGO");
             gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
             gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
 
         } else {
+            System.out.println("ESCIDIALOGO");
             gh.form.textButton[bgNum].setText("Chiudi");
             gh.form.textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
             closeTextBox(bgNum);

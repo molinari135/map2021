@@ -18,25 +18,27 @@ import type.Room;
  *
  * @author giaco
  */
-public class Main {   
-    
-     public static List<NPC> listNPC = new ArrayList<NPC>();
-     public static List<Room> listRoom = new ArrayList<Room>();
-     public static List<Item> listItem = new ArrayList<Item>();
-   
-  
+public class Main {
+
+    public static List<NPC> listNPC = new ArrayList<NPC>();
+    public static List<Room> listRoom = new ArrayList<Room>();
+    public static List<Item> listItem = new ArrayList<Item>();
+    public static List<Place> listPlace = new ArrayList<Place>();
     public static void main(String[] args) {
-        new Start().setVisible(true);  
-        
-        // test cli database
+        new Start().setVisible(true);
+        //listPlace = DBgame.getIstance().getPlaceList();
+
         try {
+
             DBgame.getIstance().connect();
             System.out.println("\n >>> Connessione al database...\n");
             DBgame.getIstance().tableManager(DBgame.CREATE_TABLE_NPC);
             DBgame.getIstance().tableManager(DBgame.CLEAR_TABLE_NPC);
             DBgame.getIstance().tableManager(DBgame.ALL_NPC);
             System.out.println("\n >>> Fine inserimento NPC <<<\n");
-       
+            DBgame.getIstance().tableManager(DBgame.CREATE_TABLE_PLACE);
+            DBgame.getIstance().tableManager(DBgame.CLEAR_TABLE_PLACE);
+            DBgame.getIstance().tableManager(DBgame.ALL_PLACE);
             System.out.println("\n >>> Fine inserimento Map <<<\n");
             DBgame.getIstance().tableManager(DBgame.CREATE_TABLE_ITEM);
             DBgame.getIstance().tableManager(DBgame.CLEAR_TABLE_ITEM);
@@ -46,38 +48,16 @@ public class Main {
             DBgame.getIstance().tableManager(DBgame.CLEAR_TABLE_ROOM);
             DBgame.getIstance().tableManager(DBgame.ALL_ROOM);
             System.out.println("\n >>> Fine inserimento Room <<<\n");
-            DBgame.getIstance().printNpc();
-            System.out.println("\n >>> Fine stampa Npc <<<\n");
-            
-            System.out.println("\n >>> Fine stampa Map <<<\n");
-            DBgame.getIstance().printItem();
-            System.out.println("\n >>> Fine stampa Item <<<\n");
-            DBgame.getIstance().printRoom();
-            System.out.println("\n >>> Fine stampa Room <<<\n");
-            // controllo metodi
-            DBgame.getIstance().joinManager(DBgame.JOIN_TABLE);
-            
-            
-            NPC a_bantry = new NPC();
-            a_bantry = DBgame.getIstance().getNpc("a_bantry");
-            System.out.println("Nome(ID): " + a_bantry.getName() + "(" + a_bantry.getId() + ")");
-            
-            Room cucina = new Room();
-            cucina = DBgame.getIstance().getRoom("livingRoom");
-            System.out.println("Nome(ID): " + cucina.getName() + "(" + cucina.getId() + ")");
-            
-            Item autopsia1 = new Item();
-            autopsia1 = DBgame.getIstance().getItem("autopsy");
-            System.out.println("Nome(ID): " + autopsia1.getName() + "(" + autopsia1.getId() + ")");
-            
-            //listPlace = DBgame.getIstance().getPlaceList();
+           
+            listPlace = DBgame.getIstance().getPlaceList();
             listItem = DBgame.getIstance().getItemList();
             listRoom = DBgame.getIstance().getRoomList();
             listNPC = DBgame.getIstance().getNpcList();
-            // fine controllo metodi
-            DBgame.getIstance().disconnect();
-            System.out.println("\n >>> Disconnessione dal database...\n");
             
+            DBgame.getIstance().disconnect();
+            
+            System.out.println("\n >>> Disconnessione dal database...\n");
+
         } catch (SQLException ex) {
             System.err.println(ex.getSQLState() + ": " + ex.getMessage());
         }

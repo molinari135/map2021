@@ -11,23 +11,23 @@ package type;
  * @author ester
  */
 public class Place {
-    private int id;
+    private String id;
     private String name;
     private String description;
-    private int chapter;
+    private boolean chapter;
     
     public Place() {
         
     }
     
-    public Place(int id, String name, String description, int chapter) {
+    public Place(String id, String name, String description, boolean chapter) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.chapter = chapter;
     }
     
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
     
@@ -39,11 +39,11 @@ public class Place {
         this.description = description;
     }
     
-    public void setChapter(int chapter) {
+    public void setChapter(boolean chapter) {
         this.chapter = chapter;
     }
     
-    public int getId() {
+    public String getId() {
         return id;
     }
     
@@ -55,7 +55,7 @@ public class Place {
         return description;
     }
     
-    public int getChapter() {
+    public boolean getChapter() {
         return chapter;
     }
 }

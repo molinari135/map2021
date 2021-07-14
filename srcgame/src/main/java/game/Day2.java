@@ -29,13 +29,13 @@ public class Day2 extends DayDescription {
         super(gh);
     }
 
-    NPC prestcot, j_turner, r_starr, c_jefferson, m_gaskell = new NPC();
+    NPC person = new NPC();
     List<String> Prestcot, J_Turner, Ramon, Jeff, Mark = new ArrayList<>();
 
     public void takeDress() {
-        Component[] object = gh.form.bgPanel[2].getComponents();
+        Component[] object = gh.form.bgPanel[9].getComponents();
         object[21].setVisible(false);
-        gh.form.inv.getItem_3().setIcon(new ImageIcon(getClass().getResource("/dress1.png")));
+        gh.inv.getItem_3().setIcon(new ImageIcon(getClass().getResource("/dress1.png")));
     }
 
     public void knockRoom() {

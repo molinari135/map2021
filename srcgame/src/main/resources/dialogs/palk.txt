@@ -4,7 +4,7 @@ Agente Palk
 Buongiornoispettoreslacktuttobene?
 Detective
 Si calmi, agente, sono solo passato per una visita.
-Agente
+Agente Palk
 Oh, sta lavorando lei al caso?
 Detective
 Già, ho un po' di indiziati.
@@ -63,4 +63,4 @@ Sto completando i documenti sulle persone scomparse.
 Buongiorno
 Colonnello Melchett
 Che stai facendo?
-a
+Non c'è altro
