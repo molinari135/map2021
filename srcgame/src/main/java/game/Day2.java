@@ -5,9 +5,10 @@
  */
 package game;
 
+import db.DataHandler;
+import static game.Main.listItem;
 import type.NPC;
 
-import java.awt.Component;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
+import type.Item;
 
 /**
  *
@@ -30,12 +31,40 @@ public class Day2 extends DayDescription {
     }
 
     NPC person = new NPC();
+    Item element = new Item();
     List<String> Prestcot, J_Turner, Ramon, Jeff, Mark = new ArrayList<>();
 
-    public void takeDress() {
-        Component[] object = gh.form.bgPanel[9].getComponents();
-        object[21].setVisible(false);
-        gh.inv.getItem_3().setIcon(new ImageIcon(getClass().getResource("/dress1.png")));
+    public void takeDanceDress() {                       
+        gh.inv.getItem_3().setVisible(true);
+        gh.inv.getItem_3().setIcon(new ImageIcon(getClass().getResource("/dressDance.png")));
+        gh.inv.getItem_3().setText("");        
+        element = DataHandler.ItemFinder(listItem, "ball_dress");        
+        gh.getPlayer().addToInventory(2, element);
+        
+        gh.inv.getItem_4().setVisible(true);
+        gh.inv.getItem_4().setIcon(new ImageIcon(getClass().getResource("/nail.png")));
+        gh.inv.getItem_4().setText("");
+        element = DataHandler.ItemFinder(listItem, "broken_nail");  
+        gh.getPlayer().addToInventory(3, element);
+        
+    }
+    
+    public void takeAdoptionDoc() {
+        gh.inv.getItem_5().setVisible(true);
+        gh.inv.getItem_5().setIcon(new ImageIcon(getClass().getResource("/doc_adozione.png")));
+        gh.inv.getItem_5().setText("");
+        
+        element = DataHandler.ItemFinder(listItem, "adoption_doc");        
+        gh.getPlayer().addToInventory(4, element);
+    }
+    
+    public void takeBillDoc() {
+        gh.inv.getItem_6().setVisible(true);
+        gh.inv.getItem_6().setIcon(new ImageIcon(getClass().getResource("/doc_estrattoConto.png")));
+        gh.inv.getItem_6().setText("");
+        
+        element = DataHandler.ItemFinder(listItem, "mark_bill");        
+        gh.getPlayer().addToInventory(5, element);
     }
 
     public void knockRoom() {
@@ -50,11 +79,11 @@ public class Day2 extends DayDescription {
             System.err.println(e.getMessage());
         }
 
-        gh.form.textBox[3].setVisible(true);
-        gh.form.textAreaBox[3].setVisible(true);
-        gh.form.textButton[3].setVisible(true);
+        gh.form.textBox[10].setVisible(true);
+        gh.form.textAreaBox[10].setVisible(true);
+        gh.form.textButton[10].setVisible(true);
         //TODO file
-        gh.form.textAreaBox[3].setText("Prego, chiunque lei sia può entrare, se una bella ragazza anche ben volentieri.");
+        gh.form.textAreaBox[10].setText("Prego, chiunque lei sia può entrare, se una bella ragazza anche ben volentieri.");
     }
 
 }

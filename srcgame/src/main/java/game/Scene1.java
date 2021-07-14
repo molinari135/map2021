@@ -105,7 +105,7 @@ public class Scene1 {
         String text1 = "Come era potuto succedere?\nSembrava che per lui, o lei, questo fosse soltanto un gioco.\n\n"
                 + "Psicopatico del cazzo...\n";
 
-        String text2 = "A interrompere le mie scorribande di pensieri fu l’agente Palck.\n\n"
+        String text2 = "A interrompere le mie scorribande di pensieri fu l’agente Palk.\n\n"
                 + "Il suo viso stanco e svigorito comparve dietro la portiera alla mia destra, "
                 + "chiedendomi se fosse tutto a posto.\n\nNon poté fare a meno di notare, "
                 + "dopo un’intera carriera insieme, che quello, velatamente, "

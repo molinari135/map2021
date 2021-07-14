@@ -30,7 +30,7 @@ public class Day1 extends DayDescription {
         gh.form.textBox[6].setVisible(true);
         gh.form.textButton[6].setVisible(true);
         gh.form.textAreaBox2[6].setVisible(true);
-        gh.form.textAreaBox2[6].setText("Ispezionando il cadavere , hai ottenuto ABITO BIANCO");
+        gh.form.textAreaBox2[6].setText("Ispezionando il cadavere, hai ottenuto [ABITO BIANCO]");
         gh.inv.getItem_2().setVisible(true);
         gh.inv.getItem_2().setIcon(new ImageIcon(getClass().getResource("/dress1.png")));
         gh.inv.getItem_2().setText("");
@@ -38,7 +38,6 @@ public class Day1 extends DayDescription {
         gh.form.textButton[6].setActionCommand("continueTextScene" + 6);
         
         element = DataHandler.ItemFinder(listItem, "white_dress");
-
         gh.getPlayer().addToInventory(1, element);
     }
 
@@ -47,8 +46,7 @@ public class Day1 extends DayDescription {
         gh.inv.getItem_1().setIcon(new ImageIcon(getClass().getResource("/doc_autopsia.png")));
         gh.inv.getItem_1().setText("");
         
-        element = DataHandler.ItemFinder(listItem, "autopsy");
-        
+        element = DataHandler.ItemFinder(listItem, "autopsy");        
         gh.getPlayer().addToInventory(0, element);
     }
 

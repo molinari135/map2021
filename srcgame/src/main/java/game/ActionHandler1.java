@@ -8,11 +8,8 @@ package game;
 import java.awt.event.ActionEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import type.NPC;
 
 /**
  *
@@ -49,11 +46,12 @@ public class ActionHandler1 extends ActionHandler {
                 break;
 
             case "StaircaseUP1":
-                gh.day.goToSceneXtoY(2, 4); //CORRIDOIO INF -> SUP
+                gh.day.goToSceneXtoY(2, 4); //CORRIDOIO INF -> SUP                
                 break;
 
             case "StaircaseDown1":
                 gh.day.goToSceneXtoY(4, 2); //CORRIDOIO SUP -> INF
+                gh.day.checkInventory();
                 break;
 
             case "WestRoomCorridor2":

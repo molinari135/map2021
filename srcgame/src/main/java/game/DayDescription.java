@@ -232,5 +232,11 @@ public class DayDescription {
         }
 
     }
+    
+    public void checkInventory() {
+        if(gh.getPlayer().getInventory().size() == 2) {
+            gh.form.setVisibleObject(2, 16, true);
+        }
+    }
 
 }

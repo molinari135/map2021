@@ -22,8 +22,8 @@ public class Player {
 
     public Player(GameHandler gh) {
         this.gh = gh;
-        this.inventory = new ArrayList<>();
-
+        this.inventory = new ArrayList<>();          
+        
     }
 
     public void addToInventory(int i, Item item) {
@@ -31,9 +31,8 @@ public class Player {
         boolean isPresent = false;
 
         if (inventory.size() > 0) {
-            while (it.hasNext() || isPresent == true) {
-                Item item1 = it.next();
-                if (item1.getId().equals(item.getId())) {
+            while (it.hasNext()) {                  
+                if (it.next().getId().equals(item.getId())) {
                     isPresent = true;
                 }
             }
@@ -46,7 +45,7 @@ public class Player {
 
         if (!isPresent) {
             inventory.add(i,item);
-            System.out.println(item.getName() + "  " + inventory.size());
+            System.out.println(item.getName() + " | size: " + inventory.size());
         }
     }   
 

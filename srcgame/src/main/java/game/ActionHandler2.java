@@ -6,29 +6,21 @@
 package game;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import type.NPC;
 
 /**
  *
  * @author tom
  */
 public class ActionHandler2 extends ActionHandler {
-    
-    GameHandler gh;
-    
 
+    GameHandler gh;
 
     public ActionHandler2(GameHandler gh) {
         this.gh = gh;
     }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -36,11 +28,11 @@ public class ActionHandler2 extends ActionHandler {
         String eventCommand = e.getActionCommand();
 
         switch (eventCommand) {
-            
+
             case "goToPoliceStation":
                 gh.day.goToSceneXtoY(8, 13);
                 break;
-            
+
             case "goToReceptionFromHall":
                 gh.day.goToSceneXtoY(9, 8);  //HALL -> RECEPTION
                 break;
@@ -70,14 +62,14 @@ public class ActionHandler2 extends ActionHandler {
                 break;
 
             case "goToRoomFromVeranda":
-                gh.day.goToSceneXtoY(12, 10); //VERANDA -> CAMERA LETTO
+                gh.day.goToSceneXtoY(12, 11); //VERANDA -> CAMERA LETTO
                 break;
-                
-            case "goToGossingtonHall": 
+
+            case "goToGossingtonHall":
                 gh.day.goToSceneXtoY(8, 2);
                 break;
-                
-                case "enterHotel": 
+
+            case "enterHotel":
                 gh.day.goToSceneXtoY(7, 8);
                 break;
 
@@ -88,6 +80,7 @@ public class ActionHandler2 extends ActionHandler {
             case "KnockRoom":
                 gh.day2.knockRoom();
                 break;
+
             case "continueTextScene7":
                 gh.day.closeTextBox(7);
                 break;
@@ -172,7 +165,7 @@ public class ActionHandler2 extends ActionHandler {
 
             case "TalkOwner":
                 try {
-                gh.day.talkNPC(8, "prestcot.txt", gh.day2.Prestcot, "/IconPrestcot.png", "prestcot", false,this);
+                gh.day.talkNPC(8, "prestcot.txt", gh.day2.Prestcot, "/IconPrestcot.png", "prestcot", false, this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -180,7 +173,7 @@ public class ActionHandler2 extends ActionHandler {
 
             case "TalkRamon":
                 try {
-                gh.day.talkNPC(9, "r_starr.txt", gh.day2.Ramon, "/IconRamon.png", "r_starr", false,this);
+                gh.day.talkNPC(9, "r_starr.txt", gh.day2.Ramon, "/IconRamon.png", "r_starr", false, this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -188,7 +181,7 @@ public class ActionHandler2 extends ActionHandler {
 
             case "TalkJosephine":
                 try {
-                gh.day.talkNPC(9, "j_turner.txt", gh.day2.J_Turner, "/IconJosephine.png", "j_turner", true,this);
+                gh.day.talkNPC(9, "j_turner.txt", gh.day2.J_Turner, "/IconJosephine.png", "j_turner", true, this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -196,7 +189,7 @@ public class ActionHandler2 extends ActionHandler {
 
             case "TalkJefferson":
                 try {
-                gh.day.talkNPC(11, "c_jefferson.txt", gh.day2.Jeff, "/IconJeff.png", "c_jefferson", true,this);
+                gh.day.talkNPC(11, "c_jefferson.txt", gh.day2.Jeff, "/IconJeff.png", "c_jefferson", true, this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -204,7 +197,7 @@ public class ActionHandler2 extends ActionHandler {
 
             case "TalkMark":
                 try {
-                gh.day.talkNPC(12, "m_gaskell.txt", gh.day2.Mark, "/IconMark.png", "m_gaskell", true,this);
+                gh.day.talkNPC(12, "m_gaskell.txt", gh.day2.Mark, "/IconMark.png", "m_gaskell", true, this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -258,6 +251,7 @@ public class ActionHandler2 extends ActionHandler {
             case "scelta2j_turner": 
                 try {
                 gh.day.choice2(9, "j_turner", "j_turner.txt");
+                gh.day2.takeDanceDress();
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -330,6 +324,7 @@ public class ActionHandler2 extends ActionHandler {
             case "scelta2c_jefferson": 
                 try {
                 gh.day.choice2(11, "c_jefferson", "c_jefferson.txt");
+                gh.day2.takeAdoptionDoc();
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -375,6 +370,7 @@ public class ActionHandler2 extends ActionHandler {
             case "scelta3m_gaskell": 
                 try {
                 gh.day.choice3(12, "m_gaskell", "m_gaskell.txt");
+                gh.day2.takeBillDoc();
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
