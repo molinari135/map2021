@@ -1,0 +1,66 @@
+Detective
+Buongiorno, Palk.
+Agente Palk
+Buongiornoispettoreslacktuttobene?
+Detective
+Si calmi, agente, sono solo passato per una visita.
+Agente Palk
+Oh, sta lavorando lei al caso?
+Detective
+Già, ho un po' di indiziati.
+
+
+
+
+Detective
+Dove posso trovare il Colonnello Melchett?
+Agente Palk
+Sta nel suo studio, infondo a destra.
+Detective
+Sai se è impegnato al momento?
+Agente Palk
+No no, è da solo, può andare a parlarle.
+Detective
+E l'archivio? Posso andarci?
+Agente Palk
+Si, vada in fondo a sinistra, è tutto suo.
+
+
+
+
+Detective
+Cosa state facendo qui in centrale?
+Agente Palk
+Niente di che, controlliamo vecchi documenti...
+Detective
+Se vuoi, posso portarti con me durante le indagini.
+Agente Palk
+Sarebbe troppo bello! Ma non posso...
+Detective
+Come mai?
+Agente Palk
+Sto completando i documenti sulle persone scomparse.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Buongiorno
+Colonnello Melchett
+Che stai facendo?
+Non c'è altro

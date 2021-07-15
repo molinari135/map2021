@@ -21,31 +21,29 @@ public class Start extends javax.swing.JFrame {
     /**
      * Creates new form Start
      */
+    
+    Clip clipJazz;
+    
+    GameHandler gh = new GameHandler();
+    
     public Start() {
         initComponents();
         playSound();
     }
     
-    //TODO come stoppare thread della musica?
-    public static synchronized void playSound() {
-        Thread t1 = new Thread(new Runnable() { //TODO wrapper thread            
-            @Override
-            public void run() {
-                try {
-                    Clip clip = AudioSystem.getClip();
-                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                            getClass().getClassLoader().getResource("jazz.wav")
-                    );
-                    clip.open(inputStream);
-                    clip.start();
-                    clip.loop(Clip.LOOP_CONTINUOUSLY);
-                    
-                } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
-                    System.err.println(e.getMessage());
-                }
-            }
-        });
-        t1.start();
+    private void playSound() {
+        try {
+            clipJazz = AudioSystem.getClip();
+            AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+                    getClass().getClassLoader().getResource("jazz.wav")
+            );
+            clipJazz.open(inputStream);
+            clipJazz.start();
+            clipJazz.loop(Clip.LOOP_CONTINUOUSLY);
+
+        } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     /**
@@ -61,13 +59,17 @@ public class Start extends javax.swing.JFrame {
         esci = new javax.swing.JButton();
         gioca = new javax.swing.JButton();
         titolo = new javax.swing.JLabel();
+        credits = new javax.swing.JButton();
+        silhouette = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("The body in the library");
         setBackground(new java.awt.Color(0, 0, 0));
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
         setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         background.setBackground(new java.awt.Color(0, 0, 0));
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         esci.setFont(new java.awt.Font("Courier New", 2, 48)); // NOI18N
         esci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit-door.png"))); // NOI18N
@@ -79,6 +81,7 @@ public class Start extends javax.swing.JFrame {
                 esciActionPerformed(evt);
             }
         });
+        background.add(esci, new org.netbeans.lib.awtextra.AbsoluteConstraints(924, 605, 145, 143));
 
         gioca.setFont(new java.awt.Font("Courier New", 2, 48)); // NOI18N
         gioca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/magnifying-glass.png"))); // NOI18N
@@ -90,60 +93,43 @@ public class Start extends javax.swing.JFrame {
                 giocaActionPerformed(evt);
             }
         });
+        background.add(gioca, new org.netbeans.lib.awtextra.AbsoluteConstraints(924, 366, 145, 143));
 
         titolo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/titolo2.gif"))); // NOI18N
+        background.add(titolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 172, -1, -1));
 
-        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
-        background.setLayout(backgroundLayout);
-        backgroundLayout.setHorizontalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                .addContainerGap(481, Short.MAX_VALUE)
-                .addComponent(titolo)
-                .addGap(481, 481, 481))
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gioca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(esci, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        backgroundLayout.setVerticalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                .addGap(182, 182, 182)
-                .addComponent(titolo)
-                .addGap(140, 140, 140)
-                .addComponent(gioca, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(esci, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(699, Short.MAX_VALUE))
-        );
+        credits.setFont(new java.awt.Font("Californian FB", 1, 24)); // NOI18N
+        credits.setForeground(new java.awt.Color(255, 255, 255));
+        credits.setText("Credits");
+        credits.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        credits.setContentAreaFilled(false);
+        background.add(credits, new org.netbeans.lib.awtextra.AbsoluteConstraints(1779, 897, -1, -1));
+
+        silhouette.setIcon(new javax.swing.ImageIcon(getClass().getResource("/silhouette.png"))); // NOI18N
+        background.add(silhouette, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 294, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void giocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_giocaActionPerformed
+        this.dispose();
+        new Prologue_0(clipJazz, gh).setVisible(true);
+    }//GEN-LAST:event_giocaActionPerformed
+
     private void esciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_esciActionPerformed
         System.exit(0);
     }//GEN-LAST:event_esciActionPerformed
-
-    private void giocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_giocaActionPerformed
-        this.dispose();
-        new Prologue_0().setVisible(true);
-    }//GEN-LAST:event_giocaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,8 +168,10 @@ public class Start extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
+    private javax.swing.JButton credits;
     private javax.swing.JButton esci;
     private javax.swing.JButton gioca;
+    private javax.swing.JLabel silhouette;
     private javax.swing.JLabel titolo;
     // End of variables declaration//GEN-END:variables
 }

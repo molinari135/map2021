@@ -1,0 +1,66 @@
+Detective
+Cognome e mestiere, prego.
+Lorrimer
+Lorrimer. Sono il maggiordomo di Gossington Hall.
+Detective
+Cosa stava facendo alle 22:00?
+Lorrimer
+Ho sistemato il whisky in salotto, il padrone non era tornato ancora.
+
+(Questo Bantry diventa sempre più sospetto...)
+
+
+
+
+Detective
+Chi si occupa della biblioteca?
+Lorrimer
+Principalmente io, al signore piace passare lì la sera quando è stanco.
+Detective
+Ieri nessuno è andato in biblioteca?
+Lorrimer
+Solo la signora Bantry, ha letto dei libri e poi è andata a letto.
+Detective
+Cosa ha fatto dopo che è andata via?
+Lorrimer
+Ho chiuso la porta a chiave e sono andato a dormire anche io.
+
+
+
+
+Detective
+Lei ha proprio la faccia da indiziato numero 1, lo sa?
+Lorrimer
+La prego, non dica così.
+Detective
+Nei libri è un classico che il maggiordomo faccia queste cose.
+Lorrimer
+Mah, è più probabile che mi rinchiudano in una cella frigorifera di questi tempi...
+Detective
+Sto scherzando, non si preoccupi.
+Lorrimer
+Lei ha uno strano senso dell'umorismo, Ispettore.
+
+
+
+
+Detective
+Da quanto tempo lavora per i Bantry?
+Lorrimer
+Ho perso il conto, signore, saranno più di 30 anni ormai.
+Detective
+Non dubita del signor Bantry? Non ha mai visto questa ragazza prima d'ora?
+Lorrimer
+Mai, e non penso che il signor Bantry abbia, diciamo, comportamenti violenti.
+Detective
+Dove ha detto che si trova il signor Bantry?
+Lorrimer
+Nel suo studio, al secondo piano. Prenda le scale alla fine del corridoio.
+
+
+
+
+Identikit e alibi
+Chiedi info sulla biblioteca
+Che tipo sospetto...
+Chiedi info sui Bantry
