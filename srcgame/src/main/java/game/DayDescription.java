@@ -22,7 +22,7 @@ import type.Room;
  */
 /**
  *
- * @author rino
+ * @author 
  */
 public class DayDescription {
 
@@ -42,52 +42,52 @@ public class DayDescription {
     }
 
     public void goToSceneXtoY(int x, int y) {
-        gh.form.bgPanel[x].setVisible(false);
-        gh.form.bgPanel[y].setVisible(true);
+        gh.getForm().bgPanel[x].setVisible(false);
+        gh.getForm().bgPanel[y].setVisible(true);
         closeTextBox(x);
     }
 
     public void observeSceneX(int x, Room room, String roomName) {
-        gh.form.textBox[x].setVisible(true);
-        gh.form.textAreaBox[x].setVisible(true);
-        gh.form.textButton[x].setVisible(true);
-        gh.form.textAreaBox2[x].setVisible(true);
+        gh.getForm().textBox[x].setVisible(true);
+        gh.getForm().textAreaBox[x].setVisible(true);
+        gh.getForm().textButton[x].setVisible(true);
+        gh.getForm().textAreaBox2[x].setVisible(true);
 
         room = DataHandler.RoomFinder(listRoom, roomName);
-        gh.form.textAreaBox[x].setText(room.getName());
-        gh.form.textAreaBox2[x].setText(room.getDescription());
-        gh.form.textButton[x].setActionCommand("continueTextScene" + x);
+        gh.getForm().textAreaBox[x].setText(room.getName());
+        gh.getForm().textAreaBox2[x].setText(room.getDescription());
+        gh.getForm().textButton[x].setActionCommand("continueTextScene" + x);
     }
 
     public void observeObjectX(int x, Item item, String itemName) {
-        gh.form.textBox[x].setVisible(true);
-        gh.form.textAreaBox[x].setVisible(true);
-        gh.form.textButton[x].setVisible(true);
-        gh.form.textAreaBox2[x].setVisible(true);
+        gh.getForm().textBox[x].setVisible(true);
+        gh.getForm().textAreaBox[x].setVisible(true);
+        gh.getForm().textButton[x].setVisible(true);
+        gh.getForm().textAreaBox2[x].setVisible(true);
 
         item = DataHandler.ItemFinder(listItem, itemName);
-        gh.form.textAreaBox[x].setText(item.getName());
-        gh.form.textAreaBox2[x].setText(item.getDescription());
-        gh.form.textButton[x].setActionCommand("continueTextScene" + x);
+        gh.getForm().textAreaBox[x].setText(item.getName());
+        gh.getForm().textAreaBox2[x].setText(item.getDescription());
+        gh.getForm().textButton[x].setActionCommand("continueTextScene" + x);
     }
 
     public void observeNPC(int bgNum, NPC npc, String npcName) {
-        gh.form.dialogueButton1[bgNum].setVisible(false);
-        gh.form.dialogueButton2[bgNum].setVisible(false);
-        gh.form.dialogueButton3[bgNum].setVisible(false);
-        gh.form.dialogueButton4[bgNum].setVisible(false);
-        gh.form.detectiveDestra[bgNum].setVisible(false);
-        gh.form.detectiveSinistra[bgNum].setVisible(false);
-        gh.form.textAreaBox[bgNum].setVisible(true);
-        gh.form.icon[bgNum].setVisible(false);
-        gh.form.textBox[bgNum].setVisible(true);
-        gh.form.textAreaBox2[bgNum].setVisible(true);
-        gh.form.textButton[bgNum].setVisible(true);
+        gh.getForm().dialogueButton1[bgNum].setVisible(false);
+        gh.getForm().dialogueButton2[bgNum].setVisible(false);
+        gh.getForm().dialogueButton3[bgNum].setVisible(false);
+        gh.getForm().dialogueButton4[bgNum].setVisible(false);
+        gh.getForm().detectiveDestra[bgNum].setVisible(false);
+        gh.getForm().detectiveSinistra[bgNum].setVisible(false);
+        gh.getForm().textAreaBox[bgNum].setVisible(true);
+        gh.getForm().icon[bgNum].setVisible(false);
+        gh.getForm().textBox[bgNum].setVisible(true);
+        gh.getForm().textAreaBox2[bgNum].setVisible(true);
+        gh.getForm().textButton[bgNum].setVisible(true);
 
         npc = DataHandler.NpcFinder(listNPC, npcName);
-        gh.form.textAreaBox[bgNum].setText(npc.getName() + " " + npc.getSurname());
-        gh.form.textAreaBox2[bgNum].setText(npc.getDescription());
-        gh.form.textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
+        gh.getForm().textAreaBox[bgNum].setText(npc.getName() + " " + npc.getSurname());
+        gh.getForm().textAreaBox2[bgNum].setText(npc.getDescription());
+        gh.getForm().textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
     }
 
     public void talkNPC(int bgNum, String fileName, List<String> npc, String iconName, String id, Boolean labelSx, ActionHandler actHandler) throws IOException {
@@ -97,58 +97,58 @@ public class DayDescription {
 
     public void choice1(int bgNum, String npcName, String filename) throws FileNotFoundException, IOException {
         i = 0;
-        gh.form.dialogueButton1[bgNum].setVisible(false);
-        gh.form.dialogueButton2[bgNum].setVisible(false);
-        gh.form.dialogueButton3[bgNum].setVisible(false);
-        gh.form.dialogueButton4[bgNum].setVisible(false);
+        gh.getForm().dialogueButton1[bgNum].setVisible(false);
+        gh.getForm().dialogueButton2[bgNum].setVisible(false);
+        gh.getForm().dialogueButton3[bgNum].setVisible(false);
+        gh.getForm().dialogueButton4[bgNum].setVisible(false);
         npcListD = dh.SelectDialogOption(filename, DialogHandler.FIRST_DIALOG_START, DialogHandler.FIRST_DIALOG_END);
         System.out.println(npcListD.get(i));
-        gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
-        gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        gh.form.textButton[bgNum].setActionCommand("continueDialog" + bgNum);
-        gh.form.textButton[bgNum].setText("Continua");
+        gh.getForm().textAreaBox[bgNum].setText(npcListD.get(i));
+        gh.getForm().textAreaBox2[bgNum].setText(npcListD.get(i + 1));
+        gh.getForm().textButton[bgNum].setActionCommand("continueDialog" + bgNum);
+        gh.getForm().textButton[bgNum].setText("Continua");
     }
 
     public void choice2(int bgNum, String npcName, String filename) throws IOException {
-        gh.form.dialogueButton1[bgNum].setVisible(false);
-        gh.form.dialogueButton2[bgNum].setVisible(false);
-        gh.form.dialogueButton3[bgNum].setVisible(false);
-        gh.form.dialogueButton4[bgNum].setVisible(false);
+        gh.getForm().dialogueButton1[bgNum].setVisible(false);
+        gh.getForm().dialogueButton2[bgNum].setVisible(false);
+        gh.getForm().dialogueButton3[bgNum].setVisible(false);
+        gh.getForm().dialogueButton4[bgNum].setVisible(false);
         npcListD = dh.SelectDialogOption(filename, DialogHandler.SECOND_DIALOG_START, DialogHandler.SECOND_DIALOG_END);
         System.out.println(npcListD.get(i));
-        gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
-        gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        gh.form.textButton[bgNum].setActionCommand("continueDialog" + bgNum);
-        gh.form.textButton[bgNum].setText("Continua");
+        gh.getForm().textAreaBox[bgNum].setText(npcListD.get(i));
+        gh.getForm().textAreaBox2[bgNum].setText(npcListD.get(i + 1));
+        gh.getForm().textButton[bgNum].setActionCommand("continueDialog" + bgNum);
+        gh.getForm().textButton[bgNum].setText("Continua");
     }
 
     public void choice3(int bgNum, String npcName, String filename) throws IOException {
-        gh.form.dialogueButton1[bgNum].setVisible(false);
-        gh.form.dialogueButton2[bgNum].setVisible(false);
-        gh.form.dialogueButton3[bgNum].setVisible(false);
-        gh.form.dialogueButton4[bgNum].setVisible(false);
+        gh.getForm().dialogueButton1[bgNum].setVisible(false);
+        gh.getForm().dialogueButton2[bgNum].setVisible(false);
+        gh.getForm().dialogueButton3[bgNum].setVisible(false);
+        gh.getForm().dialogueButton4[bgNum].setVisible(false);
 
         npcListD = dh.SelectDialogOption(filename, DialogHandler.THIRD_DIALOG_START, DialogHandler.THIRD_DIALOG_END);
         System.out.println(npcListD.get(i));
-        gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
-        gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        gh.form.textButton[bgNum].setActionCommand("continueDialog" + bgNum);
-        gh.form.textButton[bgNum].setText("Continua");
+        gh.getForm().textAreaBox[bgNum].setText(npcListD.get(i));
+        gh.getForm().textAreaBox2[bgNum].setText(npcListD.get(i + 1));
+        gh.getForm().textButton[bgNum].setActionCommand("continueDialog" + bgNum);
+        gh.getForm().textButton[bgNum].setText("Continua");
 
     }
 
     public void choice4(int bgNum, String npcName, String filename) throws IOException {
-        gh.form.dialogueButton1[bgNum].setVisible(false);
-        gh.form.dialogueButton2[bgNum].setVisible(false);
-        gh.form.dialogueButton3[bgNum].setVisible(false);
-        gh.form.dialogueButton4[bgNum].setVisible(false);
+        gh.getForm().dialogueButton1[bgNum].setVisible(false);
+        gh.getForm().dialogueButton2[bgNum].setVisible(false);
+        gh.getForm().dialogueButton3[bgNum].setVisible(false);
+        gh.getForm().dialogueButton4[bgNum].setVisible(false);
 
         npcListD = dh.SelectDialogOption(filename, DialogHandler.FORTH_DIALOG_START, DialogHandler.FORTH_DIALOG_END);
         System.out.println(npcListD.get(i));
-        gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
-        gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        gh.form.textButton[bgNum].setActionCommand("continueDialog" + bgNum);
-        gh.form.textButton[bgNum].setText("Continua");
+        gh.getForm().textAreaBox[bgNum].setText(npcListD.get(i));
+        gh.getForm().textAreaBox2[bgNum].setText(npcListD.get(i + 1));
+        gh.getForm().textButton[bgNum].setActionCommand("continueDialog" + bgNum);
+        gh.getForm().textButton[bgNum].setText("Continua");
     }
 
     public void talkNPCLast(int bgNum, String fileName, String iconName, String id, Boolean labelSx, ActionHandler actHandler, String truth) throws IOException {
@@ -159,103 +159,103 @@ public class DayDescription {
         if (i == 22) {
             i = 0;
         }
-        gh.form.dialogueButton1[bgNum].setVisible(false);
-        gh.form.dialogueButton2[bgNum].setVisible(false);
-        gh.form.dialogueButton3[bgNum].setVisible(false);
-        gh.form.dialogueButton4[bgNum].setVisible(false);
-        gh.form.textButton[bgNum].setVisible(true);
-        gh.form.textBox[bgNum].setVisible(true);
-        gh.form.textAreaBox[bgNum].setVisible(true);
-        gh.form.textAreaBox2[bgNum].setVisible(true);
-        gh.form.icon[bgNum].setVisible(true);
+        gh.getForm().dialogueButton1[bgNum].setVisible(false);
+        gh.getForm().dialogueButton2[bgNum].setVisible(false);
+        gh.getForm().dialogueButton3[bgNum].setVisible(false);
+        gh.getForm().dialogueButton4[bgNum].setVisible(false);
+        gh.getForm().textButton[bgNum].setVisible(true);
+        gh.getForm().textBox[bgNum].setVisible(true);
+        gh.getForm().textAreaBox[bgNum].setVisible(true);
+        gh.getForm().textAreaBox2[bgNum].setVisible(true);
+        gh.getForm().icon[bgNum].setVisible(true);
         setIcon(bgNum, iconName);
-        gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
-        gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        gh.form.textButton[bgNum].setActionCommand("continueDialogFinale" + truth);
-        gh.form.textButton[bgNum].setText("Continua");
+        gh.getForm().textAreaBox[bgNum].setText(npcListD.get(i));
+        gh.getForm().textAreaBox2[bgNum].setText(npcListD.get(i + 1));
+        gh.getForm().textButton[bgNum].setActionCommand("continueDialogFinale" + truth);
+        gh.getForm().textButton[bgNum].setText("Continua");
 
     }
 
     public void talkDialogue(int bgNum, String icona, String input, List<String> npcName, Boolean labelSx, ActionHandler actHandler) throws IOException {
         i = 0;
-        gh.form.detectiveSinistra[bgNum].setVisible(labelSx);
-        gh.form.icon[bgNum].setVisible(true);
+        gh.getForm().detectiveSinistra[bgNum].setVisible(labelSx);
+        gh.getForm().icon[bgNum].setVisible(true);
         setIcon(bgNum, icona);
-        gh.form.textButton[bgNum].setVisible(true);
-        gh.form.textBox[bgNum].setVisible(true);
-        gh.form.textAreaBox[bgNum].setVisible(true);
-        gh.form.textAreaBox2[bgNum].setVisible(true);
-        gh.form.dialogueButton1[bgNum].setVisible(true);
-        gh.form.dialogueButton2[bgNum].setVisible(true);
-        gh.form.dialogueButton3[bgNum].setVisible(true);
-        gh.form.dialogueButton4[bgNum].setVisible(true);
-        gh.form.detectiveDestra[bgNum].setVisible(!labelSx);
-        gh.form.dialogueButton1[bgNum].setSelected(false);
-        gh.form.dialogueButton2[bgNum].setSelected(false);
-        gh.form.dialogueButton3[bgNum].setSelected(false);
-        gh.form.dialogueButton4[bgNum].setSelected(false);
-        gh.form.textAreaBox[bgNum].setText("");
-        gh.form.textAreaBox2[bgNum].setText("");
-        gh.form.textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
-        gh.form.dialogueButton1[bgNum].setText(npcName.get(0));
-        gh.form.dialogueButton2[bgNum].setText(npcName.get(1));
-        gh.form.dialogueButton3[bgNum].setText(npcName.get(2));
-        gh.form.dialogueButton4[bgNum].setText(npcName.get(3));
-        gh.form.dialogueButton1[bgNum].addActionListener(actHandler);
-        gh.form.dialogueButton1[bgNum].setActionCommand("scelta1" + input);
-        gh.form.dialogueButton2[bgNum].addActionListener(actHandler);
-        gh.form.dialogueButton2[bgNum].setActionCommand("scelta2" + input);
-        gh.form.dialogueButton3[bgNum].addActionListener(actHandler);
-        gh.form.dialogueButton3[bgNum].setActionCommand("scelta3" + input);
-        gh.form.dialogueButton4[bgNum].addActionListener(actHandler);
-        gh.form.dialogueButton4[bgNum].setActionCommand("scelta4" + input);
+        gh.getForm().textButton[bgNum].setVisible(true);
+        gh.getForm().textBox[bgNum].setVisible(true);
+        gh.getForm().textAreaBox[bgNum].setVisible(true);
+        gh.getForm().textAreaBox2[bgNum].setVisible(true);
+        gh.getForm().dialogueButton1[bgNum].setVisible(true);
+        gh.getForm().dialogueButton2[bgNum].setVisible(true);
+        gh.getForm().dialogueButton3[bgNum].setVisible(true);
+        gh.getForm().dialogueButton4[bgNum].setVisible(true);
+        gh.getForm().detectiveDestra[bgNum].setVisible(!labelSx);
+        gh.getForm().dialogueButton1[bgNum].setSelected(false);
+        gh.getForm().dialogueButton2[bgNum].setSelected(false);
+        gh.getForm().dialogueButton3[bgNum].setSelected(false);
+        gh.getForm().dialogueButton4[bgNum].setSelected(false);
+        gh.getForm().textAreaBox[bgNum].setText("");
+        gh.getForm().textAreaBox2[bgNum].setText("");
+        gh.getForm().textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
+        gh.getForm().dialogueButton1[bgNum].setText(npcName.get(0));
+        gh.getForm().dialogueButton2[bgNum].setText(npcName.get(1));
+        gh.getForm().dialogueButton3[bgNum].setText(npcName.get(2));
+        gh.getForm().dialogueButton4[bgNum].setText(npcName.get(3));
+        gh.getForm().dialogueButton1[bgNum].addActionListener(actHandler);
+        gh.getForm().dialogueButton1[bgNum].setActionCommand("scelta1" + input);
+        gh.getForm().dialogueButton2[bgNum].addActionListener(actHandler);
+        gh.getForm().dialogueButton2[bgNum].setActionCommand("scelta2" + input);
+        gh.getForm().dialogueButton3[bgNum].addActionListener(actHandler);
+        gh.getForm().dialogueButton3[bgNum].setActionCommand("scelta3" + input);
+        gh.getForm().dialogueButton4[bgNum].addActionListener(actHandler);
+        gh.getForm().dialogueButton4[bgNum].setActionCommand("scelta4" + input);
 
     }
 
     public void continueDialogue(int bgNum) {
-        gh.form.dialogueButton1[bgNum].setVisible(false);
-        gh.form.dialogueButton2[bgNum].setVisible(false);
-        gh.form.dialogueButton3[bgNum].setVisible(false);
-        gh.form.dialogueButton4[bgNum].setVisible(false);
+        gh.getForm().dialogueButton1[bgNum].setVisible(false);
+        gh.getForm().dialogueButton2[bgNum].setVisible(false);
+        gh.getForm().dialogueButton3[bgNum].setVisible(false);
+        gh.getForm().dialogueButton4[bgNum].setVisible(false);
         i = i + 2;
 
         if (i < npcListD.size()) {
             System.out.println("CONTINUADIALOGO");
-            gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
-            gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
+            gh.getForm().textAreaBox[bgNum].setText(npcListD.get(i));
+            gh.getForm().textAreaBox2[bgNum].setText(npcListD.get(i + 1));
 
         } else {
             System.out.println("ESCIDIALOGO");
-            gh.form.textButton[bgNum].setText("Chiudi");
-            gh.form.textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
+            gh.getForm().textButton[bgNum].setText("Chiudi");
+            gh.getForm().textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
             closeTextBox(bgNum);
         }
 
     }
 
     public void closeTextBox(int bgNum) {
-        gh.form.textBox[bgNum].setVisible(false);
-        gh.form.textAreaBox[bgNum].setVisible(false);
-        gh.form.textAreaBox2[bgNum].setVisible(false);
-        gh.form.textButton[bgNum].setVisible(false);
-        gh.form.detectiveDestra[bgNum].setVisible(false);
-        gh.form.detectiveSinistra[bgNum].setVisible(false);
-        gh.form.icon[bgNum].setVisible(false);
-        gh.form.dialogueButton1[bgNum].setVisible(false);
-        gh.form.dialogueButton2[bgNum].setVisible(false);
-        gh.form.dialogueButton3[bgNum].setVisible(false);
-        gh.form.dialogueButton4[bgNum].setVisible(false);
+        gh.getForm().textBox[bgNum].setVisible(false);
+        gh.getForm().textAreaBox[bgNum].setVisible(false);
+        gh.getForm().textAreaBox2[bgNum].setVisible(false);
+        gh.getForm().textButton[bgNum].setVisible(false);
+        gh.getForm().detectiveDestra[bgNum].setVisible(false);
+        gh.getForm().detectiveSinistra[bgNum].setVisible(false);
+        gh.getForm().icon[bgNum].setVisible(false);
+        gh.getForm().dialogueButton1[bgNum].setVisible(false);
+        gh.getForm().dialogueButton2[bgNum].setVisible(false);
+        gh.getForm().dialogueButton3[bgNum].setVisible(false);
+        gh.getForm().dialogueButton4[bgNum].setVisible(false);
 
     }
 
     public void setIcon(int bgNum, String Filename) {
         ImageIcon iconMini = new ImageIcon(getClass().getResource(Filename));
-        gh.form.icon[bgNum].setIcon(iconMini);
+        gh.getForm().icon[bgNum].setIcon(iconMini);
     }
 
     public void checkInventory(int size, int bgNum, int idx) {
         if (gh.getPlayer().getInventory().size() == size) {
-            gh.form.setVisibleObject(bgNum, idx, true);
+            gh.getForm().setVisibleObject(bgNum, idx, true);
         }
     }
 
@@ -264,19 +264,19 @@ public class DayDescription {
 
         if (i < npcListD.size()) {
             System.out.println("CONTINUADIALOGO");
-            gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
-            gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
+            gh.getForm().textAreaBox[bgNum].setText(npcListD.get(i));
+            gh.getForm().textAreaBox2[bgNum].setText(npcListD.get(i + 1));
 
         } else {
             j = 0;
             Final = dh.SelectDialogOption(filename, DialogHandler.FINAL_START, DialogHandler.FINAL_END);
             System.out.println("ESCIDIALOGO");
             if (b == true) {
-                gh.form.placeDescription4[16].setText(Final.get(j));
-                gh.day.goToSceneXtoY(15, 16);
+                gh.getForm().placeDescription4[16].setText(Final.get(j));
+                gh.getDay().goToSceneXtoY(15, 16);
             } else {
-                gh.form.placeDescription4[17].setText(Final.get(j));
-                gh.day.goToSceneXtoY(15, 17);
+                gh.getForm().placeDescription4[17].setText(Final.get(j));
+                gh.getDay().goToSceneXtoY(15, 17);
             }
 
         }
@@ -287,7 +287,7 @@ public class DayDescription {
 
         if (j < Final.size()) {
             System.out.println("CONTINUADIALOGO");
-            gh.form.placeDescription4[bgNum].setText(Final.get(j));
+            gh.getForm().placeDescription4[bgNum].setText(Final.get(j));
 
         } else {
 
@@ -300,9 +300,9 @@ public class DayDescription {
 
         if (j < Final.size()) {
             System.out.println("CONTINUADIALOGO");
-            gh.form.placeDescription4[bgNum].setText(Final.get(j));
+            gh.getForm().placeDescription4[bgNum].setText(Final.get(j));
         } else {
-            gh.day.goToSceneXtoY(bgNum, 15);
+            gh.getDay().goToSceneXtoY(bgNum, 15);
         }
 
     }

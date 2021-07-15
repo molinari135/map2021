@@ -128,7 +128,7 @@ public class Scene1 {
                 clipRain.stop();
                 clipJazz.stop();
 
-                gh.form.setVisible(true);
+                gh.getForm().setVisible(true);
 
                 break;
 

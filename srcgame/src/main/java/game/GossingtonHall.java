@@ -8,11 +8,12 @@ import type.NPC;
 import javax.swing.ImageIcon;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import type.Room;
 
 /**
  *
- * @author rino
+ * @author 
  */
 
 public class GossingtonHall extends DayDescription {
@@ -27,24 +28,23 @@ public class GossingtonHall extends DayDescription {
     List<String> D_bantry, Jane_marple, Lorri, Corp, Arthur, Doc, Basil = new ArrayList<>();
 
     public void analizeBody() {
-        gh.form.textBox[6].setVisible(true);
-        gh.form.textButton[6].setVisible(true);
-        gh.form.textAreaBox2[6].setVisible(true);
-        gh.form.textAreaBox2[6].setText("Ispezionando il cadavere, hai ottenuto [ABITO BIANCO]");
-        gh.inv.getItem_2().setVisible(true);
-        gh.inv.getItem_2().setIcon(new ImageIcon(getClass().getResource("/dress1.png")));
-        gh.inv.getItem_2().setText("");
-        gh.form.textButton[6].setText("Chiudi");
-        gh.form.textButton[6].setActionCommand("continueTextScene" + 6);
         
+        JOptionPane.showMessageDialog(gh.getForm(), "Ispezionando il cadavere, hai ottenuto [VESTITO BIANCO]", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
+        
+        gh.getInv().getItem_2().setVisible(true);
+        gh.getInv().getItem_2().setIcon(new ImageIcon(getClass().getResource("/dress1.png")));
+        gh.getInv().getItem_2().setText("");
+                
         element = DataHandler.ItemFinder(listItem, "white_dress");
         gh.getPlayer().addToInventory(element);
     }
 
     public void takeAutopsy() {
-        gh.inv.getItem_1().setVisible(true);
-        gh.inv.getItem_1().setIcon(new ImageIcon(getClass().getResource("/doc_autopsia.png")));
-        gh.inv.getItem_1().setText("");
+        JOptionPane.showMessageDialog(gh.getForm(), "Hai ricevuto [AUTOPSIA] dalla dottoressa Haydock", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
+        
+        gh.getInv().getItem_1().setVisible(true);
+        gh.getInv().getItem_1().setIcon(new ImageIcon(getClass().getResource("/doc_autopsia.png")));
+        gh.getInv().getItem_1().setText("");
         
         element = DataHandler.ItemFinder(listItem, "autopsy");        
         gh.getPlayer().addToInventory(element);
