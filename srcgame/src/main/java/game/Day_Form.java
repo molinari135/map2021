@@ -475,7 +475,8 @@ public class Day_Form extends javax.swing.JFrame {
         placeDescription4[bgNum].setFont(new java.awt.Font("Californian FB", 1, 36)); // NOI18N
         placeDescription4[bgNum].setForeground(new java.awt.Color(255, 255, 255));
         placeDescription4[bgNum].setBorder(null);
-        placeDescription4[bgNum].setBounds(300, 450, 1100, 50);
+        placeDescription4[bgNum].setBounds(500, 450, 1100, 100);
+        placeDescription4[bgNum].setVisible(true);
 
         bgPanel[bgNum].add(placeDescription1[bgNum]);
         bgPanel[bgNum].add(placeDescription2[bgNum]);
@@ -594,9 +595,10 @@ public class Day_Form extends javax.swing.JFrame {
 
         //SCENA 14 -> POLICE STATION
         createScene(14, 0, -10, "/stazione_polizia.png", gh.getActHandler3());
+        createTextBox(14, gh.getActHandler3());
         createArrowButton(14, 10, 500, "/left_arrow.png", "goToInterrogation", gh.getActHandler3());
         createObject(14, 380, 250, 250, 400, "", "Parla", "Osserva", "", "TalkMelchett", "ObserveMelchett", "", gh.getActHandler3());
-        createObject(14, 1220, 230, 200, 400, "", "Parla", "Osserva", "", "TalkPalck", "ObservePalck", "", gh.getActHandler3());
+        createObject(14, 1220, 230, 200, 400, "", "Parla", "Osserva", "", "TalkPalk", "ObservePalk", "", gh.getActHandler3());
         createArrowButton(14, 850, 850, "/hotelicon.png", "goToReceptionFromStation", gh.getActHandler3());
         bgPanel[14].add(bgLabel[14]);
 

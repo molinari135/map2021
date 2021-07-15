@@ -105,7 +105,7 @@ public class ActionHandlerPS extends ActionHandler {
                 gh.getDay().observeNPC(14, gh.getDay3().person, "c_melchett");
                 break;
 
-            case "ObservePalck":
+            case "ObservePalk":
                 gh.getDay().observeNPC(14, gh.getDay3().person, "a_palk");
                 break;
 
@@ -128,7 +128,7 @@ public class ActionHandlerPS extends ActionHandler {
             }
             break;
 
-            case "TalkPalck":
+            case "TalkPalk":
                 try {
                 gh.getDay().talkNPC(14, "palk.txt", gh.getDay3().C_melch, "/IconPalk.png", "palk", false, this);
             } catch (IOException ex) {
