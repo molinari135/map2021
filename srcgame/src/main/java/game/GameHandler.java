@@ -11,17 +11,17 @@ package game;
  */
 public class GameHandler {
 
-    ActionHandler actHandler1 = new ActionHandler1(this);
-    ActionHandler actHandler2 = new ActionHandler2(this);
-    ActionHandler actHandler3 = new ActionHandler3(this);
+    ActionHandler actHandler1 = new ActionHandlerGH(this);
+    ActionHandler actHandler2 = new ActionHandlerMH(this);
+    ActionHandler actHandler3 = new ActionHandlerPS(this);
     ActionHandler inventHandler = new InventoryHandler(this);
 
     Day_Form form = new Day_Form(this);
     InventoryDialog inv = new InventoryDialog(form, true, this);
     DayDescription day = new DayDescription(this);
-    Day1 day1 = new Day1(this);
-    Day2 day2 = new Day2(this);
-    Day3 day3 = new Day3(this);
+    GossingtonHall day1 = new GossingtonHall(this);
+    MajesticHotel day2 = new MajesticHotel(this);
+    PoliceStation day3 = new PoliceStation(this);
 
     public Player getPlayer() {
         return player;

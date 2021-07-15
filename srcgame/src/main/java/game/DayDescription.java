@@ -273,7 +273,7 @@ public class DayDescription {
         }
     }
 
-    void continueDialogueFinale(int bgNum, boolean b,String filename) throws IOException {
+    void continueFinalDialogue(int bgNum, boolean b,String filename) throws IOException {
         i = i + 2;
 
         

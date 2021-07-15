@@ -85,72 +85,72 @@ public class Day_Form extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        background1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        continua1 = new javax.swing.JButton();
+        bg = new javax.swing.JPanel();
+        txtTitle3 = new javax.swing.JTextField();
+        txtTitle1 = new javax.swing.JTextField();
+        txtTitle2 = new javax.swing.JTextField();
+        cmdContinua = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1920, 1080));
         setResizable(false);
 
-        background1.setBackground(new java.awt.Color(0, 0, 0));
-        background1.setForeground(new java.awt.Color(255, 255, 255));
-        background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.setBackground(new java.awt.Color(0, 0, 0));
+        bg.setForeground(new java.awt.Color(255, 255, 255));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField1.setFont(new java.awt.Font("Californian FB", 1, 36)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("Dimora della famiglia Bantry");
-        jTextField1.setBorder(null);
-        background1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 440, -1, -1));
+        txtTitle3.setEditable(false);
+        txtTitle3.setBackground(new java.awt.Color(0, 0, 0));
+        txtTitle3.setFont(new java.awt.Font("Californian FB", 1, 36)); // NOI18N
+        txtTitle3.setForeground(new java.awt.Color(255, 255, 255));
+        txtTitle3.setText("Dimora della famiglia Bantry");
+        txtTitle3.setBorder(null);
+        bg.add(txtTitle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 440, -1, -1));
 
-        jTextField2.setEditable(false);
-        jTextField2.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField2.setFont(new java.awt.Font("Californian FB", 3, 48)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField2.setText("St. Mary Mead,   10 Ottobre 1982");
-        jTextField2.setBorder(null);
-        background1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 677, -1));
+        txtTitle1.setEditable(false);
+        txtTitle1.setBackground(new java.awt.Color(0, 0, 0));
+        txtTitle1.setFont(new java.awt.Font("Californian FB", 3, 48)); // NOI18N
+        txtTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        txtTitle1.setText("St. Mary Mead,   10 Ottobre 1982");
+        txtTitle1.setBorder(null);
+        bg.add(txtTitle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 677, -1));
 
-        jTextField3.setEditable(false);
-        jTextField3.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField3.setFont(new java.awt.Font("Californian FB", 1, 48)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField3.setText("Gossington Hall");
-        jTextField3.setBorder(null);
-        background1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 360, 329, -1));
+        txtTitle2.setEditable(false);
+        txtTitle2.setBackground(new java.awt.Color(0, 0, 0));
+        txtTitle2.setFont(new java.awt.Font("Californian FB", 1, 48)); // NOI18N
+        txtTitle2.setForeground(new java.awt.Color(255, 255, 255));
+        txtTitle2.setText("Gossington Hall");
+        txtTitle2.setBorder(null);
+        bg.add(txtTitle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 360, 329, -1));
 
-        continua1.setBackground(new java.awt.Color(0, 0, 0));
-        continua1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        continua1.setForeground(new java.awt.Color(255, 255, 255));
-        continua1.setText("Continua");
-        continua1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
-        continua1.setContentAreaFilled(false);
-        continua1.addActionListener(new java.awt.event.ActionListener() {
+        cmdContinua.setBackground(new java.awt.Color(0, 0, 0));
+        cmdContinua.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        cmdContinua.setForeground(new java.awt.Color(255, 255, 255));
+        cmdContinua.setText("Continua");
+        cmdContinua.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
+        cmdContinua.setContentAreaFilled(false);
+        cmdContinua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                continua1ActionPerformed(evt);
+                cmdContinuaActionPerformed(evt);
             }
         });
-        background1.add(continua1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 600, -1, -1));
+        bg.add(cmdContinua, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 600, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background1, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void continua1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continua1ActionPerformed
+    private void cmdContinuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdContinuaActionPerformed
         try {
             generateScenes();
         } catch (FileNotFoundException ex) {
@@ -158,9 +158,9 @@ public class Day_Form extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Day_Form.class.getName()).log(Level.SEVERE, null, ex);
         }
-        background1.setVisible(false);
+        bg.setVisible(false);
         bgPanel[1].setVisible(true);
-    }//GEN-LAST:event_continua1ActionPerformed
+    }//GEN-LAST:event_cmdContinuaActionPerformed
 
     public void createScene(int bgNum, int x, int y, String bgFileName, ActionHandler actHandler) {
 
@@ -386,14 +386,28 @@ public class Day_Form extends javax.swing.JFrame {
         bgPanel[bgNum].add(objectLabel);
 
     }
-
+    /**
+     * Crea la scena iniziale di ogni mappa
+     * <ul>
+     * <li> placeDescription4 serve per il settare il dialogo finale
+     * 
+     * @param bgNum Numero della scena
+     * @param objFileName nome file background
+     * @param choice1Name testo 1 titolo
+     * @param choice2Name testo 2 titolo
+     * @param choice3Name testo 3 titolo
+     * @param actHandler gestiore azioni 
+     * @param objx posizione ascissa 
+     * 
+     */
+    
     public void createStartDay(int bgNum, String objFileName,
             String choice1Name, String choice2Name, String choice3Name, ActionHandler actHandler, int objx) {
 
         placeDescription1[bgNum] = new JTextField();
         placeDescription2[bgNum] = new JTextField();
         placeDescription3[bgNum] = new JTextField();
-        placeDescription4[bgNum] = new JTextField();
+        placeDescription4[bgNum] = new JTextField();//txtfield 
         go[bgNum] = new JButton();
         go[bgNum].setBackground(new Color(0, 0, 0));
         go[bgNum].setBounds(920, 600, 64, 26);
@@ -568,7 +582,6 @@ public class Day_Form extends javax.swing.JFrame {
         createTextBox(15, gh.actHandler3);
         createArrowButton(15, 1750, 500, "/right_arrow.png", "goToStationFromInterrogation", gh.actHandler3);
         createObject(15, 870, 230, 135, 135, "/uncertainty.png", "Interroga", "", "", "chooseSuspected", "", "", gh.actHandler3);
-        createObject(15, 280, 280, 376, 770, "/rinotipuntailferro.png", "Parla", "Osserva", "", "TalkSuspected", "ObserveSuspected", "", gh.actHandler3);
         createObject(15, 280, 280, 290, 770, "/jeffersonpixel.png", "Parla", "Osserva", "", "TalkJefferson", "ObserveJefferson", "", gh.actHandler3);
         createObject(15, 280, 280, 290, 770, "/basilsprite.png", "Parla", "Osserva", "", "TalkBasil", "ObserveBasil", "", gh.actHandler3);
         createObject(15, 200, 270, 547, 880, "/scenainterrogatorio3.png", "Parla", "Osserva", "", "TalkMarkJosephine", "ObserveMarkJosephine", "", gh.actHandler3);
@@ -576,7 +589,7 @@ public class Day_Form extends javax.swing.JFrame {
         setVisibleObject(15, 15, false);
         setVisibleObject(15, 16, false);
         setVisibleObject(15, 17, false);
-        setVisibleObject(15, 18, false);
+        
 
         bgPanel[15].add(bgLabel[15]);
 
@@ -600,11 +613,11 @@ public class Day_Form extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel background1;
-    private javax.swing.JButton continua1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JPanel bg;
+    private javax.swing.JButton cmdContinua;
+    private javax.swing.JTextField txtTitle1;
+    private javax.swing.JTextField txtTitle2;
+    private javax.swing.JTextField txtTitle3;
     // End of variables declaration//GEN-END:variables
 
 }

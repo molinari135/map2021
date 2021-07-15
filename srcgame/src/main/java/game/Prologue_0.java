@@ -60,68 +60,68 @@ public class Prologue_0 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        background = new javax.swing.JPanel();
-        continua = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        testoPrologo = new javax.swing.JTextArea();
+        bgPrologo = new javax.swing.JPanel();
+        cmdContinua = new javax.swing.JButton();
+        jspScroll = new javax.swing.JScrollPane();
+        txtTestoPrologo = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1920, 1080));
         setPreferredSize(new java.awt.Dimension(1920, 1080));
 
-        background.setBackground(new java.awt.Color(0, 0, 0));
-        background.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        background.setPreferredSize(new java.awt.Dimension(1920, 1080));
-        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bgPrologo.setBackground(new java.awt.Color(0, 0, 0));
+        bgPrologo.setMinimumSize(new java.awt.Dimension(1920, 1080));
+        bgPrologo.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        bgPrologo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        continua.setBackground(new java.awt.Color(0, 0, 0));
-        continua.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        continua.setForeground(new java.awt.Color(255, 255, 255));
-        continua.setText("Continua");
-        continua.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.lightGray, java.awt.Color.white));
-        continua.setContentAreaFilled(false);
-        continua.addActionListener(new java.awt.event.ActionListener() {
+        cmdContinua.setBackground(new java.awt.Color(0, 0, 0));
+        cmdContinua.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        cmdContinua.setForeground(new java.awt.Color(255, 255, 255));
+        cmdContinua.setText("Continua");
+        cmdContinua.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.lightGray, java.awt.Color.white));
+        cmdContinua.setContentAreaFilled(false);
+        cmdContinua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                continuaActionPerformed(evt);
+                cmdContinuaActionPerformed(evt);
             }
         });
-        background.add(continua, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 550, -1, -1));
+        bgPrologo.add(cmdContinua, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 550, -1, -1));
 
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jspScroll.setBorder(null);
+        jspScroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jspScroll.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        testoPrologo.setEditable(false);
-        testoPrologo.setBackground(new java.awt.Color(0, 0, 0));
-        testoPrologo.setColumns(20);
-        testoPrologo.setFont(new java.awt.Font("Courier New", 0, 24)); // NOI18N
-        testoPrologo.setForeground(new java.awt.Color(255, 255, 255));
-        testoPrologo.setLineWrap(true);
-        testoPrologo.setRows(5);
-        testoPrologo.setText("\t   Era una notte buia e tempestosa...");
-        testoPrologo.setToolTipText("");
-        testoPrologo.setWrapStyleWord(true);
-        testoPrologo.setBorder(null);
-        testoPrologo.setCaretColor(new java.awt.Color(102, 102, 255));
-        jScrollPane1.setViewportView(testoPrologo);
+        txtTestoPrologo.setEditable(false);
+        txtTestoPrologo.setBackground(new java.awt.Color(0, 0, 0));
+        txtTestoPrologo.setColumns(20);
+        txtTestoPrologo.setFont(new java.awt.Font("Courier New", 0, 24)); // NOI18N
+        txtTestoPrologo.setForeground(new java.awt.Color(255, 255, 255));
+        txtTestoPrologo.setLineWrap(true);
+        txtTestoPrologo.setRows(5);
+        txtTestoPrologo.setText("\t   Era una notte buia e tempestosa...");
+        txtTestoPrologo.setToolTipText("");
+        txtTestoPrologo.setWrapStyleWord(true);
+        txtTestoPrologo.setBorder(null);
+        txtTestoPrologo.setCaretColor(new java.awt.Color(102, 102, 255));
+        jspScroll.setViewportView(txtTestoPrologo);
 
-        background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 895, 300));
+        bgPrologo.add(jspScroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 895, 300));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 2331, Short.MAX_VALUE)
+            .addComponent(bgPrologo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 2331, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bgPrologo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void continuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuaActionPerformed
+    private void cmdContinuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdContinuaActionPerformed
 
         //TODO Usare file per testi + aggiust. struttura
         String text1 = "           Era una notte buia e tempestosa...\n\n"
@@ -135,11 +135,11 @@ public class Prologue_0 extends javax.swing.JFrame {
 
         switch (i) {
             case 1:
-                testoPrologo.setText(text1);
+                txtTestoPrologo.setText(text1);
                 i++;
                 break;
             case 2:
-                testoPrologo.setText(text2);
+                txtTestoPrologo.setText(text2);
                 i++;
                 break;
             case 3:                
@@ -148,11 +148,11 @@ public class Prologue_0 extends javax.swing.JFrame {
             default:
                 break;
         }
-    }//GEN-LAST:event_continuaActionPerformed
+    }//GEN-LAST:event_cmdContinuaActionPerformed
 
     //TODO SPOSTARE SCENA 1 QUI
     public void goToScene1() {
-        background.setVisible(false);
+        bgPrologo.setVisible(false);
         Scene1 scene1 = new Scene1(this, clipRain, clipJazz, gh);
 
     }
@@ -162,9 +162,9 @@ public class Prologue_0 extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel background;
-    private javax.swing.JButton continua;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea testoPrologo;
+    private javax.swing.JPanel bgPrologo;
+    private javax.swing.JButton cmdContinua;
+    private javax.swing.JScrollPane jspScroll;
+    private javax.swing.JTextArea txtTestoPrologo;
     // End of variables declaration//GEN-END:variables
 }

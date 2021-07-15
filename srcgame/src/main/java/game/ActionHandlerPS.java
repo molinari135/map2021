@@ -14,11 +14,11 @@ import java.util.logging.Logger;
  *
  * @author giaco
  */
-public class ActionHandler3 extends ActionHandler {
+public class ActionHandlerPS extends ActionHandler {
 
     GameHandler gh;
 
-    public ActionHandler3(GameHandler gh) {
+    public ActionHandlerPS(GameHandler gh) {
         this.gh = gh;
     }
 
@@ -60,9 +60,9 @@ public class ActionHandler3 extends ActionHandler {
             case "continueDialogFinaletrue":
             {
                 try {
-                    gh.day.continueDialogueFinale(15,true,"true_ending.txt");
+                    gh.day.continueFinalDialogue(15,true,"true_ending.txt");
                 } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler3.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ActionHandlerPS.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
                 break;
@@ -70,18 +70,18 @@ public class ActionHandler3 extends ActionHandler {
             case "continueDialogFinalefalse1":
             {
                 try {
-                    gh.day.continueDialogueFinale(15,false,"b_blake_ending.txt");
+                    gh.day.continueFinalDialogue(15,false,"b_blake_ending.txt");
                 } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler3.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ActionHandlerPS.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
                 break;
             case "continueDialogFinalefalse2":
             {
                 try {
-                    gh.day.continueDialogueFinale(15,false,"a_bantry_ending.txt");
+                    gh.day.continueFinalDialogue(15,false,"a_bantry_ending.txt");
                 } catch (IOException ex) {
-                    Logger.getLogger(ActionHandler3.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ActionHandlerPS.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
                 break;
@@ -120,7 +120,7 @@ public class ActionHandler3 extends ActionHandler {
                 try {
                 gh.day.talkNPC(14, "c_melchett.txt", gh.day3.A_palck, "/IconMelchett.png", "c_melchett", true, this);
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
@@ -128,7 +128,7 @@ public class ActionHandler3 extends ActionHandler {
                 try {
                 gh.day.talkNPC(14, "palk.txt", gh.day3.C_melch, "/IconPalk.png", "palk", false, this);
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
@@ -136,14 +136,14 @@ public class ActionHandler3 extends ActionHandler {
                     try {
                 gh.day.talkNPCLast(15, "b_blake_ending.txt", "/IconBlake.png", "b_blake", true, this,"false1");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
             case "TalkJefferson":
                     try {
                 gh.day3.talkNPCLast(15, "b_blake_ending.txt", "/IconJeff.png", "c_jefferson", true, this,"false2");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
@@ -151,7 +151,7 @@ public class ActionHandler3 extends ActionHandler {
                     try {
                 gh.day3.talkNPCLast(15, "true_ending.txt", "/IconJosephine.png", "m_j_gaskell", true, this,"true");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
@@ -159,7 +159,7 @@ public class ActionHandler3 extends ActionHandler {
                 try {
                 gh.day.choice1(14, "palk", "palk.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -168,7 +168,7 @@ public class ActionHandler3 extends ActionHandler {
                 try {
                 gh.day.choice2(14, "palk", "palk.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -177,7 +177,7 @@ public class ActionHandler3 extends ActionHandler {
                 try {
                 gh.day.choice3(14, "palk", "palk.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -186,7 +186,7 @@ public class ActionHandler3 extends ActionHandler {
                 try {
                 gh.day.choice1(14, "c_melchett", "c_melchett.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -195,7 +195,7 @@ public class ActionHandler3 extends ActionHandler {
                 try {
                 gh.day.choice2(14, "c_melchett", "c_melchett.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -204,7 +204,7 @@ public class ActionHandler3 extends ActionHandler {
                 try {
                 gh.day.choice3(14, "c_melchett", "c_melchett.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -213,33 +213,24 @@ public class ActionHandler3 extends ActionHandler {
                 gh.day3.chooseSuspected();
                 break;
 
-            case "scelta1rino":
+           
+            case "scelta2jefferson":
                 gh.day3.setSuspectedFalse(16);
                 gh.day3.setSuspectedFalse(17);
-                gh.day3.setSuspectedFalse(18);
                 gh.day3.setSuspectedTrue(15);
-
-                break;
-            case "scelta2jefferson":
-                gh.day3.setSuspectedFalse(15);
-                gh.day3.setSuspectedFalse(17);
-                gh.day3.setSuspectedFalse(18);
-                gh.day3.setSuspectedTrue(16);
 
                 break;
 
             case "scelta3basil":
                 gh.day3.setSuspectedFalse(15);
                 gh.day3.setSuspectedFalse(17);
-                gh.day3.setSuspectedFalse(16);
-                gh.day3.setSuspectedTrue(17);
+                gh.day3.setSuspectedTrue(16);
                 break;
 
             case "scelta4markjosephine":
-                gh.day3.setSuspectedFalse(15);
-                gh.day3.setSuspectedFalse(17);
                 gh.day3.setSuspectedFalse(16);
-                gh.day3.setSuspectedTrue(18);
+                gh.day3.setSuspectedFalse(15);
+                gh.day3.setSuspectedTrue(17);
 
                 break;
 

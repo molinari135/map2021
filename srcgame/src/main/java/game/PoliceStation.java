@@ -18,9 +18,9 @@ import type.NPC;
  *
  * @author giaco
  */
-public class Day3 extends DayDescription {
+public class PoliceStation extends DayDescription {
 
-    public Day3(GameHandler gh) {
+    public PoliceStation(GameHandler gh) {
         super(gh);
     }
     
@@ -46,14 +46,14 @@ public class Day3 extends DayDescription {
         gh.form.textButton[15].setActionCommand("continueTextScene" + 15);
         gh.form.textAreaBox[15].setText("Scegli chi vuoi interrogare?");
         
-        gh.form.dialogueButton1[15].setText("Rino");
+        gh.form.dialogueButton1[15].setText("Nessuno");
         gh.form.dialogueButton2[15].setText("Jefferson");
         gh.form.dialogueButton1[15].setBounds(410, 780, 600, 50);
         gh.form.dialogueButton2[15].setBounds(960, 780, 600, 50);
         gh.form.dialogueButton3[15].setText("Basil Blake");
         gh.form.dialogueButton4[15].setText("Mark Gaskell e Josephine Turner");
         gh.form.dialogueButton1[15].addActionListener(gh.actHandler3);
-        gh.form.dialogueButton1[15].setActionCommand("scelta1rino");
+        gh.form.dialogueButton1[15].setActionCommand("");
         gh.form.dialogueButton2[15].addActionListener(gh.actHandler3);
         gh.form.dialogueButton2[15].setActionCommand("scelta2jefferson");
         gh.form.dialogueButton3[15].addActionListener(gh.actHandler3);

@@ -14,11 +14,11 @@ import java.util.logging.Logger;
  *
  * @author tom
  */
-public class ActionHandler2 extends ActionHandler {
+public class ActionHandlerMH extends ActionHandler {
 
     GameHandler gh;
 
-    public ActionHandler2(GameHandler gh) {
+    public ActionHandlerMH(GameHandler gh) {
         this.gh = gh;
     }
 
@@ -83,7 +83,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                     gh.day2.knockRoom();
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(ActionHandler2.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ActionHandlerMH.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
                 break;
@@ -175,7 +175,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.talkNPC(8, "prestcot.txt", gh.day2.Prestcot, "/IconPrestcot.png", "prestcot", false, this);
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
@@ -183,7 +183,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.talkNPC(9, "r_starr.txt", gh.day2.Ramon, "/IconRamon.png", "r_starr", false, this);
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
@@ -191,7 +191,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.talkNPC(9, "j_turner.txt", gh.day2.J_Turner, "/IconJosephine.png", "j_turner", true, this);
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
@@ -199,7 +199,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.talkNPC(11, "c_jefferson.txt", gh.day2.Jeff, "/IconJeff.png", "c_jefferson", true, this);
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
@@ -207,7 +207,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.talkNPC(12, "m_gaskell.txt", gh.day2.Mark, "/IconMark.png", "m_gaskell", true, this);
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
@@ -215,7 +215,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice1(8, "prestcot", "prestcot.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -224,7 +224,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice2(8, "prestcot", "prestcot.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -233,7 +233,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice3(8, "prestcot", "prestcot.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -242,7 +242,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice4(8, "prestcot", "prestcot.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -251,7 +251,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice1(9, "j_turner", "j_turner.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -261,7 +261,7 @@ public class ActionHandler2 extends ActionHandler {
                 gh.day.choice2(9, "j_turner", "j_turner.txt");
                 gh.day2.takeDanceDress();
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -270,7 +270,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice3(9, "j_turner", "j_turner.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -279,7 +279,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice4(9, "j_turner", "j_turner.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -288,7 +288,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice1(9, "r_starr", "r_starr.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -297,7 +297,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice2(9, "r_starr", "r_starr.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -306,7 +306,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice3(9, "r_starr", "r_starr.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -315,7 +315,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice4(9, "r_starr", "r_starr.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -324,7 +324,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice1(11, "c_jefferson", "c_jefferson.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -334,7 +334,7 @@ public class ActionHandler2 extends ActionHandler {
                 gh.day.choice2(11, "c_jefferson", "c_jefferson.txt");
                 gh.day2.takeAdoptionDoc();
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -343,7 +343,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice3(11, "c_jefferson", "c_jefferson.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -352,7 +352,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice4(11, "c_jefferson", "c_jefferson.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -361,7 +361,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice1(12, "m_gaskell", "m_gaskell.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -370,7 +370,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice2(12, "m_gaskell", "m_gaskell.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -379,7 +379,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice3(12, "m_gaskell", "m_gaskell.txt");                
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;
@@ -388,7 +388,7 @@ public class ActionHandler2 extends ActionHandler {
                 try {
                 gh.day.choice4(12, "m_gaskell", "m_gaskell.txt");
             } catch (IOException ex) {
-                Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             break;

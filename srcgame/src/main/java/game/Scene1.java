@@ -39,9 +39,9 @@ public class Scene1 {
 
     Clip clipRain;
     Clip clipJazz;
-       
+
     GameHandler gh;
-    
+
     public Scene1(JFrame frame, Clip clipRain, Clip clipJazz, GameHandler gh) {
 
         this.frame = frame;
@@ -54,7 +54,7 @@ public class Scene1 {
         panel1.setBounds(0, 0, 1920, 1080);
         panel1.setBackground(Color.black);
         panel1.setLayout(null);
-        
+
         auto.setBounds(30, -50, 1920, 1080);
         auto.setIcon(new ImageIcon(getClass().getResource("/car_detect_2.png")));
         panel1.add(auto);
@@ -117,21 +117,21 @@ public class Scene1 {
                 testoPrologo.setText(text1);
                 i++;
                 break;
-                
+
             case 2:
                 testoPrologo.setText(text2);
                 i++;
                 break;
-                
+
             case 3:
                 frame.dispose();
                 clipRain.stop();
                 clipJazz.stop();
-                
+
                 gh.form.setVisible(true);
-                
+
                 break;
-                
+
             default:
                 break;
         }

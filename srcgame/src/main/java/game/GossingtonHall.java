@@ -15,9 +15,9 @@ import type.Room;
  * @author rino
  */
 //TODO attributi?
-public class Day1 extends DayDescription {
+public class GossingtonHall extends DayDescription {
 
-    public Day1(GameHandler gh) {
+    public GossingtonHall(GameHandler gh) {
         super(gh);
     }
 

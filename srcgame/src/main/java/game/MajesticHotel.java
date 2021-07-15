@@ -25,9 +25,9 @@ import type.Item;
  *
  * @author giaco
  */
-public class Day2 extends DayDescription {
+public class MajesticHotel extends DayDescription {
 
-    public Day2(GameHandler gh) {
+    public MajesticHotel(GameHandler gh) {
         super(gh);
     }
 
@@ -75,7 +75,7 @@ public class Day2 extends DayDescription {
         Thread t1 = new Thread(() -> {
             try {
                 Clip clip = AudioSystem.getClip();
-                AudioInputStream inputStream = AudioSystem.getAudioInputStream(Day2.this.getClass().getClassLoader().getResource("Knocking-on-door.wav"));
+                AudioInputStream inputStream = AudioSystem.getAudioInputStream(MajesticHotel.this.getClass().getClassLoader().getResource("Knocking-on-door.wav"));
                 clip.open(inputStream);
                 clip.start();
             } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
