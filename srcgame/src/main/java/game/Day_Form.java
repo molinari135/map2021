@@ -97,7 +97,7 @@ public class Day_Form extends javax.swing.JFrame {
 
         bg.setBackground(new java.awt.Color(0, 0, 0));
         bg.setForeground(new java.awt.Color(255, 255, 255));
-        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.setLayout(null);
 
         txtTitle3.setEditable(false);
         txtTitle3.setBackground(new java.awt.Color(0, 0, 0));
@@ -105,7 +105,8 @@ public class Day_Form extends javax.swing.JFrame {
         txtTitle3.setForeground(new java.awt.Color(255, 255, 255));
         txtTitle3.setText("Dimora della famiglia Bantry");
         txtTitle3.setBorder(null);
-        bg.add(txtTitle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 440, -1, -1));
+        bg.add(txtTitle3);
+        txtTitle3.setBounds(720, 440, 436, 42);
 
         txtTitle1.setEditable(false);
         txtTitle1.setBackground(new java.awt.Color(0, 0, 0));
@@ -113,7 +114,8 @@ public class Day_Form extends javax.swing.JFrame {
         txtTitle1.setForeground(new java.awt.Color(255, 255, 255));
         txtTitle1.setText("St. Mary Mead,   10 Ottobre 1982");
         txtTitle1.setBorder(null);
-        bg.add(txtTitle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 677, -1));
+        bg.add(txtTitle1);
+        txtTitle1.setBounds(610, 200, 677, 56);
 
         txtTitle2.setEditable(false);
         txtTitle2.setBackground(new java.awt.Color(0, 0, 0));
@@ -121,7 +123,8 @@ public class Day_Form extends javax.swing.JFrame {
         txtTitle2.setForeground(new java.awt.Color(255, 255, 255));
         txtTitle2.setText("Gossington Hall");
         txtTitle2.setBorder(null);
-        bg.add(txtTitle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 360, 329, -1));
+        bg.add(txtTitle2);
+        txtTitle2.setBounds(780, 360, 329, 56);
 
         cmdContinua.setBackground(new java.awt.Color(0, 0, 0));
         cmdContinua.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -134,7 +137,8 @@ public class Day_Form extends javax.swing.JFrame {
                 cmdContinuaActionPerformed(evt);
             }
         });
-        bg.add(cmdContinua, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 600, -1, -1));
+        bg.add(cmdContinua);
+        cmdContinua.setBounds(910, 600, 64, 26);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

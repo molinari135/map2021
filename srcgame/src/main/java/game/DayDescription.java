@@ -27,10 +27,11 @@ import type.Room;
 public class DayDescription {
 
     GameHandler gh;
+    DialogHandler dh = new DialogHandler();
 
-    int i,j = 0;
+    int i, j = 0;
 
-    List<String> npcListD,Final= new ArrayList<>();
+    List<String> npcListD, Final = new ArrayList<>();
 
     ArrayList<String> list = new ArrayList<>();
 
@@ -51,19 +52,19 @@ public class DayDescription {
         gh.form.textAreaBox[x].setVisible(true);
         gh.form.textButton[x].setVisible(true);
         gh.form.textAreaBox2[x].setVisible(true);
-        
+
         room = DataHandler.RoomFinder(listRoom, roomName);
         gh.form.textAreaBox[x].setText(room.getName());
         gh.form.textAreaBox2[x].setText(room.getDescription());
         gh.form.textButton[x].setActionCommand("continueTextScene" + x);
     }
-    
+
     public void observeObjectX(int x, Item item, String itemName) {
         gh.form.textBox[x].setVisible(true);
         gh.form.textAreaBox[x].setVisible(true);
         gh.form.textButton[x].setVisible(true);
         gh.form.textAreaBox2[x].setVisible(true);
-        
+
         item = DataHandler.ItemFinder(listItem, itemName);
         gh.form.textAreaBox[x].setText(item.getName());
         gh.form.textAreaBox2[x].setText(item.getDescription());
@@ -82,7 +83,7 @@ public class DayDescription {
         gh.form.textBox[bgNum].setVisible(true);
         gh.form.textAreaBox2[bgNum].setVisible(true);
         gh.form.textButton[bgNum].setVisible(true);
-       
+
         npc = DataHandler.NpcFinder(listNPC, npcName);
         gh.form.textAreaBox[bgNum].setText(npc.getName() + " " + npc.getSurname());
         gh.form.textAreaBox2[bgNum].setText(npc.getDescription());
@@ -90,8 +91,7 @@ public class DayDescription {
     }
 
     public void talkNPC(int bgNum, String fileName, List<String> npc, String iconName, String id, Boolean labelSx, ActionHandler actHandler) throws IOException {
-        readFile(fileName);
-        npc = DialogHandler.SelectDialogOption(file, DialogHandler.DIALOG_OPTION_START, DialogHandler.DIALOG_OPTION_END);
+        npc = dh.SelectDialogOption(fileName, DialogHandler.DIALOG_OPTION_START, DialogHandler.DIALOG_OPTION_END);
         talkDialogue(bgNum, iconName, id, npc, labelSx, actHandler); //se bool vero, la label scelta è quella sx, destra altrimenti 
     }
 
@@ -101,9 +101,7 @@ public class DayDescription {
         gh.form.dialogueButton2[bgNum].setVisible(false);
         gh.form.dialogueButton3[bgNum].setVisible(false);
         gh.form.dialogueButton4[bgNum].setVisible(false);
-        readFile(filename);
-
-        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.FIRST_DIALOG_START, DialogHandler.FIRST_DIALOG_END);
+        npcListD = dh.SelectDialogOption(filename, DialogHandler.FIRST_DIALOG_START, DialogHandler.FIRST_DIALOG_END);
         System.out.println(npcListD.get(i));
         gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
         gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
@@ -116,9 +114,7 @@ public class DayDescription {
         gh.form.dialogueButton2[bgNum].setVisible(false);
         gh.form.dialogueButton3[bgNum].setVisible(false);
         gh.form.dialogueButton4[bgNum].setVisible(false);
-        readFile(filename);
-
-        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.SECOND_DIALOG_START, DialogHandler.SECOND_DIALOG_END);
+        npcListD = dh.SelectDialogOption(filename, DialogHandler.SECOND_DIALOG_START, DialogHandler.SECOND_DIALOG_END);
         System.out.println(npcListD.get(i));
         gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
         gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
@@ -131,9 +127,8 @@ public class DayDescription {
         gh.form.dialogueButton2[bgNum].setVisible(false);
         gh.form.dialogueButton3[bgNum].setVisible(false);
         gh.form.dialogueButton4[bgNum].setVisible(false);
-        readFile(filename);
 
-        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.THIRD_DIALOG_START, DialogHandler.THIRD_DIALOG_END);
+        npcListD = dh.SelectDialogOption(filename, DialogHandler.THIRD_DIALOG_START, DialogHandler.THIRD_DIALOG_END);
         System.out.println(npcListD.get(i));
         gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
         gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
@@ -147,22 +142,23 @@ public class DayDescription {
         gh.form.dialogueButton2[bgNum].setVisible(false);
         gh.form.dialogueButton3[bgNum].setVisible(false);
         gh.form.dialogueButton4[bgNum].setVisible(false);
-        readFile(filename);
-        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.FORTH_DIALOG_START, DialogHandler.FORTH_DIALOG_END);
+
+        npcListD = dh.SelectDialogOption(filename, DialogHandler.FORTH_DIALOG_START, DialogHandler.FORTH_DIALOG_END);
         System.out.println(npcListD.get(i));
         gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
         gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
         gh.form.textButton[bgNum].setActionCommand("continueDialog" + bgNum);
         gh.form.textButton[bgNum].setText("Continua");
     }
-    
-    public void talkNPCLast(int bgNum, String fileName, String iconName, String id, Boolean labelSx, ActionHandler actHandler,String truth) throws IOException {
+
+    public void talkNPCLast(int bgNum, String fileName, String iconName, String id, Boolean labelSx, ActionHandler actHandler, String truth) throws IOException {
         i = 0;
-        readFile(fileName);
-        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.DIALOG_FINAL_START, DialogHandler.DIALOG_FINAL_END);
-         if(i==22){
-            i=0;
-        }gh.form.textButton[bgNum].setVisible(true);
+
+        npcListD = dh.SelectDialogOption(fileName, DialogHandler.DIALOG_FINAL_START, DialogHandler.DIALOG_FINAL_END);
+        if (i == 22) {
+            i = 0;
+        }
+        gh.form.textButton[bgNum].setVisible(true);
         gh.form.textBox[bgNum].setVisible(true);
         gh.form.textAreaBox[bgNum].setVisible(true);
         gh.form.textAreaBox2[bgNum].setVisible(true);
@@ -174,7 +170,6 @@ public class DayDescription {
         gh.form.textButton[bgNum].setText("Continua");
 
     }
-    
 
     public void talkDialogue(int bgNum, String icona, String input, List<String> npcName, Boolean labelSx, ActionHandler actHandler) throws IOException {
         i = 0;
@@ -219,7 +214,6 @@ public class DayDescription {
         gh.form.dialogueButton4[bgNum].setVisible(false);
         i = i + 2;
 
-        
         if (i < npcListD.size()) {
             System.out.println("CONTINUADIALOGO");
             gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
@@ -254,76 +248,58 @@ public class DayDescription {
         gh.form.icon[bgNum].setIcon(iconMini);
     }
 
-    public void readFile(String namefile) throws IOException {
-
-        try {
-
-            file = new File(DialogHandler.dir + "\\src\\main\\resources\\dialogs\\" + namefile);
-
-        } catch (Exception e) {
-            // Catch exception if any
-            System.err.println("Error: " + e.getMessage());
-        }
-
-    }
-    
     public void checkInventory(int size, int bgNum, int idx) {
-        if(gh.getPlayer().getInventory().size() == size) {
+        if (gh.getPlayer().getInventory().size() == size) {
             gh.form.setVisibleObject(bgNum, idx, true);
         }
     }
 
-    void continueFinalDialogue(int bgNum, boolean b,String filename) throws IOException {
+    void continueFinalDialogue(int bgNum, boolean b, String filename) throws IOException {
         i = i + 2;
 
-        
         if (i < npcListD.size()) {
             System.out.println("CONTINUADIALOGO");
             gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
             gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
 
         } else {
-            j=0;
-            readFile(filename);
-            Final= DialogHandler.SelectDialogOption(file, DialogHandler.FINAL_START, DialogHandler.FINAL_END);
+            j = 0;
+            Final = dh.SelectDialogOption(filename, DialogHandler.FINAL_START, DialogHandler.FINAL_END);
             System.out.println("ESCIDIALOGO");
-            if(b == true){
+            if (b == true) {
                 gh.form.placeDescription4[16].setText(Final.get(j));
                 gh.day.goToSceneXtoY(15, 16);
-            }else{
+            } else {
                 gh.form.placeDescription4[17].setText(Final.get(j));
                 gh.day.goToSceneXtoY(15, 17);
             }
-            
+
         }
     }
 
     void continueTrueEnding(int bgNum) {
         j++;
-    
-       if (j < Final.size()) {
+
+        if (j < Final.size()) {
             System.out.println("CONTINUADIALOGO");
-            gh.form.placeDescription4[bgNum].setText(Final.get(j));  
-           
-        } else{
-           
-       }
-           
-    
-    }
-    
-    void continueFalseEnding(int bgNum) {
-        j++;
-    
-       if (j < Final.size()) {
-            System.out.println("CONTINUADIALOGO");
-            gh.form.placeDescription4[bgNum].setText(Final.get(j));  
-        } else{
-           gh.day.goToSceneXtoY(bgNum, 15);
-       }
-           
-    
+            gh.form.placeDescription4[bgNum].setText(Final.get(j));
+
+        } else {
+
+        }
+
     }
 
-    
+    void continueFalseEnding(int bgNum) {
+        j++;
+
+        if (j < Final.size()) {
+            System.out.println("CONTINUADIALOGO");
+            gh.form.placeDescription4[bgNum].setText(Final.get(j));
+        } else {
+            gh.day.goToSceneXtoY(bgNum, 15);
+        }
+
+    }
+
 }
