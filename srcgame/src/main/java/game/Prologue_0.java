@@ -34,8 +34,8 @@ public class Prologue_0 extends javax.swing.JFrame {
         playSound();
         this.clipJazz = clipJazz;
         this.gh = gh;
-    }
-
+    }    
+    
     private void playSound() {
         try {
             clipRain = AudioSystem.getClip();
