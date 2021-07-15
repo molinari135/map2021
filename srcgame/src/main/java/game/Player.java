@@ -1,9 +1,6 @@
 package game;
 
-import db.DataHandler;
-import static game.Main.listItem;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ListIterator;
 import type.Item;
 
@@ -22,31 +19,30 @@ public class Player {
 
     public Player(GameHandler gh) {
         this.gh = gh;
-        this.inventory = new ArrayList<>();          
-        
+        this.inventory = new ArrayList<>();
     }
 
-    public void addToInventory(int i, Item item) {
+    public void addToInventory(Item item) {
         ListIterator<Item> it = inventory.listIterator();
         boolean isPresent = false;
 
         if (inventory.size() > 0) {
-            while (it.hasNext()) {                  
+            while (it.hasNext()) {
                 if (it.next().getId().equals(item.getId())) {
                     isPresent = true;
                 }
             }
 
         } else if (inventory.isEmpty()) {
-            inventory.add(0, item);     
+            inventory.add(item);
             isPresent = true;
-            System.out.println(item.getName() + " | size: " + inventory.size());
+            System.out.println(item.getName() + " | size: " + inventory.size() + " | index: " + inventory.indexOf(item));
         }
 
         if (!isPresent) {
-            inventory.add(i,item);
-            System.out.println(item.getName() + " | size: " + inventory.size());
+            inventory.add(item);
+            System.out.println(item.getName() + " | size: " + inventory.size() + " | index: " + inventory.indexOf(item));
         }
-    }   
+    }
 
 }

@@ -35,6 +35,7 @@ public class ActionHandler2 extends ActionHandler {
 
             case "goToReceptionFromHall":
                 gh.day.goToSceneXtoY(9, 8);  //HALL -> RECEPTION
+                gh.day.checkInventory(6, 8, 16);                
                 break;
 
             case "goToHallFromReception":
@@ -369,8 +370,7 @@ public class ActionHandler2 extends ActionHandler {
 
             case "scelta3m_gaskell": 
                 try {
-                gh.day.choice3(12, "m_gaskell", "m_gaskell.txt");
-                gh.day2.takeBillDoc();
+                gh.day.choice3(12, "m_gaskell", "m_gaskell.txt");                
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -385,7 +385,18 @@ public class ActionHandler2 extends ActionHandler {
             }
 
             break;
-
+            
+            case "takeBill": 
+                gh.day2.takeBillDoc();
+                break;
+                
+             case "observeBill": 
+                gh.day.observeObjectX(12, gh.day2.element, "mark_bill");
+                break;
+                       
+                
+             
+                    
         }
 
     }

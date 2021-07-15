@@ -2,6 +2,7 @@ package game;
 
 import db.DataHandler;
 import db.DialogHandler;
+import static game.Main.listItem;
 import static game.Main.listNPC;
 import static game.Main.listRoom;
 import java.io.File;
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
+import type.Item;
 import type.NPC;
 import type.Room;
 
@@ -49,10 +51,22 @@ public class DayDescription {
         gh.form.textAreaBox[x].setVisible(true);
         gh.form.textButton[x].setVisible(true);
         gh.form.textAreaBox2[x].setVisible(true);
-        //TODO file
+        
         room = DataHandler.RoomFinder(listRoom, roomName);
         gh.form.textAreaBox[x].setText(room.getName());
         gh.form.textAreaBox2[x].setText(room.getDescription());
+        gh.form.textButton[x].setActionCommand("continueTextScene" + x);
+    }
+    
+    public void observeObjectX(int x, Item item, String itemName) {
+        gh.form.textBox[x].setVisible(true);
+        gh.form.textAreaBox[x].setVisible(true);
+        gh.form.textButton[x].setVisible(true);
+        gh.form.textAreaBox2[x].setVisible(true);
+        
+        item = DataHandler.ItemFinder(listItem, itemName);
+        gh.form.textAreaBox[x].setText(item.getName());
+        gh.form.textAreaBox2[x].setText(item.getDescription());
         gh.form.textButton[x].setActionCommand("continueTextScene" + x);
     }
 
@@ -68,7 +82,7 @@ public class DayDescription {
         gh.form.textBox[bgNum].setVisible(true);
         gh.form.textAreaBox2[bgNum].setVisible(true);
         gh.form.textButton[bgNum].setVisible(true);
-        //TODO file
+       
         npc = DataHandler.NpcFinder(listNPC, npcName);
         gh.form.textAreaBox[bgNum].setText(npc.getName() + " " + npc.getSurname());
         gh.form.textAreaBox2[bgNum].setText(npc.getDescription());
@@ -233,9 +247,9 @@ public class DayDescription {
 
     }
     
-    public void checkInventory() {
-        if(gh.getPlayer().getInventory().size() == 2) {
-            gh.form.setVisibleObject(2, 16, true);
+    public void checkInventory(int size, int bgNum, int idx) {
+        if(gh.getPlayer().getInventory().size() == size) {
+            gh.form.setVisibleObject(bgNum, idx, true);
         }
     }
 

@@ -51,7 +51,7 @@ public class ActionHandler1 extends ActionHandler {
 
             case "StaircaseDown1":
                 gh.day.goToSceneXtoY(4, 2); //CORRIDOIO SUP -> INF
-                gh.day.checkInventory();
+                gh.day.checkInventory(2, 2, 16);
                 break;
 
             case "WestRoomCorridor2":

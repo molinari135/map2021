@@ -35,8 +35,7 @@ import javax.swing.JTextField;
  */
 public class Day_Form extends javax.swing.JFrame {
 
-    GameHandler gh;
-    InventoryDialog inv = new InventoryDialog(this, true, gh);
+    GameHandler gh;    
 
     int i = 0;
 
@@ -500,6 +499,9 @@ public class Day_Form extends javax.swing.JFrame {
         createArrowButton(8, 10, 500, "/left_arrow.png", "goToHallFromReception", gh.actHandler2);
         createObject(8, 1000, 250, 200, 400, "", "Parla", "Osserva", "", "TalkOwner", "ObserveOwner", "", gh.actHandler2);
         createArrowButton(8, 1750, 800, "/policestationicon.png", "goToPoliceStation", gh.actHandler2);
+        
+        setVisibleObject(8, 16, false);
+        
         bgPanel[8].add(bgLabel[8]);
 
         //SCENA 9 -> SALA DA BALLO
@@ -531,6 +533,7 @@ public class Day_Form extends javax.swing.JFrame {
         createTextBox(12, gh.actHandler2);
         createArrowButton(12, 1750, 500, "/right_arrow.png", "goToRoomFromVeranda", gh.actHandler2);
         createObject(12, 200, 70, 200, 830, "", "Parla", "Osserva", "", "TalkMark", "ObserveMark", "", gh.actHandler2);
+        createObject(12, 490, 600, 140, 140, "/bill.png", "Osserva", "Raccogli", "", "observeBill", "takeBill", "", gh.actHandler2);
         bgPanel[12].add(bgLabel[12]);
 
         //SCENA 13 -> STAZIONE DI POLIZIA BLACK SCREEN

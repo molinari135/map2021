@@ -38,7 +38,7 @@ public class Day1 extends DayDescription {
         gh.form.textButton[6].setActionCommand("continueTextScene" + 6);
         
         element = DataHandler.ItemFinder(listItem, "white_dress");
-        gh.getPlayer().addToInventory(1, element);
+        gh.getPlayer().addToInventory(element);
     }
 
     public void takeAutopsy() {
@@ -47,7 +47,7 @@ public class Day1 extends DayDescription {
         gh.inv.getItem_1().setText("");
         
         element = DataHandler.ItemFinder(listItem, "autopsy");        
-        gh.getPlayer().addToInventory(0, element);
+        gh.getPlayer().addToInventory(element);
     }
 
 }

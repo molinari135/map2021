@@ -208,30 +208,30 @@ public class InventoryDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void item_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_1ActionPerformed
-        createPopup("Osserva", autopsy, "autopsy", item_1, 1);
+        createPopup("Osserva", autopsy, "autopsy", item_1);
     }//GEN-LAST:event_item_1ActionPerformed
 
     private void item_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_2ActionPerformed
-        createPopup("Osserva", dress1, "white_dress", item_2, 2);
+        createPopup("Osserva", dress1, "white_dress", item_2);
     }//GEN-LAST:event_item_2ActionPerformed
 
     private void item_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_3ActionPerformed
-        createPopup("Osserva", dress2, "ball_dress", item_3, 3);
+        createPopup("Osserva", dress2, "ball_dress", item_3);
     }//GEN-LAST:event_item_3ActionPerformed
 
     private void item_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_5ActionPerformed
-        createPopup("Osserva", adoption_doc, "adoption_doc", item_5, 5);
+        createPopup("Osserva", adoption_doc, "adoption_doc", item_5);
     }//GEN-LAST:event_item_5ActionPerformed
 
     private void item_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_6ActionPerformed
-        createPopup("Osserva", mark_bill, "mark_bill", item_6, 6);
+        createPopup("Osserva", mark_bill, "mark_bill", item_6);
     }//GEN-LAST:event_item_6ActionPerformed
 
     private void item_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_4ActionPerformed
-        createPopup("Osserva", broken_nail, "broken_nail", item_4, 4);
+        createPopup("Osserva", broken_nail, "broken_nail", item_4);
     }//GEN-LAST:event_item_4ActionPerformed
 
-    public void createPopup(String choice1Name, Item item, String itemName, JButton itemButton, int index) {
+    public void createPopup(String choice1Name, Item item, String itemName, JButton itemButton) {
 
         // CREATE POP MENU
         JPopupMenu popupMenu = new JPopupMenu();
@@ -244,11 +244,12 @@ public class InventoryDialog extends javax.swing.JDialog {
 
         popupMenu.add(menuItem[1]);
 
-        if (DataHandler.ItemFinder(gh.getPlayer().getInventory(), itemName) != null) {
-            int i = gh.getPlayer().getInventory().indexOf(item);
-            i += index;
+        Item itemList = DataHandler.ItemFinder(gh.getPlayer().getInventory(), itemName);
+        System.out.println(itemList.getId());
+        if (gh.getPlayer().getInventory().contains(itemList)) {
+            int i = gh.getPlayer().getInventory().indexOf(itemList);
             ArrayButton[i].setComponentPopupMenu(popupMenu);
-        }
+        }   
     }
 
     public void createObject(int objx, int objy, int objWidth, int objHeight, String objFileName,
@@ -305,8 +306,7 @@ public class InventoryDialog extends javax.swing.JDialog {
 
     }
 
-    public void observeItem(Item item, String itemName) {
-        //TODO file
+    public void observeItem(Item item, String itemName) {        
         item = DataHandler.ItemFinder(listItem, itemName);
         JOptionPane.showMessageDialog(this, item.getDescription(), "Informazioni reperto", JOptionPane.INFORMATION_MESSAGE);
     }

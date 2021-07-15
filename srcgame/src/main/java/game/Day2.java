@@ -7,6 +7,7 @@ package game;
 
 import db.DataHandler;
 import static game.Main.listItem;
+import java.awt.Component;
 import type.NPC;
 
 import java.io.IOException;
@@ -39,13 +40,13 @@ public class Day2 extends DayDescription {
         gh.inv.getItem_3().setIcon(new ImageIcon(getClass().getResource("/dressDance.png")));
         gh.inv.getItem_3().setText("");        
         element = DataHandler.ItemFinder(listItem, "ball_dress");        
-        gh.getPlayer().addToInventory(2, element);
+        gh.getPlayer().addToInventory(element);
         
         gh.inv.getItem_4().setVisible(true);
         gh.inv.getItem_4().setIcon(new ImageIcon(getClass().getResource("/nail.png")));
         gh.inv.getItem_4().setText("");
         element = DataHandler.ItemFinder(listItem, "broken_nail");  
-        gh.getPlayer().addToInventory(3, element);
+        gh.getPlayer().addToInventory(element);
         
     }
     
@@ -55,7 +56,7 @@ public class Day2 extends DayDescription {
         gh.inv.getItem_5().setText("");
         
         element = DataHandler.ItemFinder(listItem, "adoption_doc");        
-        gh.getPlayer().addToInventory(4, element);
+        gh.getPlayer().addToInventory(element);
     }
     
     public void takeBillDoc() {
@@ -64,9 +65,12 @@ public class Day2 extends DayDescription {
         gh.inv.getItem_6().setText("");
         
         element = DataHandler.ItemFinder(listItem, "mark_bill");        
-        gh.getPlayer().addToInventory(5, element);
-    }
-
+        gh.getPlayer().addToInventory(element);       
+                
+        gh.form.setVisibleObject(12, 15, false);
+        
+    }   
+   
     public void knockRoom() {
         try {
             Clip clip = AudioSystem.getClip();
