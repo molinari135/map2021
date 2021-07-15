@@ -155,9 +155,14 @@ public class DayDescription {
         i = 0;
 
         npcListD = dh.SelectDialogOption(fileName, DialogHandler.DIALOG_FINAL_START, DialogHandler.DIALOG_FINAL_END);
+       
         if (i == 22) {
             i = 0;
         }
+        gh.form.dialogueButton1[bgNum].setVisible(false);
+        gh.form.dialogueButton2[bgNum].setVisible(false);
+        gh.form.dialogueButton3[bgNum].setVisible(false);
+        gh.form.dialogueButton4[bgNum].setVisible(false);
         gh.form.textButton[bgNum].setVisible(true);
         gh.form.textBox[bgNum].setVisible(true);
         gh.form.textAreaBox[bgNum].setVisible(true);

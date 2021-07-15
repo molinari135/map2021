@@ -47,7 +47,7 @@ public class PoliceStation extends DayDescription {
         gh.form.textAreaBox[15].setText("Scegli chi vuoi interrogare?");
         
         gh.form.dialogueButton1[15].setText("Nessuno");
-        gh.form.dialogueButton2[15].setText("Jefferson");
+        gh.form.dialogueButton2[15].setText("Arthur");
         gh.form.dialogueButton1[15].setBounds(410, 780, 600, 50);
         gh.form.dialogueButton2[15].setBounds(960, 780, 600, 50);
         gh.form.dialogueButton3[15].setText("Basil Blake");
@@ -55,7 +55,7 @@ public class PoliceStation extends DayDescription {
         gh.form.dialogueButton1[15].addActionListener(gh.actHandler3);
         gh.form.dialogueButton1[15].setActionCommand("");
         gh.form.dialogueButton2[15].addActionListener(gh.actHandler3);
-        gh.form.dialogueButton2[15].setActionCommand("scelta2jefferson");
+        gh.form.dialogueButton2[15].setActionCommand("scelta2a_bantry");
         gh.form.dialogueButton3[15].addActionListener(gh.actHandler3);
         gh.form.dialogueButton3[15].setActionCommand("scelta3basil");
         gh.form.dialogueButton4[15].addActionListener(gh.actHandler3);

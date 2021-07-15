@@ -112,8 +112,11 @@ public class ActionHandlerPS extends ActionHandler {
                 gh.day.observeNPC(15, gh.day3.person, "b_blake");
                 break;
 
-            case "ObserveJefferson":
-                gh.day.observeNPC(15, gh.day3.person, "c_jefferson");
+            case "ObserveArthur":
+                gh.day.observeNPC(15, gh.day3.person, "a_bantry");
+                break;
+            case "ObserveMarkJosephine":
+                gh.day.observeNPC(15, gh.day3.person, "m_gaskell");
                 break;
             
             case "TalkMelchett":
@@ -139,9 +142,9 @@ public class ActionHandlerPS extends ActionHandler {
                 Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
-            case "TalkJefferson":
+            case "TalkArthur":
                     try {
-                gh.day3.talkNPCLast(15, "b_blake_ending.txt", "/IconJeff.png", "c_jefferson", true, this,"false2");
+                gh.day3.talkNPCLast(15, "a_bantry_ending.txt", "/IconArthur.png", "a_bantry", true, this,"false2");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -214,7 +217,7 @@ public class ActionHandlerPS extends ActionHandler {
                 break;
 
            
-            case "scelta2jefferson":
+            case "scelta2a_bantry":
                 gh.day3.setSuspectedFalse(16);
                 gh.day3.setSuspectedFalse(17);
                 gh.day3.setSuspectedTrue(15);

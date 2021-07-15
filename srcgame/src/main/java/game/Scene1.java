@@ -101,7 +101,7 @@ public class Scene1 {
 
     private void continuaActionPerformed(java.awt.event.ActionEvent evt) {
 
-        //TODO Usare file per testi + aggiust. struttura
+
         String text1 = "Come era potuto succedere?\nSembrava che per lui, o lei, questo fosse soltanto un gioco.\n\n"
                 + "Psicopatico del cazzo...\n";
 

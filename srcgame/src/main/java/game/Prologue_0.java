@@ -125,7 +125,7 @@ public class Prologue_0 extends javax.swing.JFrame {
 
     private void cmdContinuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdContinuaActionPerformed
 
-        //TODO Usare file per testi + aggiust. struttura
+
         String text1 = "           Era una notte buia e tempestosa...\n\n"
                 + "La pioggia e il fragore dei tuoni"
                 + " non facevano altro che accentuare l’inquietudine di quel momento.";
@@ -152,7 +152,7 @@ public class Prologue_0 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cmdContinuaActionPerformed
 
-    //TODO SPOSTARE SCENA 1 QUI
+
     public void goToScene1() {
         bgPrologo.setVisible(false);
         Scene1 scene1 = new Scene1(this, clipRain, clipJazz, gh);

@@ -198,7 +198,7 @@ public class Day_Form extends javax.swing.JFrame {
     }
 
     public void createTextBox(int bgNum, ActionHandler actHandler) {
-        //TODO FARE PIù PICCOLA TEXT_BOX
+
 
         //creazione componenti
         textBox[bgNum] = new JLabel();
@@ -586,7 +586,7 @@ public class Day_Form extends javax.swing.JFrame {
         createTextBox(15, gh.actHandler3);
         createArrowButton(15, 1750, 500, "/right_arrow.png", "goToStationFromInterrogation", gh.actHandler3);
         createObject(15, 870, 230, 135, 135, "/uncertainty.png", "Interroga", "", "", "chooseSuspected", "", "", gh.actHandler3);
-        createObject(15, 280, 280, 290, 770, "/jeffersonpixel.png", "Parla", "Osserva", "", "TalkJefferson", "ObserveJefferson", "", gh.actHandler3);
+        createObject(15, 280, 280, 290, 770, "/arthurpixel.png", "Parla", "Osserva", "", "TalkArthur", "ObserveArthur", "", gh.actHandler3);
         createObject(15, 280, 280, 290, 770, "/basilsprite.png", "Parla", "Osserva", "", "TalkBasil", "ObserveBasil", "", gh.actHandler3);
         createObject(15, 200, 270, 547, 880, "/scenainterrogatorio3.png", "Parla", "Osserva", "", "TalkMarkJosephine", "ObserveMarkJosephine", "", gh.actHandler3);
 
