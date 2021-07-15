@@ -57,7 +57,41 @@ public class ActionHandler3 extends ActionHandler {
             case "continueDialog15":
                 gh.day.continueDialogue(15);
                 break;
+            case "continueDialogFinaletrue":
+            {
+                try {
+                    gh.day.continueDialogueFinale(15,true,"true_ending.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler3.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
 
+            case "continueDialogFinalefalse1":
+            {
+                try {
+                    gh.day.continueDialogueFinale(15,false,"b_blake_ending.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler3.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+            case "continueDialogFinalefalse2":
+            {
+                try {
+                    gh.day.continueDialogueFinale(15,false,"a_bantry_ending.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandler3.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+
+            case "continueTrueEnding":
+                gh.day.continueTrueEnding(16);
+                break;
+            case "continueFalseEnding":
+                gh.day.continueFalseEnding(17);
+                break;
             case "closeTextScene14":
                 gh.day.closeTextBox(14);
                 break;
@@ -100,14 +134,14 @@ public class ActionHandler3 extends ActionHandler {
 
             case "TalkBasil":
                     try {
-                gh.day3.talkNPCLast(15, "b_blake_ending.txt", "/IconBlake.png", "b_blake", true, this);
+                gh.day.talkNPCLast(15, "b_blake_ending.txt", "/IconBlake.png", "b_blake", true, this,"false1");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
             case "TalkJefferson":
                     try {
-                gh.day3.talkNPCLast(15, "b_blake_ending.txt", "/IconJeff.png", "c_jefferson", true, this);
+                gh.day3.talkNPCLast(15, "b_blake_ending.txt", "/IconJeff.png", "c_jefferson", true, this,"false2");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -115,7 +149,7 @@ public class ActionHandler3 extends ActionHandler {
 
             case "TalkMarkJosephine":
                     try {
-                gh.day3.talkNPCLast(15, "true_ending.txt", "/IconJosephine.png", "m_j_gaskell", true, this);
+                gh.day3.talkNPCLast(15, "true_ending.txt", "/IconJosephine.png", "m_j_gaskell", true, this,"true");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandler1.class.getName()).log(Level.SEVERE, null, ex);
             }

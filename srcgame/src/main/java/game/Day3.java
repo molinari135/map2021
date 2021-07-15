@@ -29,9 +29,10 @@ public class Day3 extends DayDescription {
 
     public void chooseSuspected() {
         gh.form.detectiveSinistra[15].setVisible(true);
-        gh.form.icon[15].setVisible(true);
+        gh.form.icon[15].setVisible(false);
         gh.form.textButton[15].setVisible(true);
         gh.form.textBox[15].setVisible(true);
+        gh.form.textAreaBox2[15].setVisible(false);
         gh.form.textAreaBox[15].setVisible(true);
         gh.form.dialogueButton1[15].setVisible(true);
         gh.form.dialogueButton2[15].setVisible(true);
@@ -62,30 +63,16 @@ public class Day3 extends DayDescription {
 
     }
     
-    public void setSuspectedFalse(int bgNum){
+    public void setSuspectedFalse(int bgNum) {
+        gh.day.closeTextBox(15);
         Component[] object = gh.form.bgPanel[15].getComponents();
         object[bgNum].setVisible(false);
     }
-    
-    public void setSuspectedTrue(int bgNum){
+
+    public void setSuspectedTrue(int bgNum) {
         Component[] object = gh.form.bgPanel[15].getComponents();
         gh.day.closeTextBox(15);
         object[bgNum].setVisible(true);
     }
-    public void talkNPCLast(int bgNum, String fileName, String iconName, String id, Boolean labelSx, ActionHandler actHandler) throws IOException {
-        i = 0;
-        readFile(fileName);
-        npcListD = DialogHandler.SelectDialogOption(file, DialogHandler.DIALOG_FINAL_START, DialogHandler.DIALOG_FINAL_END);
-        gh.form.textButton[bgNum].setVisible(true);
-        gh.form.textBox[bgNum].setVisible(true);
-        gh.form.textAreaBox[bgNum].setVisible(true);
-        gh.form.textAreaBox2[bgNum].setVisible(true);
-        gh.form.icon[bgNum].setVisible(true);
-        setIcon(bgNum, iconName);
-        gh.form.textAreaBox[bgNum].setText(npcListD.get(i));
-        gh.form.textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        gh.form.textButton[bgNum].setActionCommand("continueDialog" + bgNum);
-        gh.form.textButton[bgNum].setText("Continua");
-        
-    }
+   
 }

@@ -79,8 +79,15 @@ public class ActionHandler2 extends ActionHandler {
                 break;
 
             case "KnockRoom":
-                gh.day2.knockRoom();
+            {
+                try {
+                    gh.day2.knockRoom();
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(ActionHandler2.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
                 break;
+
 
             case "continueTextScene7":
                 gh.day.closeTextBox(7);

@@ -35,7 +35,7 @@ import javax.swing.JTextField;
  */
 public class Day_Form extends javax.swing.JFrame {
 
-    GameHandler gh;    
+    GameHandler gh;
 
     int i = 0;
 
@@ -60,6 +60,11 @@ public class Day_Form extends javax.swing.JFrame {
     public JRadioButton dialogueButton2[] = new JRadioButton[25];
     public JRadioButton dialogueButton3[] = new JRadioButton[25];
     public JRadioButton dialogueButton4[] = new JRadioButton[25];
+    public JTextField placeDescription1[] = new JTextField[23];
+    public JTextField placeDescription2[] = new JTextField[23];
+    public JTextField placeDescription3[] = new JTextField[23];
+    public JTextField placeDescription4[] = new JTextField[23];
+    public JButton go[] = new JButton[23];
 
     public JLabel detectiveDestra[] = new JLabel[25];
     public JLabel detectiveSinistra[] = new JLabel[25];
@@ -330,7 +335,7 @@ public class Day_Form extends javax.swing.JFrame {
         // CREATE POP MENU
         JPopupMenu popMenu = new JPopupMenu();
         // CREATE POP MENU ITEMS
-        JMenuItem menuItem[] = new JMenuItem[3]; 
+        JMenuItem menuItem[] = new JMenuItem[3];
         menuItem[1] = new JMenuItem(choice1Name);
         menuItem[1].addActionListener(actHandler);
         menuItem[1].setActionCommand(choice1Command);
@@ -383,52 +388,60 @@ public class Day_Form extends javax.swing.JFrame {
     }
 
     public void createStartDay(int bgNum, String objFileName,
-        String choice1Name, String choice2Name, String choice3Name, ActionHandler actHandler, int objx) {
-                
-        JButton continua = new JButton();
-        continua.setBackground(new Color(0, 0, 0));
-        continua.setBounds(920, 600, 64, 26);
-        continua.setFont(new Font("Segoe UI", 2, 14)); // NOI18N
-        continua.setForeground(new Color(255, 255, 255));
-        continua.setText("Continua");
-        continua.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED,
+            String choice1Name, String choice2Name, String choice3Name, ActionHandler actHandler, int objx) {
+
+        placeDescription1[bgNum] = new JTextField();
+        placeDescription2[bgNum] = new JTextField();
+        placeDescription3[bgNum] = new JTextField();
+        placeDescription4[bgNum] = new JTextField();
+        go[bgNum] = new JButton();
+        go[bgNum].setBackground(new Color(0, 0, 0));
+        go[bgNum].setBounds(920, 600, 64, 26);
+        go[bgNum].setFont(new Font("Segoe UI", 2, 14)); // NOI18N
+        go[bgNum].setForeground(new Color(255, 255, 255));
+        go[bgNum].setText("Continua");
+        go[bgNum].setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED,
                 Color.lightGray, Color.white, Color.lightGray, Color.white));
-        continua.setContentAreaFilled(false);
-        continua.addActionListener(actHandler);
-        continua.setActionCommand(objFileName);
+        go[bgNum].setContentAreaFilled(false);
+        go[bgNum].addActionListener(actHandler);
+        go[bgNum].setActionCommand(objFileName);
 
-        JTextField placeDescription1 = new JTextField();
-        JTextField placeDescription2 = new JTextField();
-        JTextField placeDescription3 = new JTextField();
+        placeDescription1[bgNum].setEditable(false);
+        placeDescription1[bgNum].setBackground(new java.awt.Color(0, 0, 0));
+        placeDescription1[bgNum].setFont(new java.awt.Font("Californian FB", 3, 48)); // NOI18N
+        placeDescription1[bgNum].setForeground(new java.awt.Color(255, 255, 255));
+        placeDescription1[bgNum].setText(choice1Name);
+        placeDescription1[bgNum].setBorder(null);
+        placeDescription1[bgNum].setBounds(670, 200, 800, 40);
 
-        placeDescription1.setEditable(false);
-        placeDescription1.setBackground(new java.awt.Color(0, 0, 0));
-        placeDescription1.setFont(new java.awt.Font("Californian FB", 3, 48)); // NOI18N
-        placeDescription1.setForeground(new java.awt.Color(255, 255, 255));
-        placeDescription1.setText(choice1Name);
-        placeDescription1.setBorder(null);
-        placeDescription1.setBounds(670, 200, 800, 40);
+        placeDescription2[bgNum].setEditable(false);
+        placeDescription2[bgNum].setBackground(new java.awt.Color(0, 0, 0));
+        placeDescription2[bgNum].setFont(new java.awt.Font("Californian FB", 1, 48)); // NOI18N
+        placeDescription2[bgNum].setForeground(new java.awt.Color(255, 255, 255));
+        placeDescription2[bgNum].setText(choice2Name);
+        placeDescription2[bgNum].setBorder(null);
+        placeDescription2[bgNum].setBounds(objx, 350, 800, 50);
 
-        placeDescription2.setEditable(false);
-        placeDescription2.setBackground(new java.awt.Color(0, 0, 0));
-        placeDescription2.setFont(new java.awt.Font("Californian FB", 1, 48)); // NOI18N
-        placeDescription2.setForeground(new java.awt.Color(255, 255, 255));
-        placeDescription2.setText(choice2Name);
-        placeDescription2.setBorder(null);
-        placeDescription2.setBounds(objx, 350, 800, 50);
+        placeDescription3[bgNum].setEditable(false);
+        placeDescription3[bgNum].setBackground(new java.awt.Color(0, 0, 0));
+        placeDescription3[bgNum].setFont(new java.awt.Font("Californian FB", 1, 36)); // NOI18N
+        placeDescription3[bgNum].setForeground(new java.awt.Color(255, 255, 255));
+        placeDescription3[bgNum].setText(choice3Name);
+        placeDescription3[bgNum].setBorder(null);
+        placeDescription3[bgNum].setBounds(730, 450, 1100, 40);
+        
+        placeDescription4[bgNum].setEditable(false);
+        placeDescription4[bgNum].setBackground(new java.awt.Color(0, 0, 0));
+        placeDescription4[bgNum].setFont(new java.awt.Font("Californian FB", 1, 36)); // NOI18N
+        placeDescription4[bgNum].setForeground(new java.awt.Color(255, 255, 255));
+        placeDescription4[bgNum].setBorder(null);
+        placeDescription4[bgNum].setBounds(300, 450, 1100, 50);
 
-        placeDescription3.setEditable(false);
-        placeDescription3.setBackground(new java.awt.Color(0, 0, 0));
-        placeDescription3.setFont(new java.awt.Font("Californian FB", 1, 36)); // NOI18N
-        placeDescription3.setForeground(new java.awt.Color(255, 255, 255));
-        placeDescription3.setText(choice3Name);
-        placeDescription3.setBorder(null);
-        placeDescription3.setBounds(730, 450, 1100, 40);
-
-        bgPanel[bgNum].add(placeDescription1);
-        bgPanel[bgNum].add(placeDescription2);
-        bgPanel[bgNum].add(placeDescription3);
-        bgPanel[bgNum].add(continua);
+        bgPanel[bgNum].add(placeDescription1[bgNum]);
+        bgPanel[bgNum].add(placeDescription2[bgNum]);
+        bgPanel[bgNum].add(placeDescription3[bgNum]);
+        bgPanel[bgNum].add(placeDescription4[bgNum]);
+        bgPanel[bgNum].add(go[bgNum]);
 
         bgPanel[bgNum].add(bgLabel[bgNum]);
     }
@@ -451,7 +464,7 @@ public class Day_Form extends javax.swing.JFrame {
         createObject(2, 1215, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor1", "ObserveLivingRoom", "", gh.actHandler1);
         createObject(2, 850, 350, 300, 500, "", "Sali al piano superiore", "", "", "StaircaseUP1", "", "", gh.actHandler1);
         createArrowButton(2, 900, 900, "/hotelicon.png", "goToHotel", gh.actHandler1);
-                
+
         setVisibleObject(2, 16, false);
 
         bgPanel[2].add(bgLabel[2]);
@@ -499,9 +512,9 @@ public class Day_Form extends javax.swing.JFrame {
         createArrowButton(8, 10, 500, "/left_arrow.png", "goToHallFromReception", gh.actHandler2);
         createObject(8, 1000, 250, 200, 400, "", "Parla", "Osserva", "", "TalkOwner", "ObserveOwner", "", gh.actHandler2);
         createArrowButton(8, 1750, 800, "/policestationicon.png", "goToPoliceStation", gh.actHandler2);
-        
+
         setVisibleObject(8, 16, false);
-        
+
         bgPanel[8].add(bgLabel[8]);
 
         //SCENA 9 -> SALA DA BALLO
@@ -510,7 +523,7 @@ public class Day_Form extends javax.swing.JFrame {
         createArrowButton(9, 1750, 500, "/right_arrow.png", "goToReceptionFromHall", gh.actHandler2);
         createArrowButton(9, 10, 500, "/left_arrow.png", "StaircaseUP2", gh.actHandler2);
         createObject(9, 330, 600, 150, 330, "", "Parla", "Osserva", "", "TalkJosephine", "ObserveJosephine", "", gh.actHandler2);
-        createObject(9, 1430, 600, 150, 330, "", "Parla", "Osserva", "", "TalkRamon", "ObserveRamon", "", gh.actHandler2);        
+        createObject(9, 1430, 600, 150, 330, "", "Parla", "Osserva", "", "TalkRamon", "ObserveRamon", "", gh.actHandler2);
         bgPanel[9].add(bgLabel[9]);
 
         //SCENA 10 -> CORRIDOIO
@@ -559,7 +572,7 @@ public class Day_Form extends javax.swing.JFrame {
         createObject(15, 280, 280, 290, 770, "/jeffersonpixel.png", "Parla", "Osserva", "", "TalkJefferson", "ObserveJefferson", "", gh.actHandler3);
         createObject(15, 280, 280, 290, 770, "/basilsprite.png", "Parla", "Osserva", "", "TalkBasil", "ObserveBasil", "", gh.actHandler3);
         createObject(15, 200, 270, 547, 880, "/scenainterrogatorio3.png", "Parla", "Osserva", "", "TalkMarkJosephine", "ObserveMarkJosephine", "", gh.actHandler3);
-        
+
         setVisibleObject(15, 15, false);
         setVisibleObject(15, 16, false);
         setVisibleObject(15, 17, false);
@@ -567,11 +580,22 @@ public class Day_Form extends javax.swing.JFrame {
 
         bgPanel[15].add(bgLabel[15]);
 
+        //SCENA 16 -> STAZIONE DI POLIZIA BLACK SCREEN
+        createScene(16, 0, 0, "", gh.actHandler3);
+        createTextBox(16, gh.actHandler3);
+        createStartDay(16, "continueTrueEnding", "", "", "", gh.actHandler3, 780);
+
+        //SCENA 17 -> STAZIONE DI POLIZIA BLACK SCREEN
+        createScene(17, 0, 0, "", gh.actHandler3);
+        createTextBox(17, gh.actHandler3);
+        createStartDay(17, "continueFalseEnding", "", "", "", gh.actHandler3, 780);
+
     }
-    
+
     public void setVisibleObject(int bgNum, int idx, boolean bool) {
         Component[] object = bgPanel[bgNum].getComponents();
-        object[idx].setVisible(bool);        
+        object[idx].setVisible(bool);
+
     }
 
 

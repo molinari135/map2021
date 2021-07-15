@@ -24,6 +24,8 @@ public class DialogHandler {
     public static final int DIALOG_OPTION_END = 66;
     public static final int DIALOG_FINAL_START = 1;
     public static final int DIALOG_FINAL_END = 22;
+    public static final int FINAL_START = 23;
+    public static final int FINAL_END = 27;
     public static String dir = System.getProperty("user.dir");
     
     public static List<String> SelectDialogOption(File file, int startLine, int endLine) throws FileNotFoundException {
