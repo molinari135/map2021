@@ -72,7 +72,7 @@ public class Prologue_0 extends javax.swing.JFrame {
         bgPrologo.setBackground(new java.awt.Color(0, 0, 0));
         bgPrologo.setMinimumSize(new java.awt.Dimension(1920, 1080));
         bgPrologo.setPreferredSize(new java.awt.Dimension(1920, 1080));
-        bgPrologo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bgPrologo.setLayout(null);
 
         cmdContinua.setBackground(new java.awt.Color(0, 0, 0));
         cmdContinua.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -85,7 +85,8 @@ public class Prologue_0 extends javax.swing.JFrame {
                 cmdContinuaActionPerformed(evt);
             }
         });
-        bgPrologo.add(cmdContinua, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 550, -1, -1));
+        bgPrologo.add(cmdContinua);
+        cmdContinua.setBounds(910, 550, 64, 26);
 
         jspScroll.setBorder(null);
         jspScroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -105,7 +106,8 @@ public class Prologue_0 extends javax.swing.JFrame {
         txtTestoPrologo.setCaretColor(new java.awt.Color(102, 102, 255));
         jspScroll.setViewportView(txtTestoPrologo);
 
-        bgPrologo.add(jspScroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 895, 300));
+        bgPrologo.add(jspScroll);
+        jspScroll.setBounds(550, 200, 895, 300);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,7 +125,7 @@ public class Prologue_0 extends javax.swing.JFrame {
 
     private void cmdContinuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdContinuaActionPerformed
 
-        //TODO Usare file per testi + aggiust. struttura
+
         String text1 = "           Era una notte buia e tempestosa...\n\n"
                 + "La pioggia e il fragore dei tuoni"
                 + " non facevano altro che accentuare l’inquietudine di quel momento.";
@@ -150,7 +152,7 @@ public class Prologue_0 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cmdContinuaActionPerformed
 
-    //TODO SPOSTARE SCENA 1 QUI
+
     public void goToScene1() {
         bgPrologo.setVisible(false);
         Scene1 scene1 = new Scene1(this, clipRain, clipJazz, gh);

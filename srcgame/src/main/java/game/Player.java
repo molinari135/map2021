@@ -35,13 +35,11 @@ public class Player {
 
         } else if (inventory.isEmpty()) {
             inventory.add(item);
-            isPresent = true;
-            System.out.println(item.getName() + " | size: " + inventory.size() + " | index: " + inventory.indexOf(item));
+            isPresent = true;            
         }
 
         if (!isPresent) {
-            inventory.add(item);
-            System.out.println(item.getName() + " | size: " + inventory.size() + " | index: " + inventory.indexOf(item));
+            inventory.add(item);           
         }
     }
 

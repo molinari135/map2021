@@ -1,10 +1,12 @@
 package db;
 
-import java.io.File;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  *
@@ -28,28 +30,29 @@ public class DialogHandler {
     public static final int FINAL_END = 27;
     public static String dir = System.getProperty("user.dir");
     
-    public static List<String> SelectDialogOption(File file, int startLine, int endLine) throws FileNotFoundException {
+    public List<String> SelectDialogOption(String namefile, int startLine, int endLine) throws FileNotFoundException, IOException {
         List<String> dialogList = new ArrayList<>(); 
-        Scanner sc = new Scanner(file,"UTF-8");
+        String str;
         int lineNumber = 0;
         boolean flag = false; // true if lines == 5
-        while (sc.hasNextLine() && !flag) {
-            lineNumber++;
-            String line = sc.nextLine();
+        InputStream i = getClass().getResourceAsStream("/" + namefile);
+           
+        BufferedReader bf = new BufferedReader(new InputStreamReader(i,"UTF-8"));
+        
+
+           while ((str = bf.readLine()) != null && !flag){           
+            lineNumber++;  
+            System.out.println(str);
             if (lineNumber >= startLine ) {
                 System.out.println(lineNumber);
-                dialogList.add(line);      
+                dialogList.add(str);      
             }
             if (lineNumber == endLine) {
                 flag = true;
             }            
         }
-        sc.close();
+        
         return dialogList;
     }
-
-    public static List<String> Epilogue(File file) {
-        List<String> epilogue = new ArrayList<>();
-        return epilogue;
-    }
+            
 }

@@ -88,11 +88,8 @@ public class Scene1 {
                 Color.lightGray, Color.white, Color.lightGray, Color.white));
         continua.setContentAreaFilled(false);
 
-        continua.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                continuaActionPerformed(evt);
-            }
+        continua.addActionListener((java.awt.event.ActionEvent evt) -> {
+            continuaActionPerformed(evt);
         });
         panel1.add(continua);
 
@@ -101,7 +98,7 @@ public class Scene1 {
 
     private void continuaActionPerformed(java.awt.event.ActionEvent evt) {
 
-        //TODO Usare file per testi + aggiust. struttura
+
         String text1 = "Come era potuto succedere?\nSembrava che per lui, o lei, questo fosse soltanto un gioco.\n\n"
                 + "Psicopatico del cazzo...\n";
 
@@ -128,7 +125,7 @@ public class Scene1 {
                 clipRain.stop();
                 clipJazz.stop();
 
-                gh.form.setVisible(true);
+                gh.getForm().setVisible(true);
 
                 break;
 

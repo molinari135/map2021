@@ -15,15 +15,15 @@ Già, ho un po' di indiziati.
 Detective
 Dove posso trovare il Colonnello Melchett?
 Agente Palk
-Sta nel suo studio, infondo a destra.
+Il colonnello è praticamente alla sua sinistra, Ispettore...
 Detective
-Sai se è impegnato al momento?
+Scusa, l'età fa brutti scherzi.
 Agente Palk
-No no, è da solo, può andare a parlarle.
+Succede anche a me, stia tranquillo.
 Detective
-E l'archivio? Posso andarci?
+E l'interrogatorio? Posso andarci?
 Agente Palk
-Si, vada in fondo a sinistra, è tutto suo.
+Si, anche quella è alla sua sinistra...
 
 
 

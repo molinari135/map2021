@@ -12,9 +12,8 @@ import java.awt.event.ActionListener;
  *
  * @author giaco
  */
-public abstract class ActionHandler implements ActionListener{
+public abstract class ActionHandler implements ActionListener {
 
     @Override
     public abstract void  actionPerformed(ActionEvent e);
-    
 }
