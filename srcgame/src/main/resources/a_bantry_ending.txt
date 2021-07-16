@@ -8,17 +8,17 @@ Arthur Bantry
 Io? Io, cosa, mi scusi.
 Detective
 Lei ha ucciso Ruby Keene, lo ammetta.
-Detective
+Arthur Bantry
 Ma che diavolo va dicendo, Ispettore. Nemmeno la conoscevo.
-Arthur Bantry
+Detective
 Si certo, come no. Le conviene dire tutto o non riuscirà a godersi la sua pensione.
-Detective
+Arthur Bantry
 Senta, io non ho fatto proprio un bel niente. Non scherzi con me.
-Arthur Bantry
-Questo lo dico io, ho un mandato di arresto per omicidio per lei.
 Detective
-Ma che diamine...
+Questo lo dico io, ho un mandato di arresto per omicidio per lei.
 Arthur Bantry
+Ma che diamine...
+Detective
 Mi dispiace, ma la sua avventura finisce qui.
 Il giorno dopo arriva una chiamata in stazione.
 In una stanza dell'Hotel Majestic è stato commesso un omicidio.

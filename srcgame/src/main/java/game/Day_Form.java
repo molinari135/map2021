@@ -475,7 +475,7 @@ public class Day_Form extends javax.swing.JFrame {
         placeDescription4[bgNum].setFont(new java.awt.Font("Californian FB", 1, 36)); // NOI18N
         placeDescription4[bgNum].setForeground(new java.awt.Color(255, 255, 255));
         placeDescription4[bgNum].setBorder(null);
-        placeDescription4[bgNum].setBounds(500, 450, 1100, 100);
+        placeDescription4[bgNum].setBounds(600, 450, 1100, 150);
         placeDescription4[bgNum].setVisible(true);
 
         bgPanel[bgNum].add(placeDescription1[bgNum]);

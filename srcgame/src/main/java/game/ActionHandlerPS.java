@@ -237,7 +237,9 @@ public class ActionHandlerPS extends ActionHandler {
                 gh.getDay3().setSuspectedTrue(17);
 
                 break;
-
+            case "ExitGame":
+                System.exit(0);
+                break;
         }
     }
 

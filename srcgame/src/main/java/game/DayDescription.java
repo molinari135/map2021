@@ -290,7 +290,9 @@ public class DayDescription {
             gh.getForm().placeDescription4[bgNum].setText(Final.get(j));
 
         } else {
-
+            gh.getForm().placeDescription2[bgNum].setText("Complimenti hai finito il gioco!");
+            gh.getForm().go[bgNum].setText("Esci");
+            gh.getForm().go[bgNum].setActionCommand("ExitGame");
         }
 
     }
