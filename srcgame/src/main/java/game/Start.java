@@ -69,7 +69,7 @@ public class Start extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         background.setBackground(new java.awt.Color(0, 0, 0));
-        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        background.setLayout(null);
 
         esci.setFont(new java.awt.Font("Courier New", 2, 48)); // NOI18N
         esci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit-door.png"))); // NOI18N
@@ -81,7 +81,8 @@ public class Start extends javax.swing.JFrame {
                 esciActionPerformed(evt);
             }
         });
-        background.add(esci, new org.netbeans.lib.awtextra.AbsoluteConstraints(924, 605, 145, 143));
+        background.add(esci);
+        esci.setBounds(924, 605, 145, 143);
 
         gioca.setFont(new java.awt.Font("Courier New", 2, 48)); // NOI18N
         gioca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/magnifying-glass.png"))); // NOI18N
@@ -93,20 +94,24 @@ public class Start extends javax.swing.JFrame {
                 giocaActionPerformed(evt);
             }
         });
-        background.add(gioca, new org.netbeans.lib.awtextra.AbsoluteConstraints(924, 366, 145, 143));
+        background.add(gioca);
+        gioca.setBounds(924, 366, 145, 143);
 
         titolo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/titolo2.gif"))); // NOI18N
-        background.add(titolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 172, -1, -1));
+        background.add(titolo);
+        titolo.setBounds(514, 172, 958, 77);
 
         credits.setFont(new java.awt.Font("Californian FB", 1, 24)); // NOI18N
         credits.setForeground(new java.awt.Color(255, 255, 255));
         credits.setText("Credits");
         credits.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         credits.setContentAreaFilled(false);
-        background.add(credits, new org.netbeans.lib.awtextra.AbsoluteConstraints(1779, 897, -1, -1));
+        background.add(credits);
+        credits.setBounds(1779, 897, 78, 34);
 
         silhouette.setIcon(new javax.swing.ImageIcon(getClass().getResource("/silhouette.png"))); // NOI18N
-        background.add(silhouette, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 294, -1, -1));
+        background.add(silhouette);
+        silhouette.setBounds(52, 294, 450, 679);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

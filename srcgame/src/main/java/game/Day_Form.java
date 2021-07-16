@@ -90,6 +90,8 @@ public class Day_Form extends javax.swing.JFrame {
         txtTitle1 = new javax.swing.JTextField();
         txtTitle2 = new javax.swing.JTextField();
         cmdContinua = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1920, 1080));
@@ -97,7 +99,7 @@ public class Day_Form extends javax.swing.JFrame {
 
         bg.setBackground(new java.awt.Color(0, 0, 0));
         bg.setForeground(new java.awt.Color(255, 255, 255));
-        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.setLayout(null);
 
         txtTitle3.setEditable(false);
         txtTitle3.setBackground(new java.awt.Color(0, 0, 0));
@@ -105,7 +107,8 @@ public class Day_Form extends javax.swing.JFrame {
         txtTitle3.setForeground(new java.awt.Color(255, 255, 255));
         txtTitle3.setText("Dimora della famiglia Bantry");
         txtTitle3.setBorder(null);
-        bg.add(txtTitle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 440, -1, -1));
+        bg.add(txtTitle3);
+        txtTitle3.setBounds(720, 440, 436, 42);
 
         txtTitle1.setEditable(false);
         txtTitle1.setBackground(new java.awt.Color(0, 0, 0));
@@ -113,7 +116,8 @@ public class Day_Form extends javax.swing.JFrame {
         txtTitle1.setForeground(new java.awt.Color(255, 255, 255));
         txtTitle1.setText("St. Mary Mead,   10 Ottobre 1982");
         txtTitle1.setBorder(null);
-        bg.add(txtTitle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 677, -1));
+        bg.add(txtTitle1);
+        txtTitle1.setBounds(610, 200, 677, 56);
 
         txtTitle2.setEditable(false);
         txtTitle2.setBackground(new java.awt.Color(0, 0, 0));
@@ -121,7 +125,8 @@ public class Day_Form extends javax.swing.JFrame {
         txtTitle2.setForeground(new java.awt.Color(255, 255, 255));
         txtTitle2.setText("Gossington Hall");
         txtTitle2.setBorder(null);
-        bg.add(txtTitle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 360, 329, -1));
+        bg.add(txtTitle2);
+        txtTitle2.setBounds(780, 360, 329, 56);
 
         cmdContinua.setBackground(new java.awt.Color(0, 0, 0));
         cmdContinua.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -134,13 +139,34 @@ public class Day_Form extends javax.swing.JFrame {
                 cmdContinuaActionPerformed(evt);
             }
         });
-        bg.add(cmdContinua, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 600, -1, -1));
+        bg.add(cmdContinua);
+        cmdContinua.setBounds(900, 980, 64, 26);
+
+        jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Californian FB", 0, 36)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("--------------------------------------------------------------------\n\nIl corpo di Ruby Keene, ragazza ormai deceduta, è stato\nritrovato a Gossington Hall, abitazione della famiglia Bantry.\nLa polizia arriva immediatamente sulla scena del crimine...\n\n--------------------------------------------------------------------");
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setBorder(null);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        bg.add(jScrollPane1);
+        jScrollPane1.setBounds(500, 600, 900, 290);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 1878, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,7 +220,7 @@ public class Day_Form extends javax.swing.JFrame {
     }
 
     public void createTextBox(int bgNum, ActionHandler actHandler) {
-        //TODO FARE PIù PICCOLA TEXT_BOX
+
 
         //creazione componenti
         textBox[bgNum] = new JLabel();
@@ -449,7 +475,8 @@ public class Day_Form extends javax.swing.JFrame {
         placeDescription4[bgNum].setFont(new java.awt.Font("Californian FB", 1, 36)); // NOI18N
         placeDescription4[bgNum].setForeground(new java.awt.Color(255, 255, 255));
         placeDescription4[bgNum].setBorder(null);
-        placeDescription4[bgNum].setBounds(300, 450, 1100, 50);
+        placeDescription4[bgNum].setBounds(600, 450, 1100, 150);
+        placeDescription4[bgNum].setVisible(true);
 
         bgPanel[bgNum].add(placeDescription1[bgNum]);
         bgPanel[bgNum].add(placeDescription2[bgNum]);
@@ -463,128 +490,126 @@ public class Day_Form extends javax.swing.JFrame {
     public void generateScenes() throws FileNotFoundException, IOException {
 
         //SCENA 1 -> DINING ROOM
-        createScene(1, 0, -10, "/diningroommod.png", gh.actHandler1);
-        createTextBox(1, gh.actHandler1);
+        createScene(1, 0, -10, "/diningroommod.png", gh.getActHandler1());
+        createTextBox(1, gh.getActHandler1());
 
-        createArrowButton(1, 1750, 500, "/right_arrow.png", "goToCorridorFromDRoom", gh.actHandler1);
-        createObject(1, 200, 220, 200, 700, "", "Parla", "Osserva", "", "TalkDolly", "ObserveDolly", "", gh.actHandler1);
-        createObject(1, 1550, 210, 220, 700, "", "Parla", "Osserva", "", "TalkJane", "ObserveJane", "", gh.actHandler1);
+        createArrowButton(1, 1750, 500, "/right_arrow.png", "goToCorridorFromDRoom", gh.getActHandler1());
+        createObject(1, 200, 220, 200, 700, "", "Parla", "Osserva", "", "TalkDolly", "ObserveDolly", "", gh.getActHandler1());
+        createObject(1, 1550, 210, 220, 700, "", "Parla", "Osserva", "", "TalkJane", "ObserveJane", "", gh.getActHandler1());
         bgPanel[1].add(bgLabel[1]);
 
         //SCENA 2 -> CORRIDOIO PIANO TERRA
-        createScene(2, 352, 0, "/corridoio1.png", gh.actHandler1);
-        createTextBox(2, gh.actHandler1);
-        createObject(2, 620, 300, 150, 650, "", "Entra", "Osserva", "", "WestRoomCorridor1", "ObserveDiningRoom", "", gh.actHandler1);
-        createObject(2, 1215, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor1", "ObserveLivingRoom", "", gh.actHandler1);
-        createObject(2, 850, 350, 300, 500, "", "Sali al piano superiore", "", "", "StaircaseUP1", "", "", gh.actHandler1);
-        createArrowButton(2, 900, 900, "/hotelicon.png", "goToHotel", gh.actHandler1);
+        createScene(2, 352, 0, "/corridoio1.png", gh.getActHandler1());
+        createTextBox(2, gh.getActHandler1());
+        createObject(2, 620, 300, 150, 650, "", "Entra", "Osserva", "", "WestRoomCorridor1", "ObserveDiningRoom", "", gh.getActHandler1());
+        createObject(2, 1215, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor1", "ObserveLivingRoom", "", gh.getActHandler1());
+        createObject(2, 850, 350, 300, 500, "", "Sali al piano superiore", "", "", "StaircaseUP1", "", "", gh.getActHandler1());
+        createArrowButton(2, 900, 900, "/hotelicon.png", "goToHotel", gh.getActHandler1());
 
         setVisibleObject(2, 16, false);
 
         bgPanel[2].add(bgLabel[2]);
 
         //SCENA 3 -> LIVING ROOM 
-        createScene(3, 0, -10, "/livingroom.png", gh.actHandler1);
-        createTextBox(3, gh.actHandler1);
-        createArrowButton(3, 10, 500, "/left_arrow.png", "goToCorridorFromLRoom", gh.actHandler1);
-        createObject(3, 250, 250, 200, 650, "", "Parla", "Osserva", "puntagli il ferro", "TalkLorrimer", "ObserveLorrimer", "", gh.actHandler1);
+        createScene(3, 0, -10, "/livingroom.png", gh.getActHandler1());
+        createTextBox(3, gh.getActHandler1());
+        createArrowButton(3, 10, 500, "/left_arrow.png", "goToCorridorFromLRoom", gh.getActHandler1());
+        createObject(3, 250, 250, 200, 650, "", "Parla", "Osserva", "puntagli il ferro", "TalkLorrimer", "ObserveLorrimer", "", gh.getActHandler1());
         bgPanel[3].add(bgLabel[3]);
 
         //SCENA 4 -> CORRIDOIO PRIMO PIANO
-        createScene(4, 352, 0, "/corridoio2.png", gh.actHandler1);
-        createTextBox(4, gh.actHandler1);
-        createArrowButton(4, 850, 850, "/down_arrow.png", "StaircaseDown1", gh.actHandler1);
-        createObject(4, 550, 300, 150, 650, "", "Entra", "Osserva", "", "WestRoomCorridor2", "ObserveStudy", "", gh.actHandler1);
-        createObject(4, 1120, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor2", "ObserveLibrary", "", gh.actHandler1);
+        createScene(4, 352, 0, "/corridoio2.png", gh.getActHandler1());
+        createTextBox(4, gh.getActHandler1());
+        createArrowButton(4, 850, 850, "/down_arrow.png", "StaircaseDown1", gh.getActHandler1());
+        createObject(4, 550, 300, 150, 650, "", "Entra", "Osserva", "", "WestRoomCorridor2", "ObserveStudy", "", gh.getActHandler1());
+        createObject(4, 1120, 300, 150, 650, "", "Entra", "Osserva", "", "EastRoomCorridor2", "ObserveLibrary", "", gh.getActHandler1());
         bgPanel[4].add(bgLabel[4]);
 
         //SCENA 5 -> STUDIO
-        createScene(5, 0, -10, "/studio.png", gh.actHandler1);
-        createTextBox(5, gh.actHandler1);
-        createArrowButton(5, 1750, 500, "/right_arrow.png", "goToCorridorFromStudy", gh.actHandler1);
-        createObject(5, 390, 250, 200, 700, "", "Parla", "Osserva", "", "TalkBasil", "ObserveBasil", "", gh.actHandler1);
-        createObject(5, 1350, 250, 220, 700, "", "Parla", "Osserva", "", "TalkABantry", "ObserveABantry", "", gh.actHandler1);
+        createScene(5, 0, -10, "/studio.png", gh.getActHandler1());
+        createTextBox(5, gh.getActHandler1());
+        createArrowButton(5, 1750, 500, "/right_arrow.png", "goToCorridorFromStudy", gh.getActHandler1());
+        createObject(5, 390, 250, 200, 700, "", "Parla", "Osserva", "", "TalkBasil", "ObserveBasil", "", gh.getActHandler1());
+        createObject(5, 1350, 250, 220, 700, "", "Parla", "Osserva", "", "TalkABantry", "ObserveABantry", "", gh.getActHandler1());
         bgPanel[5].add(bgLabel[5]);
 
         //SCENA 6 -> BIBLIOTECA
-        createScene(6, 0, -10, "/Library.png", gh.actHandler1);
-        createTextBox(6, gh.actHandler1);
-        createArrowButton(6, 10, 500, "/left_arrow.png", "goToCorridorFromLibrary", gh.actHandler1);
-        createObject(6, 250, 700, 600, 170, "", "Osserva", "Ispeziona", "", "ObserveBody", "AnalizeBody", "", gh.actHandler1);
-        createObject(6, 1000, 400, 220, 500, "", "Parla", "Osserva", "", "TalkHaydoc", "ObserveHaydoc", "", gh.actHandler1);
+        createScene(6, 0, -10, "/Library.png", gh.getActHandler1());
+        createTextBox(6, gh.getActHandler1());
+        createArrowButton(6, 10, 500, "/left_arrow.png", "goToCorridorFromLibrary", gh.getActHandler1());
+        createObject(6, 250, 700, 600, 170, "", "Osserva", "Ispeziona", "", "ObserveBody", "AnalizeBody", "", gh.getActHandler1());
+        createObject(6, 1000, 400, 220, 500, "", "Parla", "Osserva", "", "TalkHaydoc", "ObserveHaydoc", "", gh.getActHandler1());
         bgPanel[6].add(bgLabel[6]);
 
         //SCENA 7 -> HOTEL BLACK SCREEN
-        createScene(7, 0, 0, "", gh.actHandler1);
-        createTextBox(7, gh.actHandler2);
-        createStartDay(7, "enterHotel", "St. Mary Mead, Ottobre 1982", "Majestic Hotel", "Lussuoso Hotel della contea", gh.actHandler2, 800);
+        createScene(7, 0, 0, "", gh.getActHandler1());
+        createTextBox(7, gh.getActHandler2());
+        createStartDay(7, "enterHotel", "St. Mary Mead, Ottobre 1982", "Majestic Hotel", "Lussuoso Hotel della contea", gh.getActHandler2(), 800);
 
         //SCENA 8 -> RECEPTION
-        createScene(8, 0, -10, "/receptionhotel.png", gh.actHandler2);
-        createTextBox(8, gh.actHandler2);
-        createArrowButton(8, 1750, 500, "/homeicon.png", "goToGossingtonHall", gh.actHandler2);
-        createArrowButton(8, 10, 500, "/left_arrow.png", "goToHallFromReception", gh.actHandler2);
-        createObject(8, 1000, 250, 200, 400, "", "Parla", "Osserva", "", "TalkOwner", "ObserveOwner", "", gh.actHandler2);
-        createArrowButton(8, 1750, 800, "/policestationicon.png", "goToPoliceStation", gh.actHandler2);
-
-        setVisibleObject(8, 16, false);
+        createScene(8, 0, -10, "/receptionhotel.png", gh.getActHandler2());
+        createTextBox(8, gh.getActHandler2());
+        createArrowButton(8, 1750, 500, "/homeicon.png", "goToGossingtonHall", gh.getActHandler2());
+        createArrowButton(8, 10, 500, "/left_arrow.png", "goToHallFromReception", gh.getActHandler2());
+        createObject(8, 1000, 250, 200, 400, "", "Parla", "Osserva", "", "TalkOwner", "ObserveOwner", "", gh.getActHandler2());
+        createArrowButton(8, 1750, 800, "/policestationicon.png", "goToPoliceStation", gh.getActHandler2());       
 
         bgPanel[8].add(bgLabel[8]);
 
         //SCENA 9 -> SALA DA BALLO
-        createScene(9, 0, 0, "/hall.png", gh.actHandler2);
-        createTextBox(9, gh.actHandler2);
-        createArrowButton(9, 1750, 500, "/right_arrow.png", "goToReceptionFromHall", gh.actHandler2);
-        createArrowButton(9, 10, 500, "/left_arrow.png", "StaircaseUP2", gh.actHandler2);
-        createObject(9, 330, 600, 150, 330, "", "Parla", "Osserva", "", "TalkJosephine", "ObserveJosephine", "", gh.actHandler2);
-        createObject(9, 1430, 600, 150, 330, "", "Parla", "Osserva", "", "TalkRamon", "ObserveRamon", "", gh.actHandler2);
+        createScene(9, 0, 0, "/hall.png", gh.getActHandler2());
+        createTextBox(9, gh.getActHandler2());
+        createArrowButton(9, 1750, 500, "/right_arrow.png", "goToReceptionFromHall", gh.getActHandler2());
+        createArrowButton(9, 10, 500, "/left_arrow.png", "StaircaseUP2", gh.getActHandler2());
+        createObject(9, 330, 600, 150, 330, "", "Parla", "Osserva", "", "TalkJosephine", "ObserveJosephine", "", gh.getActHandler2());
+        createObject(9, 1430, 600, 150, 330, "", "Parla", "Osserva", "", "TalkRamon", "ObserveRamon", "", gh.getActHandler2());
         bgPanel[9].add(bgLabel[9]);
 
         //SCENA 10 -> CORRIDOIO
-        createScene(10, 352, -10, "/corridoiohotel.png", gh.actHandler2);
-        createTextBox(10, gh.actHandler2);
-        createArrowButton(10, 850, 850, "/down_arrow.png", "StaircaseDown2", gh.actHandler2);
-        createObject(10, 360, 100, 200, 850, "", "Bussa", "Entra (senza bussare è maleducazione...)", "", "KnockRoom", "goToRoomFromCorridor", "", gh.actHandler2);
+        createScene(10, 352, -10, "/corridoiohotel.png", gh.getActHandler2());
+        createTextBox(10, gh.getActHandler2());
+        createArrowButton(10, 850, 850, "/down_arrow.png", "StaircaseDown2", gh.getActHandler2());
+        createObject(10, 360, 100, 200, 850, "", "Bussa", "Entra (senza bussare è maleducazione...)", "", "KnockRoom", "goToRoomFromCorridor", "", gh.getActHandler2());
         bgPanel[10].add(bgLabel[10]);
 
         //SCENA 11 -> ROOM
-        createScene(11, 0, -10, "/bedroom.png", gh.actHandler2);
-        createTextBox(11, gh.actHandler2);
-        createArrowButton(11, 10, 500, "/left_arrow.png", "goToVeranda", gh.actHandler2);
-        createArrowButton(11, 1750, 500, "/right_arrow.png", "goToCorridor", gh.actHandler2);
-        createObject(11, 650, 200, 200, 700, "", "Parla", "Osserva", "", "TalkJefferson", "ObserveJefferson", "", gh.actHandler2);
+        createScene(11, 0, -10, "/bedroom.png", gh.getActHandler2());
+        createTextBox(11, gh.getActHandler2());
+        createArrowButton(11, 10, 500, "/left_arrow.png", "goToVeranda", gh.getActHandler2());
+        createArrowButton(11, 1750, 500, "/right_arrow.png", "goToCorridor", gh.getActHandler2());
+        createObject(11, 650, 200, 200, 700, "", "Parla", "Osserva", "", "TalkJefferson", "ObserveJefferson", "", gh.getActHandler2());
         bgPanel[11].add(bgLabel[11]);
 
         //SCENA 12 -> VERANDA
-        createScene(12, 0, -10, "/veranda.png", gh.actHandler2);
-        createTextBox(12, gh.actHandler2);
-        createArrowButton(12, 1750, 500, "/right_arrow.png", "goToRoomFromVeranda", gh.actHandler2);
-        createObject(12, 200, 70, 200, 830, "", "Parla", "Osserva", "", "TalkMark", "ObserveMark", "", gh.actHandler2);
-        createObject(12, 490, 600, 140, 140, "/bill.png", "Osserva", "Raccogli", "", "observeBill", "takeBill", "", gh.actHandler2);
+        createScene(12, 0, -10, "/veranda.png", gh.getActHandler2());
+        createTextBox(12, gh.getActHandler2());
+        createArrowButton(12, 1750, 500, "/right_arrow.png", "goToRoomFromVeranda", gh.getActHandler2());
+        createObject(12, 200, 70, 200, 830, "", "Parla", "Osserva", "", "TalkMark", "ObserveMark", "", gh.getActHandler2());
+        createObject(12, 490, 600, 140, 140, "/bill.png", "Osserva", "Raccogli", "", "observeBill", "takeBill", "", gh.getActHandler2());
         bgPanel[12].add(bgLabel[12]);
 
         //SCENA 13 -> STAZIONE DI POLIZIA BLACK SCREEN
-        createScene(13, 0, 0, "", gh.actHandler3);
-        createTextBox(13, gh.actHandler3);
-        createStartDay(13, "enterPoliceStation", "St. Mary Mead, Ottobre 1982", "Stazione di Polizia", "", gh.actHandler3, 780);
+        createScene(13, 0, 0, "", gh.getActHandler3());
+        createTextBox(13, gh.getActHandler3());
+        createStartDay(13, "enterPoliceStation", "St. Mary Mead, Ottobre 1982", "Stazione di Polizia", "", gh.getActHandler3(), 780);
 
         //SCENA 14 -> POLICE STATION
-        createScene(14, 0, -10, "/stazione_polizia.png", gh.actHandler3);
-        createTextBox(14, gh.actHandler3);
-        createArrowButton(14, 10, 500, "/left_arrow.png", "goToInterrogation", gh.actHandler3);
-        createObject(14, 380, 250, 250, 400, "", "Parla", "Osserva", "", "TalkMelchett", "ObserveMelchett", "", gh.actHandler3);
-        createObject(14, 1220, 230, 200, 400, "", "Parla", "Osserva", "", "TalkPalck", "ObservePalck", "", gh.actHandler3);
-        createArrowButton(14, 850, 850, "/hotelicon.png", "goToReceptionFromStation", gh.actHandler3);
+        createScene(14, 0, -10, "/stazione_polizia.png", gh.getActHandler3());
+        createTextBox(14, gh.getActHandler3());
+        createArrowButton(14, 10, 500, "/left_arrow.png", "goToInterrogation", gh.getActHandler3());
+        createObject(14, 380, 250, 250, 400, "", "Parla", "Osserva", "", "TalkMelchett", "ObserveMelchett", "", gh.getActHandler3());
+        createObject(14, 1220, 230, 200, 400, "", "Parla", "Osserva", "", "TalkPalk", "ObservePalk", "", gh.getActHandler3());
+        createArrowButton(14, 850, 850, "/hotelicon.png", "goToReceptionFromStation", gh.getActHandler3());
         bgPanel[14].add(bgLabel[14]);
 
         //SCENA 15 -> STANZA DEGLI INTERROGATORI
-        createScene(15, 0, -10, "/interrogatorio.png", gh.actHandler3);
-        createTextBox(15, gh.actHandler3);
-        createArrowButton(15, 1750, 500, "/right_arrow.png", "goToStationFromInterrogation", gh.actHandler3);
-        createObject(15, 870, 230, 135, 135, "/uncertainty.png", "Interroga", "", "", "chooseSuspected", "", "", gh.actHandler3);
-        createObject(15, 280, 280, 290, 770, "/jeffersonpixel.png", "Parla", "Osserva", "", "TalkJefferson", "ObserveJefferson", "", gh.actHandler3);
-        createObject(15, 280, 280, 290, 770, "/basilsprite.png", "Parla", "Osserva", "", "TalkBasil", "ObserveBasil", "", gh.actHandler3);
-        createObject(15, 200, 270, 547, 880, "/scenainterrogatorio3.png", "Parla", "Osserva", "", "TalkMarkJosephine", "ObserveMarkJosephine", "", gh.actHandler3);
+        createScene(15, 0, -10, "/interrogatorio.png", gh.getActHandler3());
+        createTextBox(15, gh.getActHandler3());
+        createArrowButton(15, 1750, 500, "/right_arrow.png", "goToStationFromInterrogation", gh.getActHandler3());
+        createObject(15, 870, 230, 135, 135, "/uncertainty.png", "Interroga", "", "", "chooseSuspected", "", "", gh.getActHandler3());
+        createObject(15, 280, 280, 290, 770, "/arthurpixel.png", "Parla", "Osserva", "", "TalkArthur", "ObserveArthur", "", gh.getActHandler3());
+        createObject(15, 280, 280, 290, 770, "/basilsprite.png", "Parla", "Osserva", "", "TalkBasil", "ObserveBasil", "", gh.getActHandler3());
+        createObject(15, 200, 270, 547, 880, "/scenainterrogatorio3.png", "Parla", "Osserva", "", "TalkMarkJosephine", "ObserveMarkJosephine", "", gh.getActHandler3());
 
         setVisibleObject(15, 15, false);
         setVisibleObject(15, 16, false);
@@ -594,14 +619,14 @@ public class Day_Form extends javax.swing.JFrame {
         bgPanel[15].add(bgLabel[15]);
 
         //SCENA 16 -> STAZIONE DI POLIZIA BLACK SCREEN
-        createScene(16, 0, 0, "", gh.actHandler3);
-        createTextBox(16, gh.actHandler3);
-        createStartDay(16, "continueTrueEnding", "", "", "", gh.actHandler3, 780);
+        createScene(16, 0, 0, "", gh.getActHandler3());
+        createTextBox(16, gh.getActHandler3());
+        createStartDay(16, "continueTrueEnding", "", "", "", gh.getActHandler3(), 780);
 
         //SCENA 17 -> STAZIONE DI POLIZIA BLACK SCREEN
-        createScene(17, 0, 0, "", gh.actHandler3);
-        createTextBox(17, gh.actHandler3);
-        createStartDay(17, "continueFalseEnding", "", "", "", gh.actHandler3, 780);
+        createScene(17, 0, 0, "", gh.getActHandler3());
+        createTextBox(17, gh.getActHandler3());
+        createStartDay(17, "continueFalseEnding", "", "", "", gh.getActHandler3(), 780);
 
     }
 
@@ -615,6 +640,8 @@ public class Day_Form extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JButton cmdContinua;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField txtTitle1;
     private javax.swing.JTextField txtTitle2;
     private javax.swing.JTextField txtTitle3;

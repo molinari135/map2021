@@ -19,6 +19,7 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import type.Item;
 
 /**
@@ -36,38 +37,44 @@ public class MajesticHotel extends DayDescription {
     List<String> Prestcot, J_Turner, Ramon, Jeff, Mark = new ArrayList<>();
 
     public void takeDanceDress() {
-        gh.inv.getItem_3().setVisible(true);
-        gh.inv.getItem_3().setIcon(new ImageIcon(getClass().getResource("/dressDance.png")));
-        gh.inv.getItem_3().setText("");
+        JOptionPane.showMessageDialog(gh.getForm(), "Hai ricevuto [VESTITO DA BALLO e UNGHIE SPEZZATE] da Josie Turner", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
+        
+        gh.getInv().getItem_3().setVisible(true);
+        gh.getInv().getItem_3().setIcon(new ImageIcon(getClass().getResource("/dressDance.png")));
+        gh.getInv().getItem_3().setText("");
         element = DataHandler.ItemFinder(listItem, "ball_dress");
         gh.getPlayer().addToInventory(element);
 
-        gh.inv.getItem_4().setVisible(true);
-        gh.inv.getItem_4().setIcon(new ImageIcon(getClass().getResource("/nail.png")));
-        gh.inv.getItem_4().setText("");
+        gh.getInv().getItem_4().setVisible(true);
+        gh.getInv().getItem_4().setIcon(new ImageIcon(getClass().getResource("/nail.png")));
+        gh.getInv().getItem_4().setText("");
         element = DataHandler.ItemFinder(listItem, "broken_nail");
         gh.getPlayer().addToInventory(element);
 
     }
 
     public void takeAdoptionDoc() {
-        gh.inv.getItem_5().setVisible(true);
-        gh.inv.getItem_5().setIcon(new ImageIcon(getClass().getResource("/doc_adozione.png")));
-        gh.inv.getItem_5().setText("");
+        JOptionPane.showMessageDialog(gh.getForm(), "Hai ricevuto [DOCUMENTO ADOZIONE] da Conway Jefferson", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
+        
+        gh.getInv().getItem_5().setVisible(true);
+        gh.getInv().getItem_5().setIcon(new ImageIcon(getClass().getResource("/doc_adozione.png")));
+        gh.getInv().getItem_5().setText("");
 
         element = DataHandler.ItemFinder(listItem, "adoption_doc");
         gh.getPlayer().addToInventory(element);
     }
 
     public void takeBillDoc() {
-        gh.inv.getItem_6().setVisible(true);
-        gh.inv.getItem_6().setIcon(new ImageIcon(getClass().getResource("/doc_estrattoConto.png")));
-        gh.inv.getItem_6().setText("");
+        JOptionPane.showMessageDialog(gh.getForm(), "Hai raccolto [ESTRATTO CONTO DI MARK]", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
+        
+        gh.getInv().getItem_6().setVisible(true);
+        gh.getInv().getItem_6().setIcon(new ImageIcon(getClass().getResource("/doc_estrattoConto.png")));
+        gh.getInv().getItem_6().setText("");
 
         element = DataHandler.ItemFinder(listItem, "mark_bill");
         gh.getPlayer().addToInventory(element);
 
-        gh.form.setVisibleObject(12, 15, false);
+        gh.getForm().setVisibleObject(12, 15, false);
 
     }
 
@@ -82,10 +89,10 @@ public class MajesticHotel extends DayDescription {
                 System.err.println(e.getMessage());
                 return;
             }
-            gh.form.textBox[10].setVisible(true);
-            gh.form.textAreaBox[10].setVisible(true);
-            gh.form.textButton[10].setVisible(true);
-            gh.form.textAreaBox[10].setText("Prego, chiunque lei sia può entrare, se una bella ragazza anche ben volentieri.");
+            gh.getForm().textBox[10].setVisible(true);
+            gh.getForm().textAreaBox[10].setVisible(true);
+            gh.getForm().textButton[10].setVisible(true);
+            gh.getForm().textAreaBox[10].setText("Prego, chiunque lei sia può entrare, se una bella ragazza anche ben volentieri.");
         });
         t1.start();  
         

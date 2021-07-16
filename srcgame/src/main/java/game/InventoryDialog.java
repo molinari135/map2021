@@ -130,7 +130,7 @@ public class InventoryDialog extends javax.swing.JDialog {
         setTitle("Inventario");
         setMinimumSize(new java.awt.Dimension(900, 600));
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         item_1.setForeground(new java.awt.Color(255, 255, 255));
         item_1.setText("ITEM 1");
@@ -143,7 +143,8 @@ public class InventoryDialog extends javax.swing.JDialog {
                 item_1ActionPerformed(evt);
             }
         });
-        getContentPane().add(item_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 170, 160));
+        getContentPane().add(item_1);
+        item_1.setBounds(90, 90, 170, 160);
 
         item_2.setForeground(new java.awt.Color(255, 255, 255));
         item_2.setText("ITEM 2");
@@ -154,7 +155,8 @@ public class InventoryDialog extends javax.swing.JDialog {
                 item_2ActionPerformed(evt);
             }
         });
-        getContentPane().add(item_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 190, 180));
+        getContentPane().add(item_2);
+        item_2.setBounds(330, 80, 190, 180);
 
         item_3.setForeground(new java.awt.Color(255, 255, 255));
         item_3.setText("ITEM 3");
@@ -165,7 +167,8 @@ public class InventoryDialog extends javax.swing.JDialog {
                 item_3ActionPerformed(evt);
             }
         });
-        getContentPane().add(item_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 90, 170, 180));
+        getContentPane().add(item_3);
+        item_3.setBounds(600, 90, 170, 180);
 
         item_4.setForeground(new java.awt.Color(255, 255, 255));
         item_4.setText("ITEM 4");
@@ -176,7 +179,8 @@ public class InventoryDialog extends javax.swing.JDialog {
                 item_4ActionPerformed(evt);
             }
         });
-        getContentPane().add(item_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 160, 160));
+        getContentPane().add(item_4);
+        item_4.setBounds(90, 330, 160, 160);
 
         item_5.setForeground(new java.awt.Color(255, 255, 255));
         item_5.setText("ITEM 5");
@@ -188,7 +192,8 @@ public class InventoryDialog extends javax.swing.JDialog {
                 item_5ActionPerformed(evt);
             }
         });
-        getContentPane().add(item_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 180, 170));
+        getContentPane().add(item_5);
+        item_5.setBounds(340, 320, 180, 170);
 
         item_6.setForeground(new java.awt.Color(255, 255, 255));
         item_6.setText("ITEM 6");
@@ -199,10 +204,12 @@ public class InventoryDialog extends javax.swing.JDialog {
                 item_6ActionPerformed(evt);
             }
         });
-        getContentPane().add(item_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 320, 170, 160));
+        getContentPane().add(item_6);
+        item_6.setBounds(620, 320, 170, 160);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brown-leather.png"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 600));
+        getContentPane().add(background);
+        background.setBounds(0, 0, 900, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

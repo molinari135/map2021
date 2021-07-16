@@ -51,7 +51,7 @@ public class DBgame {
             + "placeId VARCHAR(2) PRIMARY KEY,"         // numero che identifica una location
             + "name VARCHAR(50),"                   // nome della location da mostrare a schermo
             + "desc VARCHAR(1024),"                 // descrizione della location
-            + "chapter BOOLEAN)";                    // giornata in cui si può accedere (da rimuovere?)
+            + "chapter BOOLEAN)";                    // giornata in cui si pu accedere (da rimuovere?)
     
     /**
      * Crea una table per gli oggetti del gioco
@@ -61,8 +61,8 @@ public class DBgame {
             + "itemId VARCHAR(50) PRIMARY KEY,"     // nome che itentifica l'oggetto 
             + "name VARCHAR(50),"                   // nome dell'oggetto da mostrare a schermo
             + "desc VARCHAR(1024),"                 // descrizione dell'oggetto
-            + "collectable BOOLEAN,"                // true se si può mettere nell'inventario, false altrimenti
-            + "room VARCHAR(50))";                  // nome che identifica la stanza in cui è presente l'oggetto
+            + "collectable BOOLEAN,"                // true se si pu mettere nell'inventario, false altrimenti
+            + "room VARCHAR(50))";                  // nome che identifica la stanza in cui  presente l'oggetto
     
     /**
      * Crea una table per le stanze di ogni mappa del gioco
@@ -72,7 +72,7 @@ public class DBgame {
             + "roomId VARCHAR(50) PRIMARY KEY,"     // nome che identifica la stanza
             + "name VARCHAR(50),"                   // nome della stanza da mostrare a schermo
             + "desc VARCHAR(1024),"                 // descrizione della stanza
-            + "floor INT(1),"                       // piano su cui è presente la stanza
+            + "floor INT(1),"                       // piano su cui  presente la stanza
             + "place VARCHAR(2))";                      // codice della location a cui appartiene la stanza
     
     /**
@@ -84,8 +84,8 @@ public class DBgame {
             + "name VARCHAR(50),"                   // nome del personaggio da mostrare a schermo
             + "surname VARCHAR(50),"                // cognome del personaggio da mostrare a schermo
             + "desc VARCHAR(1024),"                 // descrizione del personaggio
-            + "room VARCHAR(50),"                   // stanza in cui è presente il personaggio
-            + "talked BOOLEAN)";                    // true se si ha già parlato, false altrimenti
+            + "room VARCHAR(50),"                   // stanza in cui  presente il personaggio
+            + "talked BOOLEAN)";                    // true se si ha gi parlato, false altrimenti
     
     /**
      * Elimina i dati della table <code>place</code> senza cancellarne lo schema
@@ -122,7 +122,7 @@ public class DBgame {
      */
     public static final String ALL_PLACE =
             "INSERT INTO place VALUES"
-            + "('gh', 'Gossington Hall', 'Villa in cui viene rinvenuto il cadavere, proprietà dei signori Bantry.', false),"
+            + "('gh', 'Gossington Hall', 'Villa in cui viene rinvenuto il cadavere, proprietï¿½ dei signori Bantry.', false),"
             + "('mh', 'Majestic Hotel', 'Luogo di lavoro della vittima, posto apprezzato per le vacanze in famiglia.', false),"
             + "('ps', 'Stazione di polizia', 'Sede centrale della polizia della contea.', false)";
 
@@ -151,7 +151,7 @@ public class DBgame {
             + "('library', 'Biblioteca', 'La biblioteca della casa. Gli scaffali sono pieni di libri, ci sono molti gialli.', 1, 'gh'),"
             + "('studio', 'Studio', 'Lo studio del signor Arthur Bantry. Sembra in perfetto ordine.', 1, 'gh'),"           
             + "('reception', 'Reception', 'Reception del Majestic. Ha quello stile di una volta.', 0, 'mh'),"
-            + "('ballRoom', 'Sala da ballo', 'La sala più frequentata della struttura. Ci sono dei tavoli per il bridge.', 0, 'mh'),"                                  
+            + "('ballRoom', 'Sala da ballo', 'La sala piï¿½ frequentata della struttura. Ci sono dei tavoli per il bridge.', 0, 'mh'),"                                  
             + "('jeffersonRoom', 'Stanza di Jefferson', 'Pare sia la suite del signor Jefferson. Ha una veranda.', 1, 'mh'),"
             + "('balcony', 'Veranda', 'Sta un piccolo balcone con un tavolino e delle sedie.', 1, 'mh'),"
             + "('policeOffice', 'Uffici della polizia', 'Ci sono degli agenti intenti nel svolgere il loro lavoro.', 3, 'ps'),"
@@ -169,7 +169,7 @@ public class DBgame {
             + "('haydock', 'Dottor', 'Haydock', 'Medico legale che si occupa delle autopsie.', 'library', false),"            
             + "('corpse', 'Ruby', 'Keene', 'Vittima rinvenuta nella biblioteca dei Bantry.', 'library', false),"
             + "('j_turner', 'Josephine', 'Turner', 'Cugina della vittima e dipendente del Majestic.', 'ballRoom', false),"
-            + "('r_starr', 'Ramòn', 'Starr', 'Ballerino del Majestic.', 'ballRoom', false),"
+            + "('r_starr', 'Ramï¿½n', 'Starr', 'Ballerino del Majestic.', 'ballRoom', false),"
             + "('c_jefferson', 'Conway', 'Jefferson', 'Ospite della struttura; ha una suite.', 'jeffersonRoom', false),"
             + "('m_gaskell', 'Mark', 'Gaskell', 'Genero di Conway dai modi scontrosi.', 'balcony', false),"
             + "('prestcot', 'Signor', 'Prestcot', 'Proprietario della struttura dove lavorava la vittimaa.', 'reception', false),"
@@ -210,7 +210,7 @@ public class DBgame {
         Properties dbprops = new Properties();
         dbprops.setProperty("user", "map2021");
         dbprops.setProperty("password", "admin");
-        connection = DriverManager.getConnection("jdbc:h2:./resources/db/store", dbprops);
+        connection = DriverManager.getConnection("jdbc:h2:./src/main/resources/store", dbprops);
     }
     
     /**
