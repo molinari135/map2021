@@ -85,7 +85,12 @@ A questo punto inizierà il download del gioco. Basta solo fare doppio click sul
 ## Guida per l'utente
 Il gioco si apre con le riflessioni dell'Ispettore Slack nella sua berlina.<br>
 Allertato dalla polizia della contea, vai a Gossington Hall, la villa in cui è stato rinvenuto il cadavere di una giovane ragazza. Sulla scena del crimine trovi il medico legale, la Dottoressa Haydock<sup>[[1]](#haydock)</sup>, e altre persone. Indaga in ogni stanza della villa per ottenere informazioni e oggetti utili per risolvere il caso.<br>
-Quando avrai finito di parlare con tutti e avrai raccolto tutti gli indizi di Gossington Hall, torna nel corridoio all'entrata per poter andare nella prossima location, il Majestic Hotel. Quando avrai raccolto tutti i 6 indizi, torna alla reception dell'hotel per concludere le indagini.
+Quando avrai finito di parlare con tutti e avrai raccolto tutti gli indizi di Gossington Hall, torna nel corridoio all'entrata per poter andare nella prossima location, il Majestic Hotel. Quando avrai raccolto tutti i 6 indizi, torna alla reception dell'hotel per concludere le indagini.<br>
+La schermata iniziale della sala da pranzo di Gossington Hall è la seguente:<br>
+![diningRoom](/doc/drawings/gh.png)
+
+Nel gioco si dispone di un inventario, che appare in questo modo:<br>
+![inventario](/doc/drawings/inventario.png)
 
 [Torna su](#indice)
 
