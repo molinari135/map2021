@@ -6,6 +6,8 @@
 package game;
 
 /**
+ * Classe manager che si occpua di gestire e inizializzare tutte le principali
+ * classi nel codice. 
  *
  * @author tom
  */

@@ -12,6 +12,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
+ * ActionHandler specifico della seconda location del gioco, che fa override dell' unico
+ * metodo dell'interfaccia ActionListener nonchè della sua superclasse ActionHandler
  *
  * @author tom
  */

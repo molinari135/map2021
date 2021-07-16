@@ -7,6 +7,7 @@
 package type;
 
 /**
+ * Classe che rappresenta la generica location
  *
  * @author ester
  */

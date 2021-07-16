@@ -6,17 +6,13 @@
 package game;
 
 import java.awt.Component;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import type.NPC;
 
 /**
+ * Classe che contiene metodi specifici utilizzati nella terza location, sottoclasse di 
+ * DayDescription
  *
  * @author giaco
  */

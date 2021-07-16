@@ -21,6 +21,8 @@ import javax.swing.ImageIcon;
 import type.Item;
 
 /**
+ * Classe che contiene metodi specifici utlizzati nella seconda location,sottoclasse di 
+ * DayDescription
  *
  * @author giaco
  */

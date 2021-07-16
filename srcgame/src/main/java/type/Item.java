@@ -2,8 +2,10 @@ package type;
 
 
 /**
+ * Classe TYPE che rappresenta un generico oggetto
+ * 
+ * @author giaco
  *
- * @author rino
  */
 public class Item {
     private String id;

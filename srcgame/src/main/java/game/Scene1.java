@@ -22,6 +22,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
+ * Unica classe grafica non creata estendendo JFrame, che prosegue il Prologo 
  *
  * @author tom
  */

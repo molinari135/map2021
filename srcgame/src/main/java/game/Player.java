@@ -5,6 +5,7 @@ import java.util.ListIterator;
 import type.Item;
 
 /**
+ * Classe del giocatore che contiene l'inventario
  *
  * @author tom
  */
@@ -22,6 +23,9 @@ public class Player {
         this.inventory = new ArrayList<>();
     }
 
+    /*
+    Metodo che aggiunge all'inventario un oggetto solo se non è ancora presente
+    */
     public void addToInventory(Item item) {
         ListIterator<Item> it = inventory.listIterator();
         boolean isPresent = false;

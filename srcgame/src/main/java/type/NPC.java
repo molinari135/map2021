@@ -1,6 +1,7 @@
 package type;
 
 /**
+ * Classe TYPE che rappresenta un generico oggetto
  * 
  * @author giaco
  */
