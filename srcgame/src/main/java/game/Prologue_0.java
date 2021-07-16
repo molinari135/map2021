@@ -13,6 +13,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 /**
+ * Classe grafica che fa iniziare il prologo e la musica
  *
  * @author tom
  */
@@ -123,6 +124,11 @@ public class Prologue_0 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /*
+     ogni volta che si preme il bottone continua, viene invocata tale metodo che gestisce l'evento, 
+    e grazie alla variabile i, attributo della classe, è in grado di settare un testo diverso ogni volta.
+    Una volta terminato il testo, si passa alla prossima scena.
+    */
     private void cmdContinuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdContinuaActionPerformed
 
 
@@ -153,6 +159,9 @@ public class Prologue_0 extends javax.swing.JFrame {
     }//GEN-LAST:event_cmdContinuaActionPerformed
 
 
+    /*
+    Metodo che fa continuare il prologo alla prossima scena
+    */
     public void goToScene1() {
         bgPrologo.setVisible(false);
         Scene1 scene1 = new Scene1(this, clipRain, clipJazz, gh);

@@ -35,42 +35,99 @@ import javax.swing.JTextField;
  */
 public class Day_Form extends javax.swing.JFrame {
 
+    /*
+    * Istanza della classe manager
+    */
     GameHandler gh;
-
+ 
+    /*
+    * variabile utilizzata per avanzare nei dialoghi
+    */
+    
     int i = 0;
-
-    List<String> npcListD = new ArrayList<>();
-
-    ArrayList<String> list = new ArrayList<>();
-
-    File file;
+ 
+    /*
+    * Lista degli NPC utilizzata per prelevare i dialoghi
+    */    
+    List<String> npcListD = new ArrayList<>();        
 
     /**
-     * Creates new form Day1_Form
+     * Crea un array di panel che rappresentano le varie scene, uno per ogni scena
      */
     public JPanel bgPanel[] = new JPanel[25];
+
+    /**
+     * Array di label che fungono da sfondo
+     */
     public JLabel bgLabel[] = new JLabel[25];
 
+    /**
+     * Label su cui compare il testo
+     */
     public JLabel textBox[] = new JLabel[25];
+
+    /**
+     * Prima area di testo sovrapposta alla TextBox che contiene il testo
+     */
     public JTextArea textAreaBox[] = new JTextArea[25];
+
+    /**
+     * Seconda area di testo sovrapposta alla TextBox che contiene il testo, per separare nome e testo durante dialogo
+     */
     public JTextArea textAreaBox2[] = new JTextArea[25];
+
+    /**
+     * Bottoni che servono per continuare il dialogo o uscire dalla schermata di dialogo
+     */
     public JButton textButton[] = new JButton[25];
+    
     public JButton continueDialogue[] = new JButton[25];
+
+    /**
+     * 4 RadioButton per le quattro diverse scelte possibili
+     */
     public JRadioButton dialogueButton1[] = new JRadioButton[25];
+    
     public JRadioButton dialogueButton2[] = new JRadioButton[25];
+ 
     public JRadioButton dialogueButton3[] = new JRadioButton[25];
+   
     public JRadioButton dialogueButton4[] = new JRadioButton[25];
+
+    /**
+     * Aree di testo utilizzate dalla funzione createStartDay()
+     */
     public JTextField placeDescription1[] = new JTextField[23];
+
     public JTextField placeDescription2[] = new JTextField[23];
+   
     public JTextField placeDescription3[] = new JTextField[23];
+    
     public JTextField placeDescription4[] = new JTextField[23];
+
+    /**
+     * Bottone utilizzato dalla funzione createStartDay()
+     */
     public JButton go[] = new JButton[23];
 
+    /**
+     * Label su cui compare il png del detective
+     */
     public JLabel detectiveDestra[] = new JLabel[25];
+    
     public JLabel detectiveSinistra[] = new JLabel[25];
-    public JLabel icon[] = new JLabel[25];
-    public DayDescription d;
 
+    /**
+     * Label usata per mostrare la mini icon nella schermata di dialogo
+     */
+    public JLabel icon[] = new JLabel[25];
+
+      
+
+    /**
+     * Costruttore della classe Boundary
+     * @param gh
+     */
     public Day_Form(GameHandler gh) {
         initComponents();
         this.gh = gh;
@@ -176,6 +233,9 @@ public class Day_Form extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /*
+    * Gestione del primo evento della classe
+    */
     private void cmdContinuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdContinuaActionPerformed
         try {
             generateScenes();
@@ -188,6 +248,15 @@ public class Day_Form extends javax.swing.JFrame {
         bgPanel[1].setVisible(true);
     }//GEN-LAST:event_cmdContinuaActionPerformed
 
+    /**
+     * Metodo che crea una generica scena
+     * 
+     * @param bgNum numero del panel da creare
+     * @param x
+     * @param y
+     * @param bgFileName nome del file png per lo sfondo
+     * @param actHandler indica quale sottoclasse di ActionHandler utilizzare
+     */
     public void createScene(int bgNum, int x, int y, String bgFileName, ActionHandler actHandler) {
 
         //panel
@@ -219,6 +288,12 @@ public class Day_Form extends javax.swing.JFrame {
         this.add(bgPanel[bgNum]);
     }
 
+    /**
+     * Crea una generica TextBox
+     * 
+     * @param bgNum numero panel dove crearla
+     * @param actHandler indica quale sottoclasse di ActionHandler utilizzare
+     */
     public void createTextBox(int bgNum, ActionHandler actHandler) {
 
         //creazione componenti
@@ -337,6 +412,16 @@ public class Day_Form extends javax.swing.JFrame {
         bgPanel[bgNum].add(detectiveSinistra[bgNum]);
     }
 
+    /**
+     * Crea una generica freccia (button)
+     * 
+     * @param bgNum numero panel dove crearla
+     * @param x
+     * @param y
+     * @param arrowFileName
+     * @param command action command associato
+     * @param actHandler indica quale sottoclasse di ActionHandler utilizzare
+     */
     public void createArrowButton(int bgNum, int x, int y, String arrowFileName, String command, ActionHandler actHandler) {
 
         ImageIcon arrowIcon = new ImageIcon(getClass().getResource(arrowFileName));
@@ -354,6 +439,23 @@ public class Day_Form extends javax.swing.JFrame {
         bgPanel[bgNum].add(arrowButton);
     }
 
+    /**
+     * Crea un generico oggetto grafico con cui è possibile interagire (NPC o item)
+     *
+     * @param bgNum
+     * @param objx
+     * @param objy
+     * @param objWidth
+     * @param objHeight
+     * @param objFileName
+     * @param choice1Name 
+     * @param choice2Name 
+     * @param choice3Name 
+     * @param choice1Command primo action command associato al primo item del pop up menu
+     * @param Choice2Command terzo action command associato al terzo item del pop up menu
+     * @param Choice3Command terzo action command associato al terzo item del pop up menu
+     * @param actHandler
+     */
     public void createObject(int bgNum, int objx, int objy, int objWidth, int objHeight, String objFileName,
             String choice1Name, String choice2Name, String choice3Name, String choice1Command, String Choice2Command, String Choice3Command, ActionHandler actHandler) {
 
@@ -425,7 +527,6 @@ public class Day_Form extends javax.swing.JFrame {
      * @param actHandler gestiore azioni
      * @param objx2
      * @param length4
-     * @param objx posizione ascissa
      * @param objx4
      *
      */
@@ -490,6 +591,12 @@ public class Day_Form extends javax.swing.JFrame {
         bgPanel[bgNum].add(bgLabel[bgNum]);
     }
 
+    /**
+     * Metodo che crea graficamente tutte le scene visibili del gioco
+     *
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     public void generateScenes() throws FileNotFoundException, IOException {
 
         //SCENA 1 -> DINING ROOM
@@ -633,6 +740,13 @@ public class Day_Form extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Setta la visibilità di uno specifico oggetto
+     *
+     * @param bgNum
+     * @param idx
+     * @param bool
+     */
     public void setVisibleObject(int bgNum, int idx, boolean bool) {
         Component[] object = bgPanel[bgNum].getComponents();
         object[idx].setVisible(bool);

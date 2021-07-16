@@ -23,6 +23,8 @@ import javax.swing.SwingUtilities;
 import type.Item;
 
 /**
+ * Classe che si occupa di visualizzare l'inventario e gli oggetti di volta in volta
+ * inseriti.
  *
  * @author tom
  */
@@ -238,6 +240,10 @@ public class InventoryDialog extends javax.swing.JDialog {
         createPopup("Osserva", broken_nail, "broken_nail", item_4);
     }//GEN-LAST:event_item_4ActionPerformed
 
+    /*
+     Metodo che crea un pop up menu per un oggetto solo se presente all'interno
+     dell' inventario.
+    */
     public void createPopup(String choice1Name, Item item, String itemName, JButton itemButton) {
 
         // CREATE POP MENU

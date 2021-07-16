@@ -6,8 +6,9 @@
 package type;
 
 /**
+ * Classe che rappresenta la generica stanza
  *
- * @author rino
+ * @author giaco
  */
 public class Room {
 

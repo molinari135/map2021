@@ -11,6 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * ActionHandler specifico della terza location del gioco, che fa override dell' unico
+ * metodo dell'interfaccia ActionListener nonchè della sua superclasse ActionHandler
  *
  * @author giaco
  */

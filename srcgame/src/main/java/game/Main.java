@@ -15,6 +15,8 @@ import type.Place;
 import type.Room;
 
 /**
+ * Classe principale, che si occupa di avviare il database e la prima schermata
+ * del gioco.
  *
  * @author giaco
  */

@@ -14,17 +14,20 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JOptionPane;
 
 /**
+ * Schermata iniziale, da cui si inizia il gioco.
  *
  * @author giaco
  */
-public class Start extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Start
-     */
+public class Start extends javax.swing.JFrame {    
     
+    /*
+    clip musicale
+    */
     Clip clipJazz;
     
+    /*
+    Prima e unica volta che viene creata la classe GameHandler.
+    */
     GameHandler gh = new GameHandler();
     
     public Start() {
