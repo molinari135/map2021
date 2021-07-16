@@ -20,6 +20,7 @@ public class GameHandler {
     private final GossingtonHall day1;
     private final MajesticHotel day2;
     private final PoliceStation day3;
+    private final Player player;
 
     public GameHandler() {
         this.actHandler1 = new ActionHandlerGH(this);
@@ -31,6 +32,7 @@ public class GameHandler {
         this.day1 = new GossingtonHall(this);
         this.day2 = new MajesticHotel(this);
         this.day3 = new PoliceStation(this);
+        this.player = new Player(this);
 
     }
 
@@ -45,7 +47,7 @@ public class GameHandler {
     public ActionHandler getActHandler3() {
         return actHandler3;
     }
-    
+
     public Day_Form getForm() {
         return form;
     }
@@ -74,5 +76,4 @@ public class GameHandler {
         return player;
     }
 
-    private final Player player = new Player(this);
 }

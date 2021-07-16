@@ -278,8 +278,7 @@ public class InventoryDialog extends javax.swing.JDialog {
 
         // CREATE OBJECTS
         item.setBounds(objx, objy, objWidth, objHeight);
-        item.setOpaque(false);
-        //objectLabel.setBackground(Color.blue);
+        item.setOpaque(false);        
 
         ImageIcon objectIcon = new ImageIcon(getClass().getResource(objFileName));
         item.setIcon(objectIcon);

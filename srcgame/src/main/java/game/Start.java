@@ -11,6 +11,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -106,6 +107,11 @@ public class Start extends javax.swing.JFrame {
         credits.setText("Credits");
         credits.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         credits.setContentAreaFilled(false);
+        credits.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                creditsActionPerformed(evt);
+            }
+        });
         background.add(credits);
         credits.setBounds(1779, 897, 78, 34);
 
@@ -117,11 +123,11 @@ public class Start extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1920, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 1241, Short.MAX_VALUE)
         );
 
         pack();
@@ -135,6 +141,10 @@ public class Start extends javax.swing.JFrame {
     private void esciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_esciActionPerformed
         System.exit(0);
     }//GEN-LAST:event_esciActionPerformed
+
+    private void creditsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditsActionPerformed
+        JOptionPane.showMessageDialog(this, "Molinari Ester, Signorile Giacomo e Perniola Tommaso", "Autori", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_creditsActionPerformed
 
     /**
      * @param args the command line arguments

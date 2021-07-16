@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -105,6 +106,7 @@ public class ActionHandlerGH extends ActionHandler {
             case "continueDialog1d_bantry":
                 gh.getDay().continueDialogue(1,"Dolly");
                 break;
+                
             case "continueDialog1j_marple":
                 gh.getDay().continueDialogue(1,"Jane");
                 break;
@@ -120,12 +122,13 @@ public class ActionHandlerGH extends ActionHandler {
             case "continueDialog5b_blake":
                 gh.getDay().continueDialogue(5,"Basil");
                 break;
+                
             case "continueDialog5a_bantry":
                 gh.getDay().continueDialogue(5,"ABantry");
                 break;
 
             case "continueDialog6haydock":
-                gh.getDay().continueDialogue(6,"Haydock");
+                gh.getDay().continueDialogue(6,"Haydoc");
                 break;
 
             case "ObserveDiningRoom":
@@ -151,8 +154,8 @@ public class ActionHandlerGH extends ActionHandler {
             case "TalkDolly": 
                 try {
                 gh.getDay().talkNPC(1, "d_bantry.txt", gh.getDay1().D_bantry, "/IconDollyB.png", "d_bantry", true, this);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
+            } catch (IOException ex) {
+                Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
 
@@ -409,8 +412,9 @@ public class ActionHandlerGH extends ActionHandler {
             break;
 
             case "scelta3haydock": 
+                JOptionPane.showMessageDialog(gh.getForm(), "Hai ricevuto [AUTOPSIA] dalla dottoressa Haydock", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
                 try {
-                gh.getDay().choice3(6, "haydock", "haydock.txt");
+                gh.getDay().choice3(6, "haydock", "haydock.txt");                
                 gh.getDay1().takeAutopsy();
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
@@ -430,6 +434,7 @@ public class ActionHandlerGH extends ActionHandler {
                 break;
 
             case "AnalizeBody":
+                JOptionPane.showMessageDialog(gh.getForm(), "Ispezionando il cadavere, hai ottenuto [VESTITO BIANCO]", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
                 gh.getDay1().analizeBody();
                 break;
 

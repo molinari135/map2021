@@ -37,62 +37,67 @@ public class ActionHandlerPS extends ActionHandler {
             case "goToReceptionFromStation":
                 gh.getDay().goToSceneXtoY(14, 8);
                 break;
+
             case "goToInterrogation":
                 gh.getDay().goToSceneXtoY(14, 15);
                 break;
+
             case "goToStationFromInterrogation":
                 gh.getDay().goToSceneXtoY(15, 14);
                 break;
+
             case "continueTextScene14":
                 gh.getDay().closeTextBox(14);
                 break;
+
             case "continueTextScene15":
                 gh.getDay().closeTextBox(15);
                 break;
 
             case "continueDialog14c_melchett":
-                gh.getDay().continueDialogue(14,"Melchett");
-                break;
-            case "continueDialog14a_palk":
-                gh.getDay().continueDialogue(14,"Palck");
-                break;
-
-            case "continueDialogFinaletrue":
-            {
-                try {
-                    gh.getDay().continueFinalDialogue(15,true,"true_ending.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandlerPS.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-                break;
-
-            case "continueDialogFinalefalse1":
-            {
-                try {
-                    gh.getDay().continueFinalDialogue(15,false,"b_blake_ending.txt");
-                } catch (IOException ex) {
-                    Logger.getLogger(ActionHandlerPS.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
+                gh.getDay().continueDialogue(14, "Melchett");
                 break;
                 
-            case "continueDialogFinalefalse2":
-            {
+            case "continueDialog14palk":
+                gh.getDay().continueDialogue(14, "Palk");
+                break;
+
+            case "continueDialogFinaletrue": {
                 try {
-                    gh.getDay().continueFinalDialogue(15,false,"a_bantry_ending.txt");
+                    gh.getDay().continueFinalDialogue(15, true, "true_ending.txt");
                 } catch (IOException ex) {
                     Logger.getLogger(ActionHandlerPS.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-                break;
+            break;
+
+            case "continueDialogFinalefalse1": {
+                try {
+                    gh.getDay().continueFinalDialogue(15, false, "b_blake_ending.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandlerPS.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            break;
+
+            case "continueDialogFinalefalse2": {
+                try {
+                    gh.getDay().continueFinalDialogue(15, false, "a_bantry_ending.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ActionHandlerPS.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            break;
 
             case "continueTrueEnding":
                 gh.getDay().continueTrueEnding(16);
                 break;
-            case "continueFalseEnding":
+
+            case "continueFalseEnding":                
                 gh.getDay().continueFalseEnding(17);
-                break;
+            
+            break;
+
             case "closeTextScene14":
                 gh.getDay().closeTextBox(14);
                 break;
@@ -100,7 +105,7 @@ public class ActionHandlerPS extends ActionHandler {
             case "closeTextScene15":
                 gh.getDay().closeTextBox(15);
                 break;
-           
+
             case "ObserveMelchett":
                 gh.getDay().observeNPC(14, gh.getDay3().person, "c_melchett");
                 break;
@@ -119,10 +124,10 @@ public class ActionHandlerPS extends ActionHandler {
             case "ObserveMarkJosephine":
                 gh.getDay().observeNPC(15, gh.getDay3().person, "m_gaskell");
                 break;
-            
+
             case "TalkMelchett":
                 try {
-                gh.getDay().talkNPC(14, "c_melchett.txt", gh.getDay3().A_palck, "/IconMelchett.png", "c_melchett", true, this);
+                gh.getDay().talkNPC(14, "c_melchett.txt", gh.getDay3().C_melch, "/IconMelchett.png", "c_melchett", true, this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -130,7 +135,7 @@ public class ActionHandlerPS extends ActionHandler {
 
             case "TalkPalk":
                 try {
-                gh.getDay().talkNPC(14, "palk.txt", gh.getDay3().C_melch, "/IconPalk.png", "palk", false, this);
+                gh.getDay().talkNPC(14, "palk.txt", gh.getDay3().A_palck, "/IconPalk.png", "palk", false, this);
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -138,14 +143,15 @@ public class ActionHandlerPS extends ActionHandler {
 
             case "TalkBasil":
                     try {
-                gh.getDay().talkNPCLast(15, "b_blake_ending.txt", "/IconBlake.png", "b_blake", true, this,"false1");
+                gh.getDay().talkNPCLast(15, "b_blake_ending.txt", "/IconBlake.png", "b_blake", true, this, "false1");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
+
             case "TalkArthur":
                     try {
-                gh.getDay().talkNPCLast(15, "a_bantry_ending.txt", "/IconArthur.png", "a_bantry", true, this,"false2");
+                gh.getDay().talkNPCLast(15, "a_bantry_ending.txt", "/IconArthur.png", "a_bantry", true, this, "false2");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -153,7 +159,7 @@ public class ActionHandlerPS extends ActionHandler {
 
             case "TalkMarkJosephine":
                     try {
-                gh.getDay().talkNPCLast(15, "true_ending.txt", "/IconJosephine.png", "m_j_gaskell", true, this,"true");
+                gh.getDay().talkNPCLast(15, "true_ending.txt", "/IconJosephine.png", "m_j_gaskell", true, this, "true");
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -217,7 +223,6 @@ public class ActionHandlerPS extends ActionHandler {
                 gh.getDay3().chooseSuspected();
                 break;
 
-           
             case "scelta2a_bantry":
                 gh.getDay3().setSuspectedFalse(16);
                 gh.getDay3().setSuspectedFalse(17);

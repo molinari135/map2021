@@ -5,13 +5,15 @@
  */
 package game;
 
-import db.DialogHandler;
 import java.awt.Component;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import javax.swing.JLabel;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import type.NPC;
 
 /**
@@ -23,9 +25,9 @@ public class PoliceStation extends DayDescription {
     public PoliceStation(GameHandler gh) {
         super(gh);
     }
-    
-  NPC person = new NPC();
-  List<String> A_palck,C_melch = new ArrayList<>(); 
+
+    NPC person = new NPC();
+    List<String> A_palck, C_melch = new ArrayList<>();
 
     public void chooseSuspected() {
         gh.getForm().detectiveSinistra[15].setVisible(true);
@@ -45,7 +47,7 @@ public class PoliceStation extends DayDescription {
         gh.getForm().dialogueButton4[15].setSelected(false);
         gh.getForm().textButton[15].setActionCommand("continueTextScene" + 15);
         gh.getForm().textAreaBox[15].setText("Scegli chi vuoi interrogare?");
-        
+
         gh.getForm().dialogueButton1[15].setText("Nessuno");
         gh.getForm().dialogueButton2[15].setText("Arthur");
         gh.getForm().dialogueButton1[15].setBounds(410, 780, 600, 50);
@@ -62,7 +64,7 @@ public class PoliceStation extends DayDescription {
         gh.getForm().dialogueButton4[15].setActionCommand("scelta4markjosephine");
 
     }
-    
+
     public void setSuspectedFalse(int bgNum) {
         gh.getDay().closeTextBox(15);
         Component[] object = gh.getForm().bgPanel[15].getComponents();
@@ -73,6 +75,6 @@ public class PoliceStation extends DayDescription {
         Component[] object = gh.getForm().bgPanel[15].getComponents();
         gh.getDay().closeTextBox(15);
         object[bgNum].setVisible(true);
-    }
-   
+    }    
+
 }

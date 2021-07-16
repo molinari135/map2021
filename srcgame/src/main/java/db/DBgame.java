@@ -42,6 +42,11 @@ import type.Room;
  * @author ester
  */
 public class DBgame {
+    
+    public static final String INPUT_REGEX = "[a-zA-Z]+";
+    
+    private static DBgame istance;
+    private Connection connection;
 
     /**
      * Crea una table per le mappe dei luoghi del gioco
@@ -181,11 +186,7 @@ public class DBgame {
      * Serve per controllare se sono state inserite solo lettere nei metodi con input.
      * <br>Viene impiegato per le ricerche nel database.
      */
-    public static final String INPUT_REGEX = "[a-zA-Z]+";
-    
-    private static DBgame istance;
-    private Connection connection;
-    
+        
     private DBgame() {
         
     }
@@ -243,7 +244,7 @@ public class DBgame {
      * @return Una lista con tutti gli npc di una mappa.
      */
     public List<NPC> joinManagerNpc(String placeCode) {
-        List<NPC> npcList = new ArrayList<NPC>();
+        List<NPC> npcList = new ArrayList<>();
         try {
             Statement stm = connection.createStatement();
             ResultSet rs = stm.executeQuery(NPC_ROOM);
@@ -278,7 +279,7 @@ public class DBgame {
      * @return Una lista con tutti gli oggetti di una mappa.
      */
     public List<Item> joinManagerItem(String placeCode) {
-        List<Item> itemList = new ArrayList<Item>();
+        List<Item> itemList = new ArrayList<>();
         try {
             Statement stm = connection.createStatement();
             ResultSet rs = stm.executeQuery(ITEM_ROOM);
@@ -304,160 +305,7 @@ public class DBgame {
         }      
         return itemList;
     }
-    
-    /*
-    public void printPlace() throws SQLException {
-        Statement stm = connection.createStatement();
-        ResultSet rs = stm.executeQuery("SELECT * FROM place");
-        while(rs.next()) {
-            String id = rs.getString("placeId");
-            String name = rs.getString("name");
-            String description = rs.getString("desc");
-            int chapter = rs.getInt("chapter");
-    
-            System.out.print("ID: " + id);
-            System.out.println(" - Name: " + name);
-            System.out.print("Description: " + description);
-            System.out.println(" - Player is here: " + chapter);
-            System.out.println("");
-        }
-  
-        rs.close();
-        stm.close();
-    }
-    
-    public void printItem() throws SQLException {
-        Statement stm = connection.createStatement();
-        ResultSet rs = stm.executeQuery("SELECT * FROM item");
-        while(rs.next()) {
-            String id = rs.getString("itemId");
-            String name = rs.getString("name");
-            String description = rs.getString("desc");
-            String room = rs.getString("room");
-            boolean collectable = rs.getBoolean("collectable");
-    
-            System.out.print("ID: " + id);
-            System.out.println(" - Name: " + name);
-            System.out.print("Description: " + description);
-            System.out.print(" - Room: " + room);
-            System.out.println(" - Collectable: " + collectable);
-            System.out.println("");
-        }
-  
-        rs.close();
-        stm.close();
-    }
-    
-    public void printRoom() throws SQLException {
-        Statement stm = connection.createStatement();
-        ResultSet rs = stm.executeQuery("SELECT * FROM room");
-        while(rs.next()) {
-            String id = rs.getString("roomId");
-            String name = rs.getString("name");
-            String description = rs.getString("desc");
-            int floor = rs.getInt("floor");
-            String map = rs.getString("place");
-    
-            System.out.print("ID: " + id);
-            System.out.print(" - Name: " + name);
-            System.out.println(" Description: " + description);
-            System.out.print("Floor: " + floor);
-            System.out.println(" - Place (id): " + map);
-            System.out.println("");
-        }
-  
-        rs.close();
-        stm.close();
-    }
-    
-    public void printNpc() throws SQLException {
-        Statement stm = connection.createStatement();
-        ResultSet rs = stm.executeQuery("SELECT * FROM npc");
-        while(rs.next()) {
-            String id = rs.getString("npcId");
-            String name = rs.getString("name");
-            String surname = rs.getString("surname");
-            String description = rs.getString("desc");
-            String room = rs.getString("room");
-            boolean visible = rs.getBoolean("talked");
-    
-            System.out.print("ID: " + id);
-            System.out.print(" - Name: " + name);
-            System.out.println(" - Surname: " + surname);
-            System.out.print("Description: " + description);
-            System.out.print(" - Room: " + room);
-            System.out.println(" - Talked: " + visible);
-            System.out.println("");
-        }
-  
-        rs.close();
-        stm.close();
-    }
-    
-    public Place getPlace(String query) throws SQLException {
-        Place place = new Place();
-        Statement stm = connection.createStatement();
-        ResultSet rs = stm.executeQuery("SELECT * FROM place WHERE LOWER(name) LIKE LOWER('%" + query + "%')");
-        while(rs.next()) {
-            place.setId(rs.getString("placeId"));
-            place.setName(rs.getString("name"));
-            place.setDescription(rs.getString("desc"));
-            place.setChapter(rs.getBoolean("chapter"));
-        }
-        rs.close();
-        stm.close();
-        return place;
-    }
-    
-    public Item getItem(String query) throws SQLException {
-        Item item = new Item();
-        Statement stm = connection.createStatement();
-        ResultSet rs = stm.executeQuery("SELECT * FROM item WHERE LOWER(itemId) LIKE LOWER('%" + query + "%')");
-        while(rs.next()) {
-            item.setId(rs.getString("itemId"));
-            item.setName(rs.getString("name"));
-            item.setDescription(rs.getString("desc"));
-            item.isCollectable(rs.getBoolean("collectable"));
-            item.setRoom(rs.getString("room"));
-        }
-        rs.close();
-        stm.close();
-        return item;
-    }
-    
-    public Room getRoom(String query) throws SQLException {
-        Room room = new Room();
-        Statement stm = connection.createStatement();
-        ResultSet rs = stm.executeQuery("SELECT * FROM room WHERE LOWER(roomId) LIKE LOWER('%" + query + "%')");
-        while(rs.next()) {
-            room.setId(rs.getString("roomId"));
-            room.setName(rs.getString("name"));
-            room.setDescription(rs.getString("desc"));
-            room.setFloor(rs.getInt("floor"));
-            room.setPlace(rs.getString("place"));
-        }
-        rs.close();
-        stm.close();
-        return room;
-    }
-    
-    public NPC getNpc(String query) throws SQLException {
-        NPC npc = new NPC();
-        Statement stm = connection.createStatement();
-        ResultSet rs = stm.executeQuery("SELECT * FROM npc WHERE LOWER(npcId) LIKE LOWER('%" + query + "%')");
-        while(rs.next()) {
-            npc.setId(rs.getString("npcId"));
-            npc.setName(rs.getString("name"));
-            npc.setSurname(rs.getString("surname"));
-            npc.setDescription(rs.getString("desc"));
-            npc.setRoom(rs.getString("room"));
-            npc.isTalked(rs.getBoolean("talked"));
-        }
-        rs.close();
-        stm.close();
-        return npc;
-    }
-    */
+       
 
     /**
      * Fornisce tutte le mappe in un'unica lista.

@@ -88,11 +88,8 @@ public class Scene1 {
                 Color.lightGray, Color.white, Color.lightGray, Color.white));
         continua.setContentAreaFilled(false);
 
-        continua.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                continuaActionPerformed(evt);
-            }
+        continua.addActionListener((java.awt.event.ActionEvent evt) -> {
+            continuaActionPerformed(evt);
         });
         panel1.add(continua);
 

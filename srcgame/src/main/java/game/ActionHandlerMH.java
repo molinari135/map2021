@@ -34,9 +34,9 @@ public class ActionHandlerMH extends ActionHandler {
                 if (gh.getPlayer().getInventory().size() == 6) {
                     gh.getDay().goToSceneXtoY(8, 13);
                 } else {
-                   JOptionPane.showMessageDialog(gh.getForm(),
-                           "Non hai raccolto ancora abbastanze prove per recarti alla stazione di polizia.",
-                           "Info", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(gh.getForm(),
+                            "Non hai raccolto ancora abbastanze prove per recarti alla stazione di polizia.",
+                            "Info", JOptionPane.ERROR_MESSAGE);
                 }
                 break;
 
@@ -117,26 +117,26 @@ public class ActionHandlerMH extends ActionHandler {
                 break;
 
             case "continueDialog8prestcot":
-                gh.getDay().continueDialogue(8,"Owner");
+                gh.getDay().continueDialogue(8, "Owner");
                 break;
 
             case "continueDialog9r_starr":
-                gh.getDay().continueDialogue(9,"Ramon");
+                gh.getDay().continueDialogue(9, "Ramon");
                 break;
-           case "continueDialog9j_turner":
-                gh.getDay().continueDialogue(9,"Josephine");
+            case "continueDialog9j_turner":
+                gh.getDay().continueDialogue(9, "Josephine");
                 break;
 
             case "continueDialog10":
-                gh.getDay().continueDialogue(10,"");
+                gh.getDay().continueDialogue(10, "");
                 break;
 
             case "continueDialog11c_jefferson":
-                gh.getDay().continueDialogue(11,"Jefferson");
+                gh.getDay().continueDialogue(11, "Jefferson");
                 break;
 
             case "continueDialog12m_gaskell":
-                gh.getDay().continueDialogue(12,"Mark");
+                gh.getDay().continueDialogue(12, "Mark");
                 break;
             case "closeTextScene8":
                 gh.getDay().closeTextBox(8);
@@ -266,6 +266,7 @@ public class ActionHandlerMH extends ActionHandler {
             case "scelta2j_turner": 
                 try {
                 gh.getDay().choice2(9, "j_turner", "j_turner.txt");
+                JOptionPane.showMessageDialog(gh.getForm(), "Hai ricevuto [VESTITO DA BALLO] e [UNGHIE SPEZZATE] da Josie Turner", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
                 gh.getDay2().takeDanceDress();
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
@@ -337,8 +338,9 @@ public class ActionHandlerMH extends ActionHandler {
             break;
 
             case "scelta2c_jefferson": 
+                JOptionPane.showMessageDialog(gh.getForm(), "Hai ricevuto [DOCUMENTO ADOZIONE] da Conway Jefferson", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
                 try {
-                gh.getDay().choice2(11, "c_jefferson", "c_jefferson.txt");
+                gh.getDay().choice2(11, "c_jefferson", "c_jefferson.txt");                
                 gh.getDay2().takeAdoptionDoc();
             } catch (IOException ex) {
                 Logger.getLogger(ActionHandlerGH.class.getName()).log(Level.SEVERE, null, ex);
@@ -401,6 +403,8 @@ public class ActionHandlerMH extends ActionHandler {
             break;
 
             case "takeBill":
+                JOptionPane.showMessageDialog(gh.getForm(), "Hai raccolto [ESTRATTO CONTO DI MARK]", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
+
                 gh.getDay2().takeBillDoc();
                 break;
 

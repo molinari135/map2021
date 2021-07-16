@@ -27,9 +27,7 @@ public class GossingtonHall extends DayDescription {
     Room rooms = new Room();
     List<String> D_bantry, Jane_marple, Lorri, Corp, Arthur, Doc, Basil = new ArrayList<>();
 
-    public void analizeBody() {
-        
-        JOptionPane.showMessageDialog(gh.getForm(), "Ispezionando il cadavere, hai ottenuto [VESTITO BIANCO]", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
+    public void analizeBody() {               
         
         gh.getInv().getItem_2().setVisible(true);
         gh.getInv().getItem_2().setIcon(new ImageIcon(getClass().getResource("/dress1.png")));
@@ -39,8 +37,7 @@ public class GossingtonHall extends DayDescription {
         gh.getPlayer().addToInventory(element);
     }
 
-    public void takeAutopsy() {
-        JOptionPane.showMessageDialog(gh.getForm(), "Hai ricevuto [AUTOPSIA] dalla dottoressa Haydock", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
+    public void takeAutopsy() {        
         
         gh.getInv().getItem_1().setVisible(true);
         gh.getInv().getItem_1().setIcon(new ImageIcon(getClass().getResource("/doc_autopsia.png")));

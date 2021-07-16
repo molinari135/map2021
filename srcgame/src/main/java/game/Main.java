@@ -20,13 +20,32 @@ import type.Room;
  */
 public class Main {
 
+    /**
+     *
+     */
     public static List<NPC> listNPC = new ArrayList<NPC>();
+
+    /**
+     *
+     */
     public static List<Room> listRoom = new ArrayList<Room>();
+
+    /**
+     *
+     */
     public static List<Item> listItem = new ArrayList<Item>();
+
+    /**
+     *
+     */
     public static List<Place> listPlace = new ArrayList<Place>();
+
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-        new Start().setVisible(true);
-        //listPlace = DBgame.getIstance().getPlaceList();
+        new Start().setVisible(true);        
 
         try {
 
@@ -62,5 +81,6 @@ public class Main {
             System.err.println(ex.getSQLState() + ": " + ex.getMessage());
         }
     }
-
+    
+    
 }

@@ -10,6 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import type.Item;
 import type.NPC;
@@ -22,7 +24,7 @@ import type.Room;
  */
 /**
  *
- * @author 
+ * @author
  */
 public class DayDescription {
 
@@ -155,7 +157,7 @@ public class DayDescription {
         i = 0;
 
         npcListD = dh.SelectDialogOption(fileName, DialogHandler.DIALOG_FINAL_START, DialogHandler.DIALOG_FINAL_END);
-       
+
         if (i == 22) {
             i = 0;
         }
@@ -212,22 +214,20 @@ public class DayDescription {
 
     }
 
-    public void continueDialogue(int bgNum,String npcName) {
+    public void continueDialogue(int bgNum, String npcName) {
         gh.getForm().dialogueButton1[bgNum].setVisible(false);
         gh.getForm().dialogueButton2[bgNum].setVisible(false);
         gh.getForm().dialogueButton3[bgNum].setVisible(false);
         gh.getForm().dialogueButton4[bgNum].setVisible(false);
         i = i + 2;
 
-        if (i < npcListD.size()) {
-            System.out.println("CONTINUADIALOGO");
+        if (i < npcListD.size()) {            
             gh.getForm().textAreaBox[bgNum].setText(npcListD.get(i));
             gh.getForm().textAreaBox2[bgNum].setText(npcListD.get(i + 1));
 
-        } else {
-            System.out.println("ESCIDIALOGO");
+        } else {            
             gh.getForm().textButton[bgNum].setActionCommand("Talk" + npcName);
-            
+
         }
 
     }
@@ -262,14 +262,12 @@ public class DayDescription {
         i = i + 2;
 
         if (i < npcListD.size()) {
-            System.out.println("CONTINUADIALOGO");
             gh.getForm().textAreaBox[bgNum].setText(npcListD.get(i));
             gh.getForm().textAreaBox2[bgNum].setText(npcListD.get(i + 1));
 
         } else {
             j = 0;
             Final = dh.SelectDialogOption(filename, DialogHandler.FINAL_START, DialogHandler.FINAL_END);
-            System.out.println("ESCIDIALOGO");
             if (b == true) {
                 gh.getForm().placeDescription4[16].setText(Final.get(j));
                 gh.getDay().goToSceneXtoY(15, 16);
@@ -284,12 +282,11 @@ public class DayDescription {
     void continueTrueEnding(int bgNum) {
         j++;
 
-        if (j < Final.size()) {
-            System.out.println("CONTINUADIALOGO");
+        if (j < Final.size()) {            
             gh.getForm().placeDescription4[bgNum].setText(Final.get(j));
 
         } else {
-            gh.getForm().placeDescription2[bgNum].setText("Complimenti hai finito il gioco!");
+            gh.getForm().placeDescription2[bgNum].setText("Complimenti, hai finito il gioco!");
             gh.getForm().go[bgNum].setText("Esci");
             gh.getForm().go[bgNum].setActionCommand("ExitGame");
         }
@@ -297,10 +294,9 @@ public class DayDescription {
     }
 
     void continueFalseEnding(int bgNum) {
-        j++;
+        j++;       
 
         if (j < Final.size()) {
-            System.out.println("CONTINUADIALOGO");
             gh.getForm().placeDescription4[bgNum].setText(Final.get(j));
         } else {
             gh.getDay().goToSceneXtoY(bgNum, 15);

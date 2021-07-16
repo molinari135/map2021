@@ -10,7 +10,6 @@ import static game.Main.listItem;
 import type.NPC;
 
 import java.io.IOException;
-import java.lang.Thread.State;
 import java.util.ArrayList;
 import java.util.List;
 import javax.sound.sampled.AudioInputStream;
@@ -19,7 +18,6 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 import type.Item;
 
 /**
@@ -36,9 +34,8 @@ public class MajesticHotel extends DayDescription {
     Item element = new Item();
     List<String> Prestcot, J_Turner, Ramon, Jeff, Mark = new ArrayList<>();
 
-    public void takeDanceDress() {
-        JOptionPane.showMessageDialog(gh.getForm(), "Hai ricevuto [VESTITO DA BALLO e UNGHIE SPEZZATE] da Josie Turner", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
-        
+    public void takeDanceDress() {        
+
         gh.getInv().getItem_3().setVisible(true);
         gh.getInv().getItem_3().setIcon(new ImageIcon(getClass().getResource("/dressDance.png")));
         gh.getInv().getItem_3().setText("");
@@ -54,7 +51,6 @@ public class MajesticHotel extends DayDescription {
     }
 
     public void takeAdoptionDoc() {
-        JOptionPane.showMessageDialog(gh.getForm(), "Hai ricevuto [DOCUMENTO ADOZIONE] da Conway Jefferson", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
         
         gh.getInv().getItem_5().setVisible(true);
         gh.getInv().getItem_5().setIcon(new ImageIcon(getClass().getResource("/doc_adozione.png")));
@@ -65,7 +61,6 @@ public class MajesticHotel extends DayDescription {
     }
 
     public void takeBillDoc() {
-        JOptionPane.showMessageDialog(gh.getForm(), "Hai raccolto [ESTRATTO CONTO DI MARK]", "Novità Inventario", JOptionPane.WARNING_MESSAGE);
         
         gh.getInv().getItem_6().setVisible(true);
         gh.getInv().getItem_6().setIcon(new ImageIcon(getClass().getResource("/doc_estrattoConto.png")));
@@ -94,15 +89,11 @@ public class MajesticHotel extends DayDescription {
             gh.getForm().textButton[10].setVisible(true);
             gh.getForm().textAreaBox[10].setText("Prego, chiunque lei sia può entrare, se una bella ragazza anche ben volentieri.");
         });
-        t1.start();  
-        
-        State s = t1.getState();
-        
-        System.out.println("prima: " + s.name());
-        
-        if (t1.isAlive()) {            
-            Thread.currentThread().interrupt(); 
-            System.out.println("dopo interr: " + s.name());
+        t1.start();
+
+        if (t1.isAlive()) {
+            t1.interrupt();
+
         }
     }
 }

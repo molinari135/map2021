@@ -221,7 +221,6 @@ public class Day_Form extends javax.swing.JFrame {
 
     public void createTextBox(int bgNum, ActionHandler actHandler) {
 
-
         //creazione componenti
         textBox[bgNum] = new JLabel();
         textAreaBox[bgNum] = new JTextArea();
@@ -412,23 +411,27 @@ public class Day_Form extends javax.swing.JFrame {
         bgPanel[bgNum].add(objectLabel);
 
     }
+
     /**
      * Crea la scena iniziale di ogni mappa
      * <ul>
      * <li> placeDescription4 serve per il settare il dialogo finale
-     * 
+     *
      * @param bgNum Numero della scena
      * @param objFileName nome file background
      * @param choice1Name testo 1 titolo
      * @param choice2Name testo 2 titolo
      * @param choice3Name testo 3 titolo
-     * @param actHandler gestiore azioni 
-     * @param objx posizione ascissa 
-     * 
+     * @param actHandler gestiore azioni
+     * @param objx2
+     * @param length4
+     * @param objx posizione ascissa
+     * @param objx4
+     *
      */
-    
+
     public void createStartDay(int bgNum, String objFileName,
-            String choice1Name, String choice2Name, String choice3Name, ActionHandler actHandler, int objx) {
+            String choice1Name, String choice2Name, String choice3Name, ActionHandler actHandler, int objx2, int length4, int objx4) {
 
         placeDescription1[bgNum] = new JTextField();
         placeDescription2[bgNum] = new JTextField();
@@ -460,7 +463,7 @@ public class Day_Form extends javax.swing.JFrame {
         placeDescription2[bgNum].setForeground(new java.awt.Color(255, 255, 255));
         placeDescription2[bgNum].setText(choice2Name);
         placeDescription2[bgNum].setBorder(null);
-        placeDescription2[bgNum].setBounds(objx, 350, 800, 50);
+        placeDescription2[bgNum].setBounds(objx2, 350, 800, 50);
 
         placeDescription3[bgNum].setEditable(false);
         placeDescription3[bgNum].setBackground(new java.awt.Color(0, 0, 0));
@@ -469,13 +472,13 @@ public class Day_Form extends javax.swing.JFrame {
         placeDescription3[bgNum].setText(choice3Name);
         placeDescription3[bgNum].setBorder(null);
         placeDescription3[bgNum].setBounds(730, 450, 1100, 40);
-        
+
         placeDescription4[bgNum].setEditable(false);
         placeDescription4[bgNum].setBackground(new java.awt.Color(0, 0, 0));
         placeDescription4[bgNum].setFont(new java.awt.Font("Californian FB", 1, 36)); // NOI18N
         placeDescription4[bgNum].setForeground(new java.awt.Color(255, 255, 255));
         placeDescription4[bgNum].setBorder(null);
-        placeDescription4[bgNum].setBounds(600, 450, 1100, 150);
+        placeDescription4[bgNum].setBounds(objx4, 450, length4, 150);
         placeDescription4[bgNum].setVisible(true);
 
         bgPanel[bgNum].add(placeDescription1[bgNum]);
@@ -544,7 +547,7 @@ public class Day_Form extends javax.swing.JFrame {
         //SCENA 7 -> HOTEL BLACK SCREEN
         createScene(7, 0, 0, "", gh.getActHandler1());
         createTextBox(7, gh.getActHandler2());
-        createStartDay(7, "enterHotel", "St. Mary Mead, Ottobre 1982", "Majestic Hotel", "Lussuoso Hotel della contea", gh.getActHandler2(), 800);
+        createStartDay(7, "enterHotel", "St. Mary Mead, Ottobre 1982", "Majestic Hotel", "Lussuoso Hotel della contea", gh.getActHandler2(), 800, 1100, 600);
 
         //SCENA 8 -> RECEPTION
         createScene(8, 0, -10, "/receptionhotel.png", gh.getActHandler2());
@@ -552,7 +555,7 @@ public class Day_Form extends javax.swing.JFrame {
         createArrowButton(8, 1750, 500, "/homeicon.png", "goToGossingtonHall", gh.getActHandler2());
         createArrowButton(8, 10, 500, "/left_arrow.png", "goToHallFromReception", gh.getActHandler2());
         createObject(8, 1000, 250, 200, 400, "", "Parla", "Osserva", "", "TalkOwner", "ObserveOwner", "", gh.getActHandler2());
-        createArrowButton(8, 1750, 800, "/policestationicon.png", "goToPoliceStation", gh.getActHandler2());       
+        createArrowButton(8, 1750, 800, "/policestationicon.png", "goToPoliceStation", gh.getActHandler2());
 
         bgPanel[8].add(bgLabel[8]);
 
@@ -591,7 +594,7 @@ public class Day_Form extends javax.swing.JFrame {
         //SCENA 13 -> STAZIONE DI POLIZIA BLACK SCREEN
         createScene(13, 0, 0, "", gh.getActHandler3());
         createTextBox(13, gh.getActHandler3());
-        createStartDay(13, "enterPoliceStation", "St. Mary Mead, Ottobre 1982", "Stazione di Polizia", "", gh.getActHandler3(), 780);
+        createStartDay(13, "enterPoliceStation", "St. Mary Mead, Ottobre 1982", "Stazione di Polizia", "", gh.getActHandler3(), 780, 1100, 600);
 
         //SCENA 14 -> POLICE STATION
         createScene(14, 0, -10, "/stazione_polizia.png", gh.getActHandler3());
@@ -614,19 +617,19 @@ public class Day_Form extends javax.swing.JFrame {
         setVisibleObject(15, 15, false);
         setVisibleObject(15, 16, false);
         setVisibleObject(15, 17, false);
-        
 
         bgPanel[15].add(bgLabel[15]);
 
         //SCENA 16 -> STAZIONE DI POLIZIA BLACK SCREEN
         createScene(16, 0, 0, "", gh.getActHandler3());
         createTextBox(16, gh.getActHandler3());
-        createStartDay(16, "continueTrueEnding", "", "", "", gh.getActHandler3(), 780);
+        createStartDay(16, "continueTrueEnding", "", "", "", gh.getActHandler3(), 620, 1500, 400);
 
         //SCENA 17 -> STAZIONE DI POLIZIA BLACK SCREEN
         createScene(17, 0, 0, "", gh.getActHandler3());
         createTextBox(17, gh.getActHandler3());
-        createStartDay(17, "continueFalseEnding", "", "", "", gh.getActHandler3(), 780);
+
+        createStartDay(17, "continueFalseEnding", "", "", "", gh.getActHandler3(), 780, 1500, 700);
 
     }
 
