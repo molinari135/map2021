@@ -2,24 +2,20 @@
 
 ## Indice
 1. [Introduzione](#introduzione)
-2. [Modello di dominio](#modello-di-dominio)
-3. [Requisiti specifici](#requisiti-specifici)<br>
-    3.1 [Requisiti funzionali](#requisiti-funzionali)<br>
-    3.2 [Requisiti non funzionali](#requisiti-non-funzionali)
-4. [System design](#system-design)<br>
-    4.1 [Stile architetturale adottato](#stile-architetturale-adottato)<br>
-    4.2 [Diagramma dei package](#diagramma-dei-package)
-5. [O.O. Design](#o-o-design)<br>
-    5.1 [Diagrammi delle classi e diagrammi di sequenza](#diagrammi-delle-classi-e-diagrammi-di-sequenza)<br>
-    5.2 [Design pattern utilizzati](#design-pattern-utilizzati)<br>
-    5.3 [Commenti](#commenti)
-6. [Riepilogo dei test](#riepilogo-dei-test)<br>
-7. [Manuale utente](#manuale-utente)
-8. [Organizzazione del lavoro](#organizzazione-del-lavoro)
-9. [Analisi retrospettiva](#analisi-retrospettiva)<br>
-    9.1 [Soddisfazioni](#soddisfazioni)<br>
-    9.2 [Insoddisfazioni](#insoddisfazioni)<br>
-    9.3 [Cosa ci ha fatti impazzire](#cosa-ci-ha-fatti-impazzire)
+2. [Requisiti specifici](#requisiti-specifici)<br>
+    2.1 [Requisiti funzionali](#requisiti-funzionali)<br>
+    2.2 [Requisiti non funzionali](#requisiti-non-funzionali)
+3. [System design](#system-design)<br>
+    3.1 [Stile architetturale adottato](#stile-architetturale-adottato)<br>
+    3.2 [Diagramma dei package](#diagramma-dei-package)
+4. [O.O. Design](#oo-design)<br>
+    4.1 [Diagrammi delle classi e diagrammi di sequenza](#diagrammi-delle-classi-e-diagrammi-di-sequenza)<br>
+    4.2 [Design pattern](#design-pattern)<br>
+    4.3 [Commenti](#commenti)
+5. [Riepilogo dei test](#riepilogo-dei-test)<br>
+6. [Manuale utente](#manuale-utente)
+7. [Organizzazione del lavoro](#organizzazione-del-lavoro)
+8. [Note finali](#note-finali)<br>
 
 ---
 
@@ -33,9 +29,6 @@ Il progetto è stato realizzato durante il corso di Metodi Avanzati di Programma
 - [Ester Molinari](https://github.com/burraco135)
 
 [Torna su](#indice)
-
-## Modello di dominio
-<!-- Non so cosa ci va qui tbh -->
 
 ## Requisiti specifici
 Di seguito sono riportati i requisiti funzionali seguiti dai requisiti non funzionali.
@@ -64,7 +57,6 @@ L'applicazione è suddivisa semanticamente in 3 diversi package: <code>db</code>
 [Torna su](#indice)
 
 ## System design
-<!-- Non so cosa scrivere qui -->
 
 ### Stile architetturale adottato
 Abbiamo adottato lo stile architetturale *Model-View-Controller* nella sua variante *Entity-Control-Boundary*. Essi sfruttano la prospettiva dell'utente, mettendo in evidenza le funzionalità del sistema, così come le percepisce chi interagisce dal mondo esterno.<br>
@@ -112,7 +104,7 @@ Per questi motivi, abbiamo strutturato il progetto seguendo gli stereotipi di cl
 ## O.O. Design
 
 ### Diagrammi delle classi e diagrammi di sequenza
-<!-- Inserire immagini da drawings -->
+![uml](drawings/uml.png)
 
 ### Design pattern
 Abbiamo individuato nella classe <code>DBgame</code> e nella sua unica istanza un chiaro esempio di [**Singleton**](https://it.wikipedia.org/wiki/Singleton_(informatica)), vista la necessità di creare tale istanza una ed una sola volta.
@@ -126,11 +118,10 @@ Abbiamo creato una classe astratta <code>ActionHandler</code> per la gestione de
 ## Riepilogo dei test
 L'unica classe testata è <code>DBgame</code> in quanto è la classe che si occupa di fornire tutti i personaggi, gli oggetti, le mappe e le stanze di gioco. Inoltre molte frasi utilizzate in gioco vengono prese da esso. L'esecuzione dei test (8) riporta una percentuale del 100%
 
-<!-- Aggiungi foto-->
+![test](drawings/testdb.png)
 
 ## Manuale utente
-Torna a [Guida per l'utente]()
-<!-- Aggiungi URL-->
+Torna a [Guida per l'utente](../README.md/#guida-per-lutente)
 
 [Torna su](#indice)
 
@@ -150,7 +141,7 @@ Per la ricerca delle immagini, l'utilizzo di Swing, l'implementazione dell'audio
 Sono rimasto molto insoddisfatto dalla gestione della OOP e in generale della struttura del codice perchè pensavamo che implementare Swing fosse meno difficoltoso. Però sono rimasto soddisfatto dalla resa finale, nonostante tutto.
 
 ### Signorile
-Mi piacciono i treni. Ciuf ciuf.
+Mi è piaciuto molto modificare le immagini, selezionarle e creare gli sfondi per il gioco. La parte più fastidiosa è stata quella con Swing ma per il resto mi sono divertito molto.
 
 ### Molinari
 Durante tutto il progetto ho imparato a gestire la build di Maven e a comprenderne meglio il suo funzionamento. Inoltre, è stato bello lavorare utilizzando Discord; ogni tanto ascoltavamo la musica tutti insieme mentre lavoravamo.
