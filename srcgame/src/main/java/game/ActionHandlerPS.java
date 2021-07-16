@@ -50,13 +50,13 @@ public class ActionHandlerPS extends ActionHandler {
                 gh.getDay().closeTextBox(15);
                 break;
 
-            case "continueDialog14":
-                gh.getDay().continueDialogue(14);
+            case "continueDialog14c_melchett":
+                gh.getDay().continueDialogue(14,"Melchett");
+                break;
+            case "continueDialog14a_palk":
+                gh.getDay().continueDialogue(14,"Palck");
                 break;
 
-            case "continueDialog15":
-                gh.getDay().continueDialogue(15);
-                break;
             case "continueDialogFinaletrue":
             {
                 try {

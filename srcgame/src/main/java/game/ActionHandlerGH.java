@@ -102,24 +102,30 @@ public class ActionHandlerGH extends ActionHandler {
                 gh.getDay().closeTextBox(6);
                 break;
 
-            case "continueDialog1":
-                gh.getDay().continueDialogue(1);
+            case "continueDialog1d_bantry":
+                gh.getDay().continueDialogue(1,"Dolly");
+                break;
+            case "continueDialog1j_marple":
+                gh.getDay().continueDialogue(1,"Jane");
                 break;
 
             case "continueDialog2":
-                gh.getDay().continueDialogue(2);
+                gh.getDay().continueDialogue(2,"");
                 break;
 
-            case "continueDialog3":
-                gh.getDay().continueDialogue(3);
+            case "continueDialog3lorrimer":
+                gh.getDay().continueDialogue(3,"Lorrimer");
                 break;
 
-            case "continueDialog5":
-                gh.getDay().continueDialogue(5);
+            case "continueDialog5b_blake":
+                gh.getDay().continueDialogue(5,"Basil");
+                break;
+            case "continueDialog5a_bantry":
+                gh.getDay().continueDialogue(5,"ABantry");
                 break;
 
-            case "continueDialog6":
-                gh.getDay().continueDialogue(6);
+            case "continueDialog6haydock":
+                gh.getDay().continueDialogue(6,"Haydock");
                 break;
 
             case "ObserveDiningRoom":

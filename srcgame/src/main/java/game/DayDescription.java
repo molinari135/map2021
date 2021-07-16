@@ -105,7 +105,7 @@ public class DayDescription {
         System.out.println(npcListD.get(i));
         gh.getForm().textAreaBox[bgNum].setText(npcListD.get(i));
         gh.getForm().textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        gh.getForm().textButton[bgNum].setActionCommand("continueDialog" + bgNum);
+        gh.getForm().textButton[bgNum].setActionCommand("continueDialog" + bgNum + npcName);
         gh.getForm().textButton[bgNum].setText("Continua");
     }
 
@@ -118,7 +118,7 @@ public class DayDescription {
         System.out.println(npcListD.get(i));
         gh.getForm().textAreaBox[bgNum].setText(npcListD.get(i));
         gh.getForm().textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        gh.getForm().textButton[bgNum].setActionCommand("continueDialog" + bgNum);
+        gh.getForm().textButton[bgNum].setActionCommand("continueDialog" + bgNum + npcName);
         gh.getForm().textButton[bgNum].setText("Continua");
     }
 
@@ -132,7 +132,7 @@ public class DayDescription {
         System.out.println(npcListD.get(i));
         gh.getForm().textAreaBox[bgNum].setText(npcListD.get(i));
         gh.getForm().textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        gh.getForm().textButton[bgNum].setActionCommand("continueDialog" + bgNum);
+        gh.getForm().textButton[bgNum].setActionCommand("continueDialog" + bgNum + npcName);
         gh.getForm().textButton[bgNum].setText("Continua");
 
     }
@@ -147,7 +147,7 @@ public class DayDescription {
         System.out.println(npcListD.get(i));
         gh.getForm().textAreaBox[bgNum].setText(npcListD.get(i));
         gh.getForm().textAreaBox2[bgNum].setText(npcListD.get(i + 1));
-        gh.getForm().textButton[bgNum].setActionCommand("continueDialog" + bgNum);
+        gh.getForm().textButton[bgNum].setActionCommand("continueDialog" + bgNum + npcName);
         gh.getForm().textButton[bgNum].setText("Continua");
     }
 
@@ -212,7 +212,7 @@ public class DayDescription {
 
     }
 
-    public void continueDialogue(int bgNum) {
+    public void continueDialogue(int bgNum,String npcName) {
         gh.getForm().dialogueButton1[bgNum].setVisible(false);
         gh.getForm().dialogueButton2[bgNum].setVisible(false);
         gh.getForm().dialogueButton3[bgNum].setVisible(false);
@@ -226,9 +226,8 @@ public class DayDescription {
 
         } else {
             System.out.println("ESCIDIALOGO");
-            gh.getForm().textButton[bgNum].setText("Chiudi");
-            gh.getForm().textButton[bgNum].setActionCommand("continueTextScene" + bgNum);
-            closeTextBox(bgNum);
+            gh.getForm().textButton[bgNum].setActionCommand("Talk" + npcName);
+            
         }
 
     }
