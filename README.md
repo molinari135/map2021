@@ -6,17 +6,17 @@
 [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
 
 ## Indice
-1. Struttura repository
-2. Introduzione
-3. Guida per l'utilizzo
-4. Guida per l'utente
-5. Personaggi
-6. Mappe
-7. Soluzione
-8. Dettagli implementativi
-9. Struttura algebrica di una struttura dati utilizzata
-10. Architettura del sistema e diagramma UML delle classi
-11. Report
+1. [Struttura repository](#struttura-repository)
+2. [Introduzione](#introduzione)
+3. [Guida per l'utilizzo](#guida-per-lutilizzo)
+4. [Guida per l'utente](#guida-per-lutente)
+5. [Personaggi](#personaggi)
+6. [Mappe](#mappe)
+7. [Soluzione](#soluzione)
+8. [Dettagli implementativi e tecnologie utilizzate](#dettagli-implementativi-e-tecnologie-utilizzate)
+9. [Specifica algebrica di una struttura dati utilizzata](#specifica-algebrica-di-una-struttura-dati-utilizzata)
+10. [Architettura del sistema e diagramma UML delle classi](#architettura-del-sistema-e-diagramma-uml-delle-classi)
+11. [Report](#report)
 
 ## Struttura repository
 La struttura della repository si presenta nel seguente modo:
@@ -68,13 +68,13 @@ Un piccolo indizio da parte della simpatica Miss Marple:
 
 ## Guida per l'utilizzo
 Per giocare occorre cliccare su **tags**<br>
-![ImmagineRelease](drawings/how-to/release.png)
+![ImmagineRelease](doc/drawings/release.png)
 
 Successivamente, cliccare su **Assets** e dopo sul file <code>src-1.0-SNAPSHOT.jar</code><br>
-![ImmagineRelease2](drawings/how-to/release2.png)
+![ImmagineRelease2](doc/drawings/release2.png)
 
 A questo punto inizierà il download del gioco. Basta solo fare doppio click sul file appena scaricato per farlo avviare. La scena iniziale del gioco è la seguente:<br>
-![ImmagineSchermataInziiale](drawings/how-to/screen.png)
+![ImmagineSchermataInziiale](doc/drawings/screen.png)
 
 > Attenzione! Occorre avere Java installato sulla macchina per poterlo aprire.<br>
 > Puoi verificare se Java è installato inserendo il comando <code>java -version</code>.<br>
@@ -90,12 +90,12 @@ Quando avrai finito di parlare con tutti e avrai raccolto tutti gli indizi di Go
 [Torna su](#indice)
 
 ## Personaggi
-Vedi [Storyboard.md]()
+Vedi [Storyboard.md](doc/storyboard/Dettagli_avventura.md)
 
 [Torna su](#indice)
 
 ## Mappe
-Vedi [Mappe.pdf]()
+Vedi [Mappe.pdf](doc/Nuove mappe gioco.pdf)
 
 [Torna su](#indice)
 
@@ -203,7 +203,7 @@ Vedi [Report.md](doc/Report.md) per le informazioni complete del progetto, oppur
 [Torna su](#indice)
 
 ## Report
-Vedi [Report.md]()
+Vedi [Report.md](doc/Report.md)
 
 [Torna su](#indice)
 
